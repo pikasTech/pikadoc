@@ -31,8 +31,35 @@ PikaScript 支持裸机运行，最低可运行于 **RAM ≥ 4kB** ，**FLASH �
 
 ## Demo 01 点个灯
 
+``` python
+import PikaStdLib
+import machine
 
-![](assets/132943903-b3558929-a107-4a99-bdc4-1b3fd3f7172b.png)
+mem = PikaStdLib.MemChecker()
+io1 = machine.GPIO()
+time = machine.Time()
+
+io1.init()
+io1.setPin('PA8')
+io1.setMode('out')
+io1.enable()
+io1.low()
+
+print('hello pikascript')
+print('mem.max :')
+mem.max()
+print('mem.now :')
+mem.now()
+
+while True:
+    io1.low()
+    time.sleep_ms(500)
+    io1.high()
+    time.sleep_ms(500)
+    
+```
+
+
 
 看看这脚本，可都是如假包换的 Python3 标准语法。
 这灯不就闪起来了吗。
@@ -43,8 +70,26 @@ PikaScript 支持裸机运行，最低可运行于 **RAM ≥ 4kB** ，**FLASH �
 
 ## Demo 02 串口测试
 
+``` python
+import PikaStdLib
+import machine
 
-![](assets/132944132-90898355-de94-4d81-990b-7b85d4a4d08a.png)
+time = machine.Time()
+uart = machine.UART()
+uart.init()
+uart.setId(1)
+uart.setBaudRate(115200)
+uart.enable()
+
+while True:
+    time.sleep_ms(500)
+    readBuff = uart.read(2)
+    print('read 2 char:')
+    print(readBuff)
+    
+```
+
+
 
 
 开个串口，读俩字符试试
@@ -56,8 +101,26 @@ PikaScript 支持裸机运行，最低可运行于 **RAM ≥ 4kB** ，**FLASH �
 非常顺滑
 ## Demo 03 读个ADC试试
 
+``` python
+import PikaStdLib
+import machine
 
-![](assets/132944180-a805c8f8-40d5-45ff-ae2a-a0fe8f9db1ab.png)
+time = machine.Time()
+adc1 = machine.ADC()
+
+adc1.init()
+adc1.setPin('PA1')
+adc1.enable()
+
+while True:
+    val = adc1.read()
+    print('adc1 value:')
+    print(val)
+    time.sleep_ms(500)
+    
+```
+
+
 
 
 同样几行脚本搞定。
@@ -103,7 +166,6 @@ PikaScript 支持裸机运行，最低可运行于 **RAM ≥ 4kB** ，**FLASH �
 
 ## 开发难不难？
 PikaScript 为开发者准备了丰富的Demo和由浅入深的开发指南，指南还会持续完善和维护。
-![](assets/132945342-6ace05aa-50c4-4533-9129-ef131cd9fc1d.png)
 
 ## 可以商用吗？
 当然！PikaScript 采用 MIT 协议，允许修改和商用，但是要注意保留原作者的署名。
