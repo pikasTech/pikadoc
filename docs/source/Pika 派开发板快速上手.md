@@ -305,7 +305,6 @@ Plus 版使用  stm32g070 平台。
 ### 直接下载编译好的固件
 如果你想用现成的固件也可以直接下载编译好的~
 ![](https://images.gitee.com/uploads/images/2021/1122/210126_d14c9754_5521445.png#crop=0&crop=0&crop=1&crop=1&height=301&id=bM0PE&originHeight=1041&originWidth=2049&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=592)
-## ​
 
 点击下载就可以获得最新的固件了~
 ![](https://images.gitee.com/uploads/images/2021/1122/210155_5248a47c_5521445.png#crop=0&crop=0&crop=1&crop=1&height=314&id=QPjRk&originHeight=856&originWidth=1661&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=609)

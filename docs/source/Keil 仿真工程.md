@@ -2,7 +2,7 @@
 
 在本篇中，你将可以在手边没有硬件的情况下对 pikascript 进行上手测试。
 测试使用 keil5 的仿真工程，仿真目标板为 stm32f103 ，下载仿真工程即可直接开始测试。
-### (1) 创建工程
+### 创建工程
 进入 pikascript 官网 [http://pikascript.com](http://pikascript.com)
 选择 simulation-keil，然后点击“开始生成”
 ![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1644128841425-378e4391-426d-4dc3-bb2d-934e8facd22e.png#clientId=u964f7854-3670-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=688&id=ua000a7d5&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1204&originWidth=902&originalType=binary&ratio=1&rotation=0&showTitle=false&size=147062&status=done&style=none&taskId=u81074a64-e873-4e01-8837-fb9832c9222&title=&width=515.4285714285714)
@@ -10,7 +10,7 @@
 ![](https://user-images.githubusercontent.com/88232613/130745821-864038df-d8b0-41d2-97e8-199815d0d57d.png#crop=0&crop=0&crop=1&crop=1&id=bvV6n&originHeight=873&originWidth=920&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
 
-### (2) 运行仿真工程
+### 运行仿真工程
 选择使用仿真器进行调试
 ![](https://user-images.githubusercontent.com/88232613/130747706-b912e09f-3f68-495a-a69f-f8f7500b1e4e.png#crop=0&crop=0&crop=1&crop=1&id=uluci&originHeight=490&originWidth=1446&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
@@ -21,7 +21,7 @@
 ![](https://user-images.githubusercontent.com/88232613/130747952-42073ba1-c4c4-4acb-9495-766cd5731374.png#crop=0&crop=0&crop=1&crop=1&id=BSGKN&originHeight=950&originWidth=1450&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 运行然后查看输出结果
 ![](https://user-images.githubusercontent.com/88232613/130748221-53fff9f6-6427-417d-b95a-3fa52a57eeaf.png#crop=0&crop=0&crop=1&crop=1&id=WWfzW&originHeight=975&originWidth=1461&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
-### (3) 改改脚本看看
+### 改改脚本看看
 用任意编辑器打开 main.py ，推荐 vscode ， 没有 vscode 用记事本打开也可以
 ![](https://user-images.githubusercontent.com/88232613/130748847-477facfb-e16e-4e0e-8876-d66efd0ae48c.png#crop=0&crop=0&crop=1&crop=1&id=q7ZRQ&originHeight=845&originWidth=834&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 以下就是 main.py

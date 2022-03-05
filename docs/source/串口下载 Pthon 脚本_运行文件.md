@@ -7,7 +7,7 @@ obj_run 支持运行字符串形式的 Python 脚本，因此无论以那种方�
 
 
 PikaScript 支持运行 Python 脚本源码，和解析后的 Pika 字节码。
-## 1. 存储 Python 源码
+## 存储 Python 源码
 存储 Python 源码很简单，将串口接收到的 Python 脚本字符串完整写入 Flash 即可。启动时不使用pikaScriptInit() 函数，而是手动创建 pikaMain 根对象，再使用 obj_run(pikaMain, code) 运行脚本，code 代表的是存储好的 python 源码。
 
 
@@ -16,7 +16,7 @@ PikaScript 支持运行 Python 脚本源码，和解析后的 Pika 字节码。
 1. [https://gitee.com/Lyon1998/pikascript/blob/master/package/STM32G030Booter/main.c](https://gitee.com/Lyon1998/pikascript/blob/master/package/STM32G030Booter/main.c)
 1. [https://gitee.com/Lyon1998/pikascript/blob/master/package/STM32G030Booter/pika_config.c](https://gitee.com/Lyon1998/pikascript/blob/master/package/STM32G030Booter/main.c)
 1. [https://gitee.com/Lyon1998/pikascript/blob/master/package/STM32G030Booter/pika_config.h](https://gitee.com/Lyon1998/pikascript/blob/master/package/STM32G030Booter/main.c)
-## 2. 存储Pika字节码
+## 存储Pika字节码
 （待完善）
 具体代码案例可以参考：
 

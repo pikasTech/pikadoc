@@ -1,7 +1,7 @@
 # PikaScript 模块概述
 
 我们依然以keil的仿真工程为例，如果还没有获得仿真工程，请参考[1.三分钟快速上手](https://www.yuque.com/liang-mltek/pikascript/ew19qm)
-### 1. PikaScript模块与模块接口
+### PikaScript模块与模块接口
 我们打开pikascript文件夹，发现文件夹根目录下除了main.py，还有Device.py，PikaObj.py和PikaStdLib.py，这三个.py文件分别对应三个PikaScript**_模块_**(class package)，简称**_包_**(package)，每个.py文件本身称为**_模块接口_**(package interface)。一个模块中可以包含若干个相关性较强的类。
 
 
@@ -44,7 +44,7 @@ LED类中定义了两个方法，分别是`on()`方法和`off()`方法，而`Uar
 然而在使用已有的模块时，是不需要了解模块实现的，只需要了解模块接口，即可使用这个模块。
 
 
-### 2. 导入并调用模块
+### 导入并调用模块
 
 
 下面我们看一下如何使用这个模块。
