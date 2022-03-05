@@ -3,7 +3,7 @@
 进入 pikascript 官网 [http://pikascript.com](http://pikascript.com)
 选择平台，模块，然后点击 "开始生成"。
 （选择平台后会自动选择默认的模块)
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1644129110261-049ad5bb-21af-40e2-9533-a1c8c86790f1.png#clientId=ud8f924e7-b341-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=671&id=u7a239101&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1174&originWidth=887&originalType=binary&ratio=1&rotation=0&showTitle=false&size=146959&status=done&style=none&taskId=ub307287a-b2cc-40c1-abcd-76c1ca0a625&title=&width=506.85714285714283)
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1644129110261-049ad5bb-21af-40e2-9533-a1c8c86790f1.png)
 ## 工程的来源
 移植好的裸机MCU工程在pikascript/bsp目录，里面的每一个文件夹都是一个移植好的裸机工程。
 **每个工程都是独立的，可以拷贝出pikascript仓库单独使用。**

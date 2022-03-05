@@ -11,7 +11,7 @@
 1. Pro 专业版：STM32G030 + DAPLink 调试器 64K flash 8k ram
 1. Plus 顶配版：STM32G070 + DAPLink 调试器 128k flash 32k ram
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641204913846-15059096-75ac-4aa1-9c5f-27cbde8d77d9.png#clientId=uf400c24d-7b4b-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=407&id=u44417872&margin=%5Bobject%20Object%5D&name=image.png&originHeight=814&originWidth=1084&originalType=binary&ratio=1&rotation=0&showTitle=false&size=471107&status=done&style=none&taskId=u168dc6c6-b702-48fd-8a04-f975b5f2249&title=&width=542)
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641204913846-15059096-75ac-4aa1-9c5f-27cbde8d77d9.png)
 这个开发板由 PikaScript 项目官方支持，持续滚动更新，PikaScript 的最新内核，最新功能，都可以在这个开发板上抢先体验到。
 
 
@@ -273,7 +273,7 @@ while True:
 当你熟悉了 LCD 驱动之后，可以试试自己开发小游戏哦~
 ## 交互式运行
 main.py 执行完毕后，就会进入交互式运行，因此只要取消 main.py 中的 `while True :`，使其能够执行完退出，就可以进入交互式运行。
-![538feaef3281950c41b4c5b18bc1183.jpg](https://cdn.nlark.com/yuque/0/2022/jpeg/22991477/1641953728408-8fbffe1c-643a-4f18-855e-5d60578eb194.jpeg#clientId=u7b4d218e-8252-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=586&id=u0f89e27c&margin=%5Bobject%20Object%5D&name=538feaef3281950c41b4c5b18bc1183.jpg&originHeight=586&originWidth=1010&originalType=binary&ratio=1&rotation=0&showTitle=false&size=39166&status=done&style=none&taskId=u5113d3e2-ee87-4ddd-b6c2-c0957a71049&title=&width=1010)
+![538feaef3281950c41b4c5b18bc1183.jpg](https://cdn.nlark.com/yuque/0/2022/jpeg/22991477/1641953728408-8fbffe1c-643a-4f18-855e-5d60578eb194.jpeg)
 交互式运行支持单行，多行输入，和通用 Python 用法一致。建议使用 PuTTY 串口终端。
 输入 `exit()` 则会直接重启系统。
 **注意事项**：
@@ -284,9 +284,9 @@ main.py 执行完毕后，就会进入交互式运行，因此只要取消 main.
 1. 缩进应使用4个空格，不要使用TAB键。
 ## LCD屏幕安装
 1. 参考下图焊接长脚排母
-![](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641957159752-18f9f608-8389-4a43-9c1d-ea6ce44c3e4a.png#clientId=u5acfe8f2-84da-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u1ba75dc7&margin=%5Bobject%20Object%5D&originHeight=550&originWidth=284&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ucfe9eb38-080f-4421-af11-4f5d1997dbc&title=)
+![](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641957159752-18f9f608-8389-4a43-9c1d-ea6ce44c3e4a.png)
 2. 插上屏幕，参考绿色小旗的方向，屏幕能亮就说明插的方向是对的，插反了不会亮
-![](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641957159517-c3adbb12-118a-4c9f-9662-c1801df59276.png#clientId=u5acfe8f2-84da-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u6b29d0c0&margin=%5Bobject%20Object%5D&originHeight=395&originWidth=303&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uee421b68-1744-4a4b-b0c6-7894ddf4b53&title=)
+![](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641957159517-c3adbb12-118a-4c9f-9662-c1801df59276.png)
 ## 固件升级
 Pika派的固件是滚动更新的，会不断推出新的固件版本，不断提供新的功能，而有一些新的功能只有升级固件才能玩到，所以学会升级固件也是很重要的~
 ### 自己编译固件
@@ -297,10 +297,10 @@ Lite 版和 Pro版使用 stm32g030 平台。
 Plus 版使用  stm32g070 平台。
 然后点击 "开始生成"。
 （选择平台后会自动选择默认的模块)
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1644129110261-049ad5bb-21af-40e2-9533-a1c8c86790f1.png#clientId=ud8f924e7-b341-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=671&id=u7a239101&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1174&originWidth=887&originalType=binary&ratio=1&rotation=0&showTitle=false&size=146959&status=done&style=none&taskId=ub307287a-b2cc-40c1-abcd-76c1ca0a625&title=&width=506.85714285714283)
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1644129110261-049ad5bb-21af-40e2-9533-a1c8c86790f1.png)
 直接打开 Keil 工程就可以编译了。
 编译时需要使用不低于 V5.36 的 Keil，需要激活。
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1642145123916-644fdd52-a1d3-41be-bd74-8a9e05386397.png#clientId=u99a517cf-a6ca-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=50&id=u4cb6b717&margin=%5Bobject%20Object%5D&name=image.png&originHeight=50&originWidth=481&originalType=binary&ratio=1&rotation=0&showTitle=false&size=5250&status=done&style=none&taskId=u071a85f8-fa2c-40a0-bf35-dccaddc4dbd&title=&width=481)
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1642145123916-644fdd52-a1d3-41be-bd74-8a9e05386397.png)
 编译得到的 .bin 在 MDK/stm32g030c8/stm32g030c8.bin 。
 ### 直接下载编译好的固件
 如果你想用现成的固件也可以直接下载编译好的~
@@ -330,19 +330,19 @@ Pro 版和 Plus 版板载 DAP-Link，直接连接USB即可SWD升级。
 Lite 版和 Pro版使用 [bsp/stm32g030](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g030c8) 工程。
 Plus 版使用  [bsp/stm32g070](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g070cb) 工程。
 在使用SWD升级时，应选择"部分擦除"的下载方式
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1642144820993-a1c6c5e9-e3ca-4406-aa93-3ae3911738f6.png#clientId=u6977b933-ae07-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=744&id=u2577874b&margin=%5Bobject%20Object%5D&name=image.png&originHeight=744&originWidth=688&originalType=binary&ratio=1&rotation=0&showTitle=false&size=64912&status=done&style=none&taskId=u83c0af1f-d4f1-4a5b-9d32-53934934f2f&title=&width=688)
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1642144820993-a1c6c5e9-e3ca-4406-aa93-3ae3911738f6.png)
 ### 使用固件下载Python程序
 固件在编译时会加载 pikascript/main.py 作为默认 Python 程序。
 在下载固件前，按 SW0 + RST 擦除 flash 后，就会从固件 Python 程序启动。
 ## ARM-2D GUI引擎
 pika 派支持运行 ARM-2D GUI 引擎
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1642347518780-02431025-393e-41b0-bfea-e3f932a86b54.png#clientId=u86af03c5-f1af-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=465&id=u18c7dea3&margin=%5Bobject%20Object%5D&name=image.png&originHeight=929&originWidth=652&originalType=binary&ratio=1&rotation=0&showTitle=false&size=319907&status=done&style=none&taskId=u74740db5-6fbf-4c47-9184-790418a7d96&title=&width=326)
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1642347518780-02431025-393e-41b0-bfea-e3f932a86b54.png)
 使用方法：
 
 1. 获取 bsp/stm32g030 工程。
 1. 使用 examples/ARM-2D/PikaPiZero 中的工程文件，main.py 和 requestment.txt 替换。
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1642347593663-fae37327-369e-4480-9c3e-8d9440c6870d.png#clientId=u86af03c5-f1af-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=259&id=w4ZmJ&margin=%5Bobject%20Object%5D&name=image.png&originHeight=518&originWidth=967&originalType=binary&ratio=1&rotation=0&showTitle=false&size=60912&status=done&style=none&taskId=u26922064-3d9f-4cb8-843f-e31c3015fe4&title=&width=483.5)
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1642347593663-fae37327-369e-4480-9c3e-8d9440c6870d.png)
 
 3. 按住开发板上面的 SW0 键，同时按下 RST 键，擦除 flash。
 3. 重新运行包管理器，预编译，编译工程，使用 SWD/Bootloader 刷入工程。
@@ -361,10 +361,10 @@ pika 派支持运行 ARM-2D GUI 引擎
 工程需要远程拉取模块和预编译，需要先运行 pikascript/pikaPackage.exe 和 pikascript/rust-msc-win10-latest.exe 再编译工程。
 ## 原理图
 ### Lite青春版
-![Schematic_PikaPi-zero-lite_2022-01-03 (2).png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641204367325-7c0751ac-7fe8-4029-a4c2-ee6ebb1e2733.png#clientId=u9b9c0d61-f912-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=2100&id=u1c38017f&margin=%5Bobject%20Object%5D&name=Schematic_PikaPi-zero-lite_2022-01-03%20%282%29.png&originHeight=4200&originWidth=2250&originalType=binary&ratio=1&rotation=0&showTitle=false&size=780931&status=done&style=none&taskId=u45a38685-2d79-45e4-af90-f5e8477cb71&title=&width=1125)
+![Schematic_PikaPi-zero-lite_2022-01-03 (2).png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641204367325-7c0751ac-7fe8-4029-a4c2-ee6ebb1e2733.png)
 ### Pro专业版
-![Schematic_PikaPi-zero-pro_2022-01-09.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641733841411-d3a3ed0f-4609-49eb-9985-b3a635e72b51.png#clientId=u58fdccf3-c92c-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=2082&id=u3e56644c&margin=%5Bobject%20Object%5D&name=Schematic_PikaPi-zero-pro_2022-01-09.png&originHeight=4163&originWidth=2250&originalType=binary&ratio=1&rotation=0&showTitle=false&size=817064&status=done&style=none&taskId=u875c8049-6af5-46b2-9e00-45413085b69&title=&width=1125)
+![Schematic_PikaPi-zero-pro_2022-01-09.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641733841411-d3a3ed0f-4609-49eb-9985-b3a635e72b51.png)
 ### Plus顶配版
-![Schematic_PikaPi-zero-plus-pro_2022-01-09.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641733943438-bdd0d52f-1e34-4a8e-a3bb-c53508ce4fc1.png#clientId=u6dd4e745-e810-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=2082&id=ub2c2dffb&margin=%5Bobject%20Object%5D&name=Schematic_PikaPi-zero-plus-pro_2022-01-09.png&originHeight=4163&originWidth=2250&originalType=binary&ratio=1&rotation=0&showTitle=false&size=816437&status=done&style=none&taskId=u966e5094-3a0d-4683-80fa-4788f59ba6d&title=&width=1125)
+![Schematic_PikaPi-zero-plus-pro_2022-01-09.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641733943438-bdd0d52f-1e34-4a8e-a3bb-c53508ce4fc1.png)
 ### LCD
 ![](assets/1645715736921-0dcd26b4-732b-42bf-b17a-1ef3ce3d3ea6.png)

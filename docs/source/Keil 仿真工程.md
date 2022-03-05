@@ -5,7 +5,7 @@
 ### 创建工程
 进入 pikascript 官网 [http://pikascript.com](http://pikascript.com)
 选择 simulation-keil，然后点击“开始生成”
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1644128841425-378e4391-426d-4dc3-bb2d-934e8facd22e.png#clientId=u964f7854-3670-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=688&id=ua000a7d5&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1204&originWidth=902&originalType=binary&ratio=1&rotation=0&showTitle=false&size=147062&status=done&style=none&taskId=u81074a64-e873-4e01-8837-fb9832c9222&title=&width=515.4285714285714)
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1644128841425-378e4391-426d-4dc3-bb2d-934e8facd22e.png)
 解压下载的 zip 压缩包，打开工程
 ![](https://user-images.githubusercontent.com/88232613/130745821-864038df-d8b0-41d2-97e8-199815d0d57d.png#crop=0&crop=0&crop=1&crop=1&id=bvV6n&originHeight=873&originWidth=920&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 

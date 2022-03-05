@@ -22,18 +22,18 @@ MicroPython绑定C模块很复杂，很难调试，有没有更方便的技术�
 
 除了pico之外，pikascript的易移植特性使其可以在非常多的平台上运行。
 从stm32g0，stm32f1，到国产的ch32，apm32，cm32，还有平头哥的w801，博流的bl-706，统统支持。
-![](https://cdn.nlark.com/yuque/0/2021/webp/22991477/1640497097904-f2b13577-44ee-4510-a7ce-e18dd01aaa20.webp#clientId=ueaf7376e-6f92-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=ue05bf978&margin=%5Bobject%20Object%5D&originHeight=1012&originWidth=938&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u554f52c7-6351-49ca-b881-1e6f930f52e&title=)
+![](https://cdn.nlark.com/yuque/0/2021/webp/22991477/1640497097904-f2b13577-44ee-4510-a7ce-e18dd01aaa20.webp)
 很火的ESP32C3，龙芯架构，还有这次的主角树莓派Pico。
-![](https://cdn.nlark.com/yuque/0/2021/webp/22991477/1640497097922-8490fdc1-ba88-48a4-888b-3859384ca650.webp#clientId=ueaf7376e-6f92-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u50b06e32&margin=%5Bobject%20Object%5D&originHeight=753&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ufb772967-0916-4763-a523-f4175fc0620&title=)
+![](https://cdn.nlark.com/yuque/0/2021/webp/22991477/1640497097922-8490fdc1-ba88-48a4-888b-3859384ca650.webp)
 除了支持裸机，还支持rt-thread、vsf操作系统，linux操作系统。
 
 并且与rt-thread深度融合，能够基于软件包支持rt-thread全系列BSP
-![](https://cdn.nlark.com/yuque/0/2021/webp/22991477/1640497097898-69cdc136-7b7a-4a8c-b79c-0650ae3f5111.webp#clientId=ueaf7376e-6f92-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u70957796&margin=%5Bobject%20Object%5D&originHeight=535&originWidth=701&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6831ba37-5961-4959-a85a-20bd2bc85e3&title=)
+![](https://cdn.nlark.com/yuque/0/2021/webp/22991477/1640497097898-69cdc136-7b7a-4a8c-b79c-0650ae3f5111.webp)
 下面进入正题，看看如何在树莓派pico上面用MDK开发，并玩上Python。
 使用说明：
 [https://gitee.com/Lyon1998/pikascript/tree/master/bsp/pico#pikascript-in-pico](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/pico#pikascript-in-pico)
 如果能在串口看到下面的信息，就说明运行成功了！
-![](https://cdn.nlark.com/yuque/0/2021/webp/22991477/1640497099248-1358725f-072c-4810-a999-c9d372575f19.webp#clientId=ueaf7376e-6f92-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u69dd38bd&margin=%5Bobject%20Object%5D&originHeight=434&originWidth=809&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ufe736105-d75e-489a-acef-1b1368d6cbe&title=)
+![](https://cdn.nlark.com/yuque/0/2021/webp/22991477/1640497099248-1358725f-072c-4810-a999-c9d372575f19.webp)
 Enjoy！
 更多技术支持可以在论坛讨论~
 https://whycan.com/f_55.html
