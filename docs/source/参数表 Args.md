@@ -103,7 +103,7 @@ Hash hash_time33(char* str);
 int32_t args_removeArg(Args* self, Arg* argNow);
 ```
 返回值为错误码，为0表示成功。
-## 6. 参数表的遍历
+## 参数表的遍历
 可以使用下面的API遍历一个参数表。
 
 1. 第一个入口参数是参数表的指针。
@@ -114,4 +114,3 @@ int32_t args_foreach(Args* self,
                      int32_t (*eachHandle)(Arg* argEach, Args* handleArgs),
                      Args* handleArgs);
 ```
-​

@@ -2,7 +2,7 @@
 
 我们依然以keil的仿真工程为例，如果还没有获得仿真工程，请参考[1.三分钟快速上手](https://www.yuque.com/liang-mltek/pikascript/ew19qm)
 ## 编写新的PikaScript模块
-### a)新建模块接口
+### 新建模块接口
 
 
 编写一个新的模块，首先需要编写模块接口文件，比如编写一个数学计算模块Math，第一步是编写Math.py。
@@ -35,7 +35,7 @@ def set(argPath: str, val: any):
 `print(val: any)`表示输入参数为泛型的函数，`set(argPath:str, val:any)`也是泛型函数，这两个函数由内核实现。
 
 
-### b)编写类接口
+### 编写类接口
 
 
 现在我们可以在Math.py里面新建类了，比如我们要新建一个`Adder`类来实现相关的加法运算，我们就可以在Math.py里面添加Adder类，为了节省内存，Adder类从TinyObj基类中继承。
@@ -78,7 +78,7 @@ import Math
 ![](assets/131119310-99564d6a-d570-4375-9c01-c2d7cde74655.png)
 
 
-### c)编写类的实现
+### 编写类的实现
 
 
 我们把刚刚新编译出的两个-api.c文件添加到工程，然后编译一下试试。
@@ -198,7 +198,7 @@ int Math_Multiplier_byInt(PikaObj *self, int a, int b)
 这时,再编译项目，就可以通过了。
 
 
-### d)测试一下效果
+### 测试一下效果
 
 
 我们用下面的main.py来测试一下我们新编写的模块
@@ -236,7 +236,7 @@ print(res4)
 
 
 这说明我们编写的模块工作正常了。
-### e)发布模块
+### 发布模块
 
 
 出于开源的精神，发布你自己的模块是一件非常酷且激动人心的事情。

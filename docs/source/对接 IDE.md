@@ -1,5 +1,5 @@
 # 对接IDE
-## 一、概述
+## 概述
 PikaScript需要对接IDE的工具集包括
 
 1. 包管理器pikaPackage.exe
@@ -9,7 +9,7 @@ PikaScript需要对接IDE的工具集包括
 2. 预编译器rust-msc-latest-win10.exe
 
 参考**模块开发**相关文档
-## 二、调用方式
+## 调用方式
 ### 1. 起始路径：
 
    1. [裸机工程根目录]/pikascript路径
@@ -22,7 +22,7 @@ PikaScript需要对接IDE的工具集包括
 ### 3. 预编译器
 a. 在每次编译前运行
 **【注意】：**初次运行时，先用pikaPackage.exe拉取预编译器。
-## 三、工程文件
+## 工程文件
 
    1. 在执行包管理器或者预编译器后，需要添加**pikascript-lib,pikascript-core,pikascript-api**下的**全部（包括子文件夹）**的.c文件和include路径。
    1. 重置PikaScript工程文件：删除pikascript-lib，pikascript-core，pikascript-api后，重新运行pikaPackage.exe和rust-msc-latest-win10.exe。

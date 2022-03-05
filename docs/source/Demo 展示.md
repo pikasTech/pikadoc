@@ -12,6 +12,7 @@
 换句话说，我想**用 Keil 开发，用 Keil 调试，**我还想用**最便宜的单片机，**而且**开发 C 模块还非常简单**。
 这，能玩 Python吗？
 ![](assets/132941900-985ebc9e-fb65-48f6-8677-d3ebc65422ee.gif)
+
 要不，试试 PikaScript？
 
 啥是 PikaScript？
