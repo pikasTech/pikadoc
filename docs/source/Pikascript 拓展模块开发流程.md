@@ -70,13 +70,12 @@ class Multiplier(TinyObj):
 import Math
 ```
 
-
 双击运行pika预编译器。
-![](https://user-images.githubusercontent.com/88232613/131119247-ae25276e-f7c9-49ef-81e1-dbddcaffdf6c.png#crop=0&crop=0&crop=1&crop=1&height=382&id=Zijm4&originHeight=483&originWidth=830&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=656)
+![](assets/131119247-ae25276e-f7c9-49ef-81e1-dbddcaffdf6c.png)
 打开pikascript-api文件夹可以发现，我们新编写的模块接口已经可以被编译出来了。
 
 
-![](https://user-images.githubusercontent.com/88232613/131119310-99564d6a-d570-4375-9c01-c2d7cde74655.png#crop=0&crop=0&crop=1&crop=1&height=568&id=BYbB7&originHeight=907&originWidth=1038&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=650)
+![](assets/131119310-99564d6a-d570-4375-9c01-c2d7cde74655.png)
 
 
 ### c)编写类的实现
@@ -85,13 +84,13 @@ import Math
 我们把刚刚新编译出的两个-api.c文件添加到工程，然后编译一下试试。
 
 
-![](https://user-images.githubusercontent.com/88232613/131119636-3c3d52ce-a7c2-48a4-beb4-5498dfd4f279.png#crop=0&crop=0&crop=1&crop=1&height=361&id=bmF65&originHeight=402&originWidth=461&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=414)
+![](assets/131119636-3c3d52ce-a7c2-48a4-beb4-5498dfd4f279.png)
 
 
 发现编译报错了，提示是有四个函数没有找到定义。
 
 
-![](https://user-images.githubusercontent.com/88232613/131119786-823a96e3-7ab3-45f8-8c7c-282ba9b7b863.png#crop=0&crop=0&crop=1&crop=1&height=109&id=ChFNG&originHeight=227&originWidth=1418&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=683)
+![](assets/131119786-823a96e3-7ab3-45f8-8c7c-282ba9b7b863.png)
 
 
 这是正常的，因为我们之前并没有为Math模块的类编写实现，下面我们就来编写这些类的实现。
@@ -100,19 +99,19 @@ import Math
 为了模块管理的方便，我们把实现文件都放在pikascript-lib文件夹下，
 
 
-![](https://user-images.githubusercontent.com/88232613/131120029-81c9b91f-2669-40cf-86da-78d72bce81c8.png#crop=0&crop=0&crop=1&crop=1&height=332&id=ztD2E&originHeight=390&originWidth=807&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=686)
+![](assets/131120029-81c9b91f-2669-40cf-86da-78d72bce81c8.png)
 
 
 在pikascript-lib文件夹下，新建一个Math文件夹，用来放Math模块的实现代码。
 
 
-![](https://user-images.githubusercontent.com/88232613/131120240-a4001fa4-1fd2-4b6b-82a2-191834ed781b.png#crop=0&crop=0&crop=1&crop=1&height=216&id=CDpdk&originHeight=249&originWidth=787&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=684)
+![](assets/131120240-a4001fa4-1fd2-4b6b-82a2-191834ed781b.png)
 
 
 然后在Math文件夹下新建.c文件，建议用"模块名_类名.c"的命名方式为每一个类新建一个.c文件，提高代码的清晰性。
 
 
-![](https://user-images.githubusercontent.com/88232613/131120619-45ae3520-7b63-434b-8831-5b4d9f900cad.png#crop=0&crop=0&crop=1&crop=1&height=182&id=MteS3&originHeight=231&originWidth=851&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=670)
+![](assets/131120619-45ae3520-7b63-434b-8831-5b4d9f900cad.png)
 
 
 然后我们在这两个.c文件里面编写类的方法实现。那么问题来了，我们如何知道应当编写哪些实现呢？
@@ -233,7 +232,7 @@ print(res4)
 运行的效果如下：
 
 
-![](https://user-images.githubusercontent.com/88232613/131123307-1d9564d1-8b99-4784-99ed-9756693781f1.png#crop=0&crop=0&crop=1&crop=1&height=193&id=glXGH&originHeight=246&originWidth=538&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=421)
+![](assets/131123307-1d9564d1-8b99-4784-99ed-9756693781f1.png)
 
 
 这说明我们编写的模块工作正常了。

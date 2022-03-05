@@ -4,11 +4,11 @@
 ### PikaScript模块与模块接口
 我们打开pikascript文件夹，发现文件夹根目录下除了main.py，还有Device.py，PikaObj.py和PikaStdLib.py，这三个.py文件分别对应三个PikaScript**_模块_**(class package)，简称**_包_**(package)，每个.py文件本身称为**_模块接口_**(package interface)。一个模块中可以包含若干个相关性较强的类。
 
-
 ![](assets/1638582993068-0a8afe28-baa2-41ad-bac1-6626d50192ad.png)
 每一个PikaScript**_模块_**由**_模块接口_**和**_模块实现_**(package implement)两部分组成。
 我们先打开Device.py查看一下内容，在后续的文档中我们会称Device.py为**_Device模块接口_**。
 以下就是Device.py的全部内容。
+
 ```python
 # Device.py
 from PikaObj import *
@@ -80,7 +80,7 @@ mem.now()
 导入一个已经编写好的模块是非常简单的，比如导入Device模块，只需要`import Device`即可，要注意的是所有的.py文件应当放在pikascript文件架的根目录下。
 
 
-然后使用Device中的LED类新建对象，只需要写一句`uart = Device.Uart()`即可，这表示新建一个`uart`对象，这个对象的类是Device模块中的Uart类。
+xxxxxxxxxx # 调试记录示例i :1(pika-debug) ni :2(pika-debug) ni :3(pika-debug) ni :4(pika-debug) p i4(pika-debug) print(i)4(pika-debug) i = 2(pika-debug) ni :3(pika-debug) ni :4(pika-debug) i = 9(pika-debug) ni :10(pika-debug) i = 2(pika-debug) ni :3(pika-debug) qi :4i :5i :6i :7i :8i :9i :10bash
 
 
 调用方法则使用`uart.setName('com')`这种形式，这都是Python的标准语法，不需要过多介绍。

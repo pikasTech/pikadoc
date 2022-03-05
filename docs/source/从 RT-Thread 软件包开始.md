@@ -3,18 +3,18 @@
 1. PikaScript 已加入 [RT-Thread软件包](https://packages.rt-thread.org/detail.html?package=pikascript)，在编程语言分类下，直接添加软件包即可快速使用 PikaScript 。
 
 PikaScript 软件包支持**全部的 RT-Thread BSP **。
-![image.png](assets/1638840464842-02580253-48dc-4dcc-94a4-e62f1b596b38.png)
+![](assets/1638840464842-02580253-48dc-4dcc-94a4-e62f1b596b38.png)
 如果在使用过程中遇到兼容性问题，可以在 [gitee](https://gitee.com/Lyon1998/pikascript)，[github](https://github.com/pikasTech/pikascript) 提 issue 或者[论坛](https://whycan.com/f_55.html)提问。
 **安装：**
 
    1. 引入 pikascript 软件包
    1. 在 rt-thread/src/kservice.c 中的 rt_vsnprintf 前添加 RT_WEAK **(只针对rt_thread 4.1.0版本以下)**
 
-![image.png](assets/1639103607485-f33b48f8-a127-4612-9c4a-e2094ec5d79e.png)
+![](assets/1639103607485-f33b48f8-a127-4612-9c4a-e2094ec5d79e.png)
 
    3. 删除 rt-thread/components/finsh/shell.c 中 finsh_getchar 的 static **(只针对rt_thread 4.1.0版本以下)**
 
-![image.png](assets/1639103788555-fcf1c31c-386f-4baf-b1d0-4f3016af32bc.png)
+![](assets/1639103788555-fcf1c31c-386f-4baf-b1d0-4f3016af32bc.png)
 
 
 2. 启动 pikascript
@@ -29,16 +29,16 @@ PikaScript 软件包支持**全部的 RT-Thread BSP **。
 
 初次启动会执行 /pikascript-latest/**main.py **初始化脚本。执行完毕后进入 pika **交互式运行**模式，
 输入 "**exit()" **回到 msh，再次输入 **"pika" **进入 pikascript，将**直接进入**交互式运行模式。
-![d241761d5858d3ceade44d6a678f3d9.png](assets/1639058943232-9f0e0f78-0c8e-4b80-9283-6113c2450edf.png)
+![](assets/1639058943232-9f0e0f78-0c8e-4b80-9283-6113c2450edf.png)
 **方案二：开机自动启动**
 
    1. 进入软件包详细配置
 
-![image.png](assets/1639184483048-498f471e-cae7-4b6f-ad94-c1b5149d621c.png)
+![](assets/1639184483048-498f471e-cae7-4b6f-ad94-c1b5149d621c.png)
 
    2. 勾选Enable auto-running PikaScript
 
-![image.png](assets/1639184596044-a85902ac-601c-49b6-b2e5-3d20bd55ce81.png)
+![](assets/1639184596044-a85902ac-601c-49b6-b2e5-3d20bd55ce81.png)
 
    3. 设置好后会自动启动 PikaScript ，运行 main.py 脚本，然后回到 msh
 
@@ -68,7 +68,7 @@ PikaObj * pikaMain = pikaScriptInit();
 
    1. 修改 pikascript-latest/requestment.txt，然后右键工程，Sconscripts Update，即可安装模块/修改模块版本，并预编译。
 
-![IMG_20211215_091327.jpg](assets/1639531121038-abc40292-62fe-4a30-b074-7101714f6db7.jpeg)
+![](assets/1639531121038-abc40292-62fe-4a30-b074-7101714f6db7.jpeg)
 
 
 更多用法参考**包管理器**，**模块使用，模块开发**部分文档。

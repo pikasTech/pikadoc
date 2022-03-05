@@ -23,7 +23,7 @@ STM32G0==latest
 4. 提交模块的文件
    1. fork一份pikascript仓库，然后clone到本地。
 
-![image.png](assets/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png)
+![](assets/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png)
 
    2. 复制[module].py到pikascript-lib/[module]文件夹中。
    2. 复制整个修改后的pikascript-lib/[module]文件夹到fork后的pikascript/package文件夹中。
@@ -44,7 +44,7 @@ releases = [
    6. git push到你fork后的仓库中。
    6. 提交pull request。
 
-![image.png](assets/1638664500423-e4ad59fa-e476-48f0-b7ec-89f98eb70e6c.png)
+![](assets/1638664500423-e4ad59fa-e476-48f0-b7ec-89f98eb70e6c.png)
 ## 提交新的模块
 
 
@@ -54,7 +54,7 @@ releases = [
 1. 提交模块的文件
    1. fork一份pikascript仓库，然后clone到本地。
 
-![image.png](assets/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png)
+![](assets/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png)
 
    2. 复制[module].py到pikascript-lib/[module]文件夹中。
    2. 复制整个pikascript-lib/[module]文件夹到fork后的pikascript/package文件夹中。
@@ -74,4 +74,4 @@ releases = [
    6. git push到你fork后的仓库中。
    6. 提交pull request。
 
-![image.png](assets/1638664500423-e4ad59fa-e476-48f0-b7ec-89f98eb70e6c.png)
+![](assets/1638664500423-e4ad59fa-e476-48f0-b7ec-89f98eb70e6c.png)

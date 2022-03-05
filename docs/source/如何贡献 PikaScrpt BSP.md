@@ -24,5 +24,3 @@ git push
 
    5. （可选）在 pikascript/README.md 和 pikascript/README_zh.md 中更新 BSP 信息。
    5. 开启 Pull Request，等待合并。
-
-![](assets/undefined)

@@ -11,7 +11,7 @@
 1. Pro 专业版：STM32G030 + DAPLink 调试器 64K flash 8k ram
 1. Plus 顶配版：STM32G070 + DAPLink 调试器 128k flash 32k ram
 
-![image.png](assets/1641204913846-15059096-75ac-4aa1-9c5f-27cbde8d77d9.png)
+![](assets/1641204913846-15059096-75ac-4aa1-9c5f-27cbde8d77d9.png)
 这个开发板由 PikaScript 项目官方支持，持续滚动更新，PikaScript 的最新内核，最新功能，都可以在这个开发板上抢先体验到。
 
 
@@ -29,13 +29,12 @@
 下载程序的时候，需要使用一个串口助手工具，我们可以使用正点原子开发的 XCOM 助手，在正点原子的论坛可以下载到。
 [http://www.openedv.com/thread-279749-1-1.html](http://www.openedv.com/thread-279749-1-1.html)
 
-
 ![](assets/200618_b8f264a8_5521445.png)
 选择好 COM 口，然后波特率选为 115200，再点打开串口，这时候，就和 Pika 派连接上了。直接发送一个 Pthon 脚本文件，就可以给 Pika 派下载 Python 程序了。为了验证下载能不能成功，我们使用 PikaScript 源码仓库里面的示例 Python 脚本。
 我们进入 PikaScript 的代码仓库
 [https://gitee.com/Lyon1998/pikascript](https://gitee.com/Lyon1998/pikascript)
 惯例点一个 Star~
-![屏幕截图.png](assets/201054_c22a0714_5521445.png "屏幕截图.png")
+![](assets/201054_c22a0714_5521445.png "屏幕截图.png")
 然后我们点击 examples 文件夹，里面放的就是可以运行的 Python 例程。
 ![](assets/201133_2caa690c_5521445.png)
 我们打开 GPIO 文件夹，来点亮一下流水灯看看~
@@ -43,6 +42,7 @@
 GPIO 文件夹里面的 main.py 就是 GPIO 的示例代码了
 ![](assets/201351_226525cc_5521445.png)
 我们可以点开 main.py 看看~
+
 ```python
 import PikaStdLib
 import machine
@@ -81,6 +81,7 @@ while True:
 这时开发板上面的 LED 就会闪动起来！
 ![](assets/202935_f82345e6_5521445.png)
 恭喜你达成单片机玩 Python 的成就！
+
 ## GPIO的脚本里写了什么?
 下面我们来逐行解析一下 GPIO 的这个例程。
 
@@ -223,10 +224,12 @@ while True:
 
 ```
 这个例程可以驱动板载的4个 RGB 流水灯~
-![屏幕截图.png](assets/205338_ae2e2de2_5521445.png "屏幕截图.png")
+![](assets/205338_ae2e2de2_5521445.png)
+
 ### LCD
 还有一个 LCD 的例程，可以在 LCD 上面显示一个小方块，而你可以使用板载的四个按键控制小方块运动~
-![屏幕截图.png](assets/210940_f30be3d5_5521445.png "屏幕截图.png")
+![](assets/210940_f30be3d5_5521445.png)
+
 ```python
 from PikaObj import *
 import PikaStdLib
@@ -273,7 +276,7 @@ while True:
 当你熟悉了 LCD 驱动之后，可以试试自己开发小游戏哦~
 ## 交互式运行
 main.py 执行完毕后，就会进入交互式运行，因此只要取消 main.py 中的 `while True :`，使其能够执行完退出，就可以进入交互式运行。
-![538feaef3281950c41b4c5b18bc1183.jpg](assets/1641953728408-8fbffe1c-643a-4f18-855e-5d60578eb194.jpeg)
+![](assets/1641953728408-8fbffe1c-643a-4f18-855e-5d60578eb194.jpeg)
 交互式运行支持单行，多行输入，和通用 Python 用法一致。建议使用 PuTTY 串口终端。
 输入 `exit()` 则会直接重启系统。
 **注意事项**：
@@ -297,17 +300,19 @@ Lite 版和 Pro版使用 stm32g030 平台。
 Plus 版使用  stm32g070 平台。
 然后点击 "开始生成"。
 （选择平台后会自动选择默认的模块)
-![image.png](assets/1644129110261-049ad5bb-21af-40e2-9533-a1c8c86790f1.png)
+![](assets/1644129110261-049ad5bb-21af-40e2-9533-a1c8c86790f1.png)
 直接打开 Keil 工程就可以编译了。
 编译时需要使用不低于 V5.36 的 Keil，需要激活。
-![image.png](assets/1642145123916-644fdd52-a1d3-41be-bd74-8a9e05386397.png)
+![](assets/1642145123916-644fdd52-a1d3-41be-bd74-8a9e05386397.png)
 编译得到的 .bin 在 MDK/stm32g030c8/stm32g030c8.bin 。
+
 ### 直接下载编译好的固件
 如果你想用现成的固件也可以直接下载编译好的~
 ![](assets/210126_d14c9754_5521445.png)
 
 点击下载就可以获得最新的固件了~
 ![](assets/210155_5248a47c_5521445.png)
+
 ### 串口Bootloader升级
 升级固件也是使用串口就可以了，在升级时，需要用前面到自己编译的固件或者直接下载的 .bin 固件。
 目前支持串口 Bootloader 升级的版本有：
@@ -324,30 +329,32 @@ Plus 版使用  stm32g070 平台。
 ![](assets/210611_2fd707d0_5521445.png)
 发送完毕后再按一下 RST 键重启，就完成升级了！
 如果能够正常启动，那么就说明升级成功。
+
 ### 使用SWD升级
 Lite 版自行连接 J-Link \ DAP-Link \ ST-Link 即可SWD升级。
 Pro 版和 Plus 版板载 DAP-Link，直接连接USB即可SWD升级。
 Lite 版和 Pro版使用 [bsp/stm32g030](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g030c8) 工程。
 Plus 版使用  [bsp/stm32g070](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g070cb) 工程。
 在使用SWD升级时，应选择"部分擦除"的下载方式
-![image.png](assets/1642144820993-a1c6c5e9-e3ca-4406-aa93-3ae3911738f6.png)
+![](assets/1642144820993-a1c6c5e9-e3ca-4406-aa93-3ae3911738f6.png)
+
 ### 使用固件下载Python程序
 固件在编译时会加载 pikascript/main.py 作为默认 Python 程序。
 在下载固件前，按 SW0 + RST 擦除 flash 后，就会从固件 Python 程序启动。
 ## ARM-2D GUI引擎
 pika 派支持运行 ARM-2D GUI 引擎
-![image.png](assets/1642347518780-02431025-393e-41b0-bfea-e3f932a86b54.png)
+![](assets/1642347518780-02431025-393e-41b0-bfea-e3f932a86b54.png)
 使用方法：
 
 1. 获取 bsp/stm32g030 工程。
 1. 使用 examples/ARM-2D/PikaPiZero 中的工程文件，main.py 和 requestment.txt 替换。
 
-![image.png](assets/1642347593663-fae37327-369e-4480-9c3e-8d9440c6870d.png)
+![](assets/1642347593663-fae37327-369e-4480-9c3e-8d9440c6870d.png)
 
 3. 按住开发板上面的 SW0 键，同时按下 RST 键，擦除 flash。
 3. 重新运行包管理器，预编译，编译工程，使用 SWD/Bootloader 刷入工程。
 
-​
+
 
 ## 常见问题
 1 按 sw0 + rst 进不了升级模式：
@@ -361,10 +368,10 @@ pika 派支持运行 ARM-2D GUI 引擎
 工程需要远程拉取模块和预编译，需要先运行 pikascript/pikaPackage.exe 和 pikascript/rust-msc-win10-latest.exe 再编译工程。
 ## 原理图
 ### Lite青春版
-![Schematic_PikaPi-zero-lite_2022-01-03 (2).png](assets/1641204367325-7c0751ac-7fe8-4029-a4c2-ee6ebb1e2733.png)
+![](assets/1641204367325-7c0751ac-7fe8-4029-a4c2-ee6ebb1e2733.png)
 ### Pro专业版
-![Schematic_PikaPi-zero-pro_2022-01-09.png](assets/1641733841411-d3a3ed0f-4609-49eb-9985-b3a635e72b51.png)
+![](assets/1641733841411-d3a3ed0f-4609-49eb-9985-b3a635e72b51.png)
 ### Plus顶配版
-![Schematic_PikaPi-zero-plus-pro_2022-01-09.png](assets/1641733943438-bdd0d52f-1e34-4a8e-a3bb-c53508ce4fc1.png)
+![](assets/1641733943438-bdd0d52f-1e34-4a8e-a3bb-c53508ce4fc1.png)
 ### LCD
 ![](assets/1645715736921-0dcd26b4-732b-42bf-b17a-1ef3ce3d3ea6.png)
