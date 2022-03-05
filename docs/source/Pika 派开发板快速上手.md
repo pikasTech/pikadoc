@@ -367,4 +367,4 @@ pika 派支持运行 ARM-2D GUI 引擎
 ### Plus顶配版
 ![Schematic_PikaPi-zero-plus-pro_2022-01-09.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641733943438-bdd0d52f-1e34-4a8e-a3bb-c53508ce4fc1.png#clientId=u6dd4e745-e810-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=2082&id=ub2c2dffb&margin=%5Bobject%20Object%5D&name=Schematic_PikaPi-zero-plus-pro_2022-01-09.png&originHeight=4163&originWidth=2250&originalType=binary&ratio=1&rotation=0&showTitle=false&size=816437&status=done&style=none&taskId=u966e5094-3a0d-4683-80fa-4788f59ba6d&title=&width=1125)
 ### LCD
-![](https://cdn.nlark.com/yuque/0/2022/png/22991477/1645715736921-0dcd26b4-732b-42bf-b17a-1ef3ce3d3ea6.png#clientId=ud487ad1c-2e1e-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u1ebbe692&margin=%5Bobject%20Object%5D&originHeight=470&originWidth=964&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u8a47c1e1-082a-46f2-b306-a376f60ef7e&title=)
+![](assets/1645715736921-0dcd26b4-732b-42bf-b17a-1ef3ce3d3ea6.png)

@@ -74,4 +74,4 @@ releases = [
    6. git push到你fork后的仓库中。
    6. 提交pull request。
 
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638664500423-e4ad59fa-e476-48f0-b7ec-89f98eb70e6c.png#clientId=u1df381a6-8a3b-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=70&id=JSPzV&margin=%5Bobject%20Object%5D&name=image.png&originHeight=140&originWidth=1086&originalType=binary&ratio=1&rotation=0&showTitle=false&size=12365&status=done&style=none&taskId=uf6e69a81-cd1b-49a8-9de6-1ba9ca4ef59&title=&width=543)
+![image.png](assets/1638664500423-e4ad59fa-e476-48f0-b7ec-89f98eb70e6c.png)

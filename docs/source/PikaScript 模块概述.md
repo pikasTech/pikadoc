@@ -107,7 +107,7 @@ pika预编译器会为导入的模块生成.h声明文件和-api.c构造器文�
 pikaScript.c和pikaScript.h则是根据main.py编译出的初始化函数，运行初始化函数时，会自动执行启动脚本。
 
 
-![](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638582992822-6c4a7f39-a379-4c66-991a-1935ec3bfa7a.png#clientId=u892d01b9-50ec-4&crop=0&crop=0&crop=1&crop=1&height=538&id=fU66z&originHeight=554&originWidth=614&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u816777d7-13e1-45aa-8558-a065a13b0ad&title=&width=596)
+![](assets/1638582992822-6c4a7f39-a379-4c66-991a-1935ec3bfa7a.png)
 
 
 在现在的main.py中，启动脚本是写在最外层的方法调用，也就是:

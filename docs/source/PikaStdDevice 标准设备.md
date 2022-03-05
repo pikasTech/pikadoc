@@ -29,6 +29,6 @@ PikaStdDevice 是一个抽象的设备驱动模块，定义了所有的用户 AP
 ![](https://cdn.nlark.com/yuque/0/2021/webp/22991477/1638495381703-8e227dcc-97d7-4069-8754-4c118deea3fb.webp#clientId=u35f47dbf-87ab-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=475&id=u75555419&margin=%5Bobject%20Object%5D&originHeight=956&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc3e23147-d0b9-47af-ab47-133d6b19509&title=&width=537)​
 通过这个方法，我们就可以让 STM32 的驱动模块、CH32 的驱动模块、ESP32 的驱动模块有着一模一样的用户 API。用户只要熟悉了一套 API，就可以轻松使用支持了 PikaScript 标准驱动模块的所有平台。
 下面是部分被注册在驱动模块里面 C 原生驱动函数
-![](https://cdn.nlark.com/yuque/0/2021/webp/22991477/1638495381557-21aaad62-bd63-40bc-b818-257e16992780.webp#clientId=u35f47dbf-87ab-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=533&id=ubc061889&margin=%5Bobject%20Object%5D&originHeight=671&originWidth=768&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u89d468d0-edc6-48a4-8f3b-4bb315164ca&title=&width=610)
+![](assets/1638495381557-21aaad62-bd63-40bc-b818-257e16992780.webp)
 
 

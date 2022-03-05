@@ -37,4 +37,4 @@ MicroPython绑定C模块很复杂，很难调试，有没有更方便的技术�
 Enjoy！
 更多技术支持可以在论坛讨论~
 https://whycan.com/f_55.html
-![](https://cdn.nlark.com/yuque/0/2021/webp/22991477/1640497099365-67930749-d3a2-4f70-9320-73da30f72659.webp#clientId=ueaf7376e-6f92-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u001067b4&margin=%5Bobject%20Object%5D&originHeight=373&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ueba0c39f-4a9b-4000-9d16-e0815cfc7cb&title=)
+![](assets/1640497099365-67930749-d3a2-4f70-9320-73da30f72659.webp)

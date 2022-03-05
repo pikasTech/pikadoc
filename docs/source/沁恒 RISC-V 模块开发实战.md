@@ -151,7 +151,7 @@ PikaScript不依赖文件系统，只要传入字符串就可以运行，所以�
 下面是预编译器生成的初始化函数
 ​
 
-![](https://cdn.nlark.com/yuque/0/2021/webp/22991477/1638495382514-ee59c198-0557-434b-96d3-f2a21f596d2b.webp#clientId=u35f47dbf-87ab-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=493&id=u1400e9c3&margin=%5Bobject%20Object%5D&originHeight=783&originWidth=820&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3bba6df7-a40a-4fb1-896d-047a70a57db&title=&width=516)
+![](assets/1638495382514-ee59c198-0557-434b-96d3-f2a21f596d2b.webp)
 
 项目地址：
 PikaScript-CH32V103参赛项目仓库：

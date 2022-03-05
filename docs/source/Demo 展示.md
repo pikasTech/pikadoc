@@ -111,7 +111,7 @@ PikaScript 支持裸机运行，最低可运行于 **RAM ≥ 4kB** ，**FLASH �
 [https://github.com/pikasTech/pikascript](https://github.com/pikasTech/pikascript)
 ## 开发难不难？
 PikaScript 为开发者准备了丰富的Demo和由浅入深的开发指南，指南还会持续完善和维护。
-![](https://user-images.githubusercontent.com/88232613/132945342-6ace05aa-50c4-4533-9129-ef131cd9fc1d.png#crop=0&crop=0&crop=1&crop=1&height=268&id=us2U3&originHeight=699&originWidth=618&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=236.98959350585938)
+![](assets/132945342-6ace05aa-50c4-4533-9129-ef131cd9fc1d.png)
 ## 可以商用吗？
 当然！PikaScript 采用 MIT 协议，允许修改和商用，但是要注意保留原作者的署名。
 

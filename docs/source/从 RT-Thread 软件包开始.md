@@ -68,7 +68,7 @@ PikaObj * pikaMain = pikaScriptInit();
 
    1. 修改 pikascript-latest/requestment.txt，然后右键工程，Sconscripts Update，即可安装模块/修改模块版本，并预编译。
 
-![IMG_20211215_091327.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/22991477/1639531121038-abc40292-62fe-4a30-b074-7101714f6db7.jpeg#clientId=u2f6e8a27-3f82-4&crop=0&crop=0&crop=1&crop=1&from=ui&height=1104&id=u26009eda&margin=%5Bobject%20Object%5D&name=IMG_20211215_091327.jpg&originHeight=2400&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&size=1368269&status=done&style=none&taskId=ubbf1a015-08a0-47a2-abdf-b8b6ed84673&title=&width=497)
+![IMG_20211215_091327.jpg](assets/1639531121038-abc40292-62fe-4a30-b074-7101714f6db7.jpeg)
 
 
 更多用法参考**包管理器**，**模块使用，模块开发**部分文档。

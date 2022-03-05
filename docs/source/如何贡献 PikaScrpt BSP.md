@@ -25,4 +25,4 @@ git push
    5. （可选）在 pikascript/README.md 和 pikascript/README_zh.md 中更新 BSP 信息。
    5. 开启 Pull Request，等待合并。
 
-![](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638664500423-e4ad59fa-e476-48f0-b7ec-89f98eb70e6c.png#crop=0&crop=0&crop=1&crop=1&from=url&height=63&id=dvK4F&margin=%5Bobject%20Object%5D&originHeight=140&originWidth=1086&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=492)
+![](assets/undefined)

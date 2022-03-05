@@ -249,7 +249,7 @@ print(res4)
 比如发布刚刚新编写的Math模块，就是发布Math.py文件和pikascript-lib/Math文件夹。
 
 
-![](https://user-images.githubusercontent.com/88232613/131123704-403753d8-2ef1-488e-a02a-08fce33cd6de.png#crop=0&crop=0&crop=1&crop=1&height=100&id=topE9&originHeight=107&originWidth=772&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=721)
+![](assets/131123704-403753d8-2ef1-488e-a02a-08fce33cd6de.png)
 
 
 请参考包**参与社区贡献**部分的文档发布你编写的模块。
