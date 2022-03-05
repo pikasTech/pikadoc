@@ -5,7 +5,7 @@
 我们打开pikascript文件夹，发现文件夹根目录下除了main.py，还有Device.py，PikaObj.py和PikaStdLib.py，这三个.py文件分别对应三个PikaScript**_模块_**(class package)，简称**_包_**(package)，每个.py文件本身称为**_模块接口_**(package interface)。一个模块中可以包含若干个相关性较强的类。
 
 
-![](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638582993068-0a8afe28-baa2-41ad-bac1-6626d50192ad.png#clientId=u892d01b9-50ec-4&crop=0&crop=0&crop=1&crop=1&height=269&id=sOhLU&originHeight=383&originWidth=842&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uebbc38da-21fe-4e46-af38-20d48b95346&title=&width=591)
+![](assets/1638582993068-0a8afe28-baa2-41ad-bac1-6626d50192ad.png)
 每一个PikaScript**_模块_**由**_模块接口_**和**_模块实现_**(package implement)两部分组成。
 我们先打开Device.py查看一下内容，在后续的文档中我们会称Device.py为**_Device模块接口_**。
 以下就是Device.py的全部内容。
@@ -89,19 +89,19 @@ mem.now()
 在main.py中写好模块的调用后，双击rust-msc-v0.5.0.exe即可预编译PikaScript工程，预编译的输出文件在pikascrip-api文件夹内。
 
 
-![](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638582989556-feafe97a-037f-44b2-8f2c-55ddf8f041ea.png#clientId=u892d01b9-50ec-4&crop=0&crop=0&crop=1&crop=1&height=330&id=ZPo5F&originHeight=458&originWidth=844&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua42b7b94-0ede-4e7a-9d9e-73df6db056a&title=&width=608)
+![](assets/1638582989556-feafe97a-037f-44b2-8f2c-55ddf8f041ea.png)
 
 
 pika预编译器会为导入的模块生成.h声明文件和-api.c构造器文件。文件名以模块名开头，每个类对应一个.h文件和一个-api.c文件。
 
 
-![](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638582990457-2540db61-f185-4100-8b63-4d6d599c3b0e.png#clientId=u892d01b9-50ec-4&crop=0&crop=0&crop=1&crop=1&height=498&id=ie32N&originHeight=687&originWidth=829&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u654457e0-5704-4535-aa72-0862a35666a&title=&width=601)
+![](assets/1638582990457-2540db61-f185-4100-8b63-4d6d599c3b0e.png)
 
 
 而PikaMain-api.c和PikaMain.h则是对应了一个特殊的类，这个类是PikaScript的主类，由main.py编译而成。
 
 
-![](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638582990858-10783588-5ff0-469e-b64d-50e56e2357bc.png#clientId=u892d01b9-50ec-4&crop=0&crop=0&crop=1&crop=1&height=587&id=QF33Z&originHeight=645&originWidth=665&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u10fed22e-d22f-42c8-ac2f-a6c5aa4654e&title=&width=605)
+![](assets/1638582990858-10783588-5ff0-469e-b64d-50e56e2357bc.png)
 
 
 pikaScript.c和pikaScript.h则是根据main.py编译出的初始化函数，运行初始化函数时，会自动执行启动脚本。

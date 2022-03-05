@@ -2,7 +2,7 @@
 
 > Tips for English users: 
 > You can click here to get translated documents.
-> ![image.png](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638857699283-57261588-4800-4f01-aad8-6632f608287b.png#clientId=ucff7202f-a5f9-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=209&id=ud28c7423&margin=%5Bobject%20Object%5D&name=image.png&originHeight=418&originWidth=2441&originalType=binary&ratio=1&rotation=0&showTitle=false&size=183929&status=done&style=none&taskId=u4ff4de09-e59f-4212-aec8-a572b735324&title=&width=1220.5)
+> ![image.png](assets/1638857699283-57261588-4800-4f01-aad8-6632f608287b.png)
 
 ​
 
@@ -33,7 +33,7 @@ PikaScript 支持裸机运行，最低可运行于 **RAM ≥ 4kB** ，**FLASH �
 
 
 说了这么多，刘华强就有疑问了，你说这脚本，保熟吗？
-![](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638666543673-423aafcb-0c29-49b3-8221-22fdc3c65199.png#clientId=ub9474c38-162a-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=277&id=u77ab704c&margin=%5Bobject%20Object%5D&originHeight=636&originWidth=1005&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ufd06fc38-dc8a-445d-8948-c7946773dca&title=&width=437.01190185546875)
+![](assets/1638666543673-423aafcb-0c29-49b3-8221-22fdc3c65199.png)
 我这开~~水果~~脚本摊儿的，能买你生脚本蛋子？
 这就挑点儿 Demo 给哥儿几个瞧瞧。
 这可都是 STM32G070RBT6 的 Demo。

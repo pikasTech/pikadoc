@@ -18,7 +18,7 @@ PikaStdDevice==v1.4.3
 有没有什么办法，能够统一外设的 API，使得用户只需要熟悉一套 API，就能够在任意平台通用呢？
 方法是有的，就是 PikaStdDevice 标准设备驱动模块。
 ## 模块结构
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638681382807-901fa254-8323-4a9b-92ef-4e5b6e8ad5f9.png#clientId=u6816b2ec-184f-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=490&id=u1c4c9e48&margin=%5Bobject%20Object%5D&name=image.png&originHeight=979&originWidth=2234&originalType=binary&ratio=1&rotation=0&showTitle=false&size=143479&status=done&style=none&taskId=u7eb909de-24c1-4532-8fc7-8f2048a7aee&title=&width=1117)
+![image.png](assets/1638681382807-901fa254-8323-4a9b-92ef-4e5b6e8ad5f9.png)
 PikaStdDevice 是一个抽象的设备驱动模块，定义了所有的用户 API，各个平台的驱动模块只要从PikaStdDevice 继承，就能够获得一模一样的用户 API，而 PikaStdDevice 内部会间接调用平台驱动，通过多态特性重写底层的平台驱动，就可以在不同的平台工作了。
 ## 模块示例
 以 GPIO 模块为例，以下是 PikaStdDevice 定义的用户 API

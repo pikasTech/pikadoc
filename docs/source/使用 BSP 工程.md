@@ -9,17 +9,17 @@
 **每个工程都是独立的，可以拷贝出pikascript仓库单独使用。**
 （simulation-keil-dev和pico是列外，这两个bsp只能在仓库里面用，是用来开发内核的。）
 [https://gitee.com/Lyon1998/pikascript/tree/master/bsp](https://gitee.com/Lyon1998/pikascript/tree/master/bsp)
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638605947761-93b30636-099f-4c7c-a432-6aae5e2d8b53.png#clientId=u1f653719-4dd4-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=256&id=u46da1803&margin=%5Bobject%20Object%5D&name=image.png&originHeight=984&originWidth=2028&originalType=binary&ratio=1&rotation=0&showTitle=false&size=146222&status=done&style=none&taskId=u2c1d9a47-9e15-4b66-9f43-2d525e5c35f&title=&width=528)
+![image.png](assets/1638605947761-93b30636-099f-4c7c-a432-6aae5e2d8b53.png)
 ## 支持列表
 在bsp文件夹的README.md中，标注了目前的平台支持情况和bsp的使用方法。
 （以下的表格不是最新的）
 [最新表格点这里](https://gitee.com/Lyon1998/pikascript#2%E5%B9%B3%E5%8F%B0%E6%94%AF%E6%8C%81%E5%88%97%E8%A1%A8)
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/22991477/1639629972025-ca8fdf74-5dc2-472e-8497-5bc163bccdf4.png#clientId=ub4f5b7e7-1daa-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=410&id=u99328c28&margin=%5Bobject%20Object%5D&name=image.png&originHeight=855&originWidth=792&originalType=binary&ratio=1&rotation=0&showTitle=false&size=59120&status=done&style=none&taskId=u0c0dd159-00a1-4ca9-9393-0fd0a7ad3c3&title=&width=380)
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/22991477/1639629981607-43c6b771-34bf-45ac-9a66-8604f705ddff.png#clientId=ub4f5b7e7-1daa-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=205&id=ufa0c559b&margin=%5Bobject%20Object%5D&name=image.png&originHeight=474&originWidth=1075&originalType=binary&ratio=1&rotation=0&showTitle=false&size=30721&status=done&style=none&taskId=u3d6cec82-1f3a-4bd1-9d5c-1ce030fbb2b&title=&width=465.5)
+![image.png](assets/1639629972025-ca8fdf74-5dc2-472e-8497-5bc163bccdf4.png)
+![image.png](assets/1639629981607-43c6b771-34bf-45ac-9a66-8604f705ddff.png)
 你可以通过贡献**驱动模块**或者**bsp**来帮助PikaScript拓展这个表格，具体请参考文档中的**新平台移植指南**、**模块开发**和**包管理**部分。
 ## 工程结构
 以CH32V103为例，一个PikaScript的工程包含以下的几个部分。
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638631568309-cbc19553-75be-4915-900a-72fe700b4d16.png#clientId=u1584620a-be5e-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=324&id=u781912f3&margin=%5Bobject%20Object%5D&name=image.png&originHeight=630&originWidth=909&originalType=url&ratio=1&rotation=0&showTitle=false&size=32332&status=done&style=none&taskId=u410b192b-efc2-4bdd-9b83-da9ad093344&title=&width=468)
+![image.png](assets/1638631568309-cbc19553-75be-4915-900a-72fe700b4d16.png)
 
 1. 首先是BSP文件夹中除了PikaScript文件夹以外的部分，这一部分是真正的BSP，包含了厂家提供的基本外设库、CMSIS等一些平台上的通用库，只需要对厂家的例程进行整理就可以得到。
 

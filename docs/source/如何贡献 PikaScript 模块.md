@@ -23,7 +23,7 @@ STM32G0==latest
 4. 提交模块的文件
    1. fork一份pikascript仓库，然后clone到本地。
 
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png#clientId=u1df381a6-8a3b-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=45&id=ubb540eb4&margin=%5Bobject%20Object%5D&name=image.png&originHeight=90&originWidth=716&originalType=binary&ratio=1&rotation=0&showTitle=false&size=10629&status=done&style=none&taskId=u6e4ba5c7-6918-47ee-8227-7e0e6e684ee&title=&width=358)
+![image.png](assets/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png)
 
    2. 复制[module].py到pikascript-lib/[module]文件夹中。
    2. 复制整个修改后的pikascript-lib/[module]文件夹到fork后的pikascript/package文件夹中。
@@ -44,7 +44,7 @@ releases = [
    6. git push到你fork后的仓库中。
    6. 提交pull request。
 
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638664500423-e4ad59fa-e476-48f0-b7ec-89f98eb70e6c.png#clientId=u1df381a6-8a3b-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=70&id=u41301d54&margin=%5Bobject%20Object%5D&name=image.png&originHeight=140&originWidth=1086&originalType=binary&ratio=1&rotation=0&showTitle=false&size=12365&status=done&style=none&taskId=uf6e69a81-cd1b-49a8-9de6-1ba9ca4ef59&title=&width=543)
+![image.png](assets/1638664500423-e4ad59fa-e476-48f0-b7ec-89f98eb70e6c.png)
 ## 提交新的模块
 
 
@@ -54,7 +54,7 @@ releases = [
 1. 提交模块的文件
    1. fork一份pikascript仓库，然后clone到本地。
 
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/22991477/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png#clientId=u1df381a6-8a3b-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=45&id=e2G0m&margin=%5Bobject%20Object%5D&name=image.png&originHeight=90&originWidth=716&originalType=binary&ratio=1&rotation=0&showTitle=false&size=10629&status=done&style=none&taskId=u6e4ba5c7-6918-47ee-8227-7e0e6e684ee&title=&width=358)
+![image.png](assets/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png)
 
    2. 复制[module].py到pikascript-lib/[module]文件夹中。
    2. 复制整个pikascript-lib/[module]文件夹到fork后的pikascript/package文件夹中。
