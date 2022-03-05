@@ -22,7 +22,7 @@
 下载方法非常简单，只需要连接上 Type-C 数据线就可以了。
 
 
-![](https://images.gitee.com/uploads/images/2021/1122/200332_3e87979e_5521445.png#crop=0&crop=0&crop=1&crop=1&height=355&id=MVPin&originHeight=563&originWidth=719&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=453)
+![](assets/200332_3e87979e_5521445.png)
 
 
 我们用一根 USB 数据线，连接电脑和 Pika 派开发板，就可以下载程序了。
@@ -30,18 +30,18 @@
 [http://www.openedv.com/thread-279749-1-1.html](http://www.openedv.com/thread-279749-1-1.html)
 
 
-![](https://images.gitee.com/uploads/images/2021/1122/200618_b8f264a8_5521445.png#crop=0&crop=0&crop=1&crop=1&height=401&id=uiPak&originHeight=832&originWidth=1060&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=511)
+![](assets/200618_b8f264a8_5521445.png)
 选择好 COM 口，然后波特率选为 115200，再点打开串口，这时候，就和 Pika 派连接上了。直接发送一个 Pthon 脚本文件，就可以给 Pika 派下载 Python 程序了。为了验证下载能不能成功，我们使用 PikaScript 源码仓库里面的示例 Python 脚本。
 我们进入 PikaScript 的代码仓库
 [https://gitee.com/Lyon1998/pikascript](https://gitee.com/Lyon1998/pikascript)
 惯例点一个 Star~
-![屏幕截图.png](https://images.gitee.com/uploads/images/2021/1122/201054_c22a0714_5521445.png#crop=0&crop=0&crop=1&crop=1&height=87&id=eaEOE&originHeight=296&originWidth=2076&originalType=binary&ratio=1&rotation=0&showTitle=true&status=done&style=none&title=%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png&width=612 "屏幕截图.png")
+![屏幕截图.png](assets/201054_c22a0714_5521445.png "屏幕截图.png")
 然后我们点击 examples 文件夹，里面放的就是可以运行的 Python 例程。
-![](https://images.gitee.com/uploads/images/2021/1122/201133_2caa690c_5521445.png#crop=0&crop=0&crop=1&crop=1&height=377&id=mopaC&originHeight=964&originWidth=1579&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=618)
+![](assets/201133_2caa690c_5521445.png)
 我们打开 GPIO 文件夹，来点亮一下流水灯看看~
-![](https://images.gitee.com/uploads/images/2021/1122/201304_ee6f19c7_5521445.png#crop=0&crop=0&crop=1&crop=1&height=509&id=FfJq6&originHeight=802&originWidth=957&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=607)
+![](assets/201304_ee6f19c7_5521445.png)
 GPIO 文件夹里面的 main.py 就是 GPIO 的示例代码了
-![](https://images.gitee.com/uploads/images/2021/1122/201351_226525cc_5521445.png#crop=0&crop=0&crop=1&crop=1&height=243&id=JAEGI&originHeight=345&originWidth=770&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=543)
+![](assets/201351_226525cc_5521445.png)
 我们可以点开 main.py 看看~
 ```python
 import PikaStdLib
@@ -72,14 +72,14 @@ while True:
 ```
 先不解释里面的内容，我们直接下载这个脚本看看。
 我们也在桌面新建一个 main.py 文件，然后把这段代码复制进去。
-![](https://images.gitee.com/uploads/images/2021/1122/201535_8f49da20_5521445.png#crop=0&crop=0&crop=1&crop=1&id=JiLU9&originHeight=125&originWidth=110&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](assets/201535_8f49da20_5521445.png)
 我们选择这个 main.py 文件
-![](https://images.gitee.com/uploads/images/2021/1122/201639_79a783b1_5521445.png#crop=0&crop=0&crop=1&crop=1&height=437&id=OMwgV&originHeight=1113&originWidth=1779&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=699)
+![](assets/201639_79a783b1_5521445.png)
 然后点击"发送文件", 就可以把脚本下载进去了！
 我们可以看到 [ OK ]: Programing ok! 的提示，这就是说明下载成功了！
-![](https://images.gitee.com/uploads/images/2021/1122/201816_13337449_5521445.png#crop=0&crop=0&crop=1&crop=1&height=429&id=HoK7X&originHeight=832&originWidth=1060&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=546)
+![](assets/201816_13337449_5521445.png)
 这时开发板上面的 LED 就会闪动起来！
-![](https://images.gitee.com/uploads/images/2021/1122/202935_f82345e6_5521445.png#crop=0&crop=0&crop=1&crop=1&height=171&id=ULDQG&originHeight=205&originWidth=420&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=350)
+![](assets/202935_f82345e6_5521445.png)
 恭喜你达成单片机玩 Python 的成就！
 ## GPIO的脚本里写了什么?
 下面我们来逐行解析一下 GPIO 的这个例程。
@@ -104,7 +104,7 @@ print('mem.now :')
 mem.now()
 ```
 我们可以看看串口的打印输出，可以看到最大的内存占用是 1.51kB，而当前的内存占用是 0.61kB，是不是很小！
-![屏幕截图.png](https://images.gitee.com/uploads/images/2021/1122/203737_1509b9db_5521445.png#crop=0&crop=0&crop=1&crop=1&height=113&id=lOqxR&originHeight=144&originWidth=201&originalType=binary&ratio=1&rotation=0&showTitle=true&status=done&style=none&title=%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png&width=158 "屏幕截图.png")
+![屏幕截图.png](assets/203737_1509b9db_5521445.png "屏幕截图.png")
 time 对象是通过 machine 的 Time() 类新建的，可以提供基本的延时功能。
 ```python
 time = machine.Time()
@@ -223,10 +223,10 @@ while True:
 
 ```
 这个例程可以驱动板载的4个 RGB 流水灯~
-![屏幕截图.png](https://images.gitee.com/uploads/images/2021/1122/205338_ae2e2de2_5521445.png#crop=0&crop=0&crop=1&crop=1&height=278&id=DnksY&originHeight=486&originWidth=288&originalType=binary&ratio=1&rotation=0&showTitle=true&status=done&style=none&title=%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png&width=165 "屏幕截图.png")
+![屏幕截图.png](assets/205338_ae2e2de2_5521445.png "屏幕截图.png")
 ### LCD
 还有一个 LCD 的例程，可以在 LCD 上面显示一个小方块，而你可以使用板载的四个按键控制小方块运动~
-![屏幕截图.png](https://images.gitee.com/uploads/images/2021/1122/210940_f30be3d5_5521445.png#crop=0&crop=0&crop=1&crop=1&height=259&id=N4HZ7&originHeight=358&originWidth=312&originalType=binary&ratio=1&rotation=0&showTitle=true&status=done&style=none&title=%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png&width=226 "屏幕截图.png")
+![屏幕截图.png](assets/210940_f30be3d5_5521445.png "屏幕截图.png")
 ```python
 from PikaObj import *
 import PikaStdLib
@@ -304,10 +304,10 @@ Plus 版使用  stm32g070 平台。
 编译得到的 .bin 在 MDK/stm32g030c8/stm32g030c8.bin 。
 ### 直接下载编译好的固件
 如果你想用现成的固件也可以直接下载编译好的~
-![](https://images.gitee.com/uploads/images/2021/1122/210126_d14c9754_5521445.png#crop=0&crop=0&crop=1&crop=1&height=301&id=bM0PE&originHeight=1041&originWidth=2049&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=592)
+![](assets/210126_d14c9754_5521445.png)
 
 点击下载就可以获得最新的固件了~
-![](https://images.gitee.com/uploads/images/2021/1122/210155_5248a47c_5521445.png#crop=0&crop=0&crop=1&crop=1&height=314&id=QPjRk&originHeight=856&originWidth=1661&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=609)
+![](assets/210155_5248a47c_5521445.png)
 ### 串口Bootloader升级
 升级固件也是使用串口就可以了，在升级时，需要用前面到自己编译的固件或者直接下载的 .bin 固件。
 目前支持串口 Bootloader 升级的版本有：
@@ -316,12 +316,12 @@ Plus 版使用  stm32g070 平台。
 - Pro 专业版
 
 下面需要让 pika 派进入升级模式，我们按住开发板上面的 SW0 键，同时按下 RST 键，就可以进入升级模式了。
-![](https://images.gitee.com/uploads/images/2021/1122/210422_3acb9ed0_5521445.png#crop=0&crop=0&crop=1&crop=1&height=444&id=GKVcH&originHeight=637&originWidth=429&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=299)
+![](assets/210422_3acb9ed0_5521445.png)
 在升级模式下，我们可以看到串口的提示信息
-![](https://images.gitee.com/uploads/images/2021/1122/210526_b7b28342_5521445.png#crop=0&crop=0&crop=1&crop=1&height=117&id=R1PF0&originHeight=155&originWidth=693&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=522)
+![](assets/210526_b7b28342_5521445.png)
 然后我们用串口助手选择刚才下载的 stm32g030c8.bin 文件，通过串口发送。
 识别到固件后会显示 Reciving....
-![](https://images.gitee.com/uploads/images/2021/1122/210611_2fd707d0_5521445.png#crop=0&crop=0&crop=1&crop=1&height=268&id=SCucM&originHeight=342&originWidth=332&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=260)
+![](assets/210611_2fd707d0_5521445.png)
 发送完毕后再按一下 RST 键重启，就完成升级了！
 如果能够正常启动，那么就说明升级成功。
 ### 使用SWD升级
