@@ -1,11 +1,13 @@
-# 0.前言
+# 基于 ARM-2D 的 GUI 仿真工程
+
+## 0.前言
 
 
 好消息！ pikascript 的 Arm2D 模块以及仿真工程初步整理好了！pikaScript，ARM-2D，rt-thread 齐活儿，解锁python 玩 Arm2D 的新姿势！还不需要硬件，可以直接仿真，可以说是非常方便了。
 
 
 在自己的电脑上部署运行这个仿真工程也非常简单，按照下面的几步操作就可以了~
-# 1.获得仿真工程
+## 1.获得仿真工程
 
 
 首先进入 PikaScript 的代码仓库
@@ -74,19 +76,19 @@ Gitee 上的也是一样的，任选一个即可。
 到此为止，工程就准备 ok 了。
 
 
-# 2.安装开发环境
+## 2.安装开发环境
 
 
 有了工程之后，还需要安装开发环境，需要安装的只有两个东西，一个是 rt-thread studio，用来做IDE，rt-thread studio 里面集成了 qemu，用来仿真 mcu 和 gui 非常方便。另一个是最新的 arm gcc 工具链。
 
 
-## rt-thread studio 安装包链接
+### rt-thread studio 安装包链接
 
 
 [https://download-sh-cmcc.rt-thread.org:9151/www/studio/download/RT-Thread Studio-v2.1.2-setup-x86_64_20210831-1200.exe](https://download-sh-cmcc.rt-thread.org:9151/www/studio/download/RT-Thread%20Studio-v2.1.2-setup-x86_64_20210831-1200.exe)
 
 
-## arm gcc 安装包链接
+### arm gcc 安装包链接
 
 
 [https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-win32.exe](https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-win32.exe)
@@ -98,7 +100,7 @@ rt-thread studio 装在你喜欢的地方就可以，arm gcc 要装在默认的c
 装好之后，就可以开始用 python 玩 arm-2d 了。
 
 
-# 3.拉取模块并预编译
+## 3.拉取模块并预编译
 
 
 我们进入 simulation-rtt-qemu-arm2d/packages/pikascrpt 目录，这个目录就是 pikascrit 的文件了。
@@ -131,7 +133,7 @@ rt-thread studio 装在你喜欢的地方就可以，arm gcc 要装在默认的c
 ![](https://user-images.githubusercontent.com/88232613/139678750-befc11e9-d812-4fcf-949e-64dd873d0211.png#crop=0&crop=0&crop=1&crop=1&height=317&id=FXCTD&originHeight=435&originWidth=655&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=477)
 
 
-# 4.运行
+## 4.运行
 
 
 我们打开 RT-Thread Studio，点击导入
@@ -164,7 +166,7 @@ rt-thread studio 装在你喜欢的地方就可以，arm gcc 要装在默认的c
 ![](https://user-images.githubusercontent.com/88232613/139679797-3ce8f253-beb9-480f-90ee-1844500a77ab.png#crop=0&crop=0&crop=1&crop=1&height=321&id=VbS8t&originHeight=517&originWidth=816&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=507)
 
 
-# 5.修改python代码试试
+## 5.修改python代码试试
 
 
 python 的源码就在 simulation-rtt-qemu-arm2d/packages/pikascript/main.py 里面，可以打开看看~
@@ -191,7 +193,7 @@ python 的源码就在 simulation-rtt-qemu-arm2d/packages/pikascript/main.py 里
 ![](https://user-images.githubusercontent.com/88232613/139680521-20f83ee3-2163-4649-ad23-ae73b77f482e.png#crop=0&crop=0&crop=1&crop=1&height=334&id=RT4aV&originHeight=512&originWidth=803&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=524)
 
 
-# 6.结语
+## 6.结语
 
 
 这是 Arm-2D 的仓库~ 还没 star 的同学记得补个 star~

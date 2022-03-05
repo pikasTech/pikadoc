@@ -1,3 +1,4 @@
+# 如何贡献 PikaScript BSP
 ## 制作 BSP 的步骤：
 1. **制作 pikascript 模板工程**
    1. pikascript 的 BSP 很简单，就是一个可以**独立编译**的 pikascript 模板工程。

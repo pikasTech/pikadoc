@@ -1,3 +1,5 @@
+# 从 RT-Thread 软件包开始
+
 1. PikaScript 已加入 [RT-Thread软件包](https://packages.rt-thread.org/detail.html?package=pikascript)，在编程语言分类下，直接添加软件包即可快速使用 PikaScript 。
 
 PikaScript 软件包支持**全部的 RT-Thread BSP **。

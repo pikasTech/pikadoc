@@ -1,3 +1,5 @@
+# 优化内存占用、配置libc
+
 1. PikaScript本身是**免配置**的，所以通常情况下**不需要**了解这部分内容。
 2. 可以通过创建pika_config.c，重写[PikaPlagform.h](https://gitee.com/Lyon1998/pikascript/blob/master/src/PikaPlatform.h)里面的弱函数来配置PikaScript。
 

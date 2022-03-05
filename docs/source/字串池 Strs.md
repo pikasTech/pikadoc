@@ -1,3 +1,4 @@
+# 字串池 Strs
 ## 1. 头文件
 ```c
 #include "dataStrs.h"
