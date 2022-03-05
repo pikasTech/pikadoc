@@ -1,0 +1,371 @@
+
+
+今天我们不聊驱动开发还有架构原理这些令人头大的硬核内容，我们就单纯的用 Pika 派开发板玩玩 Python 编程！在单片机上点亮一个“人生苦短，我用 Python ”的成就！
+## 开发板获取
+如果手里还没有 Pika 派开发板的话，可以用下面的链接购买：
+[https://item.taobao.com/item.htm?spm=a21dvs.23580594.0.0.52de3d0dt7rqAx&ft=t&id=654947372034](https://item.taobao.com/item.htm?spm=a21dvs.23580594.0.0.52de3d0dt7rqAx&ft=t&id=654947372034)
+开发板长下面这个样子，板载一个 STM32G0 芯片，上面有4个炫彩 RGB ，采用 Type-C 接口。
+可选配置：
+
+1. Lite 青春版：STM32G030 + CH340 串口芯片 64k flash 8k ram
+1. Pro 专业版：STM32G030 + DAPLink 调试器 64K flash 8k ram
+1. Plus 顶配版：STM32G070 + DAPLink 调试器 128k flash 32k ram
+
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641204913846-15059096-75ac-4aa1-9c5f-27cbde8d77d9.png#clientId=uf400c24d-7b4b-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=407&id=u44417872&margin=%5Bobject%20Object%5D&name=image.png&originHeight=814&originWidth=1084&originalType=binary&ratio=1&rotation=0&showTitle=false&size=471107&status=done&style=none&taskId=u168dc6c6-b702-48fd-8a04-f975b5f2249&title=&width=542)
+这个开发板由 PikaScript 项目官方支持，持续滚动更新，PikaScript 的最新内核，最新功能，都可以在这个开发板上抢先体验到。
+
+
+这个开发板也由项目官方适配了丰富外设模块、包括 GPIO、TIME、ADC、IIC、LCD、KEY、PWM 等模块的驱动都已经开发好，可以直接用 python 进行编程。
+## 视频教程
+[https://space.bilibili.com/5365336/channel/seriesdetail?sid=1034902](https://space.bilibili.com/5365336/channel/seriesdetail?sid=1034902)
+## 如何给单片机下载Python程序
+下载方法非常简单，只需要连接上 Type-C 数据线就可以了。
+
+
+![](https://images.gitee.com/uploads/images/2021/1122/200332_3e87979e_5521445.png#crop=0&crop=0&crop=1&crop=1&height=355&id=MVPin&originHeight=563&originWidth=719&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=453)
+
+
+我们用一根 USB 数据线，连接电脑和 Pika 派开发板，就可以下载程序了。
+下载程序的时候，需要使用一个串口助手工具，我们可以使用正点原子开发的 XCOM 助手，在正点原子的论坛可以下载到。
+[http://www.openedv.com/thread-279749-1-1.html](http://www.openedv.com/thread-279749-1-1.html)
+
+
+![](https://images.gitee.com/uploads/images/2021/1122/200618_b8f264a8_5521445.png#crop=0&crop=0&crop=1&crop=1&height=401&id=uiPak&originHeight=832&originWidth=1060&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=511)
+选择好 COM 口，然后波特率选为 115200，再点打开串口，这时候，就和 Pika 派连接上了。直接发送一个 Pthon 脚本文件，就可以给 Pika 派下载 Python 程序了。为了验证下载能不能成功，我们使用 PikaScript 源码仓库里面的示例 Python 脚本。
+我们进入 PikaScript 的代码仓库
+[https://gitee.com/Lyon1998/pikascript](https://gitee.com/Lyon1998/pikascript)
+惯例点一个 Star~
+![屏幕截图.png](https://images.gitee.com/uploads/images/2021/1122/201054_c22a0714_5521445.png#crop=0&crop=0&crop=1&crop=1&height=87&id=eaEOE&originHeight=296&originWidth=2076&originalType=binary&ratio=1&rotation=0&showTitle=true&status=done&style=none&title=%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png&width=612 "屏幕截图.png")
+然后我们点击 examples 文件夹，里面放的就是可以运行的 Python 例程。
+![](https://images.gitee.com/uploads/images/2021/1122/201133_2caa690c_5521445.png#crop=0&crop=0&crop=1&crop=1&height=377&id=mopaC&originHeight=964&originWidth=1579&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=618)
+我们打开 GPIO 文件夹，来点亮一下流水灯看看~
+![](https://images.gitee.com/uploads/images/2021/1122/201304_ee6f19c7_5521445.png#crop=0&crop=0&crop=1&crop=1&height=509&id=FfJq6&originHeight=802&originWidth=957&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=607)
+GPIO 文件夹里面的 main.py 就是 GPIO 的示例代码了
+![](https://images.gitee.com/uploads/images/2021/1122/201351_226525cc_5521445.png#crop=0&crop=0&crop=1&crop=1&height=243&id=JAEGI&originHeight=345&originWidth=770&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=543)
+我们可以点开 main.py 看看~
+```python
+import PikaStdLib
+import machine
+
+mem = PikaStdLib.MemChecker()
+io1 = machine.GPIO()
+time = machine.Time()
+
+io1.init()
+io1.setPin('PA8')
+io1.setMode('out')
+io1.enable()
+io1.low()
+
+print('hello pikascript')
+print('mem.max :')
+mem.max()
+print('mem.now :')
+mem.now()
+
+while True:
+    io1.low()
+    time.sleep_ms(500)
+    io1.high()
+    time.sleep_ms(500)
+    
+```
+先不解释里面的内容，我们直接下载这个脚本看看。
+我们也在桌面新建一个 main.py 文件，然后把这段代码复制进去。
+![](https://images.gitee.com/uploads/images/2021/1122/201535_8f49da20_5521445.png#crop=0&crop=0&crop=1&crop=1&id=JiLU9&originHeight=125&originWidth=110&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+我们选择这个 main.py 文件
+![](https://images.gitee.com/uploads/images/2021/1122/201639_79a783b1_5521445.png#crop=0&crop=0&crop=1&crop=1&height=437&id=OMwgV&originHeight=1113&originWidth=1779&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=699)
+然后点击"发送文件", 就可以把脚本下载进去了！
+我们可以看到 [ OK ]: Programing ok! 的提示，这就是说明下载成功了！
+![](https://images.gitee.com/uploads/images/2021/1122/201816_13337449_5521445.png#crop=0&crop=0&crop=1&crop=1&height=429&id=HoK7X&originHeight=832&originWidth=1060&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=546)
+这时开发板上面的 LED 就会闪动起来！
+![](https://images.gitee.com/uploads/images/2021/1122/202935_f82345e6_5521445.png#crop=0&crop=0&crop=1&crop=1&height=171&id=ULDQG&originHeight=205&originWidth=420&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=350)
+恭喜你达成单片机玩 Python 的成就！
+## GPIO的脚本里写了什么?
+下面我们来逐行解析一下 GPIO 的这个例程。
+
+
+```python
+import PikaStdLib
+import machine
+```
+
+
+首先是第一行和第二行，这表示导入了两个模块，一个是`PikaStdLib`模块，一个是`machine`模块。PikaStdLib 是 PikaScript 的标准库，里面有一些系统的功能，比如可以检查内存的占用。第四行里面，我们就新建了一个 mem 对象，这个对象的类是 PikaStdLib.MemChecker()。
+```python
+mem = PikaStdLib.MemChecker()
+```
+这个类有 max() 方法和 now() 方法，使用这两个方法，就可以打印出当前 PikaScript 所使用的内存大小。
+```python
+print('hello pikascript')
+print('mem.max :')
+mem.max()
+print('mem.now :')
+mem.now()
+```
+我们可以看看串口的打印输出，可以看到最大的内存占用是 1.51kB，而当前的内存占用是 0.61kB，是不是很小！
+![屏幕截图.png](https://images.gitee.com/uploads/images/2021/1122/203737_1509b9db_5521445.png#crop=0&crop=0&crop=1&crop=1&height=113&id=lOqxR&originHeight=144&originWidth=201&originalType=binary&ratio=1&rotation=0&showTitle=true&status=done&style=none&title=%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png&width=158 "屏幕截图.png")
+time 对象是通过 machine 的 Time() 类新建的，可以提供基本的延时功能。
+```python
+time = machine.Time()
+```
+通过 time.sleep_ms() 方法，就可以按毫秒进行延时了，比如下面代码的作用就是延时500ms。
+```python
+time.sleep_ms(500)
+```
+io1 就是我们今天的主角了，这是一个 GPIO 对象，是用 machine .GPIO() 类新建的。
+```python
+io1 = machine.GPIO()
+```
+在新建了 io1 对象之后，我们要给这个 io 进行初始化，init() 用于对象初始化，在最前面使用，然后 setPin('PA8') 表示使用 PA8 口 setMode('out') 表示使用输出模式，而 enable() 表示启动 io1 的硬件，low() 将 io1 的电平拉低。PA8 上连接了 Pika 派上面的一个 led 灯，只要控制 PA8 的电平，就可以控制灯的亮灭了。
+```python
+io1.init()
+io1.setPin('PA8')
+io1.setMode('out')
+io1.enable()
+io1.low()
+```
+而在程序的主循环里面，对 io1 进行高低电平的切换，就可以使 LED 闪动了~
+```python
+while True:
+    io1.low()
+    time.sleep_ms(500)
+    io1.high()
+    time.sleep_ms(500)
+```
+## 其他的Python例程解读
+### ADC
+我们再解读一下 examples 里面的其他例程，比如这个 ADC 例程，就是读取 PA1 管脚上面的模拟电压值，然后打印出来~
+```python
+import PikaStdLib
+import machine
+
+time = machine.Time()
+adc1 = machine.ADC() #新建ADC对象
+
+adc1.init() #初始化ADC对象
+adc1.setPin('PA1') #设置管脚
+adc1.enable() #启动硬件
+
+while True:
+    val = adc1.read() #读一次ADC的值，存到val变量里
+    print('adc1 value:') #打印读到的内容
+    print(val)
+    time.sleep_ms(500) #等待0.5s
+    
+```
+### UART
+下面是串口的例程，功能是读取收到的两个字节，然后打印出来
+```python
+import PikaStdLib
+import machine
+
+time = machine.Time()
+uart = machine.UART() #新建串口对象
+uart.init()
+uart.setId(1) #设置串口号，使用串口1
+uart.setBaudRate(115200) #设置波特率
+uart.enable() #启动硬件
+
+while True:
+    time.sleep_ms(500)
+    readBuff = uart.read(2) #读取两个字符
+    print('read 2 char:')
+    print(readBuff) #打印出来
+
+```
+### PWM
+再下面这个是 PWM 的例程，可以指定管脚输出PWM波，可以设置频率和占空比
+```python
+import PikaStdLib
+import machine
+
+time = machine.Time()
+pwm = machine.PWM()
+pwm.setPin('PA8') #设置PWM输出管脚
+pwm.setFrequency(2000) #设置频率
+pwm.setDuty(0.5) #设置占空比为50%
+pwm.enable()
+
+while True:
+    time.sleep_ms(500)
+    pwm.setDuty(0.5)
+    time.sleep_ms(500)
+    pwm.setDuty(0.001) #设置占空比为0.1%
+
+```
+### RGB
+再下面这个就是 RGB 的例程了~
+```python
+import machine
+
+import PikaStdLib
+
+time = machine.Time()
+adc = machine.ADC()
+pin = machine.GPIO()
+pwm = machine.PWM()
+uart = machine.UART()
+rgb = machine.RGB() #新建RGB对象
+mem = PikaStdLib.MemChecker()
+
+rgb.init() #初始化对象
+rgb.enable() #启动硬件
+
+print('hello 2')
+print('mem used max:')
+mem.max()
+
+while True:
+    print('flowing')
+    rgb.flow() #RGB流水灯流动
+
+
+```
+这个例程可以驱动板载的4个 RGB 流水灯~
+![屏幕截图.png](https://images.gitee.com/uploads/images/2021/1122/205338_ae2e2de2_5521445.png#crop=0&crop=0&crop=1&crop=1&height=278&id=DnksY&originHeight=486&originWidth=288&originalType=binary&ratio=1&rotation=0&showTitle=true&status=done&style=none&title=%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png&width=165 "屏幕截图.png")
+### LCD
+还有一个 LCD 的例程，可以在 LCD 上面显示一个小方块，而你可以使用板载的四个按键控制小方块运动~
+![屏幕截图.png](https://images.gitee.com/uploads/images/2021/1122/210940_f30be3d5_5521445.png#crop=0&crop=0&crop=1&crop=1&height=259&id=N4HZ7&originHeight=358&originWidth=312&originalType=binary&ratio=1&rotation=0&showTitle=true&status=done&style=none&title=%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png&width=226 "屏幕截图.png")
+```python
+from PikaObj import *
+import PikaStdLib
+
+import machine
+
+lcd = machine.LCD()
+lcd.init()
+lcd.clear('white') #初始化LCD 背景填充为白色
+mem = PikaStdLib.MemChecker()
+key = machine.KEY() #新建按键对象，获得板载的按键输入
+key.init()
+time = machine.Time()
+h = 10
+w = 10
+x = 10
+y = 10 #用来表示小方块的高、宽和坐标
+x_last = x
+y_last = y #记录上一次的位置，用来擦除
+is_update = 0 #控制刷新屏幕的标志变量
+print('mem used max:')
+mem.max()
+lcd.fill(x, y, w, h, 'blue') #绘制蓝色小方块
+while True:
+    key_val = key.get() # 获得按键的值
+    if key_val != -1:
+        x_last = x
+        y_last = y
+        is_update = 1 #启动刷新
+    if key_val == 0:
+        x = x + 5 #改变小方块的坐标
+    if key_val == 1:
+        y = y - 5
+    if key_val == 2:
+        y = y + 5
+    if key_val == 3:
+        x = x - 5
+    if is_update: #刷新屏幕
+        is_update = 0
+        lcd.fill(x_last, y_last, w, h, 'white') #擦掉上一个位置
+        lcd.fill(x, y, w, h, 'blue') #绘制新位置
+
+```
+当你熟悉了 LCD 驱动之后，可以试试自己开发小游戏哦~
+## 交互式运行
+main.py 执行完毕后，就会进入交互式运行，因此只要取消 main.py 中的 `while True :`，使其能够执行完退出，就可以进入交互式运行。
+![538feaef3281950c41b4c5b18bc1183.jpg](https://cdn.nlark.com/yuque/0/2022/jpeg/22991477/1641953728408-8fbffe1c-643a-4f18-855e-5d60578eb194.jpeg#clientId=u7b4d218e-8252-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=586&id=u0f89e27c&margin=%5Bobject%20Object%5D&name=538feaef3281950c41b4c5b18bc1183.jpg&originHeight=586&originWidth=1010&originalType=binary&ratio=1&rotation=0&showTitle=false&size=39166&status=done&style=none&taskId=u5113d3e2-ee87-4ddd-b6c2-c0957a71049&title=&width=1010)
+交互式运行支持单行，多行输入，和通用 Python 用法一致。建议使用 PuTTY 串口终端。
+输入 `exit()` 则会直接重启系统。
+**注意事项**：
+
+1. 固件版本需要不低于**v1.3.2。**
+1. 如果使用 PuTTY 终端无法正常运行，请使用 XCOM。
+1. 在终端中应全部使用英文输入法。
+1. 缩进应使用4个空格，不要使用TAB键。
+## LCD屏幕安装
+1. 参考下图焊接长脚排母
+![](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641957159752-18f9f608-8389-4a43-9c1d-ea6ce44c3e4a.png#clientId=u5acfe8f2-84da-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u1ba75dc7&margin=%5Bobject%20Object%5D&originHeight=550&originWidth=284&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ucfe9eb38-080f-4421-af11-4f5d1997dbc&title=)
+2. 插上屏幕，参考绿色小旗的方向，屏幕能亮就说明插的方向是对的，插反了不会亮
+![](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641957159517-c3adbb12-118a-4c9f-9662-c1801df59276.png#clientId=u5acfe8f2-84da-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u6b29d0c0&margin=%5Bobject%20Object%5D&originHeight=395&originWidth=303&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uee421b68-1744-4a4b-b0c6-7894ddf4b53&title=)
+## 固件升级
+Pika派的固件是滚动更新的，会不断推出新的固件版本，不断提供新的功能，而有一些新的功能只有升级固件才能玩到，所以学会升级固件也是很重要的~
+### 自己编译固件
+固件是一个 Keil 工程，编译非常简单。
+下载固件工程：
+进入 pikascript 官网 [http://pikascript.com](http://pikascript.com)
+Lite 版和 Pro版使用 stm32g030 平台。
+Plus 版使用  stm32g070 平台。
+然后点击 "开始生成"。
+（选择平台后会自动选择默认的模块)
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1644129110261-049ad5bb-21af-40e2-9533-a1c8c86790f1.png#clientId=ud8f924e7-b341-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=671&id=u7a239101&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1174&originWidth=887&originalType=binary&ratio=1&rotation=0&showTitle=false&size=146959&status=done&style=none&taskId=ub307287a-b2cc-40c1-abcd-76c1ca0a625&title=&width=506.85714285714283)
+直接打开 Keil 工程就可以编译了。
+编译时需要使用不低于 V5.36 的 Keil，需要激活。
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1642145123916-644fdd52-a1d3-41be-bd74-8a9e05386397.png#clientId=u99a517cf-a6ca-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=50&id=u4cb6b717&margin=%5Bobject%20Object%5D&name=image.png&originHeight=50&originWidth=481&originalType=binary&ratio=1&rotation=0&showTitle=false&size=5250&status=done&style=none&taskId=u071a85f8-fa2c-40a0-bf35-dccaddc4dbd&title=&width=481)
+编译得到的 .bin 在 MDK/stm32g030c8/stm32g030c8.bin 。
+### 直接下载编译好的固件
+如果你想用现成的固件也可以直接下载编译好的~
+![](https://images.gitee.com/uploads/images/2021/1122/210126_d14c9754_5521445.png#crop=0&crop=0&crop=1&crop=1&height=301&id=bM0PE&originHeight=1041&originWidth=2049&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=592)
+## ​
+
+点击下载就可以获得最新的固件了~
+![](https://images.gitee.com/uploads/images/2021/1122/210155_5248a47c_5521445.png#crop=0&crop=0&crop=1&crop=1&height=314&id=QPjRk&originHeight=856&originWidth=1661&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=609)
+### 串口Bootloader升级
+升级固件也是使用串口就可以了，在升级时，需要用前面到自己编译的固件或者直接下载的 .bin 固件。
+目前支持串口 Bootloader 升级的版本有：
+
+- Lite 青春版
+- Pro 专业版
+
+下面需要让 pika 派进入升级模式，我们按住开发板上面的 SW0 键，同时按下 RST 键，就可以进入升级模式了。
+![](https://images.gitee.com/uploads/images/2021/1122/210422_3acb9ed0_5521445.png#crop=0&crop=0&crop=1&crop=1&height=444&id=GKVcH&originHeight=637&originWidth=429&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=299)
+在升级模式下，我们可以看到串口的提示信息
+![](https://images.gitee.com/uploads/images/2021/1122/210526_b7b28342_5521445.png#crop=0&crop=0&crop=1&crop=1&height=117&id=R1PF0&originHeight=155&originWidth=693&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=522)
+然后我们用串口助手选择刚才下载的 stm32g030c8.bin 文件，通过串口发送。
+识别到固件后会显示 Reciving....
+![](https://images.gitee.com/uploads/images/2021/1122/210611_2fd707d0_5521445.png#crop=0&crop=0&crop=1&crop=1&height=268&id=SCucM&originHeight=342&originWidth=332&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=260)
+发送完毕后再按一下 RST 键重启，就完成升级了！
+如果能够正常启动，那么就说明升级成功。
+### 使用SWD升级
+Lite 版自行连接 J-Link \ DAP-Link \ ST-Link 即可SWD升级。
+Pro 版和 Plus 版板载 DAP-Link，直接连接USB即可SWD升级。
+Lite 版和 Pro版使用 [bsp/stm32g030](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g030c8) 工程。
+Plus 版使用  [bsp/stm32g070](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g070cb) 工程。
+在使用SWD升级时，应选择"部分擦除"的下载方式
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1642144820993-a1c6c5e9-e3ca-4406-aa93-3ae3911738f6.png#clientId=u6977b933-ae07-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=744&id=u2577874b&margin=%5Bobject%20Object%5D&name=image.png&originHeight=744&originWidth=688&originalType=binary&ratio=1&rotation=0&showTitle=false&size=64912&status=done&style=none&taskId=u83c0af1f-d4f1-4a5b-9d32-53934934f2f&title=&width=688)
+### 使用固件下载Python程序
+固件在编译时会加载 pikascript/main.py 作为默认 Python 程序。
+在下载固件前，按 SW0 + RST 擦除 flash 后，就会从固件 Python 程序启动。
+## ARM-2D GUI引擎
+pika 派支持运行 ARM-2D GUI 引擎
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1642347518780-02431025-393e-41b0-bfea-e3f932a86b54.png#clientId=u86af03c5-f1af-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=465&id=u18c7dea3&margin=%5Bobject%20Object%5D&name=image.png&originHeight=929&originWidth=652&originalType=binary&ratio=1&rotation=0&showTitle=false&size=319907&status=done&style=none&taskId=u74740db5-6fbf-4c47-9184-790418a7d96&title=&width=326)
+使用方法：
+
+1. 获取 bsp/stm32g030 工程。
+1. 使用 examples/ARM-2D/PikaPiZero 中的工程文件，main.py 和 requestment.txt 替换。
+
+![image.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1642347593663-fae37327-369e-4480-9c3e-8d9440c6870d.png#clientId=u86af03c5-f1af-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=259&id=w4ZmJ&margin=%5Bobject%20Object%5D&name=image.png&originHeight=518&originWidth=967&originalType=binary&ratio=1&rotation=0&showTitle=false&size=60912&status=done&style=none&taskId=u26922064-3d9f-4cb8-843f-e31c3015fe4&title=&width=483.5)
+
+3. 按住开发板上面的 SW0 键，同时按下 RST 键，擦除 flash。
+3. 重新运行包管理器，预编译，编译工程，使用 SWD/Bootloader 刷入工程。
+
+​
+
+## 常见问题
+1 按 sw0 + rst 进不了升级模式：
+第一批发货的板子没有刷 bootloader，需要手动刷一次，使用 jlink / stlink / DAPlink 等，刷入 pikascript/bsp/pikapizero/bootloader 即可
+2 进不了 bootloader / 疑似卡死无法运行：
+检查串口助手，不能使用 dtr / rts 控制，推荐使用正点原子的 xcom 助手。
+3 下载 python 脚本卡死：
+第一次下载 python 程序时，不要下载 LCD 程序，先下载一个 gpio 程序，再下载 LCD 程序即可。
+其他情况下下载卡死，重启重新下载即可，如果还不行就重刷固件再下载。
+4 工程编译报错，缺少文件：
+工程需要远程拉取模块和预编译，需要先运行 pikascript/pikaPackage.exe 和 pikascript/rust-msc-win10-latest.exe 再编译工程。
+## 原理图
+### Lite青春版
+![Schematic_PikaPi-zero-lite_2022-01-03 (2).png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641204367325-7c0751ac-7fe8-4029-a4c2-ee6ebb1e2733.png#clientId=u9b9c0d61-f912-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=2100&id=u1c38017f&margin=%5Bobject%20Object%5D&name=Schematic_PikaPi-zero-lite_2022-01-03%20%282%29.png&originHeight=4200&originWidth=2250&originalType=binary&ratio=1&rotation=0&showTitle=false&size=780931&status=done&style=none&taskId=u45a38685-2d79-45e4-af90-f5e8477cb71&title=&width=1125)
+### Pro专业版
+![Schematic_PikaPi-zero-pro_2022-01-09.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641733841411-d3a3ed0f-4609-49eb-9985-b3a635e72b51.png#clientId=u58fdccf3-c92c-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=2082&id=u3e56644c&margin=%5Bobject%20Object%5D&name=Schematic_PikaPi-zero-pro_2022-01-09.png&originHeight=4163&originWidth=2250&originalType=binary&ratio=1&rotation=0&showTitle=false&size=817064&status=done&style=none&taskId=u875c8049-6af5-46b2-9e00-45413085b69&title=&width=1125)
+### Plus顶配版
+![Schematic_PikaPi-zero-plus-pro_2022-01-09.png](https://cdn.nlark.com/yuque/0/2022/png/22991477/1641733943438-bdd0d52f-1e34-4a8e-a3bb-c53508ce4fc1.png#clientId=u6dd4e745-e810-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=2082&id=ub2c2dffb&margin=%5Bobject%20Object%5D&name=Schematic_PikaPi-zero-plus-pro_2022-01-09.png&originHeight=4163&originWidth=2250&originalType=binary&ratio=1&rotation=0&showTitle=false&size=816437&status=done&style=none&taskId=u966e5094-3a0d-4683-80fa-4788f59ba6d&title=&width=1125)
+### LCD
+![](https://cdn.nlark.com/yuque/0/2022/png/22991477/1645715736921-0dcd26b4-732b-42bf-b17a-1ef3ce3d3ea6.png#clientId=ud487ad1c-2e1e-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u1ebbe692&margin=%5Bobject%20Object%5D&originHeight=470&originWidth=964&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u8a47c1e1-082a-46f2-b306-a376f60ef7e&title=)
