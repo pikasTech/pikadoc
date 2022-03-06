@@ -2,10 +2,11 @@
 
 1. PikaScript 已加入 [RT-Thread软件包](https://packages.rt-thread.org/detail.html?package=pikascript)，在编程语言分类下，直接添加软件包即可快速使用 PikaScript 。
 
-PikaScript 软件包支持**全部的 RT-Thread BSP **。
+PikaScript 软件包支持**全部的 RT-Thread BSP** 。
 ![](assets/1638840464842-02580253-48dc-4dcc-94a4-e62f1b596b38.png)
 如果在使用过程中遇到兼容性问题，可以在 [gitee](https://gitee.com/Lyon1998/pikascript)，[github](https://github.com/pikasTech/pikascript) 提 issue 或者[论坛](https://whycan.com/f_55.html)提问。
-**安装：**
+
+## 安装
 
    1. 引入 pikascript 软件包
    1. 在 rt-thread/src/kservice.c 中的 rt_vsnprintf 前添加 RT_WEAK **(只针对rt_thread 4.1.0版本以下)**
@@ -16,8 +17,7 @@ PikaScript 软件包支持**全部的 RT-Thread BSP **。
 
 ![](assets/1639103788555-fcf1c31c-386f-4baf-b1d0-4f3016af32bc.png)
 
-
-2. 启动 pikascript
+## 启动 pikascript
 
 **方案一：使用msh启动（默认模式）**
 
@@ -63,10 +63,9 @@ PikaObj * pikaMain = pikaScriptInit();
 
 参考**支持串口下载 Python **部分文档。
 
+### 使用 PikaScript 模块和包管理器
 
-3. 使用 PikaScript 模块和包管理器
-
-   1. 修改 pikascript-latest/requestment.txt，然后右键工程，Sconscripts Update，即可安装模块/修改模块版本，并预编译。
+1. 修改 pikascript-latest/requestment.txt，然后右键工程，Sconscripts Update，即可安装模块/修改模块版本，并预编译。
 
 ![](assets/1639531121038-abc40292-62fe-4a30-b074-7101714f6db7.jpeg)
 
