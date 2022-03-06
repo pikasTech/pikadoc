@@ -3,8 +3,7 @@
 我就想用单片机跑个 Python ，得用 linux 虚拟机+交叉编译工具链+命令行编译 micropython 固件，还得用 DfuSe 工具烧录固件，烧录完还不能用 C 的调试器来调试。
 我想拓展个自己的 C 模块，还要学着用一些完全看不懂的宏函数，还得手动注册，还得编写 makeFile ，编译完照样不能调试 C 。
 
-
-我穷，买不起 STM32F4 ，想买个 **STM32F103C8T6 **的 micropython 开发板，淘宝一搜，好像没有。
+我穷，买不起 STM32F4 ，想买个 **STM32F103C8T6** 的 micropython 开发板，淘宝一搜，好像没有。
 现在 C8T6 也贵了，我还想用 **F0，用 G0，用国产芯片**，能行吗？
 好像，给 G0 移植 micropython，不是很容易。
 
@@ -21,7 +20,7 @@ PikaScript 可以为**资源受限**的 mcu 提供**极易部署和拓展**的 *
 PikaScript 支持裸机运行，最低可运行于 **RAM ≥ 4kB** ，**FLASH ≥ 32kB** 的 mcu 中，推荐配置为 RAM ≥ 10kB， FLASH ≥ 64kB，像是 stm32f103c8t6、stm32g070RBT6 这些完全没有压力，甚至已经满足了推荐配置。
 ​
 
-而且支持 **Keil、IAR、RT-Thread studio、segger embedded studio **等 IDE 开发，零依赖，零配置，开箱即用，极易集成进已有的 C 工程。
+而且支持 **Keil、IAR、RT-Thread studio、segger embedded studio** 等 IDE 开发，零依赖，零配置，开箱即用，极易集成进已有的 C 工程。
 
 说了这么多，刘华强就有疑问了，你说这脚本，保熟吗？
 ![](assets/1638666543673-423aafcb-0c29-49b3-8221-22fdc3c65199.png)

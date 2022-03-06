@@ -1,7 +1,9 @@
 # PikaScript 拓展模块开发流程
 
 我们依然以keil的仿真工程为例，如果还没有获得仿真工程，请参考[1.三分钟快速上手](https://pikadoc.readthedocs.io/zh/latest/Keil%20%E4%BB%BF%E7%9C%9F%E5%B7%A5%E7%A8%8B.html)
-## 编写新的PikaScript模块
+
+
+
 ### 新建模块接口
 
 
@@ -245,10 +247,10 @@ print(res4)
 发布模块只需要发布类接口和类实现文件即可。
 
 
-比如发布刚刚新编写的Math模块，就是发布Math.py文件和pikascript-lib/Math文件夹。
+比如发布刚刚新编写的Math模块，就是发布 Math.py 文件和 pikascript-lib/Math 文件夹。
 
 
 ![](assets/131123704-403753d8-2ef1-488e-a02a-08fce33cd6de.png)
 
 
-请参考包**参与社区贡献**部分的文档发布你编写的模块。
+请参考包 **参与社区贡献** 部分的文档发布你编写的模块。

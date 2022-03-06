@@ -22,6 +22,7 @@ PikaScript软件包
 
 硬件使用了RTT大赛提供的CH32V103开发板，使用了板上的LED资源用于指示脚本运行状态，为GPIO硬件开发了Python脚本模块，用于测试脚本驱动拓展功能。
 ![](assets/1638495380404-1b88e98c-4325-48fa-824d-18a45c153b85.webp)
+
 **软件说明**
 **0.摘要**
 ​
@@ -43,9 +44,11 @@ PikaScript是一个完全重写的超轻量级python引擎，具有完整的解�
 好了，不卖关子了，能够在CH32V103平台部署的Python解释器，只有我目前在开发的PikaScript超轻量级Python解释器，（如果还有其他方案，请批评指正，我麻溜修改）。虽然相对于MicroPython，PikaScript没有那么完整的标准库支持，但基本的运行时对象、控制流、交互式运行都是可以实现的，且PikaScript的跨平台能力非常好，在极限的依赖管理策略下，PikaScript只依赖LibC，在任何平台都几乎没有依赖缺失问题，或许还能够运行在FPGA软核中（理论上可行，未验证）。
 
 另外感谢Gitee提供的开源平台，PikaScript刚刚被Gitee评委大佬们选入GVP——最有价值开源项目，所以如果你现在打开Gitee首页，大概率可以看到PikaScript的金色牌牌。
-![](assets/1638495380222-9af9955c-4a80-4325-9d75-2edd40d42320.webp)​
+![](assets/1638495380222-9af9955c-4a80-4325-9d75-2edd40d42320.webp)
+
 PikaScript还入选了rt-thread软件包，rt-thread真的是非常有活力的开源社区
 ![](assets/1638495380395-47352427-5fd7-4a70-b8b4-bf57f6290a49.webp)
+
 PikaScript严苛的依赖管理策略，使得部署非常轻松，这是跨平台，易部署的特点。但是单纯的易部署并没有什么用，如果难以拓展功能，就只是一个花瓶而已。我们知道在MCU开发领域，一直是C语言的天下，C语言的生态占据MCU开发的80%以上，大部分MCU都有厂家提供的C语言开发套件，因此MCU平台的Python解释器，最重要的拓展手段，就是绑定C语言的原生库，将C语言库绑定为Python模块，这通常被称为Python的C模块。
 ​
 
@@ -60,6 +63,7 @@ PikaScript严苛的依赖管理策略，使得部署非常轻松，这是跨平�
 
 我们先看一下一个PikaScript固件有哪些部分。
 ![](assets/1638495380538-858d703b-9406-499b-b1e6-8473e2a17b60.webp)
+
 在图中标注黄色的部分是我们需要制作的，而绿色部分是跨平台的，我们只需要拉取源码进行编译即可，不需要修改。
 
 从下往上看，首先是需要一份PikaScript的BSP，BSP也就是板级支持包，这通常只要将厂商提供的MCU的标准库稍加整理即可获得。然后是PikaScript的启动器，这包含了固件入口main.c，以及基本的设备初始化代码，包括对printf的支持。
@@ -87,6 +91,8 @@ BSP和启动器的制作我录制了一个视频教程，想要了解细节或�
 https://www.bilibili.com/video/BV1Cq4y1G7Tj
 ![](assets/1638495380269-bb341d5a-d901-4b3e-9b67-843a97f3c27d.webp)
 
+
+
 **3.制作CH32V103的驱动模块**
 ​
 
@@ -95,14 +101,17 @@ https://www.bilibili.com/video/BV1Cq4y1G7Tj
 
 在这个项目中，我们制作了一个PikaScript的标准设备驱动，什么是标准设备驱动呢？我们先从其他的脚本技术说起，比如MicroPython，并没有统一的外设调用API，这使得用户在使用不同的平台时，都需要重新学习API，比如下面这个是MicroPython在STM32F4平台驱动GPIO的代码。
 ![](assets/1638495380966-02a52d33-9986-401c-a7e1-136ce71ad53e.webp)
+
 这个是ESP8266的
 ![](assets/1638495381179-e6afcca5-7f32-4a2f-a531-10f6b106db15.webp)
+
 可以明显看到在选择pin的管脚时，一个用的是字符串，而另一个用的是整型数，驱动的API标准很混乱。
 
 有没有什么办法，能够统一外设的API，使得用户只需要熟悉一套API，就能够在任意平台通用呢？
 
 方法是有的，就是PikaStdDevice标准设备驱动模块！
 ![](assets/1638495380938-60679f63-cb15-4366-ac59-4efd6ff85d87.webp)
+
 PikaStdDevice是一个抽象的设备驱动模块，定义了所有的用户API，而各个平台的驱动模块只要从PikaStdDevice继承，就能够获得一模一样的用户API，而PikaStdDevice内部会间接调用平台驱动，通过多态特性重写底层的平台驱动，就可以在不同的平台工作了！
 ​
 
@@ -111,16 +120,21 @@ PikaStdDevice是一个抽象的设备驱动模块，定义了所有的用户API�
 
 ![](assets/1638495381064-51409a36-812a-48ea-a6ae-23b3c177582d.webp)
 
+
+
 以下是PikaStdDevice需要重写的平台驱动
 ​
 
 ![](assets/1638495381214-1189c3eb-28ef-408e-a21e-e6bbc594d6fb.webp)
-​
+
+
 
 而我们要制作的CH32V103的GPIO模块，就从标准驱动模块中继承。
 ​
 
 ![](assets/1638495381703-8e227dcc-97d7-4069-8754-4c118deea3fb.webp)
+
+
 
 通过这个方法，我们就可以让STM32的驱动模块、CH32的驱动模块、ESP32的驱动模块有着一模一样的用户API！用户只要熟悉了一套API，就可以轻松使用支持了PikaScript标准驱动模块的所有平台！这才是真正的跨平台！
 ​
@@ -129,12 +143,15 @@ PikaStdDevice是一个抽象的设备驱动模块，定义了所有的用户API�
 ​
 
 ![](assets/1638495381557-21aaad62-bd63-40bc-b818-257e16992780.webp)
-​
+
+
 
 驱动模块的开发，我也制作了两个视频，供想要了解细节的大佬们参考。
 https://www.bilibili.com/video/BV1aP4y1L7pi
 https://www.bilibili.com/video/BV1Jr4y117Z8
 ![](assets/1638495381957-6bc5f6f6-f3aa-4913-a06c-a0065a7d2cba.webp)![](assets/1638495382088-c0b1d1e6-746c-4f15-9775-924aa225829b.webp)
+
+
 
 **4.支持交互式运行**
 
@@ -142,8 +159,11 @@ PikaScript不依赖文件系统，只要传入字符串就可以运行，所以�
 下面是本项目中支持交互式运行的驱动代码。
 ![](assets/1638495382112-7d45db4b-c1d5-4573-a06e-7b72140a3abf.webp)
 
+
+
 **5.main.py初始化脚本**​
 ![](assets/1638495382306-0f817e57-9526-44a0-99ec-c82a13cd45e5.webp)
+
 最后我们编写一段用Python写成的初始化脚本，在固件启动后运行，初始化GPIO，并且获得一个系统对象，用于提供延时功能。在初始化结束后，led闪烁10次，并打印hello pikascript！
 
 编写好初始化脚本后，用预编译器就可以集成在固件中了。
@@ -151,11 +171,18 @@ PikaScript不依赖文件系统，只要传入字符串就可以运行，所以�
 下面是预编译器生成的初始化函数
 ​
 
+
+
 ![](assets/1638495382514-ee59c198-0557-434b-96d3-f2a21f596d2b.webp)
 
 项目地址：
+
 PikaScript-CH32V103参赛项目仓库：
+
 https://gitee.com/lyon1998/ch32v103-pika
+
 PikaScript总仓库：
+
 https://gitee.com/lyon1998/pikascript
+
 https://github.com/pikastech/pikascript
