@@ -25,10 +25,10 @@ PikaScript 软件包支持**全部的 RT-Thread BSP** 。
 
 可以在这里查看最新的默认 [requestment.txt](https://gitee.com/Lyon1998/pikascript/blob/master/port/rt-thread/requestment.txt)。
 
-   2. 在msh中输入 **"pika" **，即可**在一个线程中启动 **PikaScript。
+   2. 在msh中输入 "pika" ，即可 **在一个线程中启动** PikaScript。
 
-初次启动会执行 /pikascript-latest/**main.py **初始化脚本。执行完毕后进入 pika **交互式运行**模式，
-输入 "**exit()" **回到 msh，再次输入 **"pika" **进入 pikascript，将**直接进入**交互式运行模式。
+初次启动会执行 /pikascript-latest/main.py 初始化脚本。执行完毕后进入 pika **交互式运行** 模式，
+输入 "exit()" 回到 msh，再次输入 "pika" 进入 pikascript，将**直接进入**交互式运行模式。
 ![](assets/1639058943232-9f0e0f78-0c8e-4b80-9283-6113c2450edf.png)
 **方案二：开机自动启动**
 
