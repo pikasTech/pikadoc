@@ -1,6 +1,6 @@
 # PikaScript 拓展模块开发流程
 
-我们依然以keil的仿真工程为例，如果还没有获得仿真工程，请参考[1.三分钟快速上手](https://www.yuque.com/liang-mltek/pikascript/ew19qm)
+我们依然以keil的仿真工程为例，如果还没有获得仿真工程，请参考[1.三分钟快速上手](https://pikadoc.readthedocs.io/zh/latest/Keil%20%E4%BB%BF%E7%9C%9F%E5%B7%A5%E7%A8%8B.html)
 ## 编写新的PikaScript模块
 ### 新建模块接口
 
