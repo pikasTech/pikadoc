@@ -61,7 +61,7 @@ PikaObj * pikaMain = pikaScriptInit();
 
    3. 串口下载 Python 脚本
 
-参考**支持串口下载 Python **部分文档。
+参考**支持串口下载 Python** 部分文档。
 
 ### 使用 PikaScript 模块和包管理器
 
