@@ -3,12 +3,12 @@
 PikaStdDevice 是一个抽象的设备模型，提供了跨平台的统一外设 API 。
 ## 安装
 
-1. 在 requestment.txt 中加入 PikaStdDevice 的依赖。
+- 在 requestment.txt 中加入 PikaStdDevice 的依赖。
 ```
 PikaStdDevice==v1.4.3
 ```
 
-2. 运行 pikaPackage.exe
+- 运行 pikaPackage.exe
 ## 为什么要有标准设备模块
 什么是标准设备模块呢？我们先从其他的脚本技术说起，比如 MicroPython，并没有统一的外设调用 API，这使得用户在使用不同的平台时，都需要重新学习 API，比如下面这个是 MicroPython 在 STM32F4 平台驱动 GPIO 的代码。
 
