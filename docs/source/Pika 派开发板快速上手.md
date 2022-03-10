@@ -1,15 +1,24 @@
 # Pika 派开发板快速上手
 
 今天我们不聊驱动开发还有架构原理这些令人头大的硬核内容，我们就单纯的用 Pika 派开发板玩玩 Python 编程！在单片机上点亮一个“人生苦短，我用 Python ”的成就！
+
+[视频链接](https://www.bilibili.com/video/BV1kg411K7W2)
+
 ## 开发板获取
+
 如果手里还没有 Pika 派开发板的话，可以用下面的链接购买：
+
 [https://item.taobao.com/item.htm?spm=a21dvs.23580594.0.0.52de3d0dt7rqAx&ft=t&id=654947372034](https://item.taobao.com/item.htm?spm=a21dvs.23580594.0.0.52de3d0dt7rqAx&ft=t&id=654947372034)
+
 开发板长下面这个样子，板载一个 STM32G0 芯片，上面有4个炫彩 RGB ，采用 Type-C 接口。
+
 可选配置：
 
-1. Lite 青春版：STM32G030 + CH340 串口芯片 64k flash 8k ram
-1. Pro 专业版：STM32G030 + DAPLink 调试器 64K flash 8k ram
-1. Plus 顶配版：STM32G070 + DAPLink 调试器 128k flash 32k ram
+- Lite 青春版：STM32G030 + CH340 串口芯片 64k flash 8k ram
+
+- Pro 专业版：STM32G030 + DAPLink 调试器 64K flash 8k ram
+
+- Plus 顶配版：STM32G070 + DAPLink 调试器 128k flash 32k ram
 
 ![](assets/1641204913846-15059096-75ac-4aa1-9c5f-27cbde8d77d9.png)
 这个开发板由 PikaScript 项目官方支持，持续滚动更新，PikaScript 的最新内核，最新功能，都可以在这个开发板上抢先体验到。
