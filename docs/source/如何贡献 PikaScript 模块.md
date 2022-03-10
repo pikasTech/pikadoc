@@ -2,35 +2,37 @@
 ## 帮助完善已有的模块
 
 
-1. 拉取最新的模块
+### 拉取最新的模块
 
-在向已有的模块添加新的内容时，请确保已经拉取了最新的模块。
-拉取最新的模块的方法是在requestment.txt中使用latest版本。
+- 在向已有的模块添加新的内容时，请确保已经拉取了最新的模块。
+
+- 拉取最新的模块的方法是在 requestment.txt 中使用 latest 版本。
+
 例如：
 ```
 STM32G0==latest
 ```
 
-2. **删除reqeustment.txt中需要开发的模块**，防止误操作（比如再次拉取模块）导致正在开发的模块被覆盖掉。
-2. 修改模块并测试
+- **删除 reqeustment.txt 中需要开发的模块**，防止误操作（比如再次拉取模块）导致正在开发的模块被覆盖掉。
+### 修改模块并测试
 
-为模块添加新的Python接口 --> [module].py
-或者提供更好的实现 --> pikascript-lib/[module]/*.c
-​
+- 为模块添加新的 Python 接口 --> [module].py
+- 或者提供更好的实现 --> pikascript-lib/[module]/*.c
 
+- （可选）在 pikascript/README.md 和 pikascript/README_zh.md 中更新模块信息。
 
-4. （可选）在 pikascript/README.md 和 pikascript/README_zh.md 中更新模块信息。
-4. 提交模块的文件
-   1. fork一份pikascript仓库，然后clone到本地。
+### 提交模块的文件
+   - fork 一份 pikascript 仓库，然后 clone 到本地。
 
 ![](assets/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png)
 
-   2. 复制[module].py到pikascript-lib/[module]文件夹中。
-   2. 复制整个修改后的pikascript-lib/[module]文件夹到fork后的pikascript/package文件夹中。
-   2. git add 添加文件，并git commit 提交一次。
-   2. git log 查看提交后的commit id，在fork后的pikascript/packages.toml中填写新的版本名，并复制当前的commit id。
+   - 复制 [module].py 到 pikascript-lib/[module] 文件夹中。
+   - 复制整个修改后的 pikascript-lib/[module] 文件夹到 fork 后的 pikascript/package 文件夹中。
+   - git add 添加文件，并 git commit 提交一次。
+   - git log 查看提交后的 commit id，在 fork 后的 pikascript/packages.toml 中填写新的版本名，并复制当前的 commit id。
 
 例如：
+
 ```
 [[packages]]
 name = "STM32G0"
@@ -40,28 +42,28 @@ releases = [
 ]
 ```
 
-   6. git commit -a再提交一次，添加packages.toml的修改。
-   6. git push到你fork后的仓库中。
-   6. 提交pull request。
+   - git commit -a再提交一次，添加packages.toml的修改。
+   - git push到你fork后的仓库中。
+   - 提交pull request。
 
 ![](assets/1638664500423-e4ad59fa-e476-48f0-b7ec-89f98eb70e6c.png)
 ## 提交新的模块
 
-
-1. 新建[module].py文件和pikascript-lib/[module]文件夹。
-1. 开发和测试新的模块。
-1. （可选）在 pikascript/README.md 和 pikascript/README_zh.md 中更新模块信息。
-1. 提交模块的文件
-   1. fork一份pikascript仓库，然后clone到本地。
+- 新建[module].py文件和pikascript-lib/[module]文件夹。
+- 开发和测试新的模块。
+- （可选）在 pikascript/README.md 和 pikascript/README_zh.md 中更新模块信息。
+- 提交模块的文件
+   - fork一份pikascript仓库，然后clone到本地。
 
 ![](assets/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png)
 
-   2. 复制[module].py到pikascript-lib/[module]文件夹中。
-   2. 复制整个pikascript-lib/[module]文件夹到fork后的pikascript/package文件夹中。
-   2. git add 添加文件，并git commit 提交一次。
-   2. git log 查看提交后的commit id，在fork后的pikascript/packages.toml中新增新的模块，填写模块名、版本名和当前的commit id。
+   - 复制[module].py到pikascript-lib/[module]文件夹中。
+   - 复制整个pikascript-lib/[module]文件夹到fork后的pikascript/package文件夹中。
+   - git add 添加文件，并git commit 提交一次。
+   - git log 查看提交后的commit id，在fork后的pikascript/packages.toml中新增新的模块，填写模块名、版本名和当前的commit id。
 
 例如：
+
 ```
 [[packages]]
 name = "<新模块名>"
@@ -70,8 +72,8 @@ releases = [
 ]
 ```
 
-   6. git commit -a再提交一次，添加packages.toml的修改。
-   6. git push到你fork后的仓库中。
-   6. 提交pull request。
+   - git commit -a再提交一次，添加packages.toml的修改。
+   - git push到你fork后的仓库中。
+   - 提交pull request。
 
 ![](assets/1638664500423-e4ad59fa-e476-48f0-b7ec-89f98eb70e6c.png)
