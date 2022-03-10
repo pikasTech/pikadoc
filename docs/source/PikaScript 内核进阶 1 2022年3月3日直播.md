@@ -1,5 +1,7 @@
 # PikaScript 内核进阶
 
+[视频连接](https://www.bilibili.com/video/BV12Z4y167SP)
+
 ## 大纲
 一、内核开发概览
 
