@@ -93,3 +93,42 @@ for item in dict:
     print(item)
 
 ```
+### class ByteArray(List)
+
+[注意]: PikaStdData 的版本至少需要 v1.5.3
+
+ByteArray 类提供了 ByteArray 字节数组功能，由 ByteArray 类创建对象，即可创建一个字节数组。
+
+如：
+```python
+import PikaStdData
+bytes = PikaStdData.ByteArray()
+```
+
+ByteArray 类继承自 List 类，可以使用 List 类的方法。
+
+#### ByteArray 类的方法
+
+``` python
+# convert a string to ByteArray
+def fromString(s:str):
+    pass
+```
+用例:
+``` python
+>>> bytes = PikaStdData.ByteArray()
+>>> bytes.fromString('test')
+>>> for byte in bytes:
+...     print(byte)
+... 
+116
+101
+115
+116
+>>> bytes.append(0xff)
+>>> bytes.append(0x0f)
+>>> print(bytes[4])
+255
+>>> print(bytes[5])
+15
+```
