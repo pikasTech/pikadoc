@@ -8,7 +8,7 @@
 ## 工程的来源
 移植好的裸机MCU工程在pikascript/bsp目录，里面的每一个文件夹都是一个移植好的裸机工程。
 **每个工程都是独立的，可以拷贝出pikascript仓库单独使用。**
-（simulation-keil-dev和pico是列外，这两个bsp只能在仓库里面用，是用来开发内核的。）
+（simulation-keil-dev和pico-dev是列外，这两个bsp只能在仓库里面用，是用来开发内核的。）
 [https://gitee.com/Lyon1998/pikascript/tree/master/bsp](https://gitee.com/Lyon1998/pikascript/tree/master/bsp)
 ![](assets/1638605947761-93b30636-099f-4c7c-a432-6aae5e2d8b53.png)
 
