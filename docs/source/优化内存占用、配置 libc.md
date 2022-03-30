@@ -20,9 +20,9 @@ PikaScript 本身是 **免配置** 的，所以通常情况下 **不需要** 了
 
 - ```PIKA_OPTIMIZE_SPEED``` 性能模式 最大化运行速度
   
-### 启用配置
+### 启用用户配置
 
-默认不启用用户配置，启用默认配置的方式为添加编译时宏定义 ``` PIKA_CONFIG_ENABLE ```。然后创建 ``` pika_config.h ``` 头文件。
+默认不启用用户配置，启用用户配置的方式为添加编译时宏定义 ``` PIKA_CONFIG_ENABLE ```。然后创建 ``` pika_config.h ``` 头文件。
 
 需要注意的是, ``` PIKA_CONFIG_ENABLE ``` 宏要添加在编译选项中，例如 keil 中:
 
