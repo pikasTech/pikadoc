@@ -30,7 +30,7 @@ PikaScript 软件包支持**全部的 RT-Thread BSP** 。
 
 **方案一：使用msh启动（默认模式）**
 
-   在 packages/pikascript-latest/requestment.txt 中使用 pikaRTBooter 模块（默认已引入）。
+   在 packages/pikascript-latest/requestment.txt 中使用 pikaRTThread 模块（默认已引入）。
 
 可以在这里查看最新的默认 [requestment.txt](https://gitee.com/Lyon1998/pikascript/blob/master/port/rt-thread/requestment.txt)。
 
