@@ -28,7 +28,7 @@ PikaScript 本身是 **免配置** 的，所以通常情况下 **不需要** 了
 
 需要注意的是, ``` PIKA_CONFIG_ENABLE ``` 宏要添加在编译选项中，例如 keil 中:
 
-![b2e5ed221ab2d5169a44f2425e4f647](assets/160849244-40fe7fa8-0e93-4791-8f14-bc044bbd0d59.png)
+![](assets/160849244-40fe7fa8-0e93-4791-8f14-bc044bbd0d59.png)
 
 ### 配置项
 
