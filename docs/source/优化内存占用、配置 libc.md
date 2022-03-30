@@ -34,7 +34,7 @@ PikaScript 本身是 **免配置** 的，所以通常情况下 **不需要** 了
 
 可用的配置项和默认的配置在 pika_config_valid.h 头文件中。
 
-https://gitee.com/Lyon1998/pikascript/blob/master/src/pika_config_valid.h
+[https://gitee.com/Lyon1998/pikascript/blob/master/src/pika_config_valid.h](https://gitee.com/Lyon1998/pikascript/blob/master/src/pika_config_valid.h)
 
 截取重要的部分进行说明：
 
@@ -76,6 +76,9 @@ https://gitee.com/Lyon1998/pikascript/blob/master/src/pika_config_valid.h
 #undef PIKA_OPTIMIZE
 #define PIKA_OPTIMIZE PIKA_OPTIMIZE_SPEED
 ```
+### 示例代码
+
+[https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g070cb/Booter/pika_config.h](https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g070cb/Booter/pika_config.h)
 
 ## 依赖项配置
 
