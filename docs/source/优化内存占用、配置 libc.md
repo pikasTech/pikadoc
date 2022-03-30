@@ -14,7 +14,7 @@ PikaScript 本身是 **免配置** 的，所以通常情况下 **不需要** 了
   
 ## 优化配置
 
-[注意]：进行优化配置，需要内核版本不低于 v1.5.4
+[注意]：进行优化配置，需要内核版本不低于 ```v1.5.4```
 
 类似 GCC, PikaScript 也提供了不同的优化模式，目前可以使用的优化模式有：
 
@@ -32,7 +32,7 @@ PikaScript 本身是 **免配置** 的，所以通常情况下 **不需要** 了
 
 ### 配置项
 
-可用的配置项和默认的配置在 pika_config_valid.h 头文件中。
+可用的配置项和默认的配置在 ```pika_config_valid.h``` 头文件中。
 
 [https://gitee.com/Lyon1998/pikascript/blob/master/src/pika_config_valid.h](https://gitee.com/Lyon1998/pikascript/blob/master/src/pika_config_valid.h)
 
@@ -61,16 +61,16 @@ PikaScript 本身是 **免配置** 的，所以通常情况下 **不需要** 了
    #endif
 ```
 
-```default configuration``` 是配置项的默认值，当 ```PIKA_CONFIG_ENABLE``` 宏被定义后，pika_config_valid.h 会引入 pika_config.h，因此用户可以在 pika_config.h中覆盖上面的默认配置。
+```default configuration``` 是配置项的默认值，当 ```PIKA_CONFIG_ENABLE``` 宏被定义后，```pika_config_valid.h``` 会引入 ```pika_config.h```，因此用户可以在 ```pika_config.h``` 中覆盖上面的默认配置。
 
-例如，如果想要将增大 PikaScript 虚拟机的运行时栈，则可以在 pika_config.h 中写入
+例如，如果想要将增大 PikaScript 虚拟机的运行时栈，则可以在 ```pika_config.h``` 中写入
 
 ``` c
 #undef PIKA_STACK_BUFF_SIZE
 #define PIKA_STACK_BUFF_SIZE 512
 ```
 
-从 pika_config_valid.h 中可以看到，PikaScript 的默认优化选项 ``` PIKA_OPTIMIZE ``` 的值是 ``` PIKA_OPTIMIZE_SIZE ```，如果需要切换到 speed 优化，则可以在 pika_config.h 中写入
+从 ```pika_config_valid.h``` 中可以看到，PikaScript 的默认优化选项 ``` PIKA_OPTIMIZE ``` 的值是 ``` PIKA_OPTIMIZE_SIZE ```，如果需要切换到 speed 优化，则可以在 ```pika_config.h``` 中写入
 
 ``` c
 #undef PIKA_OPTIMIZE
@@ -82,7 +82,7 @@ PikaScript 本身是 **免配置** 的，所以通常情况下 **不需要** 了
 
 ## 依赖项配置
 
-可以通过创建 pika_config.c，重写 [PikaPlagform.h](https://gitee.com/Lyon1998/pikascript/blob/master/src/PikaPlatform.h) 里面的弱函数来配置 PikaScript 的依赖项。
+可以通过创建 ```pika_config.c```，重写 [PikaPlagform.h](https://gitee.com/Lyon1998/pikascript/blob/master/src/PikaPlatform.h) 里面的弱函数来配置 PikaScript 的依赖项。
 ``` c
 /* interrupt config */
 void __platform_enable_irq_handle(void);
