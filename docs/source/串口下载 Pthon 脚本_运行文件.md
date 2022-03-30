@@ -13,13 +13,13 @@ PikaScript 支持运行 Python 脚本源码，和解析后的 Pika 字节码。
 
 具体代码案例可以参考：
 
-1. [https://gitee.com/Lyon1998/pikascript/blob/master/package/STM32G030Booter/main.c](https://gitee.com/Lyon1998/pikascript/blob/master/package/STM32G030Booter/main.c)
-1. [https://gitee.com/Lyon1998/pikascript/blob/master/package/STM32G030Booter/pika_config.c](https://gitee.com/Lyon1998/pikascript/blob/master/package/STM32G030Booter/main.c)
-1. [https://gitee.com/Lyon1998/pikascript/blob/master/package/STM32G030Booter/pika_config.h](https://gitee.com/Lyon1998/pikascript/blob/master/package/STM32G030Booter/main.c)
+1. [https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/main.c](https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/main.c)
+1. [https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/pika_config.c](https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/main.c)
+1. [https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/pika_config.h](https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/main.c)
 ## 存储Pika字节码
 （待完善）
 具体代码案例可以参考：
 
-1. package/STM32G030Booter/main.c
-1. package/STM32G030Booter/pika_config.c
-1. package/STM32G030Booter/pika_config.h
+1. bsp/stm32g030c8/Booter/main.c
+1. bsp/stm32g030c8/Booter/pika_config.c
+1. bsp/stm32g030c8/Booter/pika_config.h
