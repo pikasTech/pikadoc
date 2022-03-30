@@ -66,14 +66,14 @@ https://gitee.com/Lyon1998/pikascript/blob/master/src/pika_config_valid.h
 例如，如果想要将增大 PikaScript 虚拟机的运行时栈，则可以在 pika_config.h 中写入
 
 ``` c
-#undif PIKA_STACK_BUFF_SIZE
+#undef PIKA_STACK_BUFF_SIZE
 #define PIKA_STACK_BUFF_SIZE 512
 ```
 
 从 pika_config_valid.h 中可以看到，PikaScript 的默认优化选项 ``` PIKA_OPTIMIZE ``` 的值是 ``` PIKA_OPTIMIZE_SIZE ```，如果需要切换到 speed 优化，则可以在 pika_config.h 中写入
 
 ``` c
-#undif PIKA_OPTIMIZE
+#undef PIKA_OPTIMIZE
 #define PIKA_OPTIMIZE PIKA_OPTIMIZE_SPEED
 ```
 
