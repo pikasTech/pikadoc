@@ -9,15 +9,15 @@ PikaScript 软件包支持**全部的 RT-Thread BSP** 。
 ## 安装
 
    引入 pikascript 软件包
-   
-   ![image](https://user-images.githubusercontent.com/88232613/159112436-d8814770-0e86-4016-a529-7053d7256df9.png)
 
-   ![image](https://user-images.githubusercontent.com/88232613/159112451-20335611-fb55-42da-b1ec-c6e9878333b3.png)
+   ![image](assets/159112436-d8814770-0e86-4016-a529-7053d7256df9.png)
 
-   ![image](https://user-images.githubusercontent.com/88232613/159112459-36030f2a-69f7-4e8f-8b3f-57011eaff82b.png)
-   
-   ![image](https://user-images.githubusercontent.com/88232613/159112482-378a549c-fb3b-4be6-b72e-a02b8e1217f3.png)
-   
+   ![image](assets/159112451-20335611-fb55-42da-b1ec-c6e9878333b3.png)
+
+   ![image](assets/159112459-36030f2a-69f7-4e8f-8b3f-57011eaff82b.png)
+
+   ![image](assets/159112482-378a549c-fb3b-4be6-b72e-a02b8e1217f3.png)
+
    在 rt-thread/src/kservice.c 中的 rt_vsnprintf 前添加 RT_WEAK **(只针对rt_thread 4.1.0版本以下)**
 
 ![](assets/1639103607485-f33b48f8-a127-4612-9c4a-e2094ec5d79e.png)

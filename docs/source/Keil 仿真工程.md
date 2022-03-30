@@ -96,7 +96,7 @@ print('add new code end')
 编译 pikascript-api
 ![](assets/130751195-40944d60-7d56-48a9-9f47-cab87d77d5a8.png)
 编译 keil 工程然后进入调试
-![](https://user-images.githubusercontent.com/88232613/130751539-aa0bdb82-750f-4f98-8f6f-02d653dda64a.png#crop=0&crop=0&crop=1&crop=1&id=LkL2a&originHeight=261&originWidth=1463&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](assets/130751539-aa0bdb82-750f-4f98-8f6f-02d653dda64a.png)
 运行然后观察输出
 ![](assets/130751653-cad627c2-367c-45a6-8c5f-686c7514df3c.png)
 我们发现多了3行输出，说明编译运行顺利。
