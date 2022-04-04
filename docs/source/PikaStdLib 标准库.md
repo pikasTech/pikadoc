@@ -54,18 +54,18 @@ SysObj 用于提供内置函数，main.py 中执行的脚本是由根对象执�
 ```python
 def type(arg: any):
 ```
-	打印变量的类型
+打印变量的类型
 ```python
 def remove(argPath: str):
 ```
-	删除变量/对象，在删除时使用字符串，例如 `remove('a')`。
+删除变量/对象，在删除时使用字符串，例如 `remove('a')`。
 ```python
 def int(arg: any) -> int:
 def float(arg: any) -> float:
 def str(arg: any) -> str:
 ```
-	用于类型转换
+用于类型转换
 ```python
 def print(arg:any):
 ```
-	继承自 BaseObj，提供打印输出。暂不支持格式化输出。
+继承自 BaseObj，提供打印输出。暂不支持格式化输出。
