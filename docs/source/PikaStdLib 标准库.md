@@ -15,8 +15,7 @@ PikaStdLib==v1.3.5
 #main.py
 import PikaStdLib
 ```
-## 类
-### class MemChecker()
+## class MemChecker()
 MemChecker 提供 PikaScript 的内存监控功能。可以用来查看内存占用，以及检查内存泄漏。
 ```python
 def max():
@@ -50,7 +49,7 @@ mem.resetMax()
 print('mem used max:' + str(mem.getMax()))
 print('mem used now:' + str(mem.getNow()))
 ```
-### class SysObj()
+## class SysObj()
 SysObj 用于提供内置函数，main.py 中执行的脚本是由根对象执行的，而根对象由 SysObj 类创建，因此 SysObj 类中的方法就是内置函数。
 ```python
 def type(arg: any):
