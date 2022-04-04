@@ -9,10 +9,10 @@ PikaStdLib==v1.3.5
 ```
 
 2. 运行 pikaPackage.exe
-## 类
-### class Debuger():
+
+## class Debuger():
 Debuger 类提供了调试器功能，由 Debuger 类创建对象，即可创建一个调试器。
-#### Debuger 类的方法
+### Debuger 类的方法
 ```c
 class Debuger(TinyObj):
     def __init__():
