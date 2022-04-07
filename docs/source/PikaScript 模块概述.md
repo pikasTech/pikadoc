@@ -14,17 +14,17 @@
 from PikaObj import *
 
 class LED(TinyObj):
-    def on():
+    def on(self):
         pass
-    def off():
+    def off(self):
         pass
 
 class Uart(TinyObj):
-    def send(data:str):
+    def send(self, data:str):
         pass
-    def setName(name:str):
+    def setName(self, name:str):
         pass
-    def printName():
+    def printName(self):
         pass
 ```
 
@@ -32,13 +32,13 @@ class Uart(TinyObj):
 可以看到，Device.py 中使用 pyhon 标准语法定义了两个类，分别是 `LED` 类和 `Uart` 类，这两个类都继承自`TinyObj`。
 
 
-LED类中定义了两个方法，分别是`on()`方法和`off()`方法，而`Uart`类则定义了`send(data:str)`方法、`setName(name:str)`方法和`printName()`方法。
+LED类中定义了两个方法，分别是 `on()` 方法和 `off()` 方法，而`Uart`类则定义了 `send(data:str)` 方法、 `setName(name:str)` 方法和 `printName()` 方法。
 
 
-可以看到，这些方法都有一个特点，与其说这是方法的 **定义**，不如说是方法的 **声明**，因为所有的方法实现都pass掉了，都没有写实现。而且方法的入口参数都是带有 **类型声明** 的。比如`data:str`就表示一个`data`参数，参数类型为`str`即字符串类型。
+可以看到，这些方法都有一个特点，与其说这是方法的 **定义**，不如说是方法的 **声明**（注解），因为所有的方法实现都pass 掉了，都没有写实现。而且方法的入口参数都是带有 **类型声明** 的。比如`data:str`就表示一个`data` 参数，参数类型为 `str` 即字符串类型。
 
 
-这是因为这个模块的模块实现是由C语言编写的，也就是说，PikaScript的所有模块，都是使用python语法编写声明，而使用C语言编写实现。PikaScript的模块开发是一种 **面向接口** 编程的 **混合编程** 技术。
+这是因为这个模块的模块实现是由 C 语言编写的，也就是说，PikaScript的所有模块，都是使用 python 语法编写声明，而使用 C 语言编写实现。PikaScript 的模块开发是一种 **面向接口** 编程的 **混合编程** 技术。
 
 
 然而在使用已有的模块时，是不需要了解模块实现的，只需要了解模块接口，即可使用这个模块。

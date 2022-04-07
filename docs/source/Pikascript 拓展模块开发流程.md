@@ -47,24 +47,26 @@ def set(argPath: str, val: any):
 ```python
 # Math.py
 class Adder(TinyObj):
-    def byInt(a:int, b:int)->int:
+    def byInt(self, a:int, b:int)->int:
         pass
-    def byFloat(a:float, b:float)->float:
+    def byFloat(self, a:float, b:float)->float:
         pass
 ```
-上面的一段代码中我们定义了`Adder`类，并添加了两个方法的声明，`byInt(a:int,b:int)->int`表示方法名为byInt,输入参数为`a`和`b`，`a`和`b`的类型都是`int`型，而返回值也是`int`型，返回值由`->int`来确定，这都是python的标准语法，是带类型声明的写法。
+上面的一段代码中我们定义了`Adder`类，并添加了两个方法的声明，```byInt(self, a:int, b:int)->int``` 表示方法名为 ```byInt ```,输入参数为 `a` 和 `b` ， `a` 和 `b` 的类型都是 `int` 型，而返回值也是 `int` 型，返回值由 `->int` 来确定，这都是 python 的标准语法，是带类型声明的写法。
+
+python 中类的方法的第一个参数都是 `self` 这是 python 的语法所要求的。
 
 
-我们再向math.py里面添加一个Multiplier类，用来实现乘法，Multiplier的写法如下所示，Multiplier类同样从`TinyObj`基类中继承：
+我们再向 math.py 里面添加一个 Multiplier 类，用来实现乘法，Multiplier 的写法如下所示，Multiplier 类同样从 `TinyObj` 基类中继承：
 ```python
 # Math.py
 class Multiplier(TinyObj):
-    def byInt(a:int, b:int)->int:
+    def byInt(self, a:int, b:int)->int:
         pass
-    def byFloat(a:float, b:float)->float:
+    def byFloat(self, a:float, b:float)->float:
         pass
 ```
-到此类接口就编写完成了。我们在main.py中引入Math模块，这样Pika预编译器就会去编译Math模块了。
+到此类接口就编写完成了。我们在 main.py 中引入 Math 模块，这样 Pika 预编译器就会去预编译 Math 模块了。
 
 
 ```python
@@ -162,7 +164,7 @@ int Math_Adder_byInt(PikaObj *self, int a, int b);
 ```
 
 
-然后我们直接在Math_Adder.c和Math_Multipler.c里面去实现这四个函数就ok了。
+然后我们直接在 Math_Adder.c 和 Math_Multipler.c 里面去实现这四个函数就 ok 了。
 
 
 ```c

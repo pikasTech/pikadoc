@@ -34,20 +34,141 @@ PikaStdDevice 是一个抽象的设备驱动模块，定义了所有的用户 AP
 
 以 GPIO 模块为例，以下是 PikaStdDevice 定义的用户 API
 
-![](assets/1638495381064-51409a36-812a-48ea-a6ae-23b3c177582d.webp)
+``` python
+class GPIO(TinyObj):
+    def __init__(self):
+        pass
+
+    def init(self):
+        pass
+
+    def setPin(self, pinName: str):
+        pass
+
+    def setId(self, id: int):
+        pass
+
+    def getId(self) -> int:
+        pass
+
+    def getPin(self) -> str:
+        pass
+
+    def setMode(self, mode: str):
+        pass
+
+    def getMode(self) -> str:
+        pass
+
+    def setPull(self, pull: str):
+        pass
+
+    def enable(self):
+        pass
+
+    def disable(self):
+        pass
+
+    def high(self):
+        pass
+
+    def low(self):
+        pass
+
+    def read(self) -> int:
+        pass
+
+```
+
+
 
 以下是 PikaStdDevice 需要重写的平台驱动
 
-![](assets/1638495381214-1189c3eb-28ef-408e-a21e-e6bbc594d6fb.webp)
+``` python
+    # need be overrid
+    def platformHigh(self):
+        pass
+
+    # need override
+    def platformLow(self):
+        pass
+
+    # need override
+    def platformEnable(self):
+        pass
+
+    # need override
+    def platformDisable(self):
+        pass
+
+    # need override
+    def platformSetMode(self):
+        pass
+
+    # need override
+    def platformRead(self):
+        pass
+```
 
 而我们要制作的 CH32V103 的 GPIO 模块，就从标准驱动模块中继承。
 
-![](assets/1638495381703-8e227dcc-97d7-4069-8754-4c118deea3fb.webp)
+``` python
+class GPIO(PikaStdDevice.GPIO):
+    # override
+    def platformHigh(self):
+        pass
+
+    # override
+    def platformLow(self):
+        pass
+
+    # override
+    def platformEnable(self):
+        pass
+
+    # override
+    def platformDisable(self):
+        pass
+
+    # override
+    def platformSetMode(self):
+        pass
+
+    # override
+    def platformRead(self):
+        pass
+```
 
 通过这个方法，我们就可以让 STM32 的驱动模块、CH32 的驱动模块、ESP32 的驱动模块有着一模一样的用户 API。用户只要熟悉了一套 API，就可以轻松使用支持了 PikaScript 标准驱动模块的所有平台。
 下面是部分被注册在驱动模块里面 C 原生驱动函数
 
-![](assets/1638495381557-21aaad62-bd63-40bc-b818-257e16992780.webp)
+``` C
+void CH32V103_GPIO_platformEnable(PikaObj *self){
+    char *pin = obj_getStr(self, "pin");
+    char *mode = obj_getStr(self, "mode");
+    GPIO_TypeDef *GPIO_group = get_GPIO_group(pin);
+    uint16_t GPIO_pin = get_GPIO_pin(pin);
+    GPIOMode_TypeDef GPIO_mode = get_GPIO_mode(mode);
+    uint32_t GPIO_clock_group = get_GPIO_Clock_group(pin);
+
+    GPIO_InitTypeDef  GPIO_InitStructure;
+    RCC_APB2PeriphClockCmd(GPIO_clock_group,ENABLE);
+    GPIO_InitStructure.GPIO_Pin = GPIO_pin;
+    GPIO_InitStructure.GPIO_Mode = GPIO_mode;
+    GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
+    GPIO_Init(GPIO_group, &GPIO_InitStructure);
+}
+
+void CH32V103_GPIO_platformHigh(PikaObj *self){
+    char *pin = obj_getStr(self, "pin");
+    GPIO_TypeDef *GPIO_group = get_GPIO_group(pin);
+    uint16_t GPIO_pin = get_GPIO_pin(pin);
+
+    GPIO_WriteBit(GPIO_group, GPIO_pin, Bit_SET);
+}
+```
+
+
 
 
 

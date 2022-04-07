@@ -5,7 +5,7 @@ PikaDebug 调试器模块提供了断点调试等功能。
 
 1. 在 requestment.txt 中加入 PikaStdLib 的依赖，PikaStdLib 的版本号应当与内核的版本号相同。
 ```
-PikaStdLib==v1.3.5
+PikaStdLib==v1.6.1
 ```
 
 2. 运行 pikaPackage.exe
@@ -15,10 +15,10 @@ Debuger 类提供了调试器功能，由 Debuger 类创建对象，即可创建
 ### Debuger 类的方法
 ```c
 class Debuger(TinyObj):
-    def __init__():
+    def __init__(self):
         pass
 
-    def set_trace():
+    def set_trace(self):
         pass
     
 ```
@@ -43,6 +43,7 @@ n：（next）继续运行至下一个断点。
 q：（quit）退出调试模式，并继续运行。
 p：（print) 打印变量，`p i`表示打印变量 `i`。
 交互式运行：直接执行交互式命令，如`print(i)`，`i = 2`等。
+
 ```bash
 # 调试记录示例
 i :1

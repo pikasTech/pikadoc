@@ -58,17 +58,15 @@ requestment.txt使用与通用python一样的模块描述语法，直接运行pi
 
 以stm32g030的bsp中的requestment.txt为例，被拉取的模块有：
 
-1. 内核： pikascript-core
-1. 标准库： PikaStdLib
-1. 启动器：STM32G030Booter
-1. 外设模块： STM32G0 PikaPiZero PikaStdDevice
+- 内核： pikascript-core
+- 标准库： PikaStdLib
+- 外设模块： STM32G0 PikaPiZero PikaStdDevice
 ```
-pikascript-core==v1.2.6
-PikaStdLib==v1.2.1
-PikaStdDevice==v1.4.2
-PikaPiZero==v1.1.2
-STM32G030Booter==v1.2.5
-STM32G0==v1.0.2
+pikascript-core==v1.6.1
+PikaStdLib==v1.6.1
+PikaStdDevice==v1.6.0
+STM32G0==v1.2.0
+PikaPiZero==v1.1.3
 ```
 拉取后的模块需要预编译，直接运行rust-msc-latest-win10.exe即可。
 ## 注意事项

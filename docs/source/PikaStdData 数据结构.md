@@ -5,7 +5,7 @@ PikaStdData 数据结构库提供了 List （列表），Dict（字典）数据�
 
 1. 在 requestment.txt 中加入 PikaStdLib 的依赖，PikaStdLib 的版本号应当与内核的版本号相同。
 ```
-PikaStdLib==v1.3.5
+PikaStdLib==v1.6.1
 ```
 
 2. 运行 pikaPackage.exe
@@ -25,19 +25,19 @@ list = PikaStdData.List()
 ### List 类的方法
 ```python
     # add an arg after the end of list
-    def append(arg: any):
+    def append(self, arg: any):
         pass
 
     # get an arg by the index
-    def get(i: int) -> any:
+    def get(self, i: int) -> any:
         pass
 
     # set an arg by the index
-    def set(i: int, arg: any):
+    def set(self, i: int, arg: any):
         pass
 
     # get the length of list
-    def len() -> int:
+    def len(self) -> int:
         pass
 ```
 注意，`set()` 方法的索引不能够超出 List 的长度，如果要添加列表的成员，需要使用 `append()`方法。
@@ -66,15 +66,15 @@ dict = PikaStdData.Dict()
 ### Dict 类的方法
 ```python
     # get an arg by the key
-    def get(key: str) -> any:
+    def get(self, key: str) -> any:
         pass
 
     # set an arg by the key
-    def set(key: str, arg: any):
+    def set(self, key: str, arg: any):
         pass
 
     # remove an arg by the key
-    def remove(key: str):
+    def remove(self, key: str):
         pass
 ```
 ### 使用 '[]' 中括号索引字典
@@ -109,9 +109,9 @@ ByteArray 类继承自 List 类，可以使用 List 类的方法。
 ### ByteArray 类的方法
 
 ``` python
-# convert a string to ByteArray
-def fromString(s:str):
-    pass
+    # convert a string to ByteArray
+    def fromString(self, s:str):
+        pass
 ```
 用例:
 ``` python

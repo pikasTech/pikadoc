@@ -5,7 +5,7 @@ PikaStdLib 是 PikaScript 的自带内置库，是必须安装的库，包含了
 
 1. 在 requestment.txt 中加入 PikaStdLib 的依赖，PikaStdLib 的版本号应当与内核的版本号相同。
 ```
-PikaStdLib==v1.3.5
+PikaStdLib==v1.6.1
 ```
 
 2. 运行 pikaPackage.exe
@@ -18,26 +18,27 @@ import PikaStdLib
 ## class MemChecker()
 MemChecker 提供 PikaScript 的内存监控功能。可以用来查看内存占用，以及检查内存泄漏。
 ```python
-def max():
+def max(self):
 ```
 打印最大的内存占用值。
 ```python
-def now():
+def now(self):
 ```
 打印当前的内存占用值。
 ```python
-def getMax()->float:
+def getMax(self)->float:
 ```
 返回最大的内存占用值
 ```python
-def getNow()->float
+def getNow(self)->float
 ```
 返回当前的内存占用值。
 ```python
-def resetMax()
+def resetMax(self)
 ```
 重置内存最大占用值
 **用例：**
+
 ```python
 # main.py
 import PikaStdLib

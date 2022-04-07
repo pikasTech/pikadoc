@@ -26,3 +26,17 @@ a. 在每次编译前运行
 
    1. 在执行包管理器或者预编译器后，需要添加**pikascript-lib,pikascript-core,pikascript-api**下的**全部（包括子文件夹）**的.c文件和include路径。
    1. 重置PikaScript工程文件：删除pikascript-lib，pikascript-core，pikascript-api后，重新运行pikaPackage.exe和rust-msc-latest-win10.exe。
+
+## 示例
+
+为 keil 编写的自动预编译脚本 pikaBeforeBuild-keil.bat ：
+
+```bash
+cd ../pikascript
+
+if not exist pikascript-core (
+    pikaPackage.exe
+)
+rust-msc-latest-win10.exe
+```
+
