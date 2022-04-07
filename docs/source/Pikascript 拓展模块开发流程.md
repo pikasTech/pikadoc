@@ -31,19 +31,16 @@ def print(val: any):
 def set(argPath: str, val: any):
     pass
 ```
-可以看到里面有`TinyObj`和`BaseObj`两个类，这两个类是由PikaScript内核实现的基本类，TinyObj是没有任何功能的最基本的类，内存占用最少，`BaseObj`和`TinyObj`相似，但是`BaseObj`可以挂载子对象。
+可以看到里面有 `TinyObj` 和 `BaseObj` 两个类，这两个类是由 PikaScript 内核实现的基本类，TinyObj 是没有任何功能的最基本的类，内存占用最少。
 
-
-`print(val: any)`表示输入参数为泛型的函数，`set(argPath:str, val:any)`也是泛型函数，这两个函数由内核实现。
-
+`print(val: any)` 表示输入参数为泛型的函数，`set(argPath:str, val:any)` 也是泛型函数，这两个函数由内核实现。
 
 ### 编写类接口
 
+现在我们可以在 Math.py 里面新建类了，比如我们要新建一个 `Adder` 类来实现相关的加法运算，我们就可以在 Math.py 里面添加 Adder 类，为了节省内存，Adder 类从 TinyObj 基类中继承。
 
-现在我们可以在Math.py里面新建类了，比如我们要新建一个`Adder`类来实现相关的加法运算，我们就可以在Math.py里面添加Adder类，为了节省内存，Adder类从TinyObj基类中继承。
+然后我们希望 Adder 可以为整形、浮点型数据提供加法运算，那么就可以添加 byInt 方法和 byFloat 方法。
 
-
-然后我们希望Adder可以为整形、浮点型数据提供加法运算，那么就可以添加byInt方法和byFloat方法。
 ```python
 # Math.py
 class Adder(TinyObj):
@@ -52,12 +49,13 @@ class Adder(TinyObj):
     def byFloat(self, a:float, b:float)->float:
         pass
 ```
+
 上面的一段代码中我们定义了`Adder`类，并添加了两个方法的声明，```byInt(self, a:int, b:int)->int``` 表示方法名为 ```byInt ```,输入参数为 `a` 和 `b` ， `a` 和 `b` 的类型都是 `int` 型，而返回值也是 `int` 型，返回值由 `->int` 来确定，这都是 python 的标准语法，是带类型声明的写法。
 
 python 中类的方法的第一个参数都是 `self` 这是 python 的语法所要求的。
 
-
 我们再向 math.py 里面添加一个 Multiplier 类，用来实现乘法，Multiplier 的写法如下所示，Multiplier 类同样从 `TinyObj` 基类中继承：
+
 ```python
 # Math.py
 class Multiplier(TinyObj):
@@ -66,8 +64,8 @@ class Multiplier(TinyObj):
     def byFloat(self, a:float, b:float)->float:
         pass
 ```
-到此类接口就编写完成了。我们在 main.py 中引入 Math 模块，这样 Pika 预编译器就会去预编译 Math 模块了。
 
+到此类接口就编写完成了。我们在 main.py 中引入 Math 模块，这样 Pika 预编译器就会去预编译 Math 模块了。
 
 ```python
 # main.py
