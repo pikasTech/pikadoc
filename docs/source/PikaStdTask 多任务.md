@@ -56,12 +56,12 @@ class Task(TinyObj):
 ### 使用方法：
 
 1. 使用 `call_xxx()` 方法指定调用的方式，并将要执行的函数注册进 task 对象中。
-1. 使用 `run_xxx()` 方法指定任务循环执行的方式，并执行 `task` 对象中的所有函数。
-1. 和时间相关的功能，如 `call_period_ms()` ，`run_until_ms()`需要提供系统时钟，提供的方式为新建一个继承自 `PikaStdTask`的类，然后重写`platformGetTick()`方法。
+2. 使用 `run_xxx()` 方法指定任务循环执行的方式，并执行 `task` 对象中的所有函数。
+3. 和时间相关的功能，如 `call_period_ms()` ，`run_until_ms()`需要提供系统时钟，提供的方式为新建一个继承自 `PikaStdTask`的类，然后重写`platformGetTick()`方法。
 ### 注意：
 
 1. 所有被注册的函数应当是 **非阻塞** 的，否则会导致整个任务循环堵死。
-1. 任务循环不是实时的。
+2. 任务循环不是实时的。
 ### 用例：
 
 1. 新建继承自 `PikaStdTask`的类。
