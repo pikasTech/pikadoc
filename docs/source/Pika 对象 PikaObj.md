@@ -24,27 +24,53 @@ PikaObj 内部维护了一个参数表，参数表中包含了属性信息、类
 ## 对象属性API
 这一部分 API 提供了对 Python 对象属性的访问。
 ### 基本类型的属性
-PikaObj 支持**整形、浮点型、指针、字串**四种基本类型的属性。使用set 和 get 方法即可读写一个对象的属性。
-​
+PikaObj 支持**整形、浮点型、字串、指针、内存块**五种基本类型的属性。使用set 和 get 方法即可读写一个对象的属性。
+其中，整形，浮点型和字串和 python 中的 int， float，string 一一对应，而指针型和内存块类型则没有对应。
+
+对应关系表：
+
+| PikaObj 属性类型 |                         读写 API                         | 对应 Python 类型 |      |
+| :--------------: | :------------------------------------------------------: | :--------------: | ---- |
+|       int        |                obj_setInt() obj_getInt()                 |       int        |      |
+|      float       |              obj_setFloat() obj_getFloat()               |      float       |      |
+|       str        |                obj_setStr() obj_getStr()                 |      string      |      |
+|     pointer      |                obj_setPtr() obj_getPtr()                 |        -         |      |
+|       mem        | obj_setMem() obj_getMem() obj_getMemSize() obj_loadMem() |        -         |      |
 
 PikaObj 的对象是**动态**的，因此可以随时为对象新增新的属性（静态对象的属性在构造时确定）。
-​
 
 基本类型属性的 API 有如下这些：
 ```c
 /* set API */
+
 int32_t obj_setInt(PikaObj* self, char* argPath, int64_t val);
+
 int32_t obj_setPtr(PikaObj* self, char* argPath, void* pointer);
+
 int32_t obj_setFloat(PikaObj* self, char* argPath, float value);
+
 int32_t obj_setStr(PikaObj* self, char* argPath, char* str);
+//create a memory buff and copy data from 'src'
+int32_t obj_setMem(PikaObj* self, char* argPath, void* src, size_t size);
+
 /* get API */
+
 void* obj_getPtr(PikaObj* self, char* argPath);
+
 float obj_getFloat(PikaObj* self, char* argPath);
+
 char* obj_getStr(PikaObj* self, char* argPath);
+
 int64_t obj_getInt(PikaObj* self, char* argPath);
+
+// get pointer of memory buff
+void* obj_getMem(PikaObj* self, char* argPath); 
+// get size of memory buff
+size_t obj_getMemSize(PikaObj* self, char* argPath); 
+// copy the data from memory buff to 'out_buff', return the size of memory buff
+size_t obj_loadMem(PikaObj* self, char* argPath, void* out_buff);
 ```
 基本类型属性的命名方式为 obj_set[Type] 和 obj_get[Type]。
-​
 
 
 1. 第一个输入参数为要操作的对象指针。
@@ -67,7 +93,6 @@ int32_t obj_setArg(PikaObj* self, char* argPath, Arg* arg);
 Arg* obj_getArg(PikaObj* self, char* argPath);
 ```
 泛型属性在使用时需要转换为基本类型。
-​
 
 使用以下 API 可以判断泛型属性的当前类型。
 ```c
@@ -79,6 +104,8 @@ int64_t arg_getInt(Arg* self);
 float arg_getFloat(Arg* self);
 void* arg_getPtr(Arg* self);
 char* arg_getStr(Arg* self);
+void* arg_getMem(Arg* self);
+size_t arg_getMemSize(Arg* self);
 ```
 ### 属性管理
 
