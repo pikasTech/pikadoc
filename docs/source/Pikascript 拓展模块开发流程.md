@@ -2,8 +2,6 @@
 
 我们依然以keil的仿真工程为例，如果还没有获得仿真工程，请参考[1.三分钟快速上手](https://pikadoc.readthedocs.io/zh/latest/Keil%20%E4%BB%BF%E7%9C%9F%E5%B7%A5%E7%A8%8B.html)
 
-
-
 ### 新建模块接口
 
 
@@ -50,7 +48,7 @@ class Adder(TinyObj):
         pass
 ```
 
-上面的一段代码中我们定义了`Adder`类，并添加了两个方法的声明，```byInt(self, a:int, b:int)->int``` 表示方法名为 ```byInt ```,输入参数为 `a` 和 `b` ， `a` 和 `b` 的类型都是 `int` 型，而返回值也是 `int` 型，返回值由 `->int` 来确定，这都是 python 的标准语法，是带类型声明的写法。
+上面的一段代码中我们定义了`Adder`类，并添加了两个方法的声明，```byInt(self, a:int, b:int)->int``` 表示方法名为 ```byInt ```,输入参数为 `a` 和 `b` ， `a` 和 `b` 的类型都是 `int` 型，而返回值也是 `int` 型，返回值由 `->int` 来确定，这都是 python 的标准语法，是带类型注解的写法。
 
 python 中类的方法的第一个参数都是 `self` 这是 python 的语法所要求的。
 
@@ -73,7 +71,9 @@ import Math
 ```
 
 双击运行pika预编译器。
+
 ![](assets/131119247-ae25276e-f7c9-49ef-81e1-dbddcaffdf6c.png)
+
 打开pikascript-api文件夹可以发现，我们新编写的模块接口已经可以被编译出来了。
 
 
@@ -238,6 +238,21 @@ print(res4)
 
 
 这说明我们编写的模块工作正常了。
+
+### 可用的类型注解
+
+下面的表格列出了 PikaScript 支持的所有类型声明,以及它们与 C 语言的原生类型的对应关系。
+
+| Python 类型注解 | C  原生类型 |      |
+| --------------- | ----------- | ---- |
+| int             | int         |      |
+| float           | float       |      |
+| str             | char*       |      |
+| bytes           | uint8_t*    |      |
+| pointer         | void*       |      |
+| any             | Arg*        |      |
+| 任意 class      | PikaObj *   |      |
+
 ### 发布模块
 
 
