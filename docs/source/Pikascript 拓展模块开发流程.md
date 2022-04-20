@@ -243,15 +243,15 @@ print(res4)
 
 下面的表格列出了 PikaScript 支持的所有类型声明,以及它们与 C 语言的原生类型的对应关系。
 
-| Python 类型注解 | C  原生类型 |      |
-| --------------- | ----------- | ---- |
-| int             | int         |      |
-| float           | float       |      |
-| str             | char*       |      |
-| bytes           | uint8_t*    |      |
-| pointer         | void*       |      |
-| any             | Arg*        |      |
-| 任意 class      | PikaObj *   |      |
+| Python 类型注解 | C  原生类型 | 说明 |
+| --------------- | ----------- | -- |
+| int             | int         | python 基本类型 |
+| float           | float       | python 基本类型 |
+| str             | char *       | python 基本类型 |
+| bytes           | uint8_t *    | python 基本类型 |
+| pointer         | void *       | PikaScript 特有的类型注解 |
+| any             | Arg*        |PikaScript 提供的泛型容器|
+| 任意 class      | PikaObj *   |PikaScript 提供的对象容器|
 
 ### 发布模块
 
