@@ -312,7 +312,7 @@ main.py 执行完毕后，就会进入交互式运行，因此只要取消 main.
   ![](assets/1641957159517-c3adbb12-118a-4c9f-9662-c1801df59276.png)
 ## 固件升级
 Pika派的固件是滚动更新的，会不断推出新的固件版本，不断提供新的功能，而有一些新的功能只有升级固件才能玩到，所以学会升级固件也是很重要的~
-### 自己编译固件
+### 编译固件
 固件是一个 Keil 工程，编译非常简单。
 下载固件工程：
 进入 pikascript 官网 [http://pikascript.com](http://pikascript.com)
@@ -325,38 +325,6 @@ Plus 版使用  stm32g070 平台。
 编译时需要使用不低于 V5.36 的 Keil，需要激活。
 ![](assets/1642145123916-644fdd52-a1d3-41be-bd74-8a9e05386397.png)
 
-编译得到的 .bin 在 MDK/stm32g030c8/stm32g030c8.bin 。
-
-### 直接下载编译好的固件
-如果你想用现成的固件也可以直接下载编译好的~
-![](assets/210126_d14c9754_5521445.png)
-
-点击下载就可以获得最新的固件了~
-![](assets/210155_5248a47c_5521445.png)
-
-### 串口Bootloader升级
-升级固件也是使用串口就可以了，在升级时，需要用前面到自己编译的固件或者直接下载的 .bin 固件。
-目前支持串口 Bootloader 升级的版本有：
-
-- Lite 青春版
-- Pro 专业版
-
-下面需要让 pika 派进入升级模式，我们按住开发板上面的 SW0 键，同时按下 RST 键，就可以进入升级模式了。
-
-![](assets/210422_3acb9ed0_5521445.png)
-
-在升级模式下，我们可以看到串口的提示信息
-
-![](assets/210526_b7b28342_5521445.png)
-
-然后我们用串口助手选择刚才下载的 stm32g030c8.bin 文件，通过串口发送。
-识别到固件后会显示 Reciving....
-
-![](assets/210611_2fd707d0_5521445.png)
-
-发送完毕后再按一下 RST 键重启，就完成升级了！
-如果能够正常启动，那么就说明升级成功。
-
 ### 使用SWD升级
 Lite 版自行连接 J-Link \ DAP-Link \ ST-Link 即可SWD升级。
 Pro 版和 Plus 版板载 DAP-Link，直接连接USB即可SWD升级。
@@ -367,34 +335,14 @@ Plus 版使用  [bsp/stm32g070](https://gitee.com/Lyon1998/pikascript/tree/maste
 
 ### 使用固件下载Python程序
 固件在编译时会加载 pikascript/main.py 作为默认 Python 程序。
-在下载固件前，按 SW0 + RST 擦除 flash 后，就会从固件 Python 程序启动。
-## ARM-2D GUI引擎
-pika 派支持运行 ARM-2D GUI 引擎
-
-![](assets/1642347518780-02431025-393e-41b0-bfea-e3f932a86b54.png)
-
-使用方法：
-
-1. 获取 bsp/stm32g030 工程。
-1. 使用 examples/ARM-2D/PikaPiZero 中的工程文件，main.py 和 requestment.txt 替换。
-
-![](assets/1642347593663-fae37327-369e-4480-9c3e-8d9440c6870d.png)
-
-3. 按住开发板上面的 SW0 键，同时按下 RST 键，擦除 flash。
-3. 重新运行包管理器，预编译，编译工程，使用 SWD/Bootloader 刷入工程。
-
-
 
 ## 常见问题
-1 按 sw0 + rst 进不了升级模式：
-第一批发货的板子没有刷 bootloader，需要手动刷一次，使用 jlink / stlink / DAPlink 等，刷入 pikascript/bsp/pikapizero/bootloader 即可
-2 进不了 bootloader / 疑似卡死无法运行：
-检查串口助手，不能使用 dtr / rts 控制，推荐使用正点原子的 xcom 助手。
-3 下载 python 脚本卡死：
+1 下载 python 脚本卡死：
 第一次下载 python 程序时，不要下载 LCD 程序，先下载一个 gpio 程序，再下载 LCD 程序即可。
 其他情况下下载卡死，重启重新下载即可，如果还不行就重刷固件再下载。
-4 工程编译报错，缺少文件：
+2 工程编译报错，缺少文件：
 工程需要远程拉取模块和预编译，需要先运行 pikascript/pikaPackage.exe 和 pikascript/rust-msc-win10-latest.exe 再编译工程。
+
 ## 原理图
 ### Lite青春版
 ![](assets/1641204367325-7c0751ac-7fe8-4029-a4c2-ee6ebb1e2733.png)
