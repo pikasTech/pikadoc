@@ -64,7 +64,7 @@ class Task(TinyObj):
 2. 任务循环不是实时的。
 ### 用例：
 
-1. 新建继承自 `PikaStdTask`的类。
+- 新建继承自 `PikaStdTask`的类。
 ```python
 # STM32G0.py
 class Task(PikaStdTask.Task):
@@ -73,7 +73,7 @@ class Task(PikaStdTask.Task):
         pass
 ```
 
-2. 重写`platformGetTick()`方法。
+- 重写`platformGetTick()`方法。
 ```c
 /* STM32G0_Task.c */
 
@@ -82,7 +82,7 @@ void STM32G0_Task_platformGetTick(PikaObj* self) {
 }
 ```
 
-3. python 用例
+- python 用例
 ```python
 import STM32G0
 import PikaPiZero
