@@ -337,11 +337,7 @@ Plus 版使用  [bsp/stm32g070](https://gitee.com/Lyon1998/pikascript/tree/maste
 固件在编译时会加载 pikascript/main.py 作为默认 Python 程序。
 
 ## 常见问题
-1 下载 python 脚本卡死：
-第一次下载 python 程序时，不要下载 LCD 程序，先下载一个 gpio 程序，再下载 LCD 程序即可。
-其他情况下下载卡死，重启重新下载即可，如果还不行就重刷固件再下载。
-
-2 工程编译报错，缺少文件：
+1 工程编译报错，缺少文件：
 工程需要远程拉取模块和预编译，需要先运行 pikascript/pikaPackage.exe 和 pikascript/rust-msc-win10-latest.exe 再编译工程。
 
 ## 原理图
