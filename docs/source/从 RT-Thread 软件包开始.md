@@ -49,7 +49,7 @@ PikaScript 软件包支持**全部的 RT-Thread BSP** 。
 
 ![](assets/1639184596044-a85902ac-601c-49b6-b2e5-3d20bd55ce81.png)
 
-   3设置好后会自动启动 PikaScript ，运行 main.py 脚本，然后回到 msh
+   设置好后会自动启动 PikaScript ，运行 main.py 脚本，然后回到 msh
 
 在 msh 输入 **pika** 进入交互式运行。
 
