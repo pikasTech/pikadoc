@@ -26,41 +26,39 @@
 
 1. 首先是BSP文件夹中除了PikaScript文件夹以外的部分，这一部分是真正的BSP，包含了厂家提供的基本外设库、CMSIS等一些平台上的通用库，只需要对厂家的例程进行整理就可以得到。
 
-
-
-
 2. 上面的一部分是PikaScript的启动器，包含main.c入口文件，pika_config.c配置文件，还有*.s汇编启动文件。启动器负责支持printf，堆栈设置，PikaScript的启动，以及交互式运行、串口下载Python等一些功能。
 
 **pika_config.c是用于支持串口下载Python等一些高级功能的，没有这个文件PikaScript依然可以运行。**
-​
 
 
 3. 再上面就是PikaScript的主要部分了，分为内核和模块两个部分，内核就是pikascript/src中的文件，选择一个版本全部添加编译即可，**不需要任何的修改。**
 
 
-
-4. **​**模块部分是可以自己开发，或者从仓库中拉取的，**PikaStdLib标准库模块是必选的。**其他模块是可选的。
+4. 模块部分是可以自己开发，或者从仓库中拉取的，**PikaStdLib标准库模块是必选的。** 其他模块是可选的。
 
 关于如何使用模块以及如何制作模块，请参考**模块开发**部分，关于如何贡献模块到PikaScript参考，请参考**如何贡献PikaScript模块**部分。
-​
 
 
 5. 最上层是PikaScript工程能够支持的Python脚本，Python脚本可以直接解释运行，加载脚本的方式有多种，包括**预编译进固件、交互式运行、串口下载Python脚本**等，预编译进固件可以参考**模块开发**的部分，交互式运行和串口下载可以参考**新平台移植**的部分。
 
 **只有在main.py中import的模块会被编译进固件，**因此main.py还可以起到**剪裁模块**的作用。
+
 ## 模块管理
+
 **启动器、内核和模块都可以使用包管理器进行管理。**
-因此BSP中的PikaScript文件夹中只包含包管理器**pikaPackage.exe**本身，**requestment.txt**模块描述文件和**main.py**示例脚本三个文件。
-​
 
-requestment.txt使用与通用python一样的模块描述语法，直接运行pikaPackage.exe就可以识别当前文件夹下的requestment.txt然后拉取相应的模块。
-​
+因此BSP中的PikaScript文件夹中只包含 **requestment.txt** 模块描述文件和 **main.py** 示例脚本。
 
-以stm32g030的bsp中的requestment.txt为例，被拉取的模块有：
+requestment.txt使用与通用 pip 一样的模块描述语法，直接运行 pikaPackage.exe 就可以识别当前文件夹下的 requestment.txt 然后拉取相应的模块。
+
+pikaPackage.exe 可以从包管理器相关文档中的链接下载。
+
+以 stm32g030的bsp 中的 requestment.txt 为例，被拉取的模块有：
 
 - 内核： pikascript-core
 - 标准库： PikaStdLib
 - 外设模块： STM32G0 PikaPiZero PikaStdDevice
+
 ```
 pikascript-core==v1.6.1
 PikaStdLib==v1.6.1
@@ -68,7 +66,8 @@ PikaStdDevice==v1.6.0
 STM32G0==v1.2.0
 PikaPiZero==v1.1.3
 ```
-拉取后的模块需要预编译，直接运行rust-msc-latest-win10.exe即可。
+
+拉取后的模块需要预编译，直接运行 rust-msc-latest-win10.exe 即可。
 ## 注意事项
 
 1. Keil版本**强烈建议**不低于**5.36**
