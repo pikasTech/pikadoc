@@ -157,17 +157,17 @@ import PikaStdLib
 import machine
 
 time = machine.Time()
-adc1 = machine.ADC() #新建ADC对象
+adc1 = machine.ADC() #create an ADC objcet
 
-adc1.init() #初始化ADC对象
-adc1.setPin('PA1') #设置管脚
-adc1.enable() #启动硬件
+adc1.init() # init the ADC object
+adc1.setPin('PA1') # config Pin
+adc1.enable() # launch the hardware
 
 while True:
-    val = adc1.read() #读一次ADC的值，存到val变量里
-    print('adc1 value:') #打印读到的内容
+    val = adc1.read() # read the value of ADC and store to 'val'
+    print('adc1 value:') # print out the value
     print(val)
-    time.sleep_ms(500) #等待0.5s
+    time.sleep_ms(500) # wait 0.5s
     
 ```
 ### UART
@@ -177,17 +177,17 @@ import PikaStdLib
 import machine
 
 time = machine.Time()
-uart = machine.UART() #新建串口对象
+uart = machine.UART() #create a uart object
 uart.init()
-uart.setId(1) #设置串口号，使用串口1
-uart.setBaudRate(115200) #设置波特率
+uart.setId(1) # set number of uart
+uart.setBaudRate(115200) # set baudrate
 uart.enable() #启动硬件
 
 while True:
     time.sleep_ms(500)
-    readBuff = uart.read(2) #读取两个字符
+    readBuff = uart.read(2) # read two chars
     print('read 2 char:')
-    print(readBuff) #打印出来
+    print(readBuff) # print out the char
 
 ```
 ### PWM
@@ -198,16 +198,16 @@ import machine
 
 time = machine.Time()
 pwm = machine.PWM()
-pwm.setPin('PA8') #设置PWM输出管脚
-pwm.setFrequency(2000) #设置频率
-pwm.setDuty(0.5) #设置占空比为50%
+pwm.setPin('PA8') # setup the pin numbcer
+pwm.setFrequency(2000) # setup the frequency
+pwm.setDuty(0.5) # set the duty to 50%
 pwm.enable()
 
 while True:
     time.sleep_ms(500)
     pwm.setDuty(0.5)
     time.sleep_ms(500)
-    pwm.setDuty(0.001) #设置占空比为0.1%
+    pwm.setDuty(0.001) # set the duty to 0.1%
 
 ```
 ### RGB
@@ -222,11 +222,11 @@ adc = machine.ADC()
 pin = machine.GPIO()
 pwm = machine.PWM()
 uart = machine.UART()
-rgb = machine.RGB() #新建RGB对象
+rgb = machine.RGB() # create an RGB object
 mem = PikaStdLib.MemChecker()
 
-rgb.init() #初始化对象
-rgb.enable() #启动硬件
+rgb.init() # init the object
+rgb.enable() # launch the hardware
 
 print('hello 2')
 print('mem used max:')
@@ -234,7 +234,7 @@ mem.max()
 
 while True:
     print('flowing')
-    rgb.flow() #RGB流水灯流动
+    rgb.flow() # let RGB flow
 
 
 ```
@@ -255,39 +255,39 @@ import machine
 
 lcd = machine.LCD()
 lcd.init()
-lcd.clear('white') #初始化LCD 背景填充为白色
+lcd.clear('white') # init LCD set background to white
 mem = PikaStdLib.MemChecker()
-key = machine.KEY() #新建按键对象，获得板载的按键输入
+key = machine.KEY() # new a KEY object
 key.init()
 time = machine.Time()
 h = 10
 w = 10
 x = 10
-y = 10 #用来表示小方块的高、宽和坐标
+y = 10 #Used to represent the height, width, and coordinates of small squares
 x_last = x
-y_last = y #记录上一次的位置，用来擦除
-is_update = 0 #控制刷新屏幕的标志变量
+y_last = y #Record the last location and use it for erasure
+is_update = 0 #A flag variable that controls the refresh screen
 print('mem used max:')
 mem.max()
-lcd.fill(x, y, w, h, 'blue') #绘制蓝色小方块
+lcd.fill(x, y, w, h, 'blue') #Draw small blue squares
 while True:
-    key_val = key.get() # 获得按键的值
+    key_val = key.get() # Gets the value of the key
     if key_val != -1:
         x_last = x
         y_last = y
-        is_update = 1 #启动刷新
+        is_update = 1 #Start the refresh
     if key_val == 0:
-        x = x + 5 #改变小方块的坐标
+        x = x + 5 #Change the coordinates of small squares
     if key_val == 1:
         y = y - 5
     if key_val == 2:
         y = y + 5
     if key_val == 3:
         x = x - 5
-    if is_update: #刷新屏幕
+    if is_update: #Refresh the screen
         is_update = 0
-        lcd.fill(x_last, y_last, w, h, 'white') #擦掉上一个位置
-        lcd.fill(x, y, w, h, 'blue') #绘制新位置
+        lcd.fill(x_last, y_last, w, h, 'white') #Erase off the previous position
+        lcd.fill(x, y, w, h, 'blue') #Draw the new location
 
 ```
 当你熟悉了 LCD 驱动之后，可以试试自己开发小游戏哦~
