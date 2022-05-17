@@ -16,7 +16,7 @@ STM32G0==latest
 - **删除 reqeustment.txt 中需要开发的模块**，防止误操作（比如再次拉取模块）导致正在开发的模块被覆盖掉。
 ### 修改模块并测试
 
-- 为模块添加新的 Python 接口 --> [module].py
+- 为模块添加新的 Python 接口 --> [module].pyi
 - 或者提供更好的实现 --> pikascript-lib/[module]/*.c
 
 - （可选）在 pikascript/README.md 和 pikascript/README_zh.md 中更新模块信息。
