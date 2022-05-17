@@ -1,25 +1,25 @@
-# PikaScript 拓展模块开发流程
+# PikaScript C模块开发流程
 
 我们依然以keil的仿真工程为例，如果还没有获得仿真工程，请参考[1.三分钟快速上手](https://pikadoc.readthedocs.io/zh/latest/Keil%20%E4%BB%BF%E7%9C%9F%E5%B7%A5%E7%A8%8B.html)
 
 ### 新建模块接口
 
 
-编写一个新的模块，首先需要编写模块接口文件，比如编写一个数学计算模块Math，第一步是编写Math.py。
+编写一个新的模块，首先需要编写模块接口文件，比如编写一个数学计算模块Math，第一步是编写Math.pyi。
 
 
-如果要从PikaScript基本类中创建新的类，则需要import PikaObj模块，导入PikaObj模块应使用`from PikaObj import *`的引入方式，实际上Pika预编译器是不会编译使用`from`语法导入的模块的，这样写只是为了获得python编辑器的智能语法提示，PikaObj是内置于Pika运行时内核的。
+如果要从 PikaScript 基本类中创建新的类，则需要 import PikaObj 模块，导入 PikaObj 模块应使用 `from PikaObj import *` 的引入方式，实际上 Pika 预编译器是不会编译使用`from`语法导入的模块的，这样写只是为了获得 python 编辑器的智能语法提示，PikaObj 是内置于 Pika 运行时内核的。
 
 
 ```python
-# Math.py
+# Math.pyi
 from PikaObj import *
 ```
 
 
-我们可以打开PikaObj.py文件查看里面的类接口
+我们可以打开 PikaObj.pyi 文件查看里面的类接口
 ```python
-# PikaObj.py
+# PikaObj.pyi
 class TinyObj:
     pass
 class BaseObj(TinyObj):
@@ -35,7 +35,7 @@ def set(argPath: str, val: any):
 
 ### 编写类接口
 
-现在我们可以在 Math.py 里面新建类了，比如我们要新建一个 `Adder` 类来实现相关的加法运算，我们就可以在 Math.py 里面添加 Adder 类，为了节省内存，Adder 类从 TinyObj 基类中继承。
+现在我们可以在 Math.pyi 里面新建类了，比如我们要新建一个 `Adder` 类来实现相关的加法运算，我们就可以在 Math.py 里面添加 Adder 类，为了节省内存，Adder 类从 TinyObj 基类中继承。
 
 然后我们希望 Adder 可以为整形、浮点型数据提供加法运算，那么就可以添加 byInt 方法和 byFloat 方法。
 
@@ -48,14 +48,14 @@ class Adder(TinyObj):
         pass
 ```
 
-上面的一段代码中我们定义了`Adder`类，并添加了两个方法的声明，```byInt(self, a:int, b:int)->int``` 表示方法名为 ```byInt ```,输入参数为 `a` 和 `b` ， `a` 和 `b` 的类型都是 `int` 型，而返回值也是 `int` 型，返回值由 `->int` 来确定，这都是 python 的标准语法，是带类型注解的写法。
+上面的一段代码中我们定义了 `Adder` 类，并添加了两个方法的声明，```byInt(self, a:int, b:int)->int``` 表示方法名为 ```byInt ```,输入参数为 `a` 和 `b` ， `a` 和 `b` 的类型都是 `int` 型，而返回值也是 `int` 型，返回值由 `->int` 来确定，这都是 python 的标准语法，是带类型注解的写法。
 
 python 中类的方法的第一个参数都是 `self` 这是 python 的语法所要求的。
 
 我们再向 math.py 里面添加一个 Multiplier 类，用来实现乘法，Multiplier 的写法如下所示，Multiplier 类同样从 `TinyObj` 基类中继承：
 
 ```python
-# Math.py
+# Math.pyi
 class Multiplier(TinyObj):
     def byInt(self, a:int, b:int)->int:
         pass
