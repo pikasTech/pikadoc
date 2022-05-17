@@ -203,7 +203,7 @@ int Math_Multiplier_byInt(PikaObj *self, int a, int b)
 ### 测试一下效果
 
 
-我们用下面的main.py来测试一下我们新编写的模块
+我们用下面的 main.py 来测试一下我们新编写的模块
 
 
 ```python
@@ -262,7 +262,7 @@ print(res4)
 发布模块只需要发布类接口和类实现文件即可。
 
 
-比如发布刚刚新编写的Math模块，就是发布 Math.py 文件和 pikascript-lib/Math 文件夹。
+比如发布刚刚新编写的 Math 模块，就是发布 Math.pyi 文件和 pikascript-lib/Math 文件夹。
 
 
 ![](assets/131123704-403753d8-2ef1-488e-a02a-08fce33cd6de.png)
