@@ -77,7 +77,7 @@ mem.now()
 ```
 
 
-导入一个已经编写好的C模块是非常简单的，比如导入Device模块，只需要`import Device`即可，要注意的是所有的.py文件应当放在pikascript文件架的根目录下。
+导入一个已经编写好的C模块是非常简单的，比如导入Device模块，只需要`import Device`即可，要注意的是所有的.py和.pyi文件应当放在pikascript文件架的根目录下。
 
 
 调用方法则使用`uart.setName('com')`这种形式，这都是Python的标准语法，不需要过多介绍。
