@@ -37,7 +37,7 @@ PikaScript是一个完全重写的超轻量级python引擎，零依赖，零配�
    如何贡献 PikaScrpt BSP
    如何贡献 PikaScript 模块
    如何贡献内核
-   对接 ID
+   对接 IDE
    优化内存占用、配置 libc
    直接运行字节码
    商业合作方式
