@@ -111,12 +111,12 @@ size_t arg_getBytesSize(Arg* self);
 ```
 ### 属性管理
 
-1. 判断一个属性是否存在，返回值为 1 表示存在。
+- 判断一个属性是否存在，返回值为 1 表示存在。
 ```c
 int32_t obj_isArgExist(PikaObj* self, char* argPath);
 ```
 
-2. 删除一个属性
+- 删除一个属性
 ```c
 int32_t obj_removeArg(PikaObj* self, char* argPath);
 ```
