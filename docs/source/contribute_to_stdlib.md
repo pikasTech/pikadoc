@@ -10,7 +10,7 @@ PikaScript 标准库是一系列跨平台的常用工具库，比如 string, tim
 
 PikaScript 标准库是跨平台的，所以不能够使用平台（比如 stm32）专有的资源，为了确保这一点，标准库都是在 linux 的平台开发的。
 
-如何确保标准库的可用性呢？PikaScript 在 linux 平台部署了 GoogleTest 单元测试框架，可以为这些标准库提供测例，GoogleTest 可以在开发者的本地机器运行，也会在每次提交到 github 的 master 分支后自动在云端运行 GoogleTest （基于Github Actions）。
+如何确保标准库的可用性呢？PikaScript 在 linux 平台部署了 GoogleTest 单元测试框架，可以为这些标准库提供测例，GoogleTest 可以在开发者的本地机器运行，也会在每次提交到 github 的 master 分支后自动在云端运行（基于Github Actions）。
 
 PikaScript 的 linux 开发平台需要安装 go，rust，GoogleTest，GoogleBenchmark，valgrind 等等工具，比较繁琐，为了简化开发平台的搭建，PikaScript 提供了基于 Docker 的开发环境，基于 Docker 的开发环境可以一键安装，并保证所有开发者的开发环境都是一致的。
 
