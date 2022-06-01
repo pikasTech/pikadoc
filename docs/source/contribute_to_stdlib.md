@@ -125,7 +125,7 @@ sh gtest.sh
 ```C
 TEST(<test group>, <test name>){
 
-	/* do something */
+    /* do something */
 
     /* assert */
     
