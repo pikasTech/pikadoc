@@ -16,12 +16,13 @@ PikaScript 的 linux 开发平台需要安装 go，rust，GoogleTest，GoogleBen
 
 在 Docker 的构建脚本中已经完成了换源操作，所以不需要使用 vpn，即可在中国大陆顺利的搭建 Docker 开发环境。
 
-### 推荐的 Docker 安装方式：
+
+### 构建 Docker 容器
+
+请确认已经安装好了 Docker:
 
 - Linux 平台直接安装 Docker
 - Windows 平台安装 Docker-Desktop
-
-### 构建 Docker 容器
 
 （如果是 windows 平台，可以在 wsl 中使用下面的命令。）
 
