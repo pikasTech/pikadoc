@@ -19,7 +19,7 @@ PikaScript 的 linux 开发平台需要安装 go，rust，GoogleTest，GoogleBen
 
 ### 构建 Docker 容器
 
-请确认已经安装好了 Docker:
+请确认已经在宿主机安装好了 Docker:
 
 - Linux 平台直接安装 Docker
 - Windows 平台安装 Docker-Desktop
