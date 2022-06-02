@@ -25,7 +25,7 @@ PikaScript 的 linux 开发平台需要安装 go，rust，GoogleTest，GoogleBen
 - Windows 平台安装 Docker-Desktop
   - Docker-Desktop 需要安装 wsl2
 
-（如果是 windows 平台，可以在 wsl 中使用下面的命令。）
+（如果是 windows 平台，可以在 wsl 中使用下面的命令，不要使用 PowerShell）
 
 step1: 克隆仓库
 
