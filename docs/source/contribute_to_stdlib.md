@@ -103,6 +103,12 @@ sh init.sh
 
 ![](assets/image-20220601003710360.png)
 
+### 调试
+
+调试已经被配置好了，直接在 vscode 中打断点，然后 F5 即可进入调试。
+
+![](https://user-images.githubusercontent.com/88232613/172127039-49e0d663-6f7a-4057-b5fe-1363c68dd9a0.png)
+
 ### 测试
 
 然后可以运行 GoogleTest，查看是否破坏了原有的代码。
