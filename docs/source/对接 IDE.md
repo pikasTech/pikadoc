@@ -2,31 +2,32 @@
 ## 概述
 PikaScript 需要对接 IDE 的工具集包括
 
-1. 包管理器 pikaPackage.exe
+- 包管理器 pikaPackage.exe
 
 参考 **包管理器与模块管理** 相关文档
 
-2. 预编译器 rust-msc-latest-win10.exe
+- 预编译器 rust-msc-latest-win10.exe
 
 参考 **模块开发** 相关文档
+
 ## 调用方式
 
-### 1. 起始路径：
+### 起始路径：
 
    1. [裸机工程根目录]/pikascript路径
    1. [rtthread工程根目录]/packages/pikascript-latest路径
-   2. 
-### 2. 包管理器
+
+### 包管理器
 
    1. 初次从 PikaSciprt 远程拉取模块时，需要运行 pikaPackge.exe
    1. 修改 requestment.txt 后，需要运行 pikaPackage.exe
    1. 如使用了 latest 版本模块，更新模块至最新时，需要运行 pikaPackage.exe
-   2. 
-### 3. 预编译器
 
-a. 在每次编译前运行
+### 预编译器
 
-**【注意】：**初次运行时，先用pikaPackage.exe拉取预编译器。
+在每次编译前运行
+
+**【注意】** 初次运行时，先用 pikaPackage.exe 拉取预编译器。
 
 ## 工程文件
 
@@ -45,4 +46,8 @@ if not exist pikascript-core (
 )
 rust-msc-latest-win10.exe
 ```
+
+Visual Studio 中预编译的设置
+
+![image](https://user-images.githubusercontent.com/88232613/172519804-67b32285-1d3c-4ff6-a90b-191f23a04592.png)
 
