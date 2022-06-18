@@ -3,26 +3,26 @@
 进入 pikascript 官网 [http://pikascript.com](http://pikascript.com)
 选择平台，模块，然后点击 "开始生成"。
 （选择平台后会自动选择默认的模块)
-![](assets/1644129110261-049ad5bb-21af-40e2-9533-a1c8c86790f1.png)
+![](../assets/1644129110261-049ad5bb-21af-40e2-9533-a1c8c86790f1.png)
 
 ## 工程的来源
 移植好的裸机MCU工程在pikascript/bsp目录，里面的每一个文件夹都是一个移植好的裸机工程。
 **每个工程都是独立的，可以拷贝出pikascript仓库单独使用。**
 （simulation-keil-dev和pico-dev是列外，这两个bsp只能在仓库里面用，是用来开发内核的。）
 [https://gitee.com/Lyon1998/pikascript/tree/master/bsp](https://gitee.com/Lyon1998/pikascript/tree/master/bsp)
-![](assets/1638605947761-93b30636-099f-4c7c-a432-6aae5e2d8b53.png)
+![](../assets/1638605947761-93b30636-099f-4c7c-a432-6aae5e2d8b53.png)
 
 ## 支持列表
 在bsp文件夹的README.md中，标注了目前的平台支持情况和bsp的使用方法。
 （以下的表格不是最新的）
 [最新表格点这里](https://gitee.com/Lyon1998/pikascript#2%E5%B9%B3%E5%8F%B0%E6%94%AF%E6%8C%81%E5%88%97%E8%A1%A8)
-![](assets/1639629972025-ca8fdf74-5dc2-472e-8497-5bc163bccdf4.png)
-![](assets/1639629981607-43c6b771-34bf-45ac-9a66-8604f705ddff.png)
+![](../assets/1639629972025-ca8fdf74-5dc2-472e-8497-5bc163bccdf4.png)
+![](../assets/1639629981607-43c6b771-34bf-45ac-9a66-8604f705ddff.png)
 你可以通过贡献**驱动模块**或者**bsp**来帮助PikaScript拓展这个表格，具体请参考文档中的**新平台移植指南**、**模块开发**和**包管理**部分。
 
 ## 工程结构
 以CH32V103为例，一个PikaScript的工程包含以下的几个部分。
-![](assets/1638631568309-cbc19553-75be-4915-900a-72fe700b4d16.png)
+![](../assets/1638631568309-cbc19553-75be-4915-900a-72fe700b4d16.png)
 
 1. 首先是BSP文件夹中除了PikaScript文件夹以外的部分，这一部分是真正的BSP，包含了厂家提供的基本外设库、CMSIS等一些平台上的通用库，只需要对厂家的例程进行整理就可以得到。
 
@@ -72,4 +72,4 @@ PikaPiZero==v1.1.3
 
 1. Keil版本**强烈建议**不低于**5.36**
 
-![](assets/1641372084863-db6426eb-b3cc-454d-b14a-5338818d01aa.png)
+![](../assets/1641372084863-db6426eb-b3cc-454d-b14a-5338818d01aa.png)
