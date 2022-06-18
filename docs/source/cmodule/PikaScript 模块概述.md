@@ -1,6 +1,6 @@
 # PikaScript C模块概述
 
-我们依然以keil的仿真工程为例，如果还没有获得仿真工程，请参考[1.三分钟快速上手](https://pikadoc.readthedocs.io/zh/latest/Keil%20%E4%BB%BF%E7%9C%9F%E5%B7%A5%E7%A8%8B.html)
+我们依然以keil的仿真工程为例，如果还没有获得仿真工程，请首先在 [快速开始 -> keil 仿真工程] 章节获取工程。
 ### PikaScript模块与模块接口
 我们打开pikascript文件夹，发现文件夹根目录下除了main.py，还有Device.pyi，PikaObj.pyi 和 PikaStdLib.pyi，这三个.pyi文件分别对应三个PikaScript **C模块** (class package)，每个.pyi 文件本身称为 **模块接口** (package interface)。一个C模块中可以包含若干个相关性较强的类。
 
