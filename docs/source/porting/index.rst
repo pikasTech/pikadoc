@@ -2,8 +2,7 @@
 ============================
 
 .. toctree::
-   :numbered:
-   :maxdepth: 2
+   :maxdepth: 1
 
    十分钟部署到新平台
    支持交互式运行

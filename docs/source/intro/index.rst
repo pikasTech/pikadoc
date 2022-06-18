@@ -2,8 +2,7 @@
 ============================
 
 .. toctree::
-   :numbered:
-   :maxdepth: 2
+   :maxdepth: 1
 
    原理简介
    Demo 展示

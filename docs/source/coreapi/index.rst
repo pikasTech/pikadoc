@@ -2,8 +2,7 @@
 ============================
 
 .. toctree::
-   :numbered:
-   :maxdepth: 2
+   :maxdepth: 1
 
    Pika 对象 PikaObj
    参数表 Args

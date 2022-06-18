@@ -2,8 +2,7 @@
 ============================
 
 .. toctree::
-   :numbered:
-   :maxdepth: 2
+   :maxdepth: 1
 
    Pika 派开发板快速上手
    Keil 仿真工程

@@ -2,8 +2,7 @@
 ============================
 
 .. toctree::
-   :numbered:
-   :maxdepth: 2
+   :maxdepth: 1
 
    如何参与社区贡献
    如何贡献 PikaScrpt BSP
