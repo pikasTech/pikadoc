@@ -43,3 +43,4 @@ PikaScript是一个完全重写的超轻量级python引擎，零依赖，零配�
    直接运行字节码
    商业合作方式
    PikaScript 内核进阶 1 2022年3月3日直播
+   contribute/index
