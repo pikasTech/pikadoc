@@ -12,7 +12,7 @@ PikaScript是一个完全重写的超轻量级python引擎，零依赖，零配�
    intro/index
    get-started/index
    porting/index
-   包管理器与模块管理
+   index_module.rst
    stdlib/index
    cmodule/index
    coreapi/index
