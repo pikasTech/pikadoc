@@ -4,7 +4,7 @@
 ### PikaScript模块与模块接口
 我们打开pikascript文件夹，发现文件夹根目录下除了main.py，还有Device.pyi，PikaObj.pyi 和 PikaStdLib.pyi，这三个.pyi文件分别对应三个PikaScript **C模块** (class package)，每个.pyi 文件本身称为 **模块接口** (package interface)。一个C模块中可以包含若干个相关性较强的类。
 
-![](assets/1638582993068-0a8afe28-baa2-41ad-bac1-6626d50192ad.png)
+![](../assets/1638582993068-0a8afe28-baa2-41ad-bac1-6626d50192ad.png)
 每一个 PikaScript **C模块** 由 **模块接口** 和 **模块实现** (package implement)两部分组成。
 我们先打开 Device.pyi 查看一下内容，在后续的文档中我们会称 Device.pyi 为 **Device模块接口**。
 以下就是 Device.pyi 的全部内容。
@@ -86,25 +86,25 @@ mem.now()
 在main.py中写好模块的调用后，双击rust-msc-v0.5.0.exe即可预编译PikaScript工程，预编译的输出文件在pikascrip-api文件夹内。
 
 
-![](assets/1638582989556-feafe97a-037f-44b2-8f2c-55ddf8f041ea.png)
+![](../assets/1638582989556-feafe97a-037f-44b2-8f2c-55ddf8f041ea.png)
 
 
 pika预编译器会为导入的模块生成.h声明文件和-api.c构造器文件。文件名以模块名开头，每个类对应一个.h文件和一个-api.c文件。
 
 
-![](assets/1638582990457-2540db61-f185-4100-8b63-4d6d599c3b0e.png)
+![](../assets/1638582990457-2540db61-f185-4100-8b63-4d6d599c3b0e.png)
 
 
 而PikaMain-api.c和PikaMain.h则是对应了一个特殊的类，这个类是PikaScript的主类，由main.py编译而成。
 
 
-![](assets/1638582990858-10783588-5ff0-469e-b64d-50e56e2357bc.png)
+![](../assets/1638582990858-10783588-5ff0-469e-b64d-50e56e2357bc.png)
 
 
 pikaScript.c和pikaScript.h则是根据main.py编译出的初始化函数，运行初始化函数时，会自动执行启动脚本。
 
 
-![](assets/1638582992822-6c4a7f39-a379-4c66-991a-1935ec3bfa7a.png)
+![](../assets/1638582992822-6c4a7f39-a379-4c66-991a-1935ec3bfa7a.png)
 
 
 在现在的main.py中，启动脚本是写在最外层的方法调用，也就是:

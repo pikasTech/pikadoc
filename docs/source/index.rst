@@ -20,10 +20,7 @@ PikaScript是一个完全重写的超轻量级python引擎，零依赖，零配�
    十分钟部署到新平台
    支持交互式运行
    串口下载 Pthon 脚本_运行文件
-   PikaScript 模块概述
-   Pikascript 拓展模块开发流程
-   包管理器与模块管理
-   模块裁剪
+   cmodule/index
    沁恒 RISC-V 模块开发实战
    PikaStdLib 标准库
    PikaStdDevice 标准设备
