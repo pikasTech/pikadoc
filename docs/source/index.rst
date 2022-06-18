@@ -10,7 +10,7 @@ PikaScript是一个完全重写的超轻量级python引擎，零依赖，零配�
    :maxdepth: 2
 
    index_intro
-   index_get-started
+   index_get-start
    index_porting
    index_module
    index_stdlib
