@@ -11,7 +11,7 @@
 ### 提交文件
 - 进入 pikascript 代码仓库，gitee 或 github 均可，fork 一份 pikascript 仓库，然后将 **fork 后的**仓库 clone 到本地。
 
-![](assets/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png)
+![](../assets/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png)
 
 - 在 [fork后的仓库]/bsp 目录下新建一个新文件夹，然后拷贝进去模板工程，使用 git 命令添加文件，并推送到 **fork 后的** pikascript 仓库中。
    
