@@ -33,14 +33,9 @@ PikaScript是一个完全重写的超轻量级python引擎，零依赖，零配�
    Pika 对象 PikaObj
    参数表 Args
    字串池 Strs
-   如何参与社区贡献
-   如何贡献 PikaScrpt BSP
-   如何贡献 PikaScript 模块
-   contribute_to_stdlib
-   如何贡献内核
+   contribute/index
    对接 IDE
    优化内存占用、配置 libc
    直接运行字节码
    商业合作方式
    PikaScript 内核进阶 1 2022年3月3日直播
-   contribute/index
