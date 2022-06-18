@@ -69,4 +69,4 @@ def str(arg: any) -> str:
 ```python
 def print(arg:any):
 ```
-继承自 BaseObj，提供打印输出。暂不支持格式化输出。
+提供打印输出
