@@ -1,5 +1,6 @@
 # 参与 PikaScript 社区贡献
 
+```eval_rst
 .. toctree::
    :numbered:
    :maxdepth: 2
@@ -8,3 +9,4 @@
    如何贡献 PikaScrpt BSP
    如何贡献 PikaScript 模块
    contribute_to_stdlib
+```
