@@ -38,7 +38,7 @@
 
 ### 内核开发步骤
 
-![](../assets/yuque_diagram.jpg)
+![](assets/yuque_diagram.jpg)
 
 实机测试前占了95%的工作量
 ​
