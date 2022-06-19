@@ -63,7 +63,7 @@ class GPIO(BaseDev):
 
 [/package/TemplateDevice/TemplateDevice.pyi](https://gitee.com/Lyon1998/pikascript/blob/master/package/TemplateDevice/TemplateDevice.pyi)
 
-```python
+``` python
 # TemplateDevice.pyi
 class GPIO(PikaStdDevice.GPIO):
     # overrid
