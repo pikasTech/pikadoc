@@ -38,7 +38,125 @@ typedef PikaObj PikaEventListener;
 
 ![image-20220619104053576](assets/image-20220619104053576.png)
 
-## 事件注册
+
+## 通过 PikaStdDevice 支持事件回调
+
+继承 PikaStdDevice 是支持事件回调的最简单方式，`PikaStdDevice.BaseDev` 设备基本类已经支持了事件注册方法 `addEventCallBack`。
+
+```python
+class BaseDev(TinyObj):
+    def addEventCallBack(self, eventCallback: any): ...
+
+    # need override
+    def platformGetEventId(self):...
+```
+
+- `PikaStdDevice` 中的设备类（如 GPIO）都继承了 `BaseDev`，因此都获得了 `addEventCallBack` 的方法，能够注册回调。
+
+https://gitee.com/Lyon1998/pikascript/blob/master/package/PikaStdDevice/PikaStdDevice.pyi
+
+``` python
+class GPIO(BaseDev):
+...
+```
+平台驱动从 `PikaStdDevice.GPIO` 继承后，也获得了 `addEventCallBack` 方法。
+
+https://gitee.com/Lyon1998/pikascript/blob/master/package/TemplateDevice/TemplateDevice.pyi
+
+```python
+# TemplateDevice.pyi
+class GPIO(PikaStdDevice.GPIO):
+    # overrid
+···
+    def platformGetEventId(self): ...
+···
+```
+
+只需要重写 `platformGetEventId` 平台方法，就能够支持注册回调。
+
+例如：
+
+https://gitee.com/Lyon1998/pikascript/blob/master/package/TemplateDevice/TemplateDevice_GPIO.c
+
+``` c
+const uint32_t GPIO_PA8_EVENT_ID = 0x08;
+void TemplateDevice_GPIO_platformGetEventId(PikaObj* self) {
+    char* pin = obj_getStr(self, "pin");
+    if (strEqu(pin, "PA8")) {
+        obj_setInt(self, "eventId", GPIO_PA8_EVENT_ID);
+    }
+}
+```
+
+## 在 Python 注册回调函数
+
+- 定义一个回调函数 `callBack1`，接收一个输入参数 `signal`，`signal`能够接收传入的信号码。
+
+https://gitee.com/Lyon1998/pikascript/blob/master/examples/TemplateDevice/gpio_cb.py
+
+``` python
+import TemplateDevice
+
+io1 = TemplateDevice.GPIO()
+io1.setPin('PA8')
+io1.setMode('in')
+io1.enable()
+
+EVENT_SIGAL_IO_RISING_EDGE = 0x01
+EVENT_SIGAL_IO_FALLING_EDGE = 0x02
+
+def callBack1(signal):
+    if signal == EVENT_SIGAL_IO_RISING_EDGE:
+        print('get rising edge!')
+    elif signal == EVENT_SIGAL_IO_FALLING_EDGE:
+        print('get falling edge!')
+
+io1.addEventCallBack(callBack1)
+```
+
+
+## 信号触发
+
+在需要触发事件回调时向 `PikaEventListener` 发送信号。
+
+例如：https://gitee.com/Lyon1998/pikascript/blob/master/port/linux/test/event-test.cpp
+
+- 通过 `extern PikaEventListener* g_pika_device_event_listener` 得到 `PikaStdDevice` 提供的事件监听器。
+
+- 通过 `pks_eventLisener_sendSignal` 发送 `eventID` 和 `signal code`。 
+
+```c
+extern PikaEventListener* g_pika_device_event_listener;
+#define EVENT_SIGAL_IO_RISING_EDGE 0x01
+#define EVENT_SIGAL_IO_FALLING_EDGE 0x02
+#define GPIO_PA8_EVENT_ID 0x08
+TEST(event, gpio) {
+    /* init */
+    PikaObj* pikaMain = newRootObj("pikaMain", New_PikaMain);
+    /* run */
+    pikaVM_runFile(pikaMain, "../../examples/TemplateDevice/gpio_cb.py");
+    /* simulate run in the call back */
+    pks_eventLisener_sendSignal(g_pika_device_event_listener, GPIO_PA8_EVENT_ID,
+                            EVENT_SIGAL_IO_RISING_EDGE);
+    pks_eventLisener_sendSignal(g_pika_device_event_listener, GPIO_PA8_EVENT_ID,
+                            EVENT_SIGAL_IO_FALLING_EDGE);
+...
+}
+```
+
+- 运行结果：
+```
+get rising edge!
+get falling edge!
+```
+
+
+
+## 进阶：自定义事件注册函数
+
+- 除了通过 PikaStdDevice 支持事件回调外，还可以自定义事件注册函数，这部分属于进阶内容。
+
+- 自定义事件注册需要比较了解 PikaScript 的 C 模块机制和对象机制。
 
 - 定义一个 C 模块的 Python 接口，接收传入的事件回调函数。
 
@@ -82,125 +200,4 @@ void PikaStdDevice_BaseDev_addEventCallBack(PikaObj* self, Arg* eventCallBack) {
   - 这个例子中通过调用 `platformGetEventId()` 平台函数来获得 `eventID`，需要 `BaseDev` 继承，然后重写 `platformGetEventId()`，在重写后的 `platformGetEventId()` 中设置 `self.eventId`。
   - 例如：https://gitee.com/Lyon1998/pikascript/blob/master/package/TemplateDevice/TemplateDevice_GPIO.c
 - 调用 `pks_eventLicener_registEvent`，将 `eventId` 和 `self` 注册进事件监听器。
-
-## 信号触发
-
-在需要触发事件回调时向 `PikaEventListener` 发送信号。
-
-例如：https://gitee.com/Lyon1998/pikascript/blob/master/port/linux/test/event-test.cpp
-
-```c
-extern PikaEventListener* g_pika_device_event_listener;
-TEST(event, gpio) {
-    /* init */
-    PikaObj* pikaMain = newRootObj("pikaMain", New_PikaMain);
-    /* run */
-    pikaVM_runFile(pikaMain, "../../examples/TemplateDevice/gpio_cb.py");
-
-    #define EVENT_SIGAL_IO_RISING_EDGE 0x01
-    #define EVENT_SIGAL_IO_FALLING_EDGE 0x02
-    #define GPIO_PA8_EVENT_ID 0x08
-
-    /* simulate run in the call back */
-    pks_eventLisener_sendSignal(g_pika_device_event_listener, GPIO_PA8_EVENT_ID,
-                            EVENT_SIGAL_IO_RISING_EDGE);
-    pks_eventLisener_sendSignal(g_pika_device_event_listener, GPIO_PA8_EVENT_ID,
-                            EVENT_SIGAL_IO_FALLING_EDGE);
-    /* collect */
-    /* assert */
-    EXPECT_STREQ(log_buff[1], "get rising edge!\r\n");
-    EXPECT_STREQ(log_buff[0], "get falling edge!\r\n");
-    /* deinit */
-    obj_deinit(pikaMain);
-
-    EXPECT_EQ(pikaMemNow(), 0);
-}
-```
-
-通过 `pks_eventLisener_sendSignal` 发送 `eventID` 和 `signal code`。 
-
-## Python 案例
-
-https://gitee.com/Lyon1998/pikascript/blob/master/examples/TemplateDevice/gpio_cb.py
-
-``` python
-import TemplateDevice
-
-io1 = TemplateDevice.GPIO()
-io1.setPin('PA8')
-io1.setMode('in')
-io1.enable()
-
-EVENT_SIGAL_IO_RISING_EDGE = 0x01
-EVENT_SIGAL_IO_FALLING_EDGE = 0x02
-
-def callBack1(signal):
-    if signal == EVENT_SIGAL_IO_RISING_EDGE:
-        print('get rising edge!')
-    elif signal == EVENT_SIGAL_IO_FALLING_EDGE:
-        print('get falling edge!')
-
-io1.addEventCallBack(callBack1)
-```
-
-- 定义一个回调函数 `callBack1`，接收一个输入参数 `signal`，`signal`能够接收传入的信号码。
-
-## PikaStdDevice 支持事件回调
-
-继承 PikaStdDevice 是支持事件回调的最简单方式。
-
-- `PikaStdDevice` 中的设备类（如 GPIO）都继承了 `BaseDev`，因此都获得了 `addEventCallBack` 的方法，能够注册回调。
-
-https://gitee.com/Lyon1998/pikascript/blob/master/package/PikaStdDevice/PikaStdDevice.pyi
-
-``` python
-class BaseDev(TinyObj):
-    def addEventCallBack(self, eventCallback: any): ...
-
-    # need override
-    def platformGetEventId(self):...
-
-
-class GPIO(BaseDev):
-    def __init__(self):
-        pass
-
-    def init(self):
-        pass
-
-    def setPin(self, pinName: str):
-        pass
-
-...
-```
-平台驱动从 `PikaStdDevice.GPIO` 继承后，也获得了 `addEventCallBack` 方法，只需要重写 `platformGetEventId` 平台方法，就能够支持回调。
-
-https://gitee.com/Lyon1998/pikascript/blob/master/package/TemplateDevice/TemplateDevice.pyi
-
-```python
-# TemplateDevice.pyi
-class GPIO(PikaStdDevice.GPIO):
-    # overrid
-    def platformHigh(self): ...
-    def platformLow(self): ...
-    def platformEnable(self): ...
-    def platformDisable(self): ...
-    def platformSetMode(self): ...
-    def platformRead(self): ...
-    def platformGetEventId(self): ...
-```
-
-例如：
-
-https://gitee.com/Lyon1998/pikascript/blob/master/package/TemplateDevice/TemplateDevice_GPIO.c
-
-``` c
-const uint32_t GPIO_PA8_EVENT_ID = 0x08;
-void TemplateDevice_GPIO_platformGetEventId(PikaObj* self) {
-    char* pin = obj_getStr(self, "pin");
-    if (strEqu(pin, "PA8")) {
-        obj_setInt(self, "eventId", GPIO_PA8_EVENT_ID);
-    }
-}
-```
 
