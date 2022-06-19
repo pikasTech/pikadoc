@@ -12,19 +12,19 @@ LVGL GUI 仿真工程提供了 PikaScript 和 LVGL 进行联合仿真的实验�
 
 这个工程是从 [LVGL 官方的 Visual Studio 仿真工程](https://github.com/lvgl/lv_port_win_visual_studio) 中分支而来的。
 
-![image-20220619174705166](assets/image-20220619174705166.png)
+![](assets/image-20220619174705166.png)
 
 点击生成工程，等待大概 1 分钟左右。
 
-![image-20220619174908845](assets/image-20220619174908845.png)
+![](assets/image-20220619174908845.png)
 
 解压工程后打开 LVGL.Simulator.sln
 
-![image-20220619175250783](assets/image-20220619175250783.png)
+![](assets/image-20220619175250783.png)
 
 直接开始编译运行
 
-![image-20220619175332172](assets/image-20220619175332172.png)
+![](assets/image-20220619175332172.png)
 
 可以看到已经成功启动了 lvgl 的模拟器
 
@@ -58,7 +58,7 @@ print('mem used now: %0.2f kB' % (mem.getNow()))
 
 可以在 [/pikascript/examples/lvgl](https://gitee.com/Lyon1998/pikascript/tree/master/examples/lvgl) 文件夹中看到更多的示例代码。
 
-![image-20220619175945030](assets/image-20220619175945030.png)
+![](assets/image-20220619175945030.png)
 
 比如可以将 lv_callback1.py 复制到 main.py 中。
 
@@ -92,15 +92,15 @@ print('mem used now: %0.2f kB' % (mem.getNow()))
 
 在替换 main.py 后，运行 PikaScript 的预编译器
 
-![image-20220619180151300](assets/image-20220619180151300.png)
+![](assets/image-20220619180151300.png)
 
 然后再开始运行
 
-![image-20220619180208847](assets/image-20220619180208847.png)
+![](assets/image-20220619180208847.png)
 
 这个例子中可以点击按钮然后查看输出。
 
-![image-20220619180255030](assets/image-20220619180255030.png)
+![](assets/image-20220619180255030.png)
 
 ## 常见问题
 
@@ -108,4 +108,4 @@ print('mem used now: %0.2f kB' % (mem.getNow()))
 
 对 pikascript/pikascript-api 和 pikascript/pikascript-lib 右键然后点击 “包括在项目中”，再重新编译即可。
 
-![image-20220619180512784](assets/image-20220619180512784.png)
+![](assets/image-20220619180512784.png)
