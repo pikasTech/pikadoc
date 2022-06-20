@@ -69,3 +69,78 @@ print('test end...')
 然后我们开始调试运行，打开串口窗口就能看到结果了
 
 ![](assets/image-20220620175959680.png)
+
+如果你对原理感兴趣，可以观看 [讲解视频](https://www.bilibili.com/video/BV14t4y1x7nv?spm_id_from=333.999.0.0)。
+
+## 导入 C 模块
+
+C 模块指的是底层用 C 实现，却仍然可以用 Python 调用的模块。
+
+一个名为 `<module>` 的C 模块通常由一个 `<module>.pyi` 文件 （python 的接口文件）和 pikascript-lib/\<module\> 文件夹组成。
+
+PikaScript 导入 C 模块和导入 Python 模块的方法一样，直接 `import`，然后运行预编译即可。
+
+在预编译后，还会自动生成一些模块连接文件，所有的模块连接文件都在 pikascript-api 文件夹。因此在引入 C 模块之后，还需要将下面列出的文件添加到工程里参与编译：
+
+- pikascript-lib/\<module\> 文件夹下的所有 .c 文件
+- pikascript-api 文件夹下的所有 .c 文件
+
+### 实验
+
+我们仍然以 keil 的仿真工程作为实验平台。
+
+我们在 main.py 里面引入 PikaStdData.pyi C 模块。
+
+我们打开 PikaStdData.pyi 查看这个 C 模块提供的类和函数。
+
+``` python
+# PikaStdData.pyi
+from PikaObj import *
+
+class List(TinyObj):
+    def __init__(self): ...
+    # add an arg after the end of list
+    def append(self, arg: any): ...
+    # get an arg by the index
+    def get(self, i: int) -> any: ...
+    # set an arg by the index
+    def set(self, i: int, arg: any): ...
+    # get the length of list
+    def len(self) -> int: ...
+...
+```
+
+可以看到里面有一个 `List` 类。
+
+在 main.py 里面引入 `PikaStdData` 并通过 `List` 类新建一个对象 `list`，然后再测试一下 `List` 的`append()`方法，和 `get()` 方法。
+
+``` python
+import PikaStdLib
+
+import PikaStdData
+
+print('test start...')
+
+list = PikaStdData.List()
+list.append(1)
+list.append('test')
+list.append(2.34)
+
+print(list.get(0))
+print(list.get(1))
+print(list.get(2))
+
+print('test end...')
+```
+
+编译时可以看到 PikaScript 的预编译器将 PikaStdData C 模块绑定到了工程里面。
+
+![](assets/image-20220620191019013.png)
+
+仿真运行可以看到结果
+
+![](assets/image-20220620191048505.png)
+
+用户也可以自己制作 C 模块，需要做的就是编写 \<module\>.pyi Python 接口文件和 pikascript-lib/\<module\> 里面的 .c 实现文件。
+
+具体请参考[C 模块的制作文档](https://pikadoc.readthedocs.io/zh/latest/index_cmodule.html)。
