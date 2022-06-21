@@ -2,7 +2,7 @@
 
 在本篇中，你将可以在手边没有硬件的情况下对 pikascript 进行上手测试。
 测试使用 keil5 的仿真工程，仿真目标板为 stm32f103 ，下载仿真工程即可直接开始测试。
-### 创建工程
+## 创建工程
 进入 pikascript 官网 [http://pikascript.com](http://pikascript.com)
 选择 simulation-keil，然后点击“开始生成”
 ![](assets/1644128841425-378e4391-426d-4dc3-bb2d-934e8facd22e.png)
@@ -10,7 +10,7 @@
 ![](assets/130745821-864038df-d8b0-41d2-97e8-199815d0d57d.png)
 
 
-### 运行仿真工程
+## 运行仿真工程
 选择使用仿真器进行调试
 ![](assets/130747706-b912e09f-3f68-495a-a69f-f8f7500b1e4e.png)
 
@@ -27,7 +27,7 @@
 
 ![](assets/image-20220621093047893.png)
 
-### 改改脚本看看
+## 改改脚本看看
 
 用任意编辑器打开 main.py ，推荐 vscode ， 没有 vscode 用记事本打开也可以
 ![](assets/130748847-477facfb-e16e-4e0e-8876-d66efd0ae48c.png)
@@ -53,13 +53,10 @@ print('mem used now:')
 mem.now()
 ```
 这个脚本使用标准的 python3 语法，那么如何让这个脚本在单片机里运行呢？
-​
 
 事实上，pikascript 虽然使用 python 语法，但原理上更像是 java，是半编译半解释型的，pikascript 的类和方法是需要编译的，而方法调用和对象新建/销毁则是在运行时解释的。
-​
 
 编译 pikascript 分为两步，第一步是使用 pikascript 预编译器将 .py 文件编译为 pikascript-api 中的 .c 和 .h 文件。
-
 
 第二步是使用 c 编译器编译所有的 c 文件，然后下载到单片机里即可。
 
