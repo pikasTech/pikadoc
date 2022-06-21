@@ -21,7 +21,14 @@
 运行然后查看输出结果
 ![](assets/130748221-53fff9f6-6427-417d-b95a-3fa52a57eeaf.png)
 
+## 交互式运行
+
+可以直接在 UART 窗口输入 Python 脚本交互运行，注意缩进应使用 **4个空格**
+
+![image-20220621093047893](assets/image-20220621093047893.png)
+
 ### 改改脚本看看
+
 用任意编辑器打开 main.py ，推荐 vscode ， 没有 vscode 用记事本打开也可以
 ![](assets/130748847-477facfb-e16e-4e0e-8876-d66efd0ae48c.png)
 以下就是 main.py
