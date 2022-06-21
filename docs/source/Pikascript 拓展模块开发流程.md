@@ -1,6 +1,6 @@
 # PikaScript C模块开发流程
 
-我们依然以keil的仿真工程为例，如果还没有获得仿真工程，请首先在 [快速开始 -> keil 仿真工程] 章节获取工程。
+我们依然以keil的仿真工程为例，如果还没有获得仿真工程，请首先在 [快速开始 -> keil 仿真工程](https://pikadoc.readthedocs.io/zh/latest/Keil%20%E4%BB%BF%E7%9C%9F%E5%B7%A5%E7%A8%8B.html) 章节获取工程。
 
 ### 新建模块接口
 
