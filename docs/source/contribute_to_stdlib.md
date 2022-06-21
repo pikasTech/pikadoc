@@ -36,7 +36,7 @@ cd pikascript/docker
 
 step2: 构建 Docker 镜像，然后启动容器
 ```
-sh build.sh
+bash build.sh
 sh run.sh
 ```
 
