@@ -37,26 +37,26 @@ cd pikascript/docker
 step2: 构建 Docker 镜像，然后启动容器
 ```
 bash build.sh
-sh run.sh
+bash run.sh
 ```
 
 step3: 初始化 port/linux
 
 ``` shell	
 cd port/linux
-sh pull-core.sh
-sh init.sh
+bash pull-core.sh
+bash init.sh
 ```
 
 step4: 运行 GoogleTest 和 BenchMark 
 ``` shell
-sh gtest.sh
-sh ci_benchmark.sh
+bash gtest.sh
+bash ci_benchmark.sh
 ```
 
 step5: 运行 REPL
 ``` shell
-sh run.sh
+bash run.sh
 ```
 
 ## 使用 VSCODE 连接到容器进行开发
@@ -90,7 +90,7 @@ VSCODE 提供了连接到容器进行开发的工具，连接后开发体验就�
 然后运行：
 
 ```
-sh init.sh
+bash init.sh
 ```
 
 进行预编译和重新配置 CMake。
@@ -114,7 +114,7 @@ sh init.sh
 然后可以运行 GoogleTest，查看是否破坏了原有的代码。
 
 ```
-sh gtest.sh 
+bash gtest.sh 
 ```
 
 ![](assets/image-20220601003830732.png)
