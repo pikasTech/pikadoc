@@ -16,7 +16,7 @@ PikaScript 的 linux 开发平台还需要安装 go，rust，GoogleTest，Google
 使用 PikaScript 的docker 开发环境可以避免这个问题，docker 开发环境中已经安装了配套的 **单元测试框架** 和 **内存检查工具** ，如果有内存安全问题，可以快速发现并解决，避免出现内存隐患。
 
 
-### 构建 Docker 容器
+## 构建 Docker 容器
 
 请确认已经在宿主机安装好了 Docker:
 
