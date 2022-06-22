@@ -12,52 +12,9 @@ PikaScript 标准库是跨平台的，所以不能够使用平台（比如 stm32
 
 如何确保标准库的可用性呢？PikaScript 在 linux 平台部署了 GoogleTest 单元测试框架，可以为这些标准库提供测例，GoogleTest 可以在开发者的本地机器运行，也会在每次提交到 github 的 master 分支后自动在云端运行（基于Github Actions）。
 
-PikaScript 的 linux 开发平台需要安装 go，rust，GoogleTest，GoogleBenchmark，valgrind 等等工具，比较繁琐，为了简化开发平台的搭建，PikaScript 提供了基于 Docker 的开发环境，基于 Docker 的开发环境可以一键安装，并保证所有开发者的开发环境都是一致的。
-
-在 Docker 的构建脚本中已经完成了换源操作，所以不需要使用 vpn，即可在中国大陆顺利的搭建 Docker 开发环境。
-
-
 ### 构建 Docker 容器
 
-请确认已经在宿主机安装好了 Docker:
-
-- Linux 平台直接安装 Docker
-- Windows 平台安装 Docker-Desktop
-  - Docker-Desktop 需要安装 wsl2 [安装手册](https://smartide.cn/zh/docs/install/docker/windows/)
-
-（如果是 windows 平台，可以在 wsl 中使用下面的命令，不要使用 PowerShell）
-
-step1: 克隆仓库
-
-``` shell
-git clone https://gitee.com/lyon1998/pikascript
-cd pikascript/docker 
-```
-
-step2: 构建 Docker 镜像，然后启动容器
-```
-bash build.sh
-bash run.sh
-```
-
-step3: 初始化 port/linux
-
-``` shell	
-cd port/linux
-bash pull-core.sh
-bash init.sh
-```
-
-step4: 运行 GoogleTest 和 BenchMark 
-``` shell
-bash gtest.sh
-bash ci_benchmark.sh
-```
-
-step5: 运行 REPL
-``` shell
-bash run.sh
-```
+[ 快速开始 -> 从 Docker 开发环境开始 ](https://pikadoc.readthedocs.io/zh/latest/get-start_linux.html)
 
 ## 使用 VSCODE 连接到容器进行开发
 
