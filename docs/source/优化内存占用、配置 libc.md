@@ -39,41 +39,49 @@ PikaScript 本身是 **免配置** 的，所以通常情况下 **不需要** 了
 截取重要的部分进行说明：
 
 ``` c
-/* default configuration  */
-   #define PIKA_LINE_BUFF_SIZE 128
-   #define PIKA_SPRINTF_BUFF_SIZE 128
-   #define PIKA_STACK_BUFF_SIZE 256
-   #define PIKA_NAME_BUFF_SIZE 32
-   #define PIKA_PATH_BUFF_SIZE 64
-   #define PIKA_ARG_ALIGN_ENABLE 1
-   #define PIKA_METHOD_CACHE_ENABLE 0
-          
-/* optimize options */
-   #define PIKA_OPTIMIZE_SIZE 0
-   #define PIKA_OPTIMIZE_SPEED 1
-      
-/* default optimize */
-   #define PIKA_OPTIMIZE PIKA_OPTIMIZE_SIZE
-      
-/* use user config */
-   #ifdef PIKA_CONFIG_ENABLE
-      #include "pika_config.h"
-   #endif
+    /* optimize options */
+        #define PIKA_OPTIMIZE_SIZE 0
+        #define PIKA_OPTIMIZE_SPEED 1
+
+    /* syntax support level */
+        #define PIKA_SYNTAX_LEVEL_MINIMAL 0
+        #define PIKA_SYNTAX_LEVEL_MAXIMAL 1
+
+    /* use user config */
+    #ifdef PIKA_CONFIG_ENABLE
+        #include "pika_config.h"
+    #endif
+
+    /* default optimize */
+    #ifndef PIKA_OPTIMIZE
+        #define PIKA_OPTIMIZE PIKA_OPTIMIZE_SIZE
+    #endif
+
+    /* default syntax support level */
+    #ifndef PIKA_SYNTAX_LEVEL
+        #define PIKA_SYNTAX_LEVEL PIKA_SYNTAX_LEVEL_MAXIMAL
+    #endif
+
+...
+    
+    /* default configuration  */
+    
+	#ifndef PIKA_STACK_BUFF_SIZE
+        #define PIKA_STACK_BUFF_SIZE 256
+    #endif
 ```
 
-```default configuration``` 是配置项的默认值，当 ```PIKA_CONFIG_ENABLE``` 宏被定义后，```pika_config_valid.h``` 会引入 ```pika_config.h```，因此用户可以在 ```pika_config.h``` 中覆盖上面的默认配置。
+```default configuration``` 是配置项的默认值，当 ```PIKA_CONFIG_ENABLE``` 宏被定义后，```pika_config_valid.h``` 会引入 ```pika_config.h```，因此用户可以在  ```pika_config.h``` 中覆盖上面的默认配置。
 
 例如，如果想要将增大 PikaScript 虚拟机的运行时栈，则可以在 ```pika_config.h``` 中写入
 
 ``` c
-#undef PIKA_STACK_BUFF_SIZE
 #define PIKA_STACK_BUFF_SIZE 512
 ```
 
 从 ```pika_config_valid.h``` 中可以看到，PikaScript 的默认优化选项 ``` PIKA_OPTIMIZE ``` 的值是 ``` PIKA_OPTIMIZE_SIZE ```，如果需要切换到 speed 优化，则可以在 ```pika_config.h``` 中写入
 
 ``` c
-#undef PIKA_OPTIMIZE
 #define PIKA_OPTIMIZE PIKA_OPTIMIZE_SPEED
 ```
 ### 示例代码
