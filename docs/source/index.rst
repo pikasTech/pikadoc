@@ -17,5 +17,6 @@ PikaScript是一个完全重写的超轻量级python引擎，零依赖，零配�
    index_cmodule
    index_coreapi
    index_contribute
+   third_part_doc
    商业合作方式
    index_meeting
