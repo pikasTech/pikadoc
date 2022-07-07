@@ -47,7 +47,9 @@ if not exist pikascript-core (
 rust-msc-latest-win10.exe
 ```
 
+![image](https://user-images.githubusercontent.com/88232613/177667714-858d644b-aa13-4104-be29-560de61c2948.png)
+
 Visual Studio 中预编译的设置
 
-![image](https://user-images.githubusercontent.com/88232613/172519804-67b32285-1d3c-4ff6-a90b-191f23a04592.png)
+![](https://user-images.githubusercontent.com/88232613/172519804-67b32285-1d3c-4ff6-a90b-191f23a04592.png)
 
