@@ -30,7 +30,7 @@ VSCODE 提供了连接到容器进行开发的工具，连接后开发体验就�
 
 ![](assets/image-20220601001641800.png)
 
- cd 到 ~/pikascript/port/linux, 然后输入 `code .`，切换工作路径到 pikascript/port/linux
+ `cd` 到 `~/pikascript/port/linux`, 然后输入 `code .`，切换工作路径到 `pikascript/port/linux`
 
 ![](assets/image-20220601001904516.png)
 
@@ -64,7 +64,19 @@ bash init.sh
 
 调试已经被配置好了，直接在 vscode 中打断点，然后 F5 即可进入调试。
 
+注意: vscode 工作路径需要在 ~/pikascript/port/linux 下，切换工作路径的方式：
+
+ `cd` 到 `~/pikascript/port/linux`, 然后输入 `code .`
+
 ![](https://user-images.githubusercontent.com/88232613/172127039-49e0d663-6f7a-4057-b5fe-1363c68dd9a0.png)
+
+可以修改 .vscode/launch 的 "--gtest_filter" 指定测试单个测例
+
+![](https://user-images.githubusercontent.com/88232613/178643919-48af254d-1c38-4ddf-9082-9ab89fca0996.png)
+
+例如只测试 `TEST(PikaCV,test1)`，则修改为 `"--gtest_filter==PikaCV.test1"`
+
+![](https://user-images.githubusercontent.com/88232613/178644052-4d1efa56-3856-49b0-b411-d66deaecbda3.png)
 
 ### 测试
 
