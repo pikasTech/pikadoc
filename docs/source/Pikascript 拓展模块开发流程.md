@@ -40,7 +40,7 @@ def set(argPath: str, val: any):
 然后我们希望 Adder 可以为整形、浮点型数据提供加法运算，那么就可以添加 byInt 方法和 byFloat 方法。
 
 ```python
-# Math.py
+# Math.pyi
 class Adder(TinyObj):
     def byInt(self, a:int, b:int)->int:
         pass
