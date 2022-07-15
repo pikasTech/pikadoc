@@ -1,8 +1,8 @@
-# 5.6 PikaCV 图像库
+# PikaCV 图像库
 
 PikaCV图像库实现了部分常用的图像处理算法。
 
-## 5.6.1 安装
+## 安装
 
 1. 在 requestment.txt 中加入 PikaCV的依赖，PikaCV的版本号应当与内核的版本号相同。
 
@@ -12,7 +12,7 @@ PikaCV图像库实现了部分常用的图像处理算法。
 
 2. 运行 pikaPackage.exe
 
-## 5.6.2 导入
+## 导入
 
 在 main.py 中加入：
 
@@ -21,7 +21,7 @@ PikaCV图像库实现了部分常用的图像处理算法。
 import PikaCV as cv
 ```
 
-## 5.6.3 class Image():
+## class Image():
 
 Image类是PikaCV库的基础，后续的图像处理算法都基于Image类。使用Image类可以创建一个空图像，如：
 
@@ -30,7 +30,7 @@ import PikaCV
 img = cv.Image()
 ```
 
-### 5.6.3.1 图像读写
+### 图像读写
 
 目前，PikaCV可以读取Jpeg格式文件与写入bmp格式文件。
 
@@ -60,9 +60,9 @@ img = cv.Image()
         """Load the image from bytes"""
 ```
 
-### 5.6.3.2 图像属性
+### 图像属性
 
-图像的``size``为``width * hight * channel``。
+图像的``size``大小为``width * hight * channel``。
 
 ```python
     def width(self) -> int:
@@ -96,7 +96,7 @@ img = cv.Image()
         """Get the size of the image by bytes"""
 ```
 
-### 5.6.3.3 图像运算
+### 图像运算
 
 ```python
     def add(self,image:Imgae):
@@ -116,7 +116,7 @@ img = cv.Image()
 
 ``merge()``与``split()``的通道顺序均为RGB。
 
-## 5.6.4 class Converter():
+## class Converter():
 
 Converter类主要实现了图像格式之间的转换，目前Converter支持以下图像存储格式及转换：
 
@@ -136,7 +136,7 @@ Converter类主要实现了图像格式之间的转换，目前Converter支持�
 cv.Converter.toBMP(img)
 ```
 
-## 5.6.5 class Transforms():
+## class Transforms():
 
 Transforms类主要实现了图像变换算法,目前已经实现的变换算法有：
 
