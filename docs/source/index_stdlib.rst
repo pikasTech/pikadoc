@@ -9,4 +9,4 @@
    PikaStdData 数据结构
    PikaStdTask 多任务
    PikaDebug 调试器
-   stdlib_PikaCV
+   PikaCV 图像库
