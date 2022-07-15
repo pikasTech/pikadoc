@@ -1,4 +1,4 @@
-# PikaStdLib  标准库
+# PikaStdLib  内置库
 
 PikaStdLib 是 PikaScript 的自带内置库，是必须安装的库，包含了内存检查工具和系统对象。
 ## 安装
