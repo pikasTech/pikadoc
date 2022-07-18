@@ -24,7 +24,7 @@
 
 这个开发板由 PikaScript 项目官方支持，持续滚动更新，PikaScript 的最新内核，最新功能，都可以在这个开发板上抢先体验到。
 
-**【重要】！ 拿到开发板之后，先[升级固件](https://pikadoc.readthedocs.io/zh/latest/Pika%20%E6%B4%BE%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.html#id6)，否则不能运行例程！ **
+### 【重要】！ 拿到开发板之后，先[升级固件](https://pikadoc.readthedocs.io/zh/latest/Pika%20%E6%B4%BE%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.html#id6)，否则不能运行例程！
 
 这个开发板也由项目官方适配了丰富外设模块、包括 GPIO、TIME、ADC、IIC、LCD、KEY、PWM 等模块的驱动都已经开发好，可以直接用 python 进行编程。
 
