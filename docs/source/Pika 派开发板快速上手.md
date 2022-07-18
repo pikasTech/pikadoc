@@ -24,13 +24,55 @@
 
 这个开发板由 PikaScript 项目官方支持，持续滚动更新，PikaScript 的最新内核，最新功能，都可以在这个开发板上抢先体验到。
 
-### 【重要】！ 拿到开发板之后，先[升级固件](https://pikadoc.readthedocs.io/zh/latest/Pika%20%E6%B4%BE%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.html#id6)，否则不能运行例程！
-
 这个开发板也由项目官方适配了丰富外设模块、包括 GPIO、TIME、ADC、IIC、LCD、KEY、PWM 等模块的驱动都已经开发好，可以直接用 python 进行编程。
 
 ## 视频教程
 
 [https://space.bilibili.com/5365336/channel/seriesdetail?sid=1034902](https://space.bilibili.com/5365336/channel/seriesdetail?sid=1034902)
+
+## 固件升级
+
+**【重要】！ 拿到开发板之后，先升级固件，否则不能运行例程！**
+
+Pika派的固件是滚动更新的，会不断推出新的固件版本，不断提供新的功能，而有一些新的功能只有升级固件才能玩到，所以学会升级固件也是很重要的~
+
+### 编译固件
+
+固件是一个 Keil 工程，编译非常简单。
+
+下载固件工程：
+
+进入 pikascript 官网 [http://pikascript.com](http://pikascript.com)
+
+Lite 版和 Pro版使用 stm32g030 平台。
+
+Plus 版使用  stm32g070 平台。
+
+然后点击 "开始生成"。
+
+（选择平台后会自动选择默认的模块)
+
+![](assets/1644129110261-049ad5bb-21af-40e2-9533-a1c8c86790f1.png)
+
+直接打开 Keil 工程就可以编译了。
+
+编译时需要使用不低于 V5.36 的 Keil，需要激活。
+
+![](assets/1642145123916-644fdd52-a1d3-41be-bd74-8a9e05386397.png)
+
+### 使用SWD升级
+
+Lite 版自行连接 J-Link \ DAP-Link \ ST-Link 即可SWD升级。
+
+Pro 版和 Plus 版板载 DAP-Link，直接连接USB即可SWD升级。
+
+Lite 版和 Pro版使用 [bsp/stm32g030](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g030c8) 工程。
+
+Plus 版使用  [bsp/stm32g070](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g070cb) 工程。
+
+在使用SWD升级时，应选择"部分擦除"的下载方式
+
+![](assets/1642144820993-a1c6c5e9-e3ca-4406-aa93-3ae3911738f6.png)
 
 ## 如何给单片机下载Python程序
 
@@ -371,48 +413,6 @@ main.py 执行完毕后，就会进入交互式运行，因此只要取消 main.
 2. 插上屏幕，参考绿色小旗的方向，屏幕能亮就说明插的方向是对的，插反了不会亮
 
   ![](assets/1641957159517-c3adbb12-118a-4c9f-9662-c1801df59276.png)
-
-## 固件升级
-
-Pika派的固件是滚动更新的，会不断推出新的固件版本，不断提供新的功能，而有一些新的功能只有升级固件才能玩到，所以学会升级固件也是很重要的~
-
-### 编译固件
-
-固件是一个 Keil 工程，编译非常简单。
-
-下载固件工程：
-
-进入 pikascript 官网 [http://pikascript.com](http://pikascript.com)
-
-Lite 版和 Pro版使用 stm32g030 平台。
-
-Plus 版使用  stm32g070 平台。
-
-然后点击 "开始生成"。
-
-（选择平台后会自动选择默认的模块)
-
-![](assets/1644129110261-049ad5bb-21af-40e2-9533-a1c8c86790f1.png)
-
-直接打开 Keil 工程就可以编译了。
-
-编译时需要使用不低于 V5.36 的 Keil，需要激活。
-
-![](assets/1642145123916-644fdd52-a1d3-41be-bd74-8a9e05386397.png)
-
-### 使用SWD升级
-
-Lite 版自行连接 J-Link \ DAP-Link \ ST-Link 即可SWD升级。
-
-Pro 版和 Plus 版板载 DAP-Link，直接连接USB即可SWD升级。
-
-Lite 版和 Pro版使用 [bsp/stm32g030](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g030c8) 工程。
-
-Plus 版使用  [bsp/stm32g070](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g070cb) 工程。
-
-在使用SWD升级时，应选择"部分擦除"的下载方式
-
-![](assets/1642144820993-a1c6c5e9-e3ca-4406-aa93-3ae3911738f6.png)
 
 ### 使用固件下载Python程序
 
