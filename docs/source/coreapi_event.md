@@ -38,6 +38,12 @@ typedef PikaObj PikaEventListener;
 
 ![](assets/image-20220619104053576.png)
 
+## 事件回调机制流程
+
+1. 初始化事件监听器
+2. 在 Python 中注册回调函数
+3. 在 C 中向事件监听器发送信号 （通常在中断或 C 的回调中）
+4. Python 中注册的回调函数被执行
 
 ## 通过 PikaStdDevice 支持事件回调
 
