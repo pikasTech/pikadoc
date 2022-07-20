@@ -97,7 +97,7 @@ size_t arg_getBytesSize(Arg* self);
     /* 用 arg_new<type> 的 api 创建 arg */
     Arg* str_arg1 = arg_newStr("aaa");
     /* 添加到 list 对象 */
-    PikaStdData_List_append(list, token_arg);
+    PikaStdData_List_append(list, str_arg1);
     /* 销毁 arg */
     arg_deinit(token_arg);
 ...
