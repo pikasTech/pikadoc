@@ -98,23 +98,10 @@ img = cv.Image()
 
 ### 图像运算
 
-```python
-    def add(self,image:Imgae):
-        """Add two images"""
+1. ``add()`` 与``minus()``逐像素操作，当像素值超过255时归为255，低于0时归为0。
+2. ``merge()``与``split()``的通道顺序均为RGB。
 
-    def minus(self,image:Imgae):
-        """Minus two images"""
 
-    def split(self) -> List:
-        """Split one 3-channels image to three 1-channel"""
-
-    def merge(self,R:Image,G:Image,B:Image):
-        """Merge three 1-channel image to 3-channels"""
-```
-
-``add()`` 与``minus()``逐像素操作，当像素值超过255时归为255，低于0时归为0。
-
-``merge()``与``split()``的通道顺序均为RGB。
 
 ## class Converter():
 
@@ -140,6 +127,65 @@ cv.Converter.toBMP(img)
 
 Transforms类主要实现了图像变换算法,目前已经实现的变换算法有：
 
-1. ``rotateDown``
+1. ``rotateDown(image: Image)``
 
-   可将图像旋转180度。
+   本函数可将图像旋转180度。
+
+2. ``threshold(image:Image,thre:int,maxval:int,thresholdType:int)``
+
+   本函数用于将图像转换为二值图像
+
+   ``thre``:当thresholdType的取值为0-4时使用thre作为图像的分界阈值
+
+   ``thresholdType``:阈值类型，具体含义如下：
+
+   | thresholdType | 对应方法          | 实现公式                                                     |
+   | ------------- | ----------------- | ------------------------------------------------------------ |
+   | 0             | THRESH_BINARY     | $dst(x,y)=\begin{cases}maxval,\,\, src(x,y)>thre \\0,\,\ otherwise \end{cases}$ |
+   | 1             | THRESH_BINARY_INV | $dst(x,y)=\begin{cases}0,\,\, src(x,y)>thre \\maxval,\,\ otherwise \end{cases}$ |
+   | 2             | THRESH_TRUNC      | $dst(x,y)=\begin{cases}thre,\,\, src(x,y)>thre \\maxval,\,\ otherwise \end{cases}$ |
+   | 3             | THRESH_TOZERO     | $dst(x,y)=\begin{cases}src(x,y),\ \,if\ \ src(x,y)>thre \\0,\,\ otherwise \end{cases}$ |
+   | 4             | THRESH_TOZERO_INV | $dst(x,y)=\begin{cases}0,\ \,if\ \ src(x,y)>thre \\src(x,y),\,\ otherwise \end{cases}$ |
+   | 5             | THRESH_OTSU       | 内部调用``getOTSUthre()``                                    |
+
+   
+
+3. ``setROI(image:Image,x:int,y:int,w:int,h:int)``
+
+   本函数用于从一张图像出选取一片感兴趣的区域，关于区域的定义采用xywh方法，x与y代表区域的左上顶点坐标，w代表区域的宽度，h代表区域的高度。
+
+4. ``getOTSUthre(image:Image) -> int``
+
+   本函数实现了[OTSU算法](https://u-aizu.ac.jp/course/bmclass/documents/otsu1979.pdf)，具体原理请参加论文，此处不过多赘述，函数的返回值为OTSU法计算得出的阈值。
+
+5. ``setOTSU(image:Image)``
+
+   本函数使用OTSU算法对图像进行二值化处理。
+
+6. ``resize(image:Image,x:int,y:int,resizeType:int)``
+
+   本函数实现了对图像的缩放，x与y是图像的目标大小
+
+   ``resizeType``:图像的缩放方法。0代表最近邻算法。
+
+7. ``adaptiveThreshold(image:Image,maxval:int,subsize:int,c:int,method:int)``
+
+   ``method``：在一个邻域内计算阈值所采用的算法。0代表均值滤波，1代表中值滤波。
+
+   ``c``:偏移值调整量
+
+   ``subsize``:卷积核大小
+
+## class Filter
+
+Filter类实现了常用的图像滤波算法，目前已经实现的算法有：
+
+1. ``meanFilter(image:Image,ksizex:int,ksizey:int)``
+
+   均值滤波，ksizex与ksizey分别为卷积核的x与y的大小。目前未支持pad，所以滤波后图片的大小为``W-F+1``（ksizex等于ksizey时）。
+
+2. ``medianFilter(image:Image)``
+
+   中值滤波，目前仅支持尺寸为3*3的卷积核。
+
+   
