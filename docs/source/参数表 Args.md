@@ -19,17 +19,17 @@ typedef Link Args;
 ```
 参数表内部基于链表（Link）实现。
 **注意不要直接访问Args内部的链表**，请使用Args API访问Args。以获得**最大的向后兼容性**。
-​
 
 ## 参数表的新建和销毁
 
 1. 新建参数表，从堆中新建一个参数表，返回参数表的指针。**注意新建的参数表需要手动销毁来回收内存。不断新建参数表但不销毁会导致内存泄漏。**
+
+[注意] 为避免内存泄漏，请在 [docker 开发环境](https://pikadoc.readthedocs.io/zh/latest/get-start_linux.html) 下进行开发，确保充足的单元测试和内存检查。
+
 ```c
 Args* New_args(Args* args);
 ```
 新建参数表传入的参数是一个预留的辅助参数表，通常情况下填NULL即可。
-​
-
 
 2. 销毁参数表。当一个参数表被销毁时，参数表**内部的所有参数也会被自动销毁**。
 ```c
@@ -40,10 +40,8 @@ void args_deinit(Args* self);
 这一部分API提供了对参数表的增删改查。
 ### 基本类型的增删改查
 Args参数表支持**整形、浮点型、指针、字串**四种基本类型的参数。使用set和get方法即可读写一个参数表内的参数。
-​
 
 Args参数表是**动态**的，因此可以随时为参数表新增新的参数。
-​
 
 基本类型属性的API有如下这些，和对象的参数API相似，但**不支持嵌套**：
 ```c
@@ -60,8 +58,6 @@ void* args_getPtr(Args* self, char* name);
 char* args_getStr(Args* self, char* name);
 ```
 基本类型属性的命名方式为args_set[Type]和args_get[Type]。
-​
-
 
 1. 第一个输入参数为要操作的参数表指针。
 1. 第二个输入参数为参数名
@@ -76,7 +72,6 @@ Arg* args_getArg(Args* self, char* name);
 ArgType args_getType(Args* self, char* name);
 ```
 泛型参数在使用时需要转换为基本类型。
-​
 
 使用以下API可以判断泛型参数的当前类型。
 ```c
