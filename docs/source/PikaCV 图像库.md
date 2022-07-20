@@ -139,14 +139,14 @@ Transforms类主要实现了图像变换算法,目前已经实现的变换算法
 
    ``thresholdType``:阈值类型，具体含义如下：
 
-   | thresholdType | 对应方法          | 实现公式                                                     |
-   | ------------- | ----------------- | ------------------------------------------------------------ |
-   | 0             | THRESH_BINARY     | $dst(x,y)=\begin{cases}maxval,\,\, src(x,y)>thre \\0,\,\ otherwise \end{cases}$ |
-   | 1             | THRESH_BINARY_INV | $dst(x,y)=\begin{cases}0,\,\, src(x,y)>thre \\maxval,\,\ otherwise \end{cases}$ |
-   | 2             | THRESH_TRUNC      | $dst(x,y)=\begin{cases}thre,\,\, src(x,y)>thre \\maxval,\,\ otherwise \end{cases}$ |
-   | 3             | THRESH_TOZERO     | $dst(x,y)=\begin{cases}src(x,y),\ \,if\ \ src(x,y)>thre \\0,\,\ otherwise \end{cases}$ |
-   | 4             | THRESH_TOZERO_INV | $dst(x,y)=\begin{cases}0,\ \,if\ \ src(x,y)>thre \\src(x,y),\,\ otherwise \end{cases}$ |
-   | 5             | THRESH_OTSU       | 内部调用``getOTSUthre()``                                    |
+   | thresholdType | 对应方法          | 实现公式                  |
+   | ------------- | ----------------- | ------------------------- |
+   | 0             | THRESH_BINARY     | ![](./assets/thre1.png)   |
+   | 1             | THRESH_BINARY_INV | ![](./assets/thre2.png)   |
+   | 2             | THRESH_TRUNC      | ![](./assets/thre3.png)   |
+   | 3             | THRESH_TOZERO     | ![](./assets/thre4.png)   |
+   | 4             | THRESH_TOZERO_INV | ![](./assets/thre5.png)   |
+   | 5             | THRESH_OTSU       | 内部调用``getOTSUthre()`` |
 
    
 
