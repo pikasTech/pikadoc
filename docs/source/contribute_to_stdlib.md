@@ -189,21 +189,11 @@ git config --global user.email < your email >
 git config remote.origin.url < your forked git repo url >
 ```
 
-运行
+运行 `sh push-core.sh` 将修改后的代码提交到 ~/pikascript/package/PikaStdLib。
 
-```
-sh push-core.sh
-```
+如果提交 PikaStdLib 之外的库，可以使用 `sh pkg-push.sh [package name]` 命令提交，比如 `sh pkg-push.sh PikaMath`。
 
-将修改后的代码提交到 ~/pikascript/package/PikaStdLib。
-
-然后运行
-
-```
-git commit -a
-```
-
-输入 commit 信息，如果你不熟悉 vim，请自行了解 vim 的基础使用方法。
+然后运行 `git commit -a` 输入 commit 信息，如果你不熟悉 vim，请先简单了解 vim 的基础使用方法。
 
 ![](assets/image-20220601005532339.png)
 
