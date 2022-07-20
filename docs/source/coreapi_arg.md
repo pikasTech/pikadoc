@@ -99,7 +99,7 @@ size_t arg_getBytesSize(Arg* self);
     /* 添加到 list 对象 */
     PikaStdData_List_append(list, str_arg1);
     /* 销毁 arg */
-    arg_deinit(token_arg);
+    arg_deinit(str_arg1);
 ...
 ```
 
