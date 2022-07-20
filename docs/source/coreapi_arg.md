@@ -53,7 +53,12 @@ Arg* arg_newBytes(uint8_t* src, size_t size);
 2. 销毁泛型参数。
 
 ```c
-void arg_deinit(arg* self);
+void arg_deinit(Arg* self);
+```
+
+3. 复制泛型参数
+```c
+Arg* arg_copy(Arg* self);
 ```
 
 传入泛型参数的指针，销毁泛型参数。
