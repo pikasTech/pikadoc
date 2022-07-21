@@ -135,21 +135,12 @@ Transforms类主要实现了图像变换算法,目前已经实现的变换算法
 
    本函数用于将图像转换为二值图像
 
-   ``thre``:当thresholdType的取值为0-4时使用thre作为图像的分界阈值
+   ``thre``:当thresholdType的取值为0-4时使用thre作为图像的分界阈值。
 
    ``thresholdType``:阈值类型，具体含义如下：
 
-   | thresholdType | 对应方法          | 实现公式                  |
-   | ------------- | ----------------- | ------------------------- |
-   | 0             | THRESH_BINARY     | ![](./assets/thre1.png)   |
-   | 1             | THRESH_BINARY_INV | ![](./assets/thre2.png)   |
-   | 2             | THRESH_TRUNC      | ![](./assets/thre3.png)   |
-   | 3             | THRESH_TOZERO     | ![](./assets/thre4.png)   |
-   | 4             | THRESH_TOZERO_INV | ![](./assets/thre5.png)   |
-   | 5             | THRESH_OTSU       | 内部调用``getOTSUthre()`` |
-
+   ![](./assets/thre.png)
    
-
 3. ``setROI(image:Image,x:int,y:int,w:int,h:int)``
 
    本函数用于从一张图像出选取一片感兴趣的区域，关于区域的定义采用xywh方法，x与y代表区域的左上顶点坐标，w代表区域的宽度，h代表区域的高度。
@@ -164,7 +155,7 @@ Transforms类主要实现了图像变换算法,目前已经实现的变换算法
 
 6. ``resize(image:Image,x:int,y:int,resizeType:int)``
 
-   本函数实现了对图像的缩放，x与y是图像的目标大小
+   本函数实现了对图像的缩放，x与y是图像的目标大小。
 
    ``resizeType``:图像的缩放方法。0代表最近邻算法。
 
@@ -172,9 +163,9 @@ Transforms类主要实现了图像变换算法,目前已经实现的变换算法
 
    ``method``：在一个邻域内计算阈值所采用的算法。0代表均值滤波，1代表中值滤波。
 
-   ``c``:偏移值调整量
+   ``c``:偏移值调整量。
 
-   ``subsize``:卷积核大小
+   ``subsize``:卷积核大小。
 
 ## class Filter
 
