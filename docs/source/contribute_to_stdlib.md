@@ -70,7 +70,7 @@ bash init.sh
 
 ![](https://user-images.githubusercontent.com/88232613/172127039-49e0d663-6f7a-4057-b5fe-1363c68dd9a0.png)
 
-可以修改 .vscode/launch.json 的 "--gtest_filter" 指定测试单个测例
+可以修改 .vscode/launch.json 的 "--gtest_filter" 指定调试单个测例
 
 ![](https://user-images.githubusercontent.com/88232613/178643919-48af254d-1c38-4ddf-9082-9ab89fca0996.png)
 
