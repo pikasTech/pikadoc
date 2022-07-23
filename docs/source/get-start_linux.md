@@ -50,6 +50,7 @@ step4: 运行 GoogleTest， BenchMark，和 valgrind
 ``` shell
 sh gtest.sh
 sh ci_benchmark.sh
+sh valgrind.sh
 ```
 
 step5: 运行 REPL
