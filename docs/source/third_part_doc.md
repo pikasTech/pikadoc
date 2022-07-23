@@ -1,5 +1,9 @@
 # 技术贴精选
 
+## 第二期
+
+### [记录一下参与的第一个开源项目暨PikaCV开发不完全指北](https://zhuanlan.zhihu.com/p/544946765)
+
 ## 第一期
 
 ### [[MM32生态] Python，让嵌入式应用开发更便捷、更高效、更专注](https://bbs.21ic.com/icview-3236202-1-1.html) 
