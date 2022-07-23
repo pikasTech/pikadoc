@@ -42,7 +42,7 @@ mem_pool_init();
 
 如果需要释放内存池，调用
 
-```
+``` C
 mem_pool_deinit();
 ```
 
