@@ -1,12 +1,10 @@
-# 如何贡献标准库
+# 如何贡献通用模块
 
-## PikaScript 标准库是什么？
+## PikaScript 通用模块是什么？
 
-PikaScript 标准库是一系列跨平台的常用工具库，比如 string, time 等等，这些库有一些提供了和 CPython 一致或者类似的 API, 有些提供了 MCU 开发的常用工具。
+PikaScript 通用模块是一系列跨平台的常用工具库，比如 string, time 等等，这些库有一些提供了和 CPython 一致或者类似的 API, 有些提供了 MCU 开发的常用工具。
 
-
-
-## PikaScript 标准库的开发环境搭建
+## PikaScript 开发环境搭建
 
 PikaScript 标准库是跨平台的，所以不能够使用平台（比如 stm32）专有的资源，为了确保这一点，标准库都是在 linux 的平台开发的。
 
