@@ -6,4 +6,5 @@ C 模块 - 将 C 库制作为 Python 库
 
    PikaScript 模块概述
    Pikascript 拓展模块开发流程
+   cmodule_enhance
    模块裁剪
