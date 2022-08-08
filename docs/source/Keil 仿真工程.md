@@ -35,7 +35,6 @@
 
 ```python
 # main.py
-from PikaObj import  *
 import Device
 import PikaStdLib 
 
@@ -72,7 +71,6 @@ mem.now()
 接下来我们来修改一下 main.py 看看效果
 
 ```python
-from PikaObj import  *
 import Device
 import PikaStdLib 
 
