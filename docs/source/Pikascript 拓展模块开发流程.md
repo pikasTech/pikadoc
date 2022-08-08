@@ -21,6 +21,15 @@ class Adder:
         pass
 ```
 
+使用 `...` 代替 `pass` 的写法也是合法的，例如：
+
+```python
+# Math.pyi
+class Addr:
+    def byInt(self, a:int, b:int)->int:...
+    def byFloat(self, a:float, b:float)->float:...
+```
+
 上面的一段代码中我们定义了 `Adder` 类，并添加了两个方法的声明，```byInt(self, a:int, b:int)->int``` 表示方法名为 ```byInt ```,输入参数为 `a` 和 `b` ， `a` 和 `b` 的类型都是 `int` 型，而返回值也是 `int` 型，返回值由 `->int` 来确定，这都是 python 的标准语法，是带类型注解的写法。
 
 python 中类的方法的第一个参数都是 `self` 这是 python 的语法所要求的。
