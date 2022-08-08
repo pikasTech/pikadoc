@@ -5,21 +5,23 @@
 我们打开pikascript文件夹，发现文件夹根目录下除了main.py，还有Device.pyi，PikaObj.pyi 和 PikaStdLib.pyi，这三个.pyi文件分别对应三个PikaScript **C模块** (class package)，每个.pyi 文件本身称为 **模块接口** (package interface)。一个C模块中可以包含若干个相关性较强的类。
 
 ![](assets/1638582993068-0a8afe28-baa2-41ad-bac1-6626d50192ad.png)
+
 每一个 PikaScript **C模块** 由 **模块接口** 和 **模块实现** (package implement)两部分组成。
+
 我们先打开 Device.pyi 查看一下内容，在后续的文档中我们会称 Device.pyi 为 **Device模块接口**。
+
 以下就是 Device.pyi 的全部内容。
 
 ```python
-# Device.py
-from PikaObj import *
+# Device.pyi
 
-class LED(TinyObj):
+class LED:
     def on(self):
         pass
     def off(self):
         pass
 
-class Uart(TinyObj):
+class Uart:
     def send(self, data:str):
         pass
     def setName(self, name:str):
@@ -28,9 +30,7 @@ class Uart(TinyObj):
         pass
 ```
 
-
-可以看到，Device.pyi 中使用 pyhon 标准语法定义了两个类，分别是 `LED` 类和 `Uart` 类，这两个类都继承自`TinyObj`。
-
+可以看到，Device.pyi 中使用 pyhon 标准语法定义了两个类，分别是 `LED` 类和 `Uart` 类。
 
 LED类中定义了两个方法，分别是 `on()` 方法和 `off()` 方法，而`Uart`类则定义了 `send(data:str)` 方法、 `setName(name:str)` 方法和 `printName()` 方法。
 
@@ -58,7 +58,6 @@ main.py的内容如下
 
 ```python
 # main.py
-from PikaObj import  *
 import Device
 import PikaStdLib 
 
