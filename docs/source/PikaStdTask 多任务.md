@@ -14,7 +14,6 @@ PikaStdLib==v1.6.1
 Task 类提供了任务循环功能，由 Task 类创建对象，即可创建一个任务循环。
 ### Task 类的方法
 ```python
-from PikaObj import *
 import PikaStdData
 
 
