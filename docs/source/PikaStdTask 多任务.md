@@ -18,7 +18,7 @@ from PikaObj import *
 import PikaStdData
 
 
-class Task(TinyObj):
+class Task:
     calls = PikaStdData.List()
 
     def __init__(self):

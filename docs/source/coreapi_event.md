@@ -50,7 +50,7 @@ typedef PikaObj PikaEventListener;
 继承 PikaStdDevice 是支持事件回调的最简单方式，`PikaStdDevice.BaseDev` 设备基本类已经支持了事件注册方法 `addEventCallBack`。
 
 ```python
-class BaseDev(TinyObj):
+class BaseDev:
     def addEventCallBack(self, eventCallback: any): ...
 
     # need override
@@ -171,7 +171,7 @@ get falling edge!
 [/package/PikaStdDevice/PikaStdDevice.pyi](https://gitee.com/Lyon1998/pikascript/blob/master/package/PikaStdDevice/PikaStdDevice.pyi)
 
 ```python
-class BaseDev(TinyObj):
+class BaseDev:
     def addEventCallBack(self, eventCallback: any): ...
 ```
 

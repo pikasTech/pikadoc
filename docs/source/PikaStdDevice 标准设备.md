@@ -35,7 +35,7 @@ PikaStdDevice 是一个抽象的设备驱动模块，定义了所有的用户 AP
 以 GPIO 模块为例，以下是 PikaStdDevice 定义的用户 API
 
 ``` python
-class GPIO(TinyObj):
+class GPIO:
     def __init__(self):
         pass
 

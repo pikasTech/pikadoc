@@ -95,9 +95,7 @@ PikaScript 导入 C 模块和导入 Python 模块的方法一样，直接 `impor
 
 ``` python
 # PikaStdData.pyi
-from PikaObj import *
-
-class List(TinyObj):
+class List:
     def __init__(self): ...
     # add an arg after the end of list
     def append(self, arg: any): ...
