@@ -4,7 +4,7 @@
 
 ## 安装 PikaTech.PikaScript.x.x.x.pack
 
-[ 点击下载 ](https://gitee.com/Lyon1998/pikascript/attach_files/1106948/download)
+[ 点击下载 ](https://gitee.com/Lyon1998/pikascript/attach_files/1151230/download)
 
 一路 Next 安装即可
 
