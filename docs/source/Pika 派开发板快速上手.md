@@ -342,9 +342,7 @@ while True:
 ![](assets/210940_f30be3d5_5521445.png)
 
 ```python
-from PikaObj import *
 import PikaStdLib
-
 import machine
 
 lcd = machine.LCD()
