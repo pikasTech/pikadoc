@@ -22,6 +22,11 @@ STM32G0==latest
 - （可选）在 pikascript/README.md 和 pikascript/README_zh.md 中更新模块信息。
 
 ### 提交模块的文件
+
+使用[模块贡献引导](http://pikascript.com/contribute.html)，即可快速提交模块。
+
+或者手动 fork 然后 pullrequest：
+
    - fork 一份 pikascript 仓库，然后 clone 到本地。
 
 ![](assets/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png)
@@ -53,6 +58,11 @@ releases = [
 - 开发和测试新的模块。
 - （可选）在 pikascript/README.md 和 pikascript/README_zh.md 中更新模块信息。
 - 提交模块的文件
+
+使用[模块贡献引导](http://pikascript.com/contribute.html)，即可快速提交模块。
+
+或者手动 fork 然后 pullrequest：
+
    - fork一份pikascript仓库，然后clone到本地。
 
 ![](assets/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png)
