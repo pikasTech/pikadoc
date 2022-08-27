@@ -6,10 +6,6 @@
 
 ## 第一期
 
-### [[MM32生态] Python，让嵌入式应用开发更便捷、更高效、更专注](https://bbs.21ic.com/icview-3236202-1-1.html) 
-
-### [[MM32生态] 基于PikaScript在MM32平台上部署Python开发环境](https://bbs.21ic.com/icview-3232352-1-1.html) 
-     
 ### [HC32F460 实现模拟U盘导入python脚本在19264点阵屏上绘图--PikaScript移植](https://blog.csdn.net/wwddgod/article/details/125235234) 
 
 ### [[Hacker News 周报] 超轻量级 Python 引擎；快速阅读英文插件；TypeScript 发布新版本](https://www.bilibili.com/video/BV1pY4y1z7Vx) 
