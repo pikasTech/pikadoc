@@ -5,7 +5,7 @@ PikaDebug 调试器模块提供了断点调试等功能。
 
 1. 在 requestment.txt 中加入 PikaStdLib 的依赖，PikaStdLib 的版本号应当与内核的版本号相同。
 ```
-PikaStdLib==v1.6.1
+PikaStdLib==v1.10.0
 ```
 
 2. 运行 pikaPackage.exe
