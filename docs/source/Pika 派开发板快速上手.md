@@ -70,7 +70,7 @@ Plus 版使用  [bsp/stm32g070](https://gitee.com/Lyon1998/pikascript/tree/maste
 
 在使用SWD升级时，应选择"全部擦除"的下载方式
 
-![](assets/1642144820993-a1c6c5e9-e3ca-4406-aa93-3ae3911738f6.png)
+![](assets/image-20220828180911429.png)
 
 ## 如何给单片机下载Python程序
 
