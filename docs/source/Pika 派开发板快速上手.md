@@ -68,7 +68,7 @@ Lite 版和 Pro版使用 [bsp/stm32g030](https://gitee.com/Lyon1998/pikascript/t
 
 Plus 版使用  [bsp/stm32g070](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g070cb) 工程。
 
-在使用SWD升级时，应选择"部分擦除"的下载方式
+在使用SWD升级时，应选择"全部擦除"的下载方式
 
 ![](assets/1642144820993-a1c6c5e9-e3ca-4406-aa93-3ae3911738f6.png)
 
