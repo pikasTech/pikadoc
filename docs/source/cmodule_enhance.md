@@ -104,6 +104,6 @@ print('after run test.hello()')
 before run test.hello()
 now loading module test...
 hello!
-before run test.hello()
+after run test.hello()
 ```
 
