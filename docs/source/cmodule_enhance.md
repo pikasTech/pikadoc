@@ -69,7 +69,7 @@ print(cJSON.cJSON_Invalid)
 
 # C 模块初始化
 
-直接在 .pyi 中定义 `__init()__` 函数即可执行模块初始化，在模块载入时会触发执执行，PikaScript 具有模块延时加载机制，`import` 不会直接触发模块加载，仅仅在第一次真正使用模块时，才会触发加载。
+直接在 .pyi 中定义 `__init__()` 函数即可执行模块初始化，在模块载入时会触发执行，PikaScript 具有模块延时加载机制，`import` 不会直接触发模块加载，仅仅在第一次真正使用模块时，才会触发加载。
 
 例如:
 
@@ -104,5 +104,6 @@ print('after run test.hello()')
 before run test.hello()
 now loading module test...
 hello!
+before run test.hello()
 ```
 
