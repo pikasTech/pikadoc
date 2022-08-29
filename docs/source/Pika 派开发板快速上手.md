@@ -114,7 +114,6 @@ mem = PikaStdLib.MemChecker()
 io1 = machine.GPIO()
 time = machine.Time()
 
-io1.init()
 io1.setPin('PA8')
 io1.setMode('out')
 io1.enable()
@@ -207,12 +206,11 @@ io1 就是我们今天的主角了，这是一个 GPIO 对象，是用 machine .
 io1 = machine.GPIO()
 ```
 
-在新建了 io1 对象之后，我们要给这个 io 进行初始化，init() 用于对象初始化，在最前面使用，然后 setPin('PA8') 表示使用 PA8 口 setMode('out') 表示使用输出模式，而 enable() 表示启动 io1 的硬件，low() 将 io1 的电平拉低。
+在新建了 io1 对象之后，setPin('PA8') 表示使用 PA8 口 setMode('out') 表示使用输出模式，而 enable() 表示启动 io1 的硬件，low() 将 io1 的电平拉低。
 
 PA8 上连接了 Pika 派上面的一个 led 灯，只要控制 PA8 的电平，就可以控制灯的亮灭了。
 
 ```python
-io1.init()
 io1.setPin('PA8')
 io1.setMode('out')
 io1.enable()
@@ -241,7 +239,6 @@ import machine
 time = machine.Time()
 adc1 = machine.ADC() #create an ADC objcet
 
-adc1.init() # init the ADC object
 adc1.setPin('PA1') # config Pin
 adc1.enable() # launch the hardware
 
@@ -262,7 +259,6 @@ import machine
 
 time = machine.Time()
 uart = machine.UART() #create a uart object
-uart.init()
 uart.setId(1) # set number of uart
 uart.setBaudRate(115200) # set baudrate
 uart.enable() #启动硬件
