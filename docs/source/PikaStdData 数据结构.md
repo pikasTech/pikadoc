@@ -29,20 +29,20 @@ list = PikaStdData.List()
         pass
 
     # get an arg by the index
-    def get(self, i: int) -> any:
+    def __getitem__(self, i: int) -> any:
         pass
 
     # set an arg by the index
-    def set(self, i: int, arg: any):
+    def __setitem__(self, i: int, arg: any):
         pass
 
     # get the length of list
     def len(self) -> int:
         pass
 ```
-注意，`set()` 方法的索引不能够超出 List 的长度，如果要添加列表的成员，需要使用 `append()`方法。
+注意，`__setitem__()` 方法的索引不能够超出 List 的长度，如果要添加列表的成员，需要使用 `append()`方法。
 ### 使用 '[]' 中括号索引列表
-List 对象可以使用 '[]' 进行索引。`list[1] = a`等效于 `list.set(1, a)`，`a = list[1]`等效于`a = list.get(1)`。
+List 对象可以使用 '[]' 进行索引。`list[1] = a`等效于 `list.__setitem__(1, a)`，`a = list[1]`等效于`a = list.__getitem__(1)`。
 ### 使用 for 循环遍历 List
 List 对象支持 for 循环遍历
 例：
@@ -66,11 +66,11 @@ dict = PikaStdData.Dict()
 ### Dict 类的方法
 ```python
     # get an arg by the key
-    def get(self, key: str) -> any:
+    def __getitem__(self, key: str) -> any:
         pass
 
     # set an arg by the key
-    def set(self, key: str, arg: any):
+    def __setitem__(self, key: str, arg: any):
         pass
 
     # remove an arg by the key
@@ -78,7 +78,7 @@ dict = PikaStdData.Dict()
         pass
 ```
 ### 使用 '[]' 中括号索引字典
-Dict 对象可以使用 '[]' 进行索引。`dict['x'] = a`等效于 `dict.set('x', a)`，`a = dict['x']`等效于`a = dict.get('x')`。
+Dict 对象可以使用 '[]' 进行索引。`dict['x'] = a`等效于 `dict.__setitem__('x', a)`，`a = dict['x']`等效于`a = dict.__getitem__('x')`。
 ### 使用 for 循环遍历 Dict
 Dict 对象支持 for 循环遍历
 例：
@@ -101,22 +101,14 @@ ByteArray 类提供了 ByteArray 字节数组功能，由 ByteArray 类创建对
 如：
 ```python
 import PikaStdData
-bytes = PikaStdData.ByteArray()
+bytes = PikaStdData.ByteArray(b'test')
 ```
 
-ByteArray 类继承自 List 类，可以使用 List 类的方法。
 
-### ByteArray 类的方法
-
-``` python
-    # convert a string to ByteArray
-    def fromString(self, s:str):
-        pass
-```
 用例:
 ``` python
->>> bytes = PikaStdData.ByteArray()
->>> bytes.fromString('test')
+>>> bytes = PikaStdData.ByteArray(b'test')
+
 >>> for byte in bytes:
 ...     print(byte)
 ... 
