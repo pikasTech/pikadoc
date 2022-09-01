@@ -1,6 +1,6 @@
 # C 模块可变参数
 
-C 模块支持可变参数，使用 `*xxx` 的输入参数即可，在 C 层会将任意个数的参数打包进 `PikaTuple` 数据类型中，使用 `tuple_getSize()` 可以获得可变参数的个数，使用 `tuple_getArg()` 可以根据可变参数的位置得到 `arg`。
+C 模块支持可变参数，使用 `*xxx` 的输入参数即可，在 C 层会将任意个数的参数打包进 `PikaTuple` 数据类型中，使用 `tuple_getSize()` 可以获得可变参数的个数，使用 `tuple_getArg()` 可以根据可变参数的位置得到 `arg`。同样支持 `tuple_get<Type>` api，直接得到指定类型的值。
 
 
 [注意] 
@@ -35,6 +35,43 @@ a: 1
 val[0]: 2
 val[1]: 3
 val[2]: 4
+>>>
+```
+
+# C 模块关键词参数
+
+C 模块支持关键词参数，使用 `**xxx` 的输入参数即可，在 C 层会将任意个数的参数打包进 `PikaDict` 数据类型中，使用 `dict_getArg()` 可以根据关键词得到 `arg`。同样支持 `dict_get<Type>()` api, 直接得到指定类型的值。
+
+
+[注意] 
+
+- 需要内核版本 `>= v1.10.7`
+
+- 关键词参数必须放在位置参数和可变参数的后面
+
+示例：
+
+``` python
+# test.pyi
+def keys(a:int, **keys):...
+```
+
+``` C
+// test.c
+void test_keys(PikaObj* self, int a, PikaDict* keys){
+    printf("a: %d\n", a);
+    printf("keys['b']: %d\n", i, dict_getInt(keys, "b"));
+    printf("keys['c']: %d\n", i, dict_getInt(keys, "c"));
+}
+```
+
+输出结果:
+
+```python
+>>> test.vals(1, b=2, c=3)
+a: 1
+keys['b']: 2
+keys['c']: 3
 >>>
 ```
 
