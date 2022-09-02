@@ -30,7 +30,7 @@ void test_vals(PikaObj* self, int a, PikaTuple* val){
 输出结果:
 
 ```python
->>> test.keys(1, 2, 3, 4)
+>>> test.vals(1, 2, 3, 4)
 a: 1
 val[0]: 2
 val[1]: 3
@@ -68,7 +68,7 @@ void test_keys(PikaObj* self, int a, PikaDict* keys){
 输出结果:
 
 ```python
->>> test.vals(1, b=2, c=3)
+>>> test.keys(1, b=2, c=3)
 a: 1
 keys['b']: 2
 keys['c']: 3
