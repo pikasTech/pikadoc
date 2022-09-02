@@ -30,7 +30,7 @@ void test_vals(PikaObj* self, int a, PikaTuple* val){
 输出结果:
 
 ```python
->>> test.vals(1, 2, 3, 4)
+>>> test.keys(1, 2, 3, 4)
 a: 1
 val[0]: 2
 val[1]: 3
