@@ -201,7 +201,7 @@ print(res4)
 | Python 类型注解 | C  原生类型 | 说明 |
 | --------------- | ----------- | -- |
 | int             | int         | python 基本类型 |
-| float           | float       | python 基本类型 |
+| float           | double       | python 基本类型 |
 | str             | char *       | python 基本类型 |
 | bytes           | uint8_t *    | python 基本类型 |
 | pointer         | void *       | PikaScript 特有的类型注解 |
