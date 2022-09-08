@@ -9,7 +9,7 @@
 在自己的电脑上部署运行这个仿真工程也非常简单，按照下面的几步操作就可以了~
 ## 获得仿真工程
 
-进入 PikaScript 官网，然后平台选择 `sumulation-rtt-qemu-arm2d`，然后点开始生成即可得到工程。
+进入 PikaScript 官网: http://pikascript.com ，然后平台选择 `sumulation-rtt-qemu-arm2d`，然后点开始生成即可得到工程。
 
 ## 安装开发环境
 
