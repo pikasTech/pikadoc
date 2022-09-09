@@ -101,8 +101,11 @@ PikaObj* test_test_list(PikaObj* self){
     /* 返回列表 */
     return list;
 }
+```
 
 ## Dict
+
+注意：需要内核版本 `>= v1.10.8`
 
 ``` python
 # test.pyi
@@ -123,6 +126,7 @@ PikaObj* test_test_dict(PikaObj* self){
     arg_deinit(para2);
     return dict;
 }
+```
 
 # C 模块常量
 
