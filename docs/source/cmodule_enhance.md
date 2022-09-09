@@ -75,6 +75,55 @@ keys['c']: 3
 >>>
 ```
 
+# C 模块返回 List/Dict
+
+## List
+
+``` python
+# test.pyi
+def test_list()->list:...
+```
+
+``` C
+// test.c
+#include "PikaStdData_List.h"
+PikaObj* test_test_list(PikaObj* self){
+    /* 创建 list 对象 */
+    PikaObj* list = newNormalObj(New_PikaStdData_List);
+    /* 初始化 list */
+    PikaStdData_List___init__(list);
+    /* 用 arg_new<type> 的 api 创建 arg */
+    Arg* str_arg1 = arg_newStr("aaa");
+    /* 添加到 list 对象 */
+    PikaStdData_List_append(list, str_arg1);
+    /* 销毁 arg */
+    arg_deinit(str_arg1);
+    /* 返回列表 */
+    return list;
+}
+
+## Dict
+
+``` python
+# test.pyi
+def test_dict()->dict:...
+```
+
+``` C
+// test.c
+#include "PikaStdData_Dict.h"
+PikaObj* test_test_dict(PikaObj* self){
+    PikaObj* dict = newNormalObj(New_PikaStdData_Dict);
+    PikaStdData_Dict___init__(dict);
+    Arg* para1 = arg_newInt(1);
+    Arg* para2 = arg_newInt(2);
+    PikaStdData_Dict_set(dict, "para1", para1);
+    PikaStdData_Dict_set(dict, "para2", para2);
+    arg_deinit(para1);
+    arg_deinit(para2);
+    return dict;
+}
+
 # C 模块常量
 
 C 模块支持在类中或模块中加入常量，可以使用 `val:type` 的语法，这些常量需要在初始化时赋值，因此需要定义 `__init__()` 方法，例如：
