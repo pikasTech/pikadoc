@@ -22,25 +22,25 @@ VSCODE 提供了连接到容器进行开发的工具，连接后开发体验就�
 
 在 VSCODE 侧边栏选择远程，Containers，pikadev，然后点击打开目录，即可在 VSCODE 中连接到 Dockder 内部。
 
-![](assets/image-20220601001455518.png)
+![](assets/image-20220601001455518-16627321708954.png)
 
 初次打开需要等待一些插件自动安装，以后再打开就可以直接启动了。
 
-![](assets/image-20220601001641800.png)
+![](assets/image-20220601001641800-16627321708956.png)
 
  `cd` 到 `~/pikascript/port/linux`, 然后输入 `code .`，切换工作路径到 `pikascript/port/linux`
 
-![](assets/image-20220601001904516.png)
+![](assets/image-20220601001904516-16627321708955.png)
 
 ### 开发
 
 标准库的 pyi 声明文件在 package/pikascript 目录下，标准库包括了 PikaStdLib.pyi, PikaStdData.pyi, PikaDebug.pyi, PikaStdTask.pyi 等，实现文件在 PikaStdLib 文件夹下。
 
-![](assets/image-20220601002350438.png)
+![](assets/image-20220601002350438-16627321708968.png)
 
 然后可以为标准库增加类，或者函数，例如，为 `PikaStdData.String` 类增加一个 `startswith()` 方法，首先在 PikaStdData.pyi 中的 `String` 类下面新增 ` startswith() ` 方法的声明。
 
-![](assets/image-20220601003457155.png)
+![](assets/image-20220601003457155-16627321708967.png)
 
 然后运行：
 
@@ -52,11 +52,11 @@ bash init.sh
 
 再打开 `PikaStdData_String.h`，会发现自动生成的 startswith 方法的 c 函数声明。
 
-![](assets/image-20220601003545995.png)
+![](assets/image-20220601003545995-16627321708969.png)
 
 接着在 PikaStdData_String.c 中实现这个函数。
 
-![](assets/image-20220601003710360.png)
+![](assets/image-20220601003710360-166273217089610.png)
 
 ### 调试
 
@@ -66,15 +66,15 @@ bash init.sh
 
  `cd` 到 `~/pikascript/port/linux`, 然后输入 `code .`
 
-![](https://user-images.githubusercontent.com/88232613/172127039-49e0d663-6f7a-4057-b5fe-1363c68dd9a0.png)
+![](assets/172127039-49e0d663-6f7a-4057-b5fe-1363c68dd9a0.png)
 
 可以修改 .vscode/launch.json 的 "--gtest_filter" 指定调试单个测例
 
-![](https://user-images.githubusercontent.com/88232613/178643919-48af254d-1c38-4ddf-9082-9ab89fca0996.png)
+![](assets/178643919-48af254d-1c38-4ddf-9082-9ab89fca0996.png)
 
 例如只测试 `TEST(PikaCV,test1)`，则修改为 `"--gtest_filter==PikaCV.test1"`
 
-![](https://user-images.githubusercontent.com/88232613/178644052-4d1efa56-3856-49b0-b411-d66deaecbda3.png)
+![](assets/178644052-4d1efa56-3856-49b0-b411-d66deaecbda3.png)
 
 ### 测试
 
@@ -84,13 +84,13 @@ bash init.sh
 bash gtest.sh 
 ```
 
-![](assets/image-20220601003830732.png)
+![](assets/image-20220601003830732-166273217089611.png)
 
 如果测试都通过了，就可以编写功能测试的代码了。
 
 测试代码在 test 目录下。
 
-![](assets/image-20220601003945867.png)
+![](assets/image-20220601003945867-166273217089614.png)
 
 标准库的测试可以放在 pikaMain-test.cpp 下。
 
@@ -173,7 +173,7 @@ sh gtest.sh
 
 可以看到，测例个数为 331，比之前的 330 多了一个，而且都通过了，这说明测试是成功的。
 
-![](assets/image-20220601005050927.png)
+![](assets/image-20220601005050927-166273217089613.png)
 
 ### 提交
 
@@ -193,7 +193,7 @@ git config remote.origin.url < your forked git repo url >
 
 然后运行 `git commit -a` 输入 commit 信息，如果你不熟悉 vim，请先简单了解 vim 的基础使用方法。
 
-![](assets/image-20220601005532339.png)
+![](assets/image-20220601005532339-166273217089612.png)
 
 接下来就可以提交了
 
@@ -209,8 +209,8 @@ git pull --rebase
 
 然后再 `git push` 提交，更多 git 的用法请参考 git 使用手册。
 
-![](assets/image-20220601005949285.png)
+![](assets/image-20220601005949285-166273217089615.png)
 
 然后在 gitee / github 中发起 Pull Request
 
-![](assets/image-20220601010131920.png)
+![](assets/image-20220601010131920-166273217089616.png)
