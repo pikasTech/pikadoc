@@ -208,6 +208,10 @@ print(res4)
 | any             | Arg*        |PikaScript 提供的泛型容器|
 | 任意 class      | PikaObj *   |PikaScript 提供的对象容器|
 
+> **注意**
+> 1. `str` 作为返回值时，在 c 中返回的是 `char*` ，如果要返回的字串是函数中的局部变量，需要用 `obj_cacheStr` 进行缓存，避免出函数作用域后发生悬垂引用，如: `return obj_cacheStr(self, res);`。
+> 2. `bytes` 作为返回值时，在 c 中返回的是 `Arg*`，这是因为 `bytes` 需要指定长度，返回 `uint8_t*` 不能达到要求。正确返回方式为：`return arg_newBytes(bytes, len);`。
+
 ### 发布模块
 
 出于开源的精神，发布你自己的模块是一件非常酷且激动人心的事情。
