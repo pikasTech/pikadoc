@@ -54,7 +54,9 @@ Plus 版使用  stm32g070 平台。
 
 直接打开 Keil 工程就可以编译了。
 
-编译时需要使用不低于 V5.36 的 Keil，需要激活。
+> **[注意]**
+>
+> 编译时需要使用不低于 V5.36 的 Keil，需要激活。
 
 ![](assets/1642145123916-644fdd52-a1d3-41be-bd74-8a9e05386397.png)
 
@@ -64,7 +66,7 @@ Lite 版自行连接 J-Link \ DAP-Link \ ST-Link 即可SWD升级。
 
 Pro 版和 Plus 版板载 DAP-Link，直接连接USB即可SWD升级。
 
-Lite 版和 Pro版使用 [bsp/stm32g030](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g030c8) 工程。
+Lite 版和 Pro 版使用 [bsp/stm32g030](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g030c8) 工程。
 
 Plus 版使用  [bsp/stm32g070](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g070cb) 工程。
 
@@ -72,7 +74,7 @@ Plus 版使用  [bsp/stm32g070](https://gitee.com/Lyon1998/pikascript/tree/maste
 
 ![](assets/image-20220828180911429.png)
 
-## 如何给单片机下载Python程序
+## 如何给单片机下载 Python 程序
 
 下载方法非常简单，只需要连接上 Type-C 数据线就可以了。
 
@@ -136,6 +138,11 @@ while True:
 先不解释里面的内容，我们直接下载这个脚本看看。
 
 我们在桌面新建一个 main.py 文件，然后把这段代码复制进去。
+
+> **[注意]**
+> 
+> 1. python 文件开头应当包含 `import` 语句，才能触发 Python 文件下载功能。
+> 2. 需要在脚本的末尾保留 2 个空行，确保识别到文件结尾
 
 ![](assets/201535_8f49da20_5521445.png)
 
@@ -389,14 +396,14 @@ main.py 执行完毕后，就会进入交互式运行，因此只要取消 main.
 
 输入 `exit()` 则会直接重启系统。
 
-**注意事项**：
+> **[注意]**
+>
+> 1. 固件版本需要不低于 `v1.3.2`
+> 2. 如果使用 PuTTY 终端无法正常运行，请使用 XCOM。
+> 3. 在终端中应全部使用英文输入法。
+> 4. 缩进应使用 4 个空格，**不要**使用 TAB 键。
 
-1. 固件版本需要不低于**v1.3.2。**
-1. 如果使用 PuTTY 终端无法正常运行，请使用 XCOM。
-1. 在终端中应全部使用英文输入法。
-1. 缩进应使用4个空格，不要使用TAB键。
-
-## LCD屏幕安装
+## LCD 屏幕安装
 
 1. 参考下图焊接长脚排母
 
@@ -406,7 +413,7 @@ main.py 执行完毕后，就会进入交互式运行，因此只要取消 main.
 
   ![](assets/1641957159517-c3adbb12-118a-4c9f-9662-c1801df59276.png)
 
-### 使用固件下载Python程序
+### 使用固件下载 Python 程序
 
 固件在编译时会加载 pikascript/main.py 作为默认 Python 程序。
 
@@ -422,15 +429,15 @@ main.py 执行完毕后，就会进入交互式运行，因此只要取消 main.
 
 ## 原理图
 
-### Lite青春版
+### Lite 青春版
 
 ![](assets/1641204367325-7c0751ac-7fe8-4029-a4c2-ee6ebb1e2733.png)
 
-### Pro专业版
+### Pro 专业版
 
 ![](assets/1641733841411-d3a3ed0f-4609-49eb-9985-b3a635e72b51.png)
 
-### Plus顶配版
+### Plus 顶配版
 
 ![](assets/1641733943438-bdd0d52f-1e34-4a8e-a3bb-c53508ce4fc1.png)
 
