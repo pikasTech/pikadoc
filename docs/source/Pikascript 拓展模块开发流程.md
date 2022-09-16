@@ -54,11 +54,11 @@ import Math
 
 双击运行pika预编译器。
 
-![](assets/131119247-ae25276e-f7c9-49ef-81e1-dbddcaffdf6c.png)
+![](assets/image-20220916121255823.png)
 
-打开 pikascript-api 文件夹可以发现，我们新编写的模块接口对应的头文件已经可以被编译出来了。
+打开 pikascript-api 文件夹可以发现，我们新编写的模块接口对应的头文件已经可以被预编译出来了。
 
-![](assets/131119310-99564d6a-d570-4375-9c01-c2d7cde74655.png)
+![](assets/image-20220916121454812.png)
 
 ### 编写类的实现
 
@@ -72,7 +72,7 @@ import Math
 
 为了模块管理的方便，我们把实现文件都放在 pikascript-lib 文件夹下，
 
-![](assets/131120029-81c9b91f-2669-40cf-86da-78d72bce81c8.png)
+![](assets/image-20220916121548065.png)
 
 在 pikascript-lib 文件夹下，新建一个 Math 文件夹，用来放 `Math` 模块的实现代码。
 
@@ -216,8 +216,8 @@ print(res4)
 
 发布模块只需要发布类接口和类实现文件即可。
 
-比如发布刚刚新编写的 Math 模块，就是发布 Math.pyi 文件和 pikascript-lib/Math 文件夹。
+比如发布刚刚新编写的 Math 模块，就是发布 Math.pyi 文件和 pikascript-lib/Math 文件夹里的文件。
 
-![](assets/131123704-403753d8-2ef1-488e-a02a-08fce33cd6de.png)
+![](assets/image-20220916121755609.png)
 
 请参考 [参与社区贡献->贡献模块](https://pikadoc.readthedocs.io/zh/latest/%E5%A6%82%E4%BD%95%E8%B4%A1%E7%8C%AE%20PikaScript%20%E6%A8%A1%E5%9D%97.html) 部分的文档发布你编写的模块。
