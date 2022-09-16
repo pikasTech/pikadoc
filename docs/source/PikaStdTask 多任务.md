@@ -5,7 +5,7 @@ PikaStdTask 多任务库提供了 Task （任务循环）的异步多任务功�
 
 1. 在 requestment.txt 中加入 PikaStdLib 的依赖，PikaStdLib 的版本号应当与内核的版本号相同。
 ```
-PikaStdLib==v1.10.0
+PikaStdLib==v1.11.0
 ```
 
 2. 运行 pikaPackage.exe
