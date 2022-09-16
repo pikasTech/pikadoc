@@ -6,7 +6,7 @@
 
 我们打开 pikascript 文件夹，发现文件夹根目录下除了 main.py，还有Device.pyi，PikaObj.pyi 和 PikaStdLib.pyi。
 
-这三个 `.pyi` 文件分别对应三个PikaScript **C模块** (class package)，每个 `.pyi` 文件本身称为 **模块接口** (package interface)。
+这三个 `.pyi` 文件分别对应三个PikaScript **C 模块** (class package)，每个 `.pyi` 文件本身称为 **模块接口** (package interface)。
 
 一个C模块中可以包含若干个相关性较强的类。
 
