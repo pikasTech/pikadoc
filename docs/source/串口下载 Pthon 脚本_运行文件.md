@@ -1,4 +1,4 @@
-# 串口下载 Python 脚本 运行文件
+# 串口下载 Python 脚本
 
 串口下载 Python 脚本和交互式运行非常类似，仍然是使用 `obj_run` 内核 API 进行脚本的运行。和交互式运行不同的是，下载 Python 脚本还需要对python脚本进行 **存储**。
 
@@ -25,7 +25,7 @@ PikaScript 支持运行 Python 脚本源码，和解析后的 Pika 字节码。
 1. [https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/pika_config.c](https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/pika_config.c)
 1. [https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/pika_bsp.h](https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/pika_bsp.h)
 
-## 使用文件系统运行文件
+# 使用文件系统运行 Python 脚本
 
 当 MCU 已经移植了文件系统，那么可以使用文件 API 直接运行 Python 脚本文件。
 
