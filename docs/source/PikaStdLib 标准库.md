@@ -3,9 +3,9 @@
 PikaStdLib 是 PikaScript 的自带内置库，是必须安装的库，包含了内存检查工具和系统对象。
 ## 安装
 
-1. 在 requestment.txt 中加入 PikaStdLib 的依赖，PikaStdLib 的版本号应当与内核的版本号相同。
+1. 在 requestment.txt 中加入 PikaStdLib 的依赖。
 ```
-PikaStdLib==v1.11.0
+PikaStdLib
 ```
 
 2. 运行 pikaPackage.exe

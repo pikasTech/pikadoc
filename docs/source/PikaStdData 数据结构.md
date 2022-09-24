@@ -3,9 +3,9 @@
 PikaStdData 数据结构库提供了 List （列表），Dict（字典）数据结构。
 ## 安装
 
-1. 在 requestment.txt 中加入 PikaStdLib 的依赖，PikaStdLib 的版本号应当与内核的版本号相同。
+1. 在 requestment.txt 中加入 PikaStdLib 的依赖。
 ```
-PikaStdLib==v1.11.0
+PikaStdLib
 ```
 
 2. 运行 pikaPackage.exe

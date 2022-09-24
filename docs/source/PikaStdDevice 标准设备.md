@@ -5,7 +5,7 @@ PikaStdDevice 是一个抽象的设备模型，提供了跨平台的统一外设
 
 - 在 requestment.txt 中加入 PikaStdDevice 的依赖。
 ```
-PikaStdDevice==v1.4.3
+PikaStdDevice
 ```
 
 - 运行 pikaPackage.exe

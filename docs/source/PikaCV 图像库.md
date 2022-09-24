@@ -7,7 +7,7 @@ PikaCV图像库实现了部分常用的图像处理算法。
 1. 在 requestment.txt 中加入 PikaCV的依赖。
 
    ```
-   PikaCV==latest
+   PikaCV
    ```
 
 2. 运行 pikaPackage.exe
