@@ -3,12 +3,13 @@
 PikaStdTask 多任务库提供了 Task （任务循环）的异步多任务功能。
 ## 安装
 
-1. 在 requestment.txt 中加入 PikaStdLib 的依赖，PikaStdLib 的版本号应当与内核的版本号相同。
+- 在 requestment.txt 中加入 PikaStdLib 的依赖，PikaStdLib 的版本号应当与内核的版本号相同。
+
 ```
 PikaStdLib
 ```
 
-2. 运行 pikaPackage.exe
+- 运行 pikaPackage.exe
 
 ## class Task():
 Task 类提供了任务循环功能，由 Task 类创建对象，即可创建一个任务循环。
@@ -83,7 +84,7 @@ void STM32G0_Task_platformGetTick(PikaObj* self) {
 
 - python 用例
 
-```
+``` python
 import machine
 
 import PikaStdLib
