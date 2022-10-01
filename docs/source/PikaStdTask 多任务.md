@@ -82,18 +82,19 @@ void STM32G0_Task_platformGetTick(PikaObj* self) {
 ```
 
 - python 用例
-```python
-import STM32G0
-import PikaPiZero
+
+```
+import machine
+
 import PikaStdLib
 
-pin = STM32G0.GPIO()
-rgb = PikaPiZero.RGB()
+pin = machine.GPIO()
+rgb = machine.RGB()
 mem = PikaStdLib.MemChecker()
 
 pin.setPin('PA8')
 pin.setMode('out')
-pin.enalbe()
+pin.enable()
 
 rgb.init()
 rgb.enable()
@@ -105,6 +106,7 @@ mem.max()
 
 def rgb_task():
     rgb.flow()
+    mem.now()
 
 
 def led_task():
@@ -114,7 +116,7 @@ def led_task():
         pin.high()
 
 
-task = STM32G0.Task()
+task = machine.Task()
 
 task.call_period_ms(rgb_task, 50)
 task.call_period_ms(led_task, 500)
