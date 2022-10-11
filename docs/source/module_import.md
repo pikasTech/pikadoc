@@ -82,7 +82,7 @@ PikaScript 导入 C 模块和导入 Python 模块的方法一样，直接 `impor
 
 C 模块还需要把使用 C 语言编写的实现部分加入编译，包括：
 
-- pikascript-lib/\<module\> 添加编译文件夹下的所有 .c 文件
+- 添加编译 pikascript-lib/\<module\>  文件夹下的所有 .c 文件
 - 将 pikascript-lib/\<module\> 加入 include 路径
 
 ### 实验
