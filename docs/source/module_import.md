@@ -80,10 +80,10 @@ C 模块指的是底层用 C 实现，却仍然可以用 Python 调用的模块�
 
 PikaScript 导入 C 模块和导入 Python 模块的方法一样，直接 `import`，然后运行预编译即可。
 
-在预编译后，还会自动生成一些模块连接文件，所有的模块连接文件都在 pikascript-api 文件夹。因此在引入 C 模块之后，还需要将下面列出的文件添加到工程里参与编译：
+C 模块还需要把使用 C 语言编写的实现部分加入编译，包括：
 
-- pikascript-lib/\<module\> 文件夹下的所有 .c 文件
-- pikascript-api 文件夹下的所有 .c 文件
+- pikascript-lib/\<module\> 添加编译文件夹下的所有 .c 文件
+- 将 pikascript-lib/\<module\> 加入 include 路径
 
 ### 实验
 
