@@ -31,13 +31,15 @@ PikaObj 支持**整形、浮点型、字串、指针、字节串**五种基本�
 
 对应关系表：
 
-| PikaObj 属性类型 |                           读写 API                           | 对应 Python 类型 |      |
-| :--------------: | :----------------------------------------------------------: | :--------------: | ---- |
-|       int        |                  `obj_setInt() obj_getInt()`                   |       int        |      |
-|      float       |                `obj_setFloat() obj_getFloat()`                 |      float       |      |
-|       str        |                  `obj_setStr() obj_getStr()`                   |      string      |      |
-|     pointer      |                  `obj_setPtr() obj_getPtr()`                   |        -         |      |
-|      bytes       | `obj_setBytes() obj_getBytes() obj_getBytesSize()` |      bytes       |      |
+| PikaObj 属性类型 |                           读写 API                              | 对应 Python 类型  | 
+| :--------------: | :----------------------------------------------------------:   | :--------------: |
+|       int        |                  `obj_setInt() obj_getInt()`                   |       int        |
+|      float       |                `obj_setFloat() obj_getFloat()`                 |      float       |
+|       str        |                  `obj_setStr() obj_getStr()`                   |      string      |
+|      bytes       | `obj_setBytes() obj_getBytes() obj_getBytesSize()`             |      bytes       |
+|     struct       |                  `obj_setStruct() obj_getStruct()`             |        -         |
+|     pointer      |                  `obj_setPtr() obj_getPtr()`                   |        -         |
+
 
 PikaObj 的对象是**动态**的，因此可以随时为对象新增新的属性（静态对象的属性在构造时确定）。
 
