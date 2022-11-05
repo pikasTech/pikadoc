@@ -158,7 +158,24 @@ get rising edge!
 get falling edge!
 ```
 
+### 触发后等待返回值
 
+事件回调函数可以有返回值，如直接返回 `signal`。
+
+``` Python
+def callBack1(signal):
+    return signal
+
+io1.addEventCallBack(callBack1)
+```
+
+触发事件可以使用 `pks_eventLisener_sendSignalAwaitResult` 获得回调函数的返回值，返回值是一个 `Arg*` 类型。
+
+``` C
+Arg* res_123 = pks_eventLisener_sendSignalAwaitResult(
+        g_pika_device_event_listener, GPIO_PA8_EVENT_ID, 123);
+int res = arg_getInt(res_123);
+```
 
 ## 进阶：自定义事件注册函数
 
