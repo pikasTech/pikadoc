@@ -179,6 +179,8 @@ Arg* res_123 = pks_eventLisener_sendSignalAwaitResult(
 int res = arg_getInt(res_123);
 ```
 
+> 注意：需要内核版本 `>= v1.11.7`
+
 ## 进阶：自定义事件注册函数
 
 - 除了通过 PikaStdDevice 支持事件回调外，还可以自定义事件注册函数，这部分属于进阶内容。
