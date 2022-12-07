@@ -156,7 +156,7 @@ class GPIO:
 |参数|类型|功能|备注|
 |---|---|---|---|
 | dev| pika_dev*| 设备句柄 |要操作的设备句柄。|
-| cmd| PIKA_HAL_IOCTL_CMD|控制命令| |
+| cmd| PIKA_HAL_IOCTL_CMD|控制命令| 可填 PIKA_HAL_IOCTL_ENABLE，PIKA_HAL_IOCTL_DISABLE，PIKA_HAL_IOCTL_CONFIG 三个命名，分别对应使能、失能和配置。 |
 | ...| (None)/pika_hal_config_XXXX * | 控制参数 |该参数可填可不填，根据 cmd 的取值而定。当 cmd 为 PIKA_HAL_IOCTL_ENABLE、PIKA_HAL_IOCTL_DISABLE 时，该参数不填。当 cmd 为 PIKA_HAL_IOCTL_CONFIG 时，该参数为 pika_hal_config_XXXX \*cfg，其中  XXXX 是设备的类型，如 pika_hal_config_GPIO 、pika_hal_config_SPI 等，应和 pika_hal_open() 中使用的设备的类型相同。|
 | (return)| int |错误值|错误值为 0 表示操作成功，其他返回值表示操作失败，返回值为错误码。|
 
@@ -200,6 +200,134 @@ class GPIO:
 | len      | size_t     | 写入的字节数 | 对于 GPIO、DAC 这样只能读取单个数据的设备，长度为 sizeof(uint32_t)。 |
 | (return) | int        | 错误值       | 错误值为 0 表示操作成功，其他返回值表示操作失败，返回值为错误码。 |
 
+
+
+### ioctl config
+
+`pika_hal_ioctl()` 的 `cmd` 参数填入 `PIKA_HAL_IOCTL_CONFIG` 时对设备进行配置，这一部分在设备驱动中是最关键的，因此单独说明。
+
+当 `cmd` 为 `PIKA_HAL_IOCTL_CONFIG` 时，`pika_hal_ioctl()` 的第三个参数为配置结构体的指针 `pika_hal_config_XXXX *cfg`，其中  `XXXX` 是设备的类型，如 `pika_hal_config_GPIO` 、`pika_hal_config_SPI` 等。
+
+#### 配置结构体
+
+创建配置结构体时，应确保结构体被清零，避免未定义行为。推荐写法：
+
+```c
+pika_hal_config_XXXX cfg = {0};
+```
+
+配置结构体在 `pika_hal.h` 中定义，如 `GPIO` 的配置结构体：
+
+```c
+typedef struct {
+    PIKA_HAL_GPIO_DIR dir;
+    PIKA_HAL_GPIO_PULL pull;
+    PIKA_HAL_GPIO_SPEED speed;
+    void (*event_callback_rising)(pika_dev* dev);
+    void (*event_callback_falling)(pika_dev* dev);
+} pika_hal_GPIO_config;
+```
+
+#### 配置项
+
+配置结构体中的配置项的取值通常由 `enum` 定义，如 `PIKA_HAL_GPIO_DIR` 代表的 `GPIO` 的方向，其取值由以下的 `enum` 来决定：
+
+```c
+typedef enum {
+    _PIKA_HAL_GPIO_DIR_UNUSED = 0,
+    PIKA_HAL_GPIO_DIR_IN,
+    PIKA_HAL_GPIO_DIR_OUT,
+} PIKA_HAL_GPIO_DIR;
+```
+
+`PIKA_HAL_GPIO_DIR_IN` 和 `PIKA_HAL_GPIO_DIR_OUT` 表示 `GPIO` 的方向为输入或者输出，是常规的取值。而 `_PIKA_HAL_GPIO_DIR_UNUSED` 是一个特殊的取值，这个取值表示不在配置结构体中使用 `PIKA_HAL_GPIO_DIR` 这个配置项。
+
+当 `_PIKA_HAL_GPIO_DIR_UNUSED` 被指定时，实际的配置操作会进行下面的处理：
+
+- 如果没有配置过该配置项，那么该配置项会被自动赋予默认值。（默认配置）
+
+- 如果已经配置过该配置项，那么该配置项会维持原先的状态。（配置差分修改）
+
+#### 默认配置
+
+这样设计的好处在于，在使用 `ioctl config` 对设备进行初次配置时，不必填写所有的配置项，只需要填写实际关心的配置项即可，这降低了填写配置项的心智负担。
+
+比如，如果在应用中不关心 `GPIO` 的翻转速度，那么可以这样填写配置结构体：
+
+```c
+pika_hal_config_GPIO cfg = {0};
+cfg.dir = PIKA_HAL_GPIO_DIR_OUT;
+cfg.pull = PIKA_HAL_GPIO_PULL_UP;
+```
+
+这时 `cfg.speed` 取值为 `_PIKA_HAL_GPIO_SPEED_UNUSED` (创建清零的结构体后，所有配置项均为 `0`，而 `_PIKA_HAL_XXXX_UNUSED` 的数值总是 `0`)
+
+在运行 `ioct config` 后，实际设备接收到的配置值如下：
+
+``` c
+cfg.dir = PIKA_HAL_GPIO_DIR_OUT;
+cfg.pull = PIKA_HAL_GPIO_PULL_UP;
+cfg.speed = PIKA_HAL_GPIO_SPEED_10M;
+cfg.event_callback_rising = NULL;
+cfg.event_callback_falling = NULL;
+```
+
+这时 `cfg.speed` 会自动被设置为默认值 `PIKA_HAL_GPIO_SPEED_10M`。
+
+#### 配置差分修改
+
+在对设备进行再次配置时，通常只想要对设备的某几个值进行修改，而不是修改全部值，因此不想修改的值可以填写为 `_PIKA_HAL_XXXX_UNUSED`。
+
+例如：
+
+```c
+pika_hal_config_GPIO cfg2 = {0};
+cfg2.dir = PIKA_HAL_GPIO_DIR_IN;
+```
+
+在运行 `ioct config` 后，实际设备接收到的配置值如下：
+
+``` c
+cfg.dir = PIKA_HAL_GPIO_DIR_IN;
+cfg.pull = PIKA_HAL_GPIO_PULL_UP;
+cfg.speed = PIKA_HAL_GPIO_SPEED_10M;
+cfg.event_callback_rising = NULL;
+cfg.event_callback_falling = NULL;
+```
+
+只有被指定了的 `dir` 配置项被修改了，其他的配置项均维持原状。
+
+#### 配置合并策略
+
+配置的默认值和合并策略（新的配置结构体如何合并进旧的配置值）在 `pika_hal.c` 中的 `pika_hal_XXXX_ioctl_merge_config()` 函数可以看到，例如 `GPIO` 的配置合并策略：
+
+```c
+int pika_hal_GPIO_ioctl_merge_config(pika_hal_GPIO_config* dst,
+                                     pika_hal_GPIO_config* src) {
+    _IOCTL_CONFIG_USE_DEFAULT(dir, PIKA_HAL_GPIO_DIR_IN);
+    _IOCTL_CONFIG_USE_DEFAULT(pull, PIKA_HAL_GPIO_PULL_NONE);
+    _IOCTL_CONFIG_USE_DEFAULT(speed, PIKA_HAL_GPIO_SPEED_10M);
+    _IOCTL_CONFIG_USE_DEFAULT(event_callback_rising, NULL);
+    _IOCTL_CONFIG_USE_DEFAULT(event_callback_falling, NULL);
+    return 0;
+}
+```
+
+`_IOCTL_CONFIG_USE_DEFAULT` 宏指定了配置项的默认值，例如 `speed` 配置项的 `_PIKA_HAL_XXXX_UNUSED` 默认值为 `PIKA_HAL_GPIO_SPEED_10M`。
+
+也有例外的合并策略，例如 `PWM` 的配置中 `duty` 配置项的合并：
+
+```c
+int pika_hal_PWM_ioctl_merge_config(pika_hal_PWM_config* dst,
+                                    pika_hal_PWM_config* src) {
+    _IOCTL_CONFIG_USE_DEFAULT(period, PIKA_HAL_PWM_PERIOD_1MS * 10);
+    dst->duty = src->duty;
+    return 0;
+}
+```
+
+其中 `duty` 配置项就是直接使用新配置结构体的配置值，而没有使用默认值（因为 duty 为 0 时也是有意义的，不能认为是 `_PIKA_HAL_XXXX_UNUSED`)。
+
 ### 驱动适配
 
 为平台适配 `pika_hal`，就是为设备重写以下的 `pika_hal_platform_XXXX` 为前缀的 `WEAK` 函数，其中`XXXX` 为设备类型名，如 `GPIO`、`PWM` 等。
@@ -214,7 +342,7 @@ PIKA_WEAK int pika_hal_platform_XXXX_ioctl_disable(pika_dev* dev);
 PIKA_WEAK int pika_hal_platform_XXXX_ioctl_config(pika_dev* dev, pika_hal_XXXX_config* cfg);
 ```
 
-参考适配代码：
+示例适配代码：
 
 [https://gitee.com/Lyon1998/pikascript/tree/master/package/BLIOT](https://gitee.com/Lyon1998/pikascript/tree/master/package/BLIOT)
 
