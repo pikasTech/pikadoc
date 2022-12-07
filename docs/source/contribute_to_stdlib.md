@@ -32,6 +32,35 @@ VSCODE 提供了连接到容器进行开发的工具，连接后开发体验就�
 
 ![](assets/image-20220601001904516-16627321708955.png)
 
+### 编译运行
+
+- 初始化
+```
+sh pull-core.sh # 更新内核源码
+```
+
+- 预编译并配置 CMake
+```
+sh init.sh
+```
+
+- 编译
+```
+sh only_make.sh
+```
+
+- 测试
+```
+sh gtest.sh # 运行 google test
+sh ci_benchmark.sh # 运行 benchmark
+sh valgrind.sh # 运行 valgrind
+```
+
+- 运行
+```
+sh run.sh # 启动 REPL
+```
+
 ### 开发
 
 标准库的 pyi 声明文件在 package/pikascript 目录下，标准库包括了 PikaStdLib.pyi, PikaStdData.pyi, PikaDebug.pyi, PikaStdTask.pyi 等，实现文件在 PikaStdLib 文件夹下。
