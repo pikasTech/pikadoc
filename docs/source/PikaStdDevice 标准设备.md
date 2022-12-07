@@ -30,7 +30,7 @@ PikaStdDevice
 
 - `PikaStdDevice` 模块提供了 `GPIO`、`IIC`、`PWM` 等基础的外设 Python 模块。
 - `PikaStdDevice` 基于 `pika_hal` 设备抽象层，`pika_hal`是一个纯 `c` 语言的设备抽象层，将不同平台的外设操作都统一为相同的 `API` 供 `PikaStdDevice` 调用，这样不同的平台 (STM32、ESP32、BL602) 等都可以使用通用的 `Python` 代码来控制设备了。
-- `pika_hal` 设备抽象层需要在不同的平台进行适配 (Platform Port)，通过在不同的平台重写形如 `pika_hal_platform_xxxx()`  的 `WEAK` 函数，就可以为不同的平台提供支持了。
+- `pika_hal` 设备抽象层需要在不同的平台进行适配 (Platform Port)，通过在不同的平台重写形如 `pika_hal_platform_xxxx()`  的 `WEAK` 函数，就可以为不同的平台提供支持。
 - 除了 `PikaStdDevice` 模块之外，还有一些 `sensor` / `motor` 等 `Python` 模块，也基于 `pika_hal` 开发，这些模块使用的是 `pika_hal` 的 `GPIO`、`IIC`、`PWM` 等适配好的功能，所以不需要除了 `pika_hal` 之外额外的适配就可以使用。
 
 ## `PikaStdDevice` 模块示例
@@ -83,7 +83,7 @@ class GPIO:
 
 ```
 
-`PikaStdDevice` 模块的示例代码在 https://gitee.com/Lyon1998/pikascript/tree/master/examples/Device 路径下，示例中的 `machine` 模块是 `PikaStdDevice` 模块的简单重命名。
+`PikaStdDevice` 模块的示例代码在 [https://gitee.com/Lyon1998/pikascript/tree/master/examples/Device](https://gitee.com/Lyon1998/pikascript/tree/master/examples/Device) 路径下，示例中的 `machine` 模块是 `PikaStdDevice` 模块的简单重命名。
 
 ## `pika_hal` 设备抽象层
 
@@ -95,7 +95,7 @@ class GPIO:
 
 ### 编程模型
 
-![image-20221207132547828](assets/image-20221207132547828.png)
+![](assets/image-20221207132547828.png)
 
 所有设备均遵循类 linux 文件的编程模型，所有类型的设备均使用 `pika_dev` 结构体来作为设备句柄，所有类型的设备均有且只有以下五个控制 API：
 
@@ -218,7 +218,7 @@ PIKA_WEAK int pika_hal_platform_XXXX_ioctl_config(pika_dev* dev, pika_hal_XXXX_c
 
 参考适配代码：
 
-https://gitee.com/Lyon1998/pikascript/tree/master/package/BLIOT
+[https://gitee.com/Lyon1998/pikascript/tree/master/package/BLIOT](https://gitee.com/Lyon1998/pikascript/tree/master/package/BLIOT)
 
 ## 参与贡献
 
