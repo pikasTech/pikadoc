@@ -116,7 +116,7 @@ class GPIO:
     |参数|类型|功能|备注|
     |---|---|---|---|
     | dev_type | PIKA_HAL_DEV_TYPE  | 设备类型 |如 PIKA_HAL_GPIO 为 GPIO 设备，PIKA_HAL_SPI 为 SPI 设备。|
-    | name| char*  设备名   |如 PA0 ，SPI2 等|
+    | name| char* |  设备名   |如 PA0 ，SPI2 等|
     | (return)| pika_dev| 设备句柄 |如果成功打开设备，将会返回设备句柄 pika_dev 的指针，如果打开失败会返回 NULL。|
 
 ### `close()`
