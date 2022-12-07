@@ -24,8 +24,6 @@ PikaStdDevice
 
 ## 模块结构
 
-
-
 ![](assets/image-20221207125315706.png)
 
 - `PikaStdDevice` 模块提供了 `GPIO`、`IIC`、`PWM` 等基础的外设 Python 模块。
@@ -113,11 +111,11 @@ class GPIO:
 
 - 参数
 
-    |参数|类型|功能|备注|
-    |---|---|---|---|
-    | dev_type | PIKA_HAL_DEV_TYPE  | 设备类型 |如 PIKA_HAL_GPIO 为 GPIO 设备，PIKA_HAL_SPI 为 SPI 设备。|
-    | name| char* |  设备名   |如 PA0 ，SPI2 等|
-    | (return)| pika_dev| 设备句柄 |如果成功打开设备，将会返回设备句柄 pika_dev 的指针，如果打开失败会返回 NULL。|
+|参数|类型|功能|备注|
+|---|---|---|---|
+| dev_type | PIKA_HAL_DEV_TYPE  | 设备类型 |如 PIKA_HAL_GPIO 为 GPIO 设备，PIKA_HAL_SPI 为 SPI 设备。|
+| name| char* |  设备名   |如 PA0 ，SPI2 等|
+| (return)| pika_dev| 设备句柄 |如果成功打开设备，将会返回设备句柄 pika_dev 的指针，如果打开失败会返回 NULL。|
 
 ### `close()`
 
@@ -132,10 +130,10 @@ class GPIO:
   ```
 - 参数
 
-    |参数|类型|功能|备注|
-    |---|---|---|---|
-    | dev| pika_dev*  | 设备句柄 |要操作的设备句柄。|
-    |(return)| int| 错误值|错误值为 0 表示操作成功，其他返回值表示操作失败，返回值为错误码。|
+|参数|类型|功能|备注|
+|---|---|---|---|
+| dev| pika_dev*  | 设备句柄 |要操作的设备句柄。|
+|(return)| int| 错误值|错误值为 0 表示操作成功，其他返回值表示操作失败，返回值为错误码。|
 
 ### `ioctl()`
 
@@ -155,12 +153,12 @@ class GPIO:
 
 - 参数
 
-    |参数|类型|功能|备注|
-    |---|---|---|---|
-    | dev| pika_dev*| 设备句柄 |要操作的设备句柄。|
-    | cmd| PIKA_HAL_IOCTL_CMD|控制命令| |
-    | ...| (None)/pika_hal_config_XXXX * | 控制参数 |该参数可填可不填，根据 cmd 的取值而定。当 cmd 为 PIKA_HAL_IOCTL_ENABLE、PIKA_HAL_IOCTL_DISABLE 时，该参数不填。当 cmd 为 PIKA_HAL_IOCTL_CONFIG 时，该参数为 pika_hal_config_XXXX \*cfg，其中  XXXX 是设备的类型，如 pika_hal_config_GPIO 、pika_hal_config_SPI 等，应和 pika_hal_open() 中使用的设备的类型相同。|
-    | (return)| int |错误值|错误值为 0 表示操作成功，其他返回值表示操作失败，返回值为错误码。|
+|参数|类型|功能|备注|
+|---|---|---|---|
+| dev| pika_dev*| 设备句柄 |要操作的设备句柄。|
+| cmd| PIKA_HAL_IOCTL_CMD|控制命令| |
+| ...| (None)/pika_hal_config_XXXX * | 控制参数 |该参数可填可不填，根据 cmd 的取值而定。当 cmd 为 PIKA_HAL_IOCTL_ENABLE、PIKA_HAL_IOCTL_DISABLE 时，该参数不填。当 cmd 为 PIKA_HAL_IOCTL_CONFIG 时，该参数为 pika_hal_config_XXXX \*cfg，其中  XXXX 是设备的类型，如 pika_hal_config_GPIO 、pika_hal_config_SPI 等，应和 pika_hal_open() 中使用的设备的类型相同。|
+| (return)| int |错误值|错误值为 0 表示操作成功，其他返回值表示操作失败，返回值为错误码。|
 
 ### `read()`
 
@@ -175,12 +173,12 @@ class GPIO:
   ```
 - 参数
 
-    |参数|类型|功能|备注|
-    |---|---|---|---|
-    | dev      | pika_dev*  | 设备句柄     | 要操作的设备句柄。                                           |
-    | buf      | void*      | 读取缓冲区   | 对于 GPIO、ADC 这样只能读取单个数据的设备，缓冲区使用 uint32_t。 |
-    | len      | size_t     | 读取的字节数 | 对于 GPIO、ADC 这样只能读取单个数据的设备，长度为 sizeof(uint32_t)。 |
-    | (return) | int        | 错误值       | 错误值为 0 表示操作成功，其他返回值表示操作失败，返回值为错误码。 |
+|参数|类型|功能|备注|
+|---|---|---|---|
+| dev      | pika_dev*  | 设备句柄     | 要操作的设备句柄。                                           |
+| buf      | void*      | 读取缓冲区   | 对于 GPIO、ADC 这样只能读取单个数据的设备，缓冲区使用 uint32_t。 |
+| len      | size_t     | 读取的字节数 | 对于 GPIO、ADC 这样只能读取单个数据的设备，长度为 sizeof(uint32_t)。 |
+| (return) | int        | 错误值       | 错误值为 0 表示操作成功，其他返回值表示操作失败，返回值为错误码。 |
 
 ### `write()`
 
@@ -195,12 +193,12 @@ class GPIO:
   ```
 - 参数
 
-    |参数|类型|功能|备注|
-    |---|---|---|---|
-    | dev      | pika_dev*  | 设备句柄     | 要操作的设备句柄。                                           |
-    | buf      | void*      | 写入缓冲区   | 对于 GPIO、DAC 这样只能写入单个数据的设备，缓冲区使用 uint32_t。 |
-    | len      | size_t     | 写入的字节数 | 对于 GPIO、DAC 这样只能读取单个数据的设备，长度为 sizeof(uint32_t)。 |
-    | (return) | int        | 错误值       | 错误值为 0 表示操作成功，其他返回值表示操作失败，返回值为错误码。 |
+|参数|类型|功能|备注|
+|---|---|---|---|
+| dev      | pika_dev*  | 设备句柄     | 要操作的设备句柄。                                           |
+| buf      | void*      | 写入缓冲区   | 对于 GPIO、DAC 这样只能写入单个数据的设备，缓冲区使用 uint32_t。 |
+| len      | size_t     | 写入的字节数 | 对于 GPIO、DAC 这样只能读取单个数据的设备，长度为 sizeof(uint32_t)。 |
+| (return) | int        | 错误值       | 错误值为 0 表示操作成功，其他返回值表示操作失败，返回值为错误码。 |
 
 ### 驱动适配
 
