@@ -169,7 +169,7 @@ class GPIO:
 - 函数原型
 
   ```c
-  int pika_hal_write(pika_dev* dev, void* buf, size_t len);
+  int pika_hal_read(pika_dev* dev, void* buf, size_t len);
   ```
 - 参数
 
