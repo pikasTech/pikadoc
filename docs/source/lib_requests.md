@@ -2,14 +2,14 @@
 
 Author: Onceday	Date: 2022年12月10日
 
-##### 1. 模块基本情况
+##### 模块基本情况
 
 1. 基于 webclient.c 开发，暂时支持最简单的 get 请求和 post 请求。
 2. 在 get 请求上额外支持简单的拼接 URL。
 3. 能够指定额外的请求头关键字。
 4. 返回数据包括状态码，负载内容长度，和负载内容。
 
-##### 2. 使用方法
+##### 使用方法
 
 1. 首先导入模块
 
@@ -58,7 +58,7 @@ request(method: str, url: str, params=None, headers=None, data=None) -> Response
 - `data`，用于在 `POST` 中传输的负载数据，注意是字符串类型。
 - `Response`，返回的响应对象，只有发送的请求响应成功，才会返回，否则为 `None`。
 
-##### 3.  拼接 URL
+##### 拼接 URL
 
 get 方法额外支持的就是拼接 URL，这个过程也会涉及一些字符的转换。因为 URL 里面有一些特殊字符是不能直接展示的，必须转义才行。
 
@@ -85,7 +85,7 @@ if result not None:
 	print(result.text)
 ```
 
-##### 4. post 接口
+##### post 接口
 
 该接口比较原始，如果想自己上传数据，则需要手动拼接内容。原因如下：
 
@@ -163,7 +163,7 @@ Content-Length: (sizeof(data))
 
 但这需要服务器对应支持解析，很明显，`http://pikascript.com/upload` 不能解析这种数据。
 
-##### 5. 运行过程
+##### 运行过程
 
 整个 request 代码是基于 webclient 开发，并进行了简单的更改。
 
