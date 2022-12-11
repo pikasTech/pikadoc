@@ -1,4 +1,4 @@
-#### request 模块说明
+#### requests 模块说明
 
 Author: Onceday	Date: 2022年12月10日
 
@@ -9,12 +9,20 @@ Author: Onceday	Date: 2022年12月10日
 3. 能够指定额外的请求头关键字。
 4. 返回数据包括状态码，负载内容长度，和负载内容。
 
+
+#### 安装
+
+requestment.txt 加入
+```
+requests
+```
+
 ##### 使用方法
 
 1. 首先导入模块
 
    ``` python
-   import request
+   import requests
    ```
 
 2. 然后输入方法和 url 地址
