@@ -390,9 +390,11 @@ while True:
 
 main.py 执行完毕后，就会进入交互式运行，因此只要取消 main.py 中的 `while True :`，使其能够执行完退出，就可以进入交互式运行。
 
-![](assets/1641953728408-8fbffe1c-643a-4f18-855e-5d60578eb194.jpeg)
+- 强烈建议使用 [pikaStudio](https://gitee.com/Lyon1998/pikascript/attach_files/1285327/download) 作为串口终端。
 
-交互式运行支持单行，多行输入，和通用 Python 用法一致。建议使用 PuTTY 串口终端。
+![](assets/image-20230105225643467.png)
+
+交互式运行支持单行，多行输入，和通用 Python 用法一致。
 
 输入 `exit()` 则会直接重启系统。
 
