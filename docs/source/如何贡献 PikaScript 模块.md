@@ -1,4 +1,4 @@
-# 如何贡献 PikaScript 模块
+# 如何贡献 PikaPython 模块
 ## 帮助完善已有的模块
 
 
@@ -19,7 +19,7 @@ STM32G0==latest
 - 为模块添加新的 Python 接口 --> [module].pyi
 - 或者提供更好的实现 --> pikascript-lib/[module]/*.c
 
-- （可选）在 pikascript/README.md 和 pikascript/README_zh.md 中更新模块信息。
+- （可选）在 pikapython/README.md 和 pikapython/README_zh.md 中更新模块信息。
 
 ### 提交模块的文件
 
@@ -27,14 +27,14 @@ STM32G0==latest
 
 或者手动 fork 然后 pullrequest：
 
-   - fork 一份 pikascript 仓库，然后 clone 到本地。
+   - fork 一份 pikapython 仓库，然后 clone 到本地。
 
 ![](assets/1638664526181-09b00c29-fc72-429a-bb99-3f009eae141e.png)
 
    - 复制 [module].pyi 到 pikascript-lib/[module] 文件夹中。
-   - 复制整个修改后的 pikascript-lib/[module] 文件夹到 fork 后的 pikascript/package 文件夹中。
+   - 复制整个修改后的 pikascript-lib/[module] 文件夹到 fork 后的 pikapython/package 文件夹中。
    - git add 添加文件，并 git commit 提交一次。
-   - git log 查看提交后的 commit id，在 fork 后的 pikascript/packages.toml 中填写新的版本名，并复制当前的 commit id。
+   - git log 查看提交后的 commit id，在 fork 后的 pikapython/packages.toml 中填写新的版本名，并复制当前的 commit id。
 
 例如：
 
@@ -56,7 +56,7 @@ releases = [
 
 - 新建 [module].pyi 文件和pikascript-lib/[module]文件夹。
 - 开发和测试新的模块。
-- （可选）在 pikascript/README.md 和 pikascript/README_zh.md 中更新模块信息。
+- （可选）在 pikapython/README.md 和 pikapython/README_zh.md 中更新模块信息。
 - 提交模块的文件
 
 使用[模块贡献引导](http://pikascript.com/contribute.html)，即可快速提交模块。

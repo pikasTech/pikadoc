@@ -1,6 +1,6 @@
 # 从 LVGL GUI 仿真工程开始
 
-LVGL GUI 仿真工程提供了 PikaScript 和 LVGL 进行联合仿真的实验环境。
+LVGL GUI 仿真工程提供了 PikaPython 和 LVGL 进行联合仿真的实验环境。
 
 可以在 PC 上，使用 Visual Studio 进行 GUI 的仿真。
 
@@ -8,7 +8,7 @@ LVGL GUI 仿真工程提供了 PikaScript 和 LVGL 进行联合仿真的实验�
 
 [http://pikascript.com/](http://pikascript.com/)
 
-在 PikaScript 官网的工程生成器中选择 lvgl-vs-simu，这是一个 Visual Studio 的仿真工程。
+在 PikaPython 官网的工程生成器中选择 lvgl-vs-simu，这是一个 Visual Studio 的仿真工程。
 
 这个工程是从 [LVGL 官方的 Visual Studio 仿真工程](https://github.com/lvgl/lv_port_win_visual_studio) 中分支而来的。
 
@@ -56,7 +56,7 @@ print('mem used now: %0.2f kB' % (mem.getNow()))
 
 更多示例代码
 
-可以在 [/pikascript/examples/lvgl](https://gitee.com/Lyon1998/pikascript/tree/master/examples/lvgl) 文件夹中看到更多的示例代码。
+可以在 [/pikapython/examples/lvgl](https://gitee.com/Lyon1998/pikapython/tree/master/examples/lvgl) 文件夹中看到更多的示例代码。
 
 ![](assets/image-20220619175945030.png)
 
@@ -90,7 +90,7 @@ print('mem used max: %0.2f kB' % (mem.getMax()))
 print('mem used now: %0.2f kB' % (mem.getNow()))
 ```
 
-在替换 main.py 后，运行 PikaScript 的预编译器
+在替换 main.py 后，运行 PikaPython 的预编译器
 
 ![](assets/image-20220619180151300.png)
 

@@ -5,7 +5,7 @@
 
 `obj_run` 支持运行字符串形式的 Python 脚本，因此无论以哪种方式存储，只要最后给 `obj_run` 传入 Python 脚本的字符串即可。所以可以的存储方式有：**flash 直接存储、文件系统、外部存储器** 等。
 
-PikaScript 支持运行 Python 脚本源码，和解析后的 Pika 字节码。
+PikaPython 支持运行 Python 脚本源码，和解析后的 Pika 字节码。
 
 ## 存储 Python 源码
 
@@ -13,17 +13,17 @@ PikaScript 支持运行 Python 脚本源码，和解析后的 Pika 字节码。
 
 具体代码案例可以参考：
 
-1. [https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g070cb/Booter/main.c](https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g070cb/Booter/main.c)
-1. [https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g070cb/Booter/pika_config.c](https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g070cb/Booter/pika_config.c)
-1. [https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g070cb/Booter/pika_bsp.h](https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g070cb/Booter/pika_bsp.h)
+1. [https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g070cb/Booter/main.c](https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g070cb/Booter/main.c)
+1. [https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g070cb/Booter/pika_config.c](https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g070cb/Booter/pika_config.c)
+1. [https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g070cb/Booter/pika_bsp.h](https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g070cb/Booter/pika_bsp.h)
 
 ## 存储Pika字节码
 
 具体代码案例可以参考：
 
-1. [https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/main.c](https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/main.c)
-1. [https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/pika_config.c](https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/pika_config.c)
-1. [https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/pika_bsp.h](https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/pika_bsp.h)
+1. [https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g030c8/Booter/main.c](https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g030c8/Booter/main.c)
+1. [https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g030c8/Booter/pika_config.c](https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g030c8/Booter/pika_config.c)
+1. [https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g030c8/Booter/pika_bsp.h](https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g030c8/Booter/pika_bsp.h)
 
 # 使用文件系统运行 Python 脚本
 

@@ -2,19 +2,19 @@
 
 嵌入式的运行环境和 PC 有明显区别，在很多的场景下，MCU 甚至没有文件系统。
 
-不过不用担心，PikaScript 已经通过官方自带的工具帮助你轻松的导入模块，你需要做的仅仅是写一行 `import`，就像平时在 PC 使用 Python 一样。
+不过不用担心，PikaPython 已经通过官方自带的工具帮助你轻松的导入模块，你需要做的仅仅是写一行 `import`，就像平时在 PC 使用 Python 一样。
 
-和 PC 的 Python 不一样的地方仅在于，在用编译器编译 PikaScript 的工程之前，需要运行一次 PikaScript 提供的预编译器（没有什么复杂的参数和选项，仅仅是双击运行）。
+和 PC 的 Python 不一样的地方仅在于，在用编译器编译 PikaPython 的工程之前，需要运行一次 PikaPython 提供的预编译器（没有什么复杂的参数和选项，仅仅是双击运行）。
 
 ## 导入 Python 模块
 
-PikaScript 支持导入多个 Python 文件作为模块，而且不需要在 MCU 里面移植文件系统（如果你想基于文件系统，当然也可以）。
+PikaPython 支持导入多个 Python 文件作为模块，而且不需要在 MCU 里面移植文件系统（如果你想基于文件系统，当然也可以）。
 
-PikaScript 的预编译器可以将 Python 文件在 PC 开发机就转换成字节码并打包成一个库，就像是 C 一样。
+PikaPython 的预编译器可以将 Python 文件在 PC 开发机就转换成字节码并打包成一个库，就像是 C 一样。
 
 这样一来，在资源很少的 MCU 里面，就可以省去文件系统的花销了 （通常需要 20kB 的 ROM）。
 
-另一方面，如果你想快速在新平台尝试 PikaScript，也不需要先费一番功夫为新平台移植文件系统，然后再将文件系统和 PikaScript 对接。
+另一方面，如果你想快速在新平台尝试 PikaPython，也不需要先费一番功夫为新平台移植文件系统，然后再将文件系统和 PikaPython 对接。
 
 （注意，需要内核版本不低于 v1.8.0）
 
@@ -58,11 +58,11 @@ print(test.add(3, 5))
 print('test end...')
 ```
 
-然后直接在 keil 工程里面编译，会发现在开始编译 .c 文件之前，出现了 PikaScript Compiler 的提示信息，包括编译了 test.py。
+然后直接在 keil 工程里面编译，会发现在开始编译 .c 文件之前，出现了 PikaPython Compiler 的提示信息，包括编译了 test.py。
 
 ![](assets/image-20220620175646395.png)
 
-这是因为已经自动运行了 PikaScript 的预编译器，这是一项 Keil 提供的设置，能够在编译开始前执行一段脚本，包括运行 PikaScript 的预编译器。
+这是因为已经自动运行了 PikaPython 的预编译器，这是一项 Keil 提供的设置，能够在编译开始前执行一段脚本，包括运行 PikaPython 的预编译器。
 
 ![](assets/image-20220620175845943.png)
 
@@ -78,7 +78,7 @@ C 模块指的是底层用 C 实现，却仍然可以用 Python 调用的模块�
 
 一个名为 `<module>` 的C 模块通常由一个 `<module>.pyi` 文件 （python 的接口文件）和 pikascript-lib/\<module\> 文件夹组成。
 
-PikaScript 导入 C 模块和导入 Python 模块的方法一样，直接 `import`，然后运行预编译即可。
+PikaPython 导入 C 模块和导入 Python 模块的方法一样，直接 `import`，然后运行预编译即可。
 
 C 模块还需要把使用 C 语言编写的实现部分加入编译，包括：
 
@@ -131,7 +131,7 @@ print(list.get(2))
 print('test end...')
 ```
 
-编译时可以看到 PikaScript 的预编译器将 PikaStdData C 模块绑定到了工程里面。
+编译时可以看到 PikaPython 的预编译器将 PikaStdData C 模块绑定到了工程里面。
 
 ![](assets/image-20220620191019013.png)
 

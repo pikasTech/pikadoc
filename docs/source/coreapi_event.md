@@ -2,7 +2,7 @@
 
 ## 概述
 
-PikaScript 内核中提供了事件回调机制，可以支持在 C 的事件/中断中触发 Python 定义的回调函数。
+PikaPython 内核中提供了事件回调机制，可以支持在 C 的事件/中断中触发 Python 定义的回调函数。
 
 > 注意
 > 
@@ -61,7 +61,7 @@ class BaseDev:
 
 - `PikaStdDevice` 中的设备类（如 GPIO）都继承了 `BaseDev`，因此都获得了 `addEventCallBack` 的方法，能够注册回调。
 
-[/package/PikaStdDevice/PikaStdDevice.pyi](https://gitee.com/Lyon1998/pikascript/blob/master/package/PikaStdDevice/PikaStdDevice.pyi)
+[/package/PikaStdDevice/PikaStdDevice.pyi](https://gitee.com/Lyon1998/pikapython/blob/master/package/PikaStdDevice/PikaStdDevice.pyi)
 
 ``` python
 class GPIO(BaseDev):
@@ -69,7 +69,7 @@ class GPIO(BaseDev):
 ```
 平台驱动从 `PikaStdDevice.GPIO` 继承后，也获得了 `addEventCallBack` 方法。
 
-[/package/TemplateDevice/TemplateDevice.pyi](https://gitee.com/Lyon1998/pikascript/blob/master/package/TemplateDevice/TemplateDevice.pyi)
+[/package/TemplateDevice/TemplateDevice.pyi](https://gitee.com/Lyon1998/pikapython/blob/master/package/TemplateDevice/TemplateDevice.pyi)
 
 ``` python
 # TemplateDevice.pyi
@@ -84,7 +84,7 @@ class GPIO(PikaStdDevice.GPIO):
 
 例如：
 
-[/package/TemplateDevice/TemplateDevice_GPIO.c](https://gitee.com/Lyon1998/pikascript/blob/master/package/TemplateDevice/TemplateDevice_GPIO.c)
+[/package/TemplateDevice/TemplateDevice_GPIO.c](https://gitee.com/Lyon1998/pikapython/blob/master/package/TemplateDevice/TemplateDevice_GPIO.c)
 
 ``` c
 const uint32_t GPIO_PA8_EVENT_ID = 0x08;
@@ -100,7 +100,7 @@ void TemplateDevice_GPIO_platformGetEventId(PikaObj* self) {
 
 - 定义一个回调函数 `callBack1`，接收一个输入参数 `signal`，`signal`能够接收传入的信号码。
 
-[/examples/TemplateDevice/gpio_cb.py](https://gitee.com/Lyon1998/pikascript/blob/master/examples/TemplateDevice/gpio_cb.py)
+[/examples/TemplateDevice/gpio_cb.py](https://gitee.com/Lyon1998/pikapython/blob/master/examples/TemplateDevice/gpio_cb.py)
 
 ``` python
 import TemplateDevice
@@ -127,7 +127,7 @@ io1.addEventCallBack(callBack1)
 
 在需要触发事件回调时向 `PikaEventListener` 发送信号。
 
-例如：[/port/linux/test/event-test.cpp](https://gitee.com/Lyon1998/pikascript/blob/master/port/linux/test/event-test.cpp)
+例如：[/port/linux/test/event-test.cpp](https://gitee.com/Lyon1998/pikapython/blob/master/port/linux/test/event-test.cpp)
 
 - 通过 `extern PikaEventListener* g_pika_device_event_listener` 得到 `PikaStdDevice` 提供的事件监听器。
 
@@ -185,13 +185,13 @@ int res = arg_getInt(res_123);
 
 - 除了通过 PikaStdDevice 支持事件回调外，还可以自定义事件注册函数，这部分属于进阶内容。
 
-- 自定义事件注册需要比较了解 PikaScript 的 C 模块机制和对象机制。
+- 自定义事件注册需要比较了解 PikaPython 的 C 模块机制和对象机制。
 
 - 定义一个 C 模块的 Python 接口，接收传入的事件回调函数。
 
 例如：
 
-[/package/PikaStdDevice/PikaStdDevice.pyi](https://gitee.com/Lyon1998/pikascript/blob/master/package/PikaStdDevice/PikaStdDevice.pyi)
+[/package/PikaStdDevice/PikaStdDevice.pyi](https://gitee.com/Lyon1998/pikapython/blob/master/package/PikaStdDevice/PikaStdDevice.pyi)
 
 ```python
 class BaseDev:
@@ -202,7 +202,7 @@ class BaseDev:
 
 - 在 C 模块的实现中注册事件
 
-例如：[/package/PikaStdDevice/PikaStdDevice_BaseDev.c](https://gitee.com/Lyon1998/pikascript/blob/master/package/PikaStdDevice/PikaStdDevice_BaseDev.c)
+例如：[/package/PikaStdDevice/PikaStdDevice_BaseDev.c](https://gitee.com/Lyon1998/pikapython/blob/master/package/PikaStdDevice/PikaStdDevice_BaseDev.c)
 
 ```c
 PikaEventListener* g_pika_device_event_listener;
@@ -227,6 +227,6 @@ void PikaStdDevice_BaseDev_addEventCallBack(PikaObj* self, Arg* eventCallBack) {
 - 将 `self` 作为 `Event Handler Object`，将 `evnetCallBack` 传入 `self`。
 - 获取 `evnetID`
   - 这个例子中通过调用 `platformGetEventId()` 平台函数来获得 `eventID`，需要 `BaseDev` 继承，然后重写 `platformGetEventId()`，在重写后的 `platformGetEventId()` 中设置 `self.eventId`。
-  - 例如：[/package/TemplateDevice/TemplateDevice_GPIO.c](https://gitee.com/Lyon1998/pikascript/blob/master/package/TemplateDevice/TemplateDevice_GPIO.c)
+  - 例如：[/package/TemplateDevice/TemplateDevice_GPIO.c](https://gitee.com/Lyon1998/pikapython/blob/master/package/TemplateDevice/TemplateDevice_GPIO.c)
 - 调用 `pks_eventLicener_registEvent`，将 `eventId` 和 `self` 注册进事件监听器。
 

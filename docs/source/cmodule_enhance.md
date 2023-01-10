@@ -155,11 +155,11 @@ void pika_cjson_cJSON___init__(PikaObj* self) {
 print(cJSON.cJSON_Invalid)
 ```
 
-需要注意的是，PikaScript 的类属性是只读的，对类属性的所有修改都是无效的。
+需要注意的是，PikaPython 的类属性是只读的，对类属性的所有修改都是无效的。
 
 # C 模块初始化
 
-直接在 .pyi 中定义 `__init__()` 函数即可执行模块初始化，在模块载入时会触发执行，PikaScript 具有模块延时加载机制，`import` 不会直接触发模块加载，仅仅在第一次真正使用模块时，才会触发加载。
+直接在 .pyi 中定义 `__init__()` 函数即可执行模块初始化，在模块载入时会触发执行，PikaPython 具有模块延时加载机制，`import` 不会直接触发模块加载，仅仅在第一次真正使用模块时，才会触发加载。
 
 例如:
 

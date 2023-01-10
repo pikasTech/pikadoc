@@ -4,7 +4,7 @@ PikaScript 已加入 [RT-Thread软件包](https://packages.rt-thread.org/detail.
 
 PikaScript 软件包支持**全部的 RT-Thread BSP** 。
 ![](assets/1638840464842-02580253-48dc-4dcc-94a4-e62f1b596b38.png)
-如果在使用过程中遇到兼容性问题，可以在 [gitee](https://gitee.com/Lyon1998/pikascript)，[github](https://github.com/pikasTech/pikascript) 提 issue 或者[论坛](https://whycan.com/f_55.html)提问。
+如果在使用过程中遇到兼容性问题，可以在 [gitee](https://gitee.com/Lyon1998/pikapython)，[github](https://github.com/pikasTech/pikapython) 提 issue 或者[论坛](https://whycan.com/f_55.html)提问。
 
 ## 安装
 

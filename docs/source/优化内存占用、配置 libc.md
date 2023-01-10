@@ -1,8 +1,8 @@
-# PikaScript 配置手册
+# PikaPython 配置手册
 
 ## 何时需要配置
 
-PikaScript 本身是 **免配置** 的，所以通常情况下 **不需要** 了解这部分内容。
+PikaPython 本身是 **免配置** 的，所以通常情况下 **不需要** 了解这部分内容。
 
 当你有以下的需求时，则可以考虑配置 PikaScript：
 
@@ -16,7 +16,7 @@ PikaScript 本身是 **免配置** 的，所以通常情况下 **不需要** 了
 
 [注意]：进行优化配置，需要内核版本不低于 ```v1.5.4```
 
-类似 GCC, PikaScript 也提供了不同的优化模式，目前可以使用的优化模式有：
+类似 GCC, PikaPython 也提供了不同的优化模式，目前可以使用的优化模式有：
 
 - ```PIKA_OPTIMIZE_SIZE``` 体积模式 最小化运行内存
 
@@ -34,7 +34,7 @@ PikaScript 本身是 **免配置** 的，所以通常情况下 **不需要** 了
 
 可用的配置项和默认的配置在 ```pika_config_valid.h``` 头文件中。
 
-[https://gitee.com/Lyon1998/pikascript/blob/master/src/pika_config_valid.h](https://gitee.com/Lyon1998/pikascript/blob/master/src/pika_config_valid.h)
+[https://gitee.com/Lyon1998/pikapython/blob/master/src/pika_config_valid.h](https://gitee.com/Lyon1998/pikapython/blob/master/src/pika_config_valid.h)
 
 截取重要的部分进行说明：
 
@@ -73,24 +73,24 @@ PikaScript 本身是 **免配置** 的，所以通常情况下 **不需要** 了
 
 ```default configuration``` 是配置项的默认值，当 ```PIKA_CONFIG_ENABLE``` 宏被定义后，```pika_config_valid.h``` 会引入 ```pika_config.h```，因此用户可以在  ```pika_config.h``` 中覆盖上面的默认配置。
 
-例如，如果想要将增大 PikaScript 虚拟机的运行时栈，则可以在 ```pika_config.h``` 中写入
+例如，如果想要将增大 PikaPython 虚拟机的运行时栈，则可以在 ```pika_config.h``` 中写入
 
 ``` c
 #define PIKA_STACK_BUFF_SIZE 512
 ```
 
-从 ```pika_config_valid.h``` 中可以看到，PikaScript 的默认优化选项 ``` PIKA_OPTIMIZE ``` 的值是 ``` PIKA_OPTIMIZE_SIZE ```，如果需要切换到 speed 优化，则可以在 ```pika_config.h``` 中写入
+从 ```pika_config_valid.h``` 中可以看到，PikaPython 的默认优化选项 ``` PIKA_OPTIMIZE ``` 的值是 ``` PIKA_OPTIMIZE_SIZE ```，如果需要切换到 speed 优化，则可以在 ```pika_config.h``` 中写入
 
 ``` c
 #define PIKA_OPTIMIZE PIKA_OPTIMIZE_SPEED
 ```
 ### 示例代码
 
-[https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g070cb/Booter/pika_config.h](https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g070cb/Booter/pika_config.h)
+[https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g070cb/Booter/pika_config.h](https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g070cb/Booter/pika_config.h)
 
 ## 依赖项配置
 
-可以通过创建 ```pika_config.c```，重写 [PikaPlagform.h](https://gitee.com/Lyon1998/pikascript/blob/master/src/PikaPlatform.h) 里面的弱函数来配置 PikaScript 的依赖项。
+可以通过创建 ```pika_config.c```，重写 [PikaPlagform.h](https://gitee.com/Lyon1998/pikapython/blob/master/src/PikaPlatform.h) 里面的弱函数来配置 PikaPython 的依赖项。
 ``` c
 /* interrupt config */
 void __platform_enable_irq_handle(void);
@@ -137,6 +137,6 @@ void __platform_error_handle(void);
 - 内存管理 —— 替换 malloc free 内存管理算法
   
 ### 示例代码：
-- [https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/pika_config.c](https://gitee.com/Lyon1998/pikascript/blob/master/bsp/stm32g030c8/Booter/pika_config.c)
+- [https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g030c8/Booter/pika_config.c](https://gitee.com/Lyon1998/pikapython/blob/master/bsp/stm32g030c8/Booter/pika_config.c)
   
-- [https://gitee.com/Lyon1998/pikascript/blob/master/package/pikaRTThread/pika_config.c](https://gitee.com/Lyon1998/pikascript/blob/master/package/pikaRTThread/pika_config.c)
+- [https://gitee.com/Lyon1998/pikapython/blob/master/package/pikaRTThread/pika_config.c](https://gitee.com/Lyon1998/pikapython/blob/master/package/pikaRTThread/pika_config.c)

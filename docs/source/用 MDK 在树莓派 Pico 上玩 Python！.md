@@ -12,14 +12,14 @@ MicroPython 绑定 C 模块很复杂，很难调试，有没有更方便的技�
 
 有的，那就是 PikaScript，PikaScript 是一个完全重写的超轻量级 python 引擎，零依赖，零配置，可以在少于 4KB 的 RAM 下运行，具有框架式 C 模块开发工具，只要用 Python 写好调用 API，就能够自动连接到 C 模块，非常方便快捷。不用手动处理任何全局表、宏函数、模块注册等等过程。
 
-而且 PikaScript 也支持 MDK 开发，能够轻松地调试 C 模块。
+而且 PikaPython 也支持 MDK 开发，能够轻松地调试 C 模块。
 
 
 了解详情可以看：
 
 李昂 1998，公众号：吉大仪电 216 小论坛[【独家】我就要用最便宜的单片机来跑 python，还要用 MDK 开发，怎么地吧！](http://mp.weixin.qq.com/s?__biz=MzU4NzUzMDc1OA==&mid=2247484313&idx=1&sn=2749a27bba09b2fe9c7bc0ad4977c8a6&chksm=fdebd4f0ca9c5de6f9160d42c58aa5d5e072168752c826cbf82f700f1fc301b96a3aaf4cfcfd#rd)
 
-除了pico之外，pikascript 的易移植特性使其可以在非常多的平台上运行。
+除了pico之外，pikapython 的易移植特性使其可以在非常多的平台上运行。
 
 从 stm32g0，stm32f1，到国产的 ch32，apm32，cm32，还有平头哥的 w801，博流的 bl-706，统统支持。
 
@@ -39,7 +39,7 @@ MicroPython 绑定 C 模块很复杂，很难调试，有没有更方便的技�
 
 使用说明：
 
-[https://gitee.com/Lyon1998/pikascript/tree/master/bsp/pico#pikascript-in-pico](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/pico#pikascript-in-pico)
+[https://gitee.com/Lyon1998/pikapython/tree/master/bsp/pico#pikascript-in-pico](https://gitee.com/Lyon1998/pikapython/tree/master/bsp/pico#pikascript-in-pico)
 
 如果能在串口看到下面的信息，就说明运行成功了！
 

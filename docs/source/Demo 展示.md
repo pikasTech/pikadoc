@@ -18,13 +18,13 @@
 
 ![](assets/132941900-985ebc9e-fb65-48f6-8677-d3ebc65422ee.gif)
 
-要不，试试 PikaScript？
+要不，试试 PikaPython？
 
-啥是 PikaScript？
+啥是 PikaPython？
 
-PikaScript 可以为**资源受限**的 mcu 提供**极易部署和拓展**的 **Python **脚本支持。**不需要操作系统**，能**裸机**运行，还**不需要文件系统**。
+PikaPython 可以为**资源受限**的 mcu 提供**极易部署和拓展**的 **Python **脚本支持。**不需要操作系统**，能**裸机**运行，还**不需要文件系统**。
 
-PikaScript 支持裸机运行，最低可运行于 **RAM ≥ 4kB** ，**FLASH ≥ 32kB** 的 mcu 中，推荐配置为 RAM ≥ 10kB， FLASH ≥ 64kB，像是 stm32f103c8t6、stm32g070RBT6 这些完全没有压力，甚至已经满足了推荐配置。
+PikaPython 支持裸机运行，最低可运行于 **RAM ≥ 4kB** ，**FLASH ≥ 32kB** 的 mcu 中，推荐配置为 RAM ≥ 10kB， FLASH ≥ 64kB，像是 stm32f103c8t6、stm32g070RBT6 这些完全没有压力，甚至已经满足了推荐配置。
 
 而且支持 **Keil、IAR、RT-Thread studio、segger embedded studio** 等 IDE 开发，零依赖，零配置，开箱即用，极易集成进已有的 C 工程。
 
@@ -53,7 +53,7 @@ io1.setMode('out')
 io1.enable()
 io1.low()
 
-print('hello pikascript')
+print('hello pikapython')
 print('mem.max :')
 mem.max()
 print('mem.now :')
@@ -127,7 +127,7 @@ while True:
 
 这几个 Demo 占用的 RAM 最大值只有 **3.56K**，把 1K 的堆栈也算上就是 4.56K，Flash 最大占用是 30.4K，以STM32F103C8T6 的 20K RAM 和 64K Flash 为标准，RAM 才**用掉不到25%**，Flash 才**用掉不到50%**，简直是资源多到不知道咋霍霍。
 
-同样跑 Python，我们可以简单对比一下 micropython 的常用芯片 STM32F405RG 和这次跑 PikaScript 的芯片 STM32G070CB
+同样跑 Python，我们可以简单对比一下 micropython 的常用芯片 STM32F405RG 和这次跑 PikaPython 的芯片 STM32G070CB
 
 ## RAM 资源对比
 
@@ -142,20 +142,20 @@ while True:
 
 ## 拓展能力如何呢？
 
-除了设备驱动之外，为 mcu 开发**自定义的 python 脚本绑定**在 pikascript 的开发框架下**非常轻松**，下面两个 Demo 就是自定义的 C 模块拓展，这个 Demo 基于 ARM-2D 图像驱动库开发了一些 python 脚本接口。
+除了设备驱动之外，为 mcu 开发**自定义的 python 脚本绑定**在 pikapython 的开发框架下**非常轻松**，下面两个 Demo 就是自定义的 C 模块拓展，这个 Demo 基于 ARM-2D 图像驱动库开发了一些 python 脚本接口。
 ## 几个小方块~
 
 ![](assets/132945282-bfd310df-8063-456d-b90c-6b798a2c8ed5.gif)
 ## 几个旋转太阳~
 
 ![](assets/132945107-e473a2cc-9fbc-47f9-aaed-a28d3ad1048c.gif)
-## 那，PikaScript 是开源的吗？
-当然，这个就是 PikaScript 的 github 主页：
-[https://github.com/pikasTech/pikascript](https://github.com/pikasTech/pikascript)
+## 那，PikaPython 是开源的吗？
+当然，这个就是 PikaPython 的 github 主页：
+[https://github.com/pikasTech/pikapython](https://github.com/pikasTech/pikapython)
 
 ## 开发难不难？
-PikaScript 为开发者准备了丰富的Demo和由浅入深的开发指南，指南还会持续完善和维护。
+PikaPython 为开发者准备了丰富的Demo和由浅入深的开发指南，指南还会持续完善和维护。
 
 ## 可以商用吗？
-当然！PikaScript 采用 MIT 协议，允许修改和商用，但是要注意保留原作者的署名。
+当然！PikaPython 采用 MIT 协议，允许修改和商用，但是要注意保留原作者的署名。
 

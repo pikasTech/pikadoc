@@ -1,6 +1,6 @@
 # Keil 仿真工程
 
-在本篇中，你将可以在手边没有硬件的情况下对 pikascript 进行上手测试。
+在本篇中，你将可以在手边没有硬件的情况下对 pikapython 进行上手测试。
 测试使用 keil5 的仿真工程，仿真目标板为 stm32f103 ，下载仿真工程即可直接开始测试。
 ## 创建工程
 进入 pikascript 官网 [http://pikascript.com](http://pikascript.com)
@@ -55,7 +55,7 @@ mem.now()
 
 事实上，pikascript 虽然使用 python 语法，但原理上更像是 java，是半编译半解释型的，pikascript 的类和方法是需要编译的，而方法调用和对象新建/销毁则是在运行时解释的。
 
-编译 pikascript 分为两步，第一步是使用 pikascript 预编译器将 .py 文件编译为 pikascript-api 中的 .c 和 .h 文件。
+编译 pikapython 分为两步，第一步是使用 pikapython 预编译器将 .py 文件编译为 pikascript-api 中的 .c 和 .h 文件。
 
 第二步是使用 c 编译器编译所有的 c 文件，然后下载到单片机里即可。
 

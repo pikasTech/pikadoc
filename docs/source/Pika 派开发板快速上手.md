@@ -22,7 +22,7 @@
 
 ![](assets/1641204913846-15059096-75ac-4aa1-9c5f-27cbde8d77d9.png)
 
-这个开发板由 PikaScript 项目官方支持，持续滚动更新，PikaScript 的最新内核，最新功能，都可以在这个开发板上抢先体验到。
+这个开发板由 PikaPython 项目官方支持，持续滚动更新，PikaPython 的最新内核，最新功能，都可以在这个开发板上抢先体验到。
 
 这个开发板也由项目官方适配了丰富外设模块、包括 GPIO、TIME、ADC、IIC、LCD、KEY、PWM 等模块的驱动都已经开发好，可以直接用 python 进行编程。
 
@@ -40,7 +40,7 @@
 
 下载固件工程：
 
-进入 pikascript 官网 [http://pikascript.com](http://pikascript.com)
+进入 pikapython 官网 [http://pikascript.com](http://pikascript.com)
 
 Lite 版和 Pro版使用 stm32g030 平台。
 
@@ -66,9 +66,9 @@ Lite 版自行连接 J-Link \ DAP-Link \ ST-Link 即可SWD升级。
 
 Pro 版和 Plus 版板载 DAP-Link，直接连接USB即可SWD升级。
 
-Lite 版和 Pro 版使用 [bsp/stm32g030](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g030c8) 工程。
+Lite 版和 Pro 版使用 [bsp/stm32g030](https://gitee.com/Lyon1998/pikapython/tree/master/bsp/stm32g030c8) 工程。
 
-Plus 版使用  [bsp/stm32g070](https://gitee.com/Lyon1998/pikascript/tree/master/bsp/stm32g070cb) 工程。
+Plus 版使用  [bsp/stm32g070](https://gitee.com/Lyon1998/pikapython/tree/master/bsp/stm32g070cb) 工程。
 
 在使用SWD升级时，应选择"全部擦除"的下载方式
 
@@ -88,11 +88,11 @@ Plus 版使用  [bsp/stm32g070](https://gitee.com/Lyon1998/pikascript/tree/maste
 
 ![](assets/200618_b8f264a8_5521445.png)
 
-选择好 COM 口，然后波特率选为 115200，再点打开串口，这时候，就和 Pika 派连接上了。直接发送一个 Pthon 脚本文件，就可以给 Pika 派下载 Python 程序了。为了验证下载能不能成功，我们使用 PikaScript 源码仓库里面的示例 Python 脚本。
+选择好 COM 口，然后波特率选为 115200，再点打开串口，这时候，就和 Pika 派连接上了。直接发送一个 Pthon 脚本文件，就可以给 Pika 派下载 Python 程序了。为了验证下载能不能成功，我们使用 PikaPython 源码仓库里面的示例 Python 脚本。
 
-我们进入 PikaScript 的代码仓库
+我们进入 PikaPython 的代码仓库
 
-[https://gitee.com/Lyon1998/pikascript](https://gitee.com/Lyon1998/pikascript)
+[https://gitee.com/Lyon1998/pikapython](https://gitee.com/Lyon1998/pikapython)
 
 惯例点一个 Star~
 
@@ -121,7 +121,7 @@ io1.setMode('out')
 io1.enable()
 io1.low()
 
-print('hello pikascript')
+print('hello pikapython')
 print('mem.max :')
 mem.max()
 print('mem.now :')
@@ -175,16 +175,16 @@ import machine
 
 首先是第一行和第二行，这表示导入了两个模块，一个是`PikaStdLib`模块，一个是`machine`模块。
 
-PikaStdLib 是 PikaScript 的标准库，里面有一些系统的功能，比如可以检查内存的占用。第四行里面，我们就新建了一个 mem 对象，这个对象的类是 PikaStdLib.MemChecker()。
+PikaStdLib 是 PikaPython 的标准库，里面有一些系统的功能，比如可以检查内存的占用。第四行里面，我们就新建了一个 mem 对象，这个对象的类是 PikaStdLib.MemChecker()。
 
 ```python
 mem = PikaStdLib.MemChecker()
 ```
 
-这个类有 max() 方法和 now() 方法，使用这两个方法，就可以打印出当前 PikaScript 所使用的内存大小。
+这个类有 max() 方法和 now() 方法，使用这两个方法，就可以打印出当前 PikaPython 所使用的内存大小。
 
 ```python
-print('hello pikascript')
+print('hello pikapython')
 print('mem.max :')
 mem.max()
 print('mem.now :')
@@ -390,7 +390,7 @@ while True:
 
 main.py 执行完毕后，就会进入交互式运行，因此只要取消 main.py 中的 `while True :`，使其能够执行完退出，就可以进入交互式运行。
 
-- 强烈建议使用 [pikaStudio](https://gitee.com/Lyon1998/pikascript/attach_files/1285327/download) 作为串口终端。
+- 强烈建议使用 [pikaStudio](https://gitee.com/Lyon1998/pikapython/attach_files/1285327/download) 作为串口终端。
 
 ![](assets/image-20230105225643467.png)
 

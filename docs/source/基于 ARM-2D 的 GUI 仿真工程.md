@@ -3,13 +3,13 @@
 ## 前言
 
 
-好消息！ pikascript 的 Arm2D 模块以及仿真工程初步整理好了！pikaScript，ARM-2D，rt-thread 齐活儿，解锁python 玩 Arm2D 的新姿势！还不需要硬件，可以直接仿真，可以说是非常方便了。
+好消息！ pikapython 的 Arm2D 模块以及仿真工程初步整理好了！pikaScript，ARM-2D，rt-thread 齐活儿，解锁python 玩 Arm2D 的新姿势！还不需要硬件，可以直接仿真，可以说是非常方便了。
 
 
 在自己的电脑上部署运行这个仿真工程也非常简单，按照下面的几步操作就可以了~
 ## 获得仿真工程
 
-进入 PikaScript 官网: http://pikascript.com ，然后平台选择 `sumulation-rtt-qemu-arm2d`，然后点开始生成即可得到工程。
+进入 PikaPython 官网: http://pikascript.com ，然后平台选择 `sumulation-rtt-qemu-arm2d`，然后点开始生成即可得到工程。
 
 ## 安装开发环境
 
@@ -71,7 +71,7 @@ rt-thread studio 装在你喜欢的地方就可以，arm gcc 要装在默认的c
 ## 修改python代码试试
 
 
-python 的源码就在 simulation-rtt-qemu-arm2d/packages/pikascript/main.py 里面，可以打开看看~
+python 的源码就在 simulation-rtt-qemu-arm2d/packages/pikapython/main.py 里面，可以打开看看~
 
 
 ![](assets/139679915-45d1362e-7066-4829-ae83-b4bbc5d0aaa0.png)

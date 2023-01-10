@@ -1,4 +1,4 @@
-# PikaScript C模块概述
+# PikaPython C模块概述
 
 我们依然以keil的仿真工程为例，如果还没有获得仿真工程，请首先在 [快速开始 -> keil 仿真工程](https://pikadoc.readthedocs.io/zh/latest/Keil%20%E4%BB%BF%E7%9C%9F%E5%B7%A5%E7%A8%8B.html) 章节获取工程。
 
@@ -12,7 +12,7 @@
 
 ![](assets/image-20220916120814065.png)
 
-每一个 PikaScript **C模块** 由 **模块接口** 和 **模块实现** (package implement)两部分组成。
+每一个 PikaPython **C模块** 由 **模块接口** 和 **模块实现** (package implement)两部分组成。
 
 我们先打开 Device.pyi 查看一下内容，在后续的文档中我们会称 Device.pyi 为 **Device 模块接口**。
 
@@ -44,7 +44,7 @@ LED类中定义了两个方法，分别是 `on()` 方法和 `off()` 方法，而
 可以看到，这些方法都有一个特点，与其说这是方法的 **定义**，不如说是方法的 **声明**（注解），因为所有的方法实现都 pass 掉了，都没有写实现。而且方法的入口参数都是带有 **类型声明** 的。比如 `data:str` 就表示一个`data` 参数，参数类型为 `str` 即字符串类型。
 
 
-这是因为这个模块的模块实现是由 C 语言编写的，也就是说，PikaScript 的 C 模块，都是使用 python 语法编写声明，而使用 C 语言编写实现。PikaScript 的模块开发是一种 **面向接口** 编程的 **混合编程** 技术。
+这是因为这个模块的模块实现是由 C 语言编写的，也就是说，PikaPython 的 C 模块，都是使用 python 语法编写声明，而使用 C 语言编写实现。PikaPython 的模块开发是一种 **面向接口** 编程的 **混合编程** 技术。
 
 
 然而在使用已有的模块时，是不需要了解模块实现的，只需要了解模块接口，即可使用这个模块。
@@ -56,7 +56,7 @@ LED类中定义了两个方法，分别是 `on()` 方法和 `off()` 方法，而
 下面我们看一下如何使用这个模块。
 
 
-我们打开工程中的 main.py，见名知意，这个文件是 PikaScript 的入口文件。
+我们打开工程中的 main.py，见名知意，这个文件是 PikaPython 的入口文件。
 
 
 main.py 的内容如下
@@ -85,7 +85,7 @@ mem.now()
 
 调用方法则使用 `uart.setName('com')` 这种形式，这都是 Python 的标准语法，不需要过多介绍。
 
-在 main.py 中写好模块的调用后，双击 rust-msc-v0.5.0.exe 即可预编译 PikaScript 工程，预编译的输出文件在 pikascrip-api 文件夹内。
+在 main.py 中写好模块的调用后，双击 rust-msc-v0.5.0.exe 即可预编译 PikaPython 工程，预编译的输出文件在 pikascrip-api 文件夹内。
 
 ![](assets/image-20220916121019138.png)
 
@@ -93,7 +93,7 @@ pika 预编译器会为导入的模块生成 .h 声明文件。文件名以模�
 
 ![](assets/image-20220916121107004.png)
 
-而 PikaMain.h 则是对应了一个特殊的类，这个类是 PikaScript 的主类，由 main.py 编译而成。
+而 PikaMain.h 则是对应了一个特殊的类，这个类是 PikaPython 的主类，由 main.py 编译而成。
 
 ![](assets/image-20220916121148778.png)
 

@@ -1,6 +1,6 @@
 # 对接IDE
 ## 概述
-PikaScript 需要对接 IDE 的工具集包括
+PikaPython 需要对接 IDE 的工具集包括
 
 - 包管理器 pikaPackage.exe
 
@@ -32,7 +32,7 @@ PikaScript 需要对接 IDE 的工具集包括
 ## 工程文件
 
    1. 在执行包管理器或者预编译器后，需要添加 **pikascript-lib,pikascript-core,pikascript-api** 下的 **全部（包括子文件夹)** 的 .c 文件和 include 路径。
-   1. 重置 PikaScript 工程文件：删除 pikascript-lib，pikascript-core，pikascript-api 后，重新运行 pikaPackage.exe 和 rust-msc-latest-win10.exe。
+   1. 重置 PikaPython 工程文件：删除 pikascript-lib，pikascript-core，pikascript-api 后，重新运行 pikaPackage.exe 和 rust-msc-latest-win10.exe。
 
 ## 示例
 

@@ -81,7 +81,7 @@ class GPIO:
 
 ```
 
-`PikaStdDevice` 模块的示例代码在 [https://gitee.com/Lyon1998/pikascript/tree/master/examples/Device](https://gitee.com/Lyon1998/pikascript/tree/master/examples/Device) 路径下，示例中的 `machine` 模块是 `PikaStdDevice` 模块的简单重命名。
+`PikaStdDevice` 模块的示例代码在 [https://gitee.com/Lyon1998/pikapython/tree/master/examples/Device](https://gitee.com/Lyon1998/pikapython/tree/master/examples/Device) 路径下，示例中的 `machine` 模块是 `PikaStdDevice` 模块的简单重命名。
 
 ## `pika_hal` 设备抽象层
 
@@ -344,7 +344,7 @@ PIKA_WEAK int pika_hal_platform_XXXX_ioctl_config(pika_dev* dev, pika_hal_XXXX_c
 
 示例适配代码：
 
-[https://gitee.com/Lyon1998/pikascript/tree/master/package/BLIOT](https://gitee.com/Lyon1998/pikascript/tree/master/package/BLIOT)
+[https://gitee.com/Lyon1998/pikapython/tree/master/package/BLIOT](https://gitee.com/Lyon1998/pikapython/tree/master/package/BLIOT)
 
 ## 参与贡献
 

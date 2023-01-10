@@ -177,12 +177,12 @@ PikaScript不依赖文件系统，只要传入字符串就可以运行，所以�
 
 项目地址：
 
-PikaScript-CH32V103参赛项目仓库：
+PikaPython-CH32V103参赛项目仓库：
 
 https://gitee.com/lyon1998/ch32v103-pika
 
 PikaScript总仓库：
 
-https://gitee.com/lyon1998/pikascript
+https://gitee.com/lyon1998/pikapython
 
-https://github.com/pikastech/pikascript
+https://github.com/pikastech/pikapython

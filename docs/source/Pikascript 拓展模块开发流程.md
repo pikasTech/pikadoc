@@ -1,4 +1,4 @@
-# PikaScript C 模块开发流程
+# PikaPython C 模块开发流程
 
 我们依然以 keil 的仿真工程为例，如果还没有获得仿真工程，请首先在 [快速开始 -> keil 仿真工程](https://pikadoc.readthedocs.io/zh/latest/Keil%20%E4%BB%BF%E7%9C%9F%E5%B7%A5%E7%A8%8B.html) 章节获取工程。
 
@@ -194,7 +194,7 @@ print(res4)
 
 ### 可用的类型注解
 
-下面的表格列出了 PikaScript 支持的所有类型声明,以及它们与 C 语言的原生类型的对应关系。
+下面的表格列出了 PikaPython 支持的所有类型声明,以及它们与 C 语言的原生类型的对应关系。
 
 | Python 类型注解 | C  原生类型 | 说明 |
 | --------------- | ----------- | -- |
@@ -203,9 +203,9 @@ print(res4)
 | float           | double       | python 基本类型 |
 | str             | char *       | python 基本类型 |
 | bytes           | uint8_t *    | python 基本类型 |
-| pointer         | void *       | PikaScript 特有的类型注解 |
-| any             | Arg*        |PikaScript 提供的泛型容器|
-| 任意 class      | PikaObj *   |PikaScript 提供的对象容器|
+| pointer         | void *       | PikaPython 特有的类型注解 |
+| any             | Arg*        |PikaPython 提供的泛型容器|
+| 任意 class      | PikaObj *   |PikaPython 提供的对象容器|
 
 > **注意**
 > 1. `str` 作为返回值时，在 c 中返回的是 `char*` ，如果要返回的字串是函数中的局部变量，需要用 `obj_cacheStr` 进行缓存，避免出函数作用域后发生悬垂引用，如: `return obj_cacheStr(self, res);`。

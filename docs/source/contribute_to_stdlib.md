@@ -1,14 +1,14 @@
 # 如何贡献通用模块
 
-## PikaScript 通用模块是什么？
+## PikaPython 通用模块是什么？
 
-PikaScript 通用模块是一系列跨平台的常用工具库，比如 string, time 等等，这些库有一些提供了和 CPython 一致或者类似的 API, 有些提供了 MCU 开发的常用工具。
+PikaPython 通用模块是一系列跨平台的常用工具库，比如 string, time 等等，这些库有一些提供了和 CPython 一致或者类似的 API, 有些提供了 MCU 开发的常用工具。
 
-## PikaScript 开发环境搭建
+## PikaPython 开发环境搭建
 
-PikaScript 标准库是跨平台的，所以不能够使用平台（比如 stm32）专有的资源，为了确保这一点，标准库都是在 linux 的平台开发的。
+PikaPython 标准库是跨平台的，所以不能够使用平台（比如 stm32）专有的资源，为了确保这一点，标准库都是在 linux 的平台开发的。
 
-如何确保标准库的可用性呢？PikaScript 在 linux 平台部署了 GoogleTest 单元测试框架，可以为这些标准库提供测例，GoogleTest 可以在开发者的本地机器运行，也会在每次提交到 github 的 master 分支后自动在云端运行（基于Github Actions）。
+如何确保标准库的可用性呢？PikaPython 在 linux 平台部署了 GoogleTest 单元测试框架，可以为这些标准库提供测例，GoogleTest 可以在开发者的本地机器运行，也会在每次提交到 github 的 master 分支后自动在云端运行（基于Github Actions）。
 
 ### 构建 Docker 容器
 
@@ -28,7 +28,7 @@ VSCODE 提供了连接到容器进行开发的工具，连接后开发体验就�
 
 ![](assets/image-20220601001641800-16627321708956.png)
 
- `cd` 到 `~/pikascript/port/linux`, 然后输入 `code .`，切换工作路径到 `pikascript/port/linux`
+ `cd` 到 `~/pikapython/port/linux`, 然后输入 `code .`，切换工作路径到 `pikapython/port/linux`
 
 ![](assets/image-20220601001904516-16627321708955.png)
 
@@ -91,9 +91,9 @@ bash init.sh
 
 调试已经被配置好了，直接在 vscode 中打断点，然后 F5 即可进入调试。
 
-注意: vscode 工作路径需要在 ~/pikascript/port/linux 下，切换工作路径的方式：
+注意: vscode 工作路径需要在 ~/pikapython/port/linux 下，切换工作路径的方式：
 
- `cd` 到 `~/pikascript/port/linux`, 然后输入 `code .`
+ `cd` 到 `~/pikapython/port/linux`, 然后输入 `code .`
 
 ![](assets/172127039-49e0d663-6f7a-4057-b5fe-1363c68dd9a0.png)
 
@@ -206,7 +206,7 @@ sh gtest.sh
 
 ### 提交
 
-测试通过后，就可以提交这个修改了，在提交修改之前，你需要先 fork PikaScript 的仓库，Gitee 和 Github 均可。
+测试通过后，就可以提交这个修改了，在提交修改之前，你需要先 fork PikaPython 的仓库，Gitee 和 Github 均可。
 
 第一次提交时，需要修改你的提交信息，包括你的用户名，email，和 fork 后的仓库地址。
 

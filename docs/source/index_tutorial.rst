@@ -4,5 +4,5 @@
 .. toctree::
    :maxdepth: 1
 
-   pikascript 实践记录 
+   pikapython 实践记录 
    MM32 PikaScript
