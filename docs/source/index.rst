@@ -1,9 +1,9 @@
-PikaScript 开发文档
+PikaPython 开发文档
 ====================================
 
 English Document: https://pikadoc.readthedocs.io/en/latest/index.html
 
-PikaScript是一个完全重写的超轻量级python引擎，零依赖，零配置，可以在少于4KB的RAM下运行(如stm32g030c8和stm32f103c8)，极易部署和扩展。
+PikaPython (也称 PikaScript、PikaPy) 是一个完全重写的超轻量级 python 引擎，零依赖，零配置，可以在少于 4KB 的 RAM 下运行 (如 stm32g030c8 和 stm32f103c8)，极易部署和扩展。
 
 .. toctree::
    :numbered:
