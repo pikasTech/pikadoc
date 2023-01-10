@@ -2,8 +2,8 @@
 
 # -- Project information
 
-project = 'PikaScript'
-copyright = '2021, PikasTech'
+project = 'PikaPython'
+copyright = '2023, PikasTech'
 author = 'Lyon'
 
 release = '0.1'
