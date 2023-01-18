@@ -85,6 +85,10 @@ class GPIO:
 
 ## `pika_hal` 设备抽象层
 
+### 讲解视频
+
+[【Pika Python 设备抽象层】pika_hal](https://space.bilibili.com/5365336/channel/collectiondetail?sid=1033930)
+
 ### 设计理念
 
 - 高效。纯 C 语言实现，内部环节精简。
