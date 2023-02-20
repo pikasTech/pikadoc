@@ -47,7 +47,7 @@ Sipeed M0P DOCK 是基于[博流智能科技](http://www.bouffalolab.com/)的 BL
 
   bl_mcu_sdk/examples/pikapython/pikapython/main.py
 
-- pikaStudio 会在每次发送软件包之前把多脚本文件自动打包，每次编辑 Python 文件后直接发送即可。
+- pikaStudio 会在每次发送软件包之前把多脚本文件自动打包，每次编辑 Python 文件后直接发送即可
 
 ## 擦除脚本文件
 
