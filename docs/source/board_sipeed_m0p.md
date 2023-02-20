@@ -78,6 +78,43 @@ import json
 print('hello PikaPython!')
 ```
 
+## 支持的外设
+
+参考 [machine.py](https://github.com/pikasTech/bl_mcu_sdk/blob/master/examples/pikapython/pikapython/main.py) 中的外设类
+
+例如 (注意，可能不是最新的)
+``` python
+import PikaStdDevice
+
+
+class UART(PikaStdDevice.UART):
+    pass
+
+
+class GPIO(PikaStdDevice.GPIO):
+    pass
+
+
+class LED(GPIO):
+    pin: str = None
+
+    def __init__(self, id: int):
+        super().__init__()
+        if id == 0:
+            self.pin = 'P27'
+        elif id == 1:
+            self.pin = 'P28'
+        self.setMode('out')
+        self.enable()
+        self.high()
+
+    def on(self):
+        self.low()
+
+    def off(self):
+        self.high()
+```
+
 ## 示例代码
 
 [PikaPython - Example] (https://gitee.com/Lyon1998/pikapython/tree/master/examples)
