@@ -52,3 +52,32 @@ Sipeed M0P DOCK 是基于[博流智能科技](http://www.bouffalolab.com/)的 BL
 ## 擦除脚本文件
 
 - 按住 BOOT 键，持续 2s，会自动擦除脚本文件。
+
+## 支持的模块
+
+参考 [main.py](https://github.com/pikasTech/bl_mcu_sdk/blob/master/examples/pikapython/pikapython/main.py) 中 import 的模块
+
+例如 (注意，可能不是最新的)
+``` python
+import PikaStdLib
+import random
+import PikaStdData
+import configparser
+import pika_cjson
+import PikaMath
+import unittest
+import re
+import binascii
+import modbus
+import time
+import pika_lvgl
+import _thread
+import machine
+import example
+import json
+print('hello PikaPython!')
+```
+
+## 示例代码
+
+[PikaPython - Example] (https://gitee.com/Lyon1998/pikapython/tree/master/examples)
