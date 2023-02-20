@@ -80,7 +80,7 @@ print('hello PikaPython!')
 
 ## 支持的外设
 
-参考 [machine.py](https://github.com/pikasTech/bl_mcu_sdk/blob/master/examples/pikapython/pikapython/main.py) 中的外设类
+参考 [machine.py](https://github.com/pikasTech/bl_mcu_sdk/blob/master/examples/pikapython/pikapython/machine.py) 中的外设类
 
 例如 (注意，可能不是最新的)
 ``` python
