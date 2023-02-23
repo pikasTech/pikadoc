@@ -16,7 +16,7 @@ Sipeed M0P DOCK 是基于[博流智能科技](http://www.bouffalolab.com/)的 BL
 
 
 
-- 按住开发板的 BOOT 键不松开，然后按 RST 进入下载模式，连接 USB，Image File 选择固件，Port/SN 端口（没有的话点 Refresh，然后点 Create & Download 烧录固件。
+- 连接 USB，按住开发板的 BOOT 键不松开，然后按 RST 进入下载模式，Image File 选择固件，Port/SN 端口（没有的话点 Refresh，然后点 Create & Download 烧录固件。
 
 ![](assets/image-20230220235401746.png)
 
