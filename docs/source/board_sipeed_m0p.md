@@ -22,8 +22,11 @@ Sipeed M0P DOCK 是基于[博流智能科技](http://www.bouffalolab.com/)的 BL
 
 ## 连接 Python 终端
 
+- 使用 TTL 转串口工具连接开发板的串口
+  - TTL 转串口: TX <--------> 开发板: GPIO22
+  - TTL 转串口: RX <--------> 开发板: GPIO21
 - 下载终端软件：[pikaStudio.exe](https://gitee.com/Lyon1998/pikapython/attach_files/1285327/download)
-- 选择端口，然后打开终端
+- 选择端口，然后打开终端，波特率 115200
 
 ![](assets/image-20230220235936917.png)
 
