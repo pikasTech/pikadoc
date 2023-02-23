@@ -6,9 +6,9 @@ Sipeed M0P DOCK 是基于[博流智能科技](http://www.bouffalolab.com/)的 BL
 
 ## 固件烧录
 
-- [下载烧录工具 Bouffalo Lab Dev Cube](https://gitee.com/Lyon1998/pikapython/attach_files/1322074/download)
+- 下载烧录工具: [Bouffalo Lab Dev Cube](https://gitee.com/Lyon1998/pikapython/attach_files/1322074/download)
 
-下载固件：[pikapython_bl616_m0.bin](https://gitee.com/Lyon1998/pikapython/attach_files/1319192/download)
+- 下载固件：[pikapython_bl616_m0.bin](https://gitee.com/Lyon1998/pikapython/attach_files/1319192/download)
 
 选择 Chip: BL616/618
 
