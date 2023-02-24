@@ -38,7 +38,7 @@ Sipeed M0P DOCK 是基于[博流智能科技](http://www.bouffalolab.com/)的 BL
 
 ## 烧录多个脚本文件
 
-- 克隆代码仓库 [https://github.com/pikasTech/bl_mcu_sdk](https://github.com/pikasTech/bl_mcu_sdk)
+- 克隆代码仓库 [https://gitee.com/lyon1998/bl_mcu_sdk](https://gitee.com/lyon1998/bl_mcu_sdk)
 
 - 运行 bl_mcu_sdk/examples/pikapython/pikapython/rust-msc-latest-win10.exe 将 Python 脚本打包
 
@@ -58,7 +58,7 @@ Sipeed M0P DOCK 是基于[博流智能科技](http://www.bouffalolab.com/)的 BL
 
 ## 支持的模块
 
-参考 [main.py](https://github.com/pikasTech/bl_mcu_sdk/blob/master/examples/pikapython/pikapython/main.py) 中 import 的模块
+参考 [main.py](https://gitee.com/lyon1998/bl_mcu_sdk/blob/master/examples/pikapython/pikapython/main.py) 中 import 的模块
 
 例如 (注意，可能不是最新的)
 ``` python
@@ -83,7 +83,7 @@ print('hello PikaPython!')
 
 ## 支持的外设
 
-参考 [machine.py](https://github.com/pikasTech/bl_mcu_sdk/blob/master/examples/pikapython/pikapython/machine.py) 中的外设类
+参考 [machine.py](https://gitee.com/lyon1998/bl_mcu_sdk/blob/master/examples/pikapython/pikapython/machine.py) 中的外设类
 
 例如 (注意，可能不是最新的)
 ``` python
