@@ -40,6 +40,8 @@ Sipeed M0P DOCK 是基于[博流智能科技](http://www.bouffalolab.com/)的 BL
 
 - 克隆代码仓库 [https://github.com/pikasTech/bl_mcu_sdk](https://github.com/pikasTech/bl_mcu_sdk)
 
+- 运行 bl_mcu_sdk/examples/pikapython/pikapython/rust-msc-latest-win10.exe 将 Python 脚本打包
+
 - 发送打包后的 Python 软件包: 
   
   bl_mcu_sdk/examples/pikapython/pikapython/pikascript-api/pikaModules.py.a
@@ -48,7 +50,7 @@ Sipeed M0P DOCK 是基于[博流智能科技](http://www.bouffalolab.com/)的 BL
 
   bl_mcu_sdk/examples/pikapython/pikapython/main.py
 
-- pikaStudio 会在每次发送软件包之前把多脚本文件自动打包，每次编辑 Python 文件后直接发送即可
+- pikaStudio 会在每次发送软件包之前把多脚本文件自动打包，后续编辑 Python 文件后直接发送即可
 
 ## 擦除脚本文件
 
