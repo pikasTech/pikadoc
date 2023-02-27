@@ -40,15 +40,15 @@ Sipeed M0P DOCK 是基于[博流智能科技](http://www.bouffalolab.com/)的 BL
 
 - 克隆代码仓库 [https://gitee.com/lyon1998/bl_mcu_sdk](https://gitee.com/lyon1998/bl_mcu_sdk)
 
-- 运行 bl_mcu_sdk/examples/pikapython/pikapython/rust-msc-latest-win10.exe 将 Python 脚本打包
+- 运行 `bl_mcu_sdk/examples/pikapython/pikapython/rust-msc-latest-win10.exe` 将 Python 脚本打包
 
 - 发送打包后的 Python 软件包: 
   
-  bl_mcu_sdk/examples/pikapython/pikapython/pikascript-api/pikaModules.py.a
+  `bl_mcu_sdk/examples/pikapython/pikapython/pikascript-api/pikaModules.py.a`
 
 - 入口文件是:
 
-  bl_mcu_sdk/examples/pikapython/pikapython/main.py
+  `bl_mcu_sdk/examples/pikapython/pikapython/main.py`
 
 - pikaStudio 会在每次发送软件包之前把多脚本文件自动打包，后续编辑 Python 文件后直接发送即可
 
@@ -58,7 +58,7 @@ Sipeed M0P DOCK 是基于[博流智能科技](http://www.bouffalolab.com/)的 BL
 
 ## 支持的模块
 
-参考 [main.py](https://gitee.com/lyon1998/bl_mcu_sdk/blob/master/examples/pikapython/pikapython/main.py) 中 import 的模块
+参考 [main.py](https://gitee.com/lyon1998/bl_mcu_sdk/blob/master/examples/pikapython/pikapython/main.py) 中 `import` 的模块
 
 例如 (注意，可能不是最新的)
 ``` python
@@ -132,7 +132,7 @@ class LED(GPIO):
 git clone https://gitee.com/lyon1998/bl_mcu_sdk
 ```
 
-进入 pikapython 目录
+进入 `pikapython` 目录
 
 ```
 cd bl_mcu_sdk/example/pikapython
