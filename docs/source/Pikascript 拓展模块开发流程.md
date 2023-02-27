@@ -1,6 +1,6 @@
 # PikaPython C 模块开发流程
 
-我们依然以 keil 的仿真工程为例，如果还没有获得仿真工程，请首先在 [快速开始 -> keil 仿真工程](https://pikadoc.readthedocs.io/zh/latest/Keil%20%E4%BB%BF%E7%9C%9F%E5%B7%A5%E7%A8%8B.html) 章节获取工程。
+我们依然以 keil 的仿真工程为例，如果还没有获得仿真工程，请首先在 [快速开始 -> keil 仿真工程](Keil%20%E4%BB%BF%E7%9C%9F%E5%B7%A5%E7%A8%8B.html) 章节获取工程。
 
 ### 新建模块接口
 
@@ -221,4 +221,4 @@ print(res4)
 
 ![](assets/image-20220916121755609.png)
 
-请参考 [参与社区贡献->贡献模块](https://pikadoc.readthedocs.io/zh/latest/%E5%A6%82%E4%BD%95%E8%B4%A1%E7%8C%AE%20PikaScript%20%E6%A8%A1%E5%9D%97.html) 部分的文档发布你编写的模块。
+请参考 [参与社区贡献->贡献模块](%E5%A6%82%E4%BD%95%E8%B4%A1%E7%8C%AE%20PikaScript%20%E6%A8%A1%E5%9D%97.html) 部分的文档发布你编写的模块。

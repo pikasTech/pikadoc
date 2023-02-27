@@ -24,7 +24,7 @@ typedef Link Args;
 
 1. 新建参数表，从堆中新建一个参数表，返回参数表的指针。**注意新建的参数表需要手动销毁来回收内存。不断新建参数表但不销毁会导致内存泄漏。**
 
-[注意] 为避免内存泄漏，请在 [docker 开发环境](https://pikadoc.readthedocs.io/zh/latest/get-start_linux.html) 下进行开发，确保充足的单元测试和内存检查。
+[注意] 为避免内存泄漏，请在 [docker 开发环境](get-start_linux.html) 下进行开发，确保充足的单元测试和内存检查。
 
 ```c
 Args* New_args(Args* args);

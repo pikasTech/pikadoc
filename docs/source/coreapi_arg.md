@@ -90,7 +90,7 @@ size_t arg_getBytesSize(Arg* self);
 
 直接使用 arg_new\<Type\>() api **极易引起** 内存泄漏或悬垂引用，导致 **致命缺陷**。
 
-请在 [docker 开发环境](https://pikadoc.readthedocs.io/zh/latest/get-start_linux.html) 下进行开发，确保充足的单元测试和内存检查。
+请在 [docker 开发环境](get-start_linux.html) 下进行开发，确保充足的单元测试和内存检查。
 
 ## 案例
 

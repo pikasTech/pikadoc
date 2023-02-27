@@ -58,4 +58,4 @@ step5: 运行 REPL
 sh run.sh
 ```
 
-更多 Docker 下的开发指引，请参考 [ 标准库的开发流程 ](https://pikadoc.readthedocs.io/zh/latest/contribute_to_stdlib.html)。
+更多 Docker 下的开发指引，请参考 [ 标准库的开发流程 ](contribute_to_stdlib.html)。

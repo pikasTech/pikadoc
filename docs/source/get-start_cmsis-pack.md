@@ -50,4 +50,4 @@ PikaObj *pikaMain = pikaScriptInit();
 
 ![](assets/image-20220624091137190.png)
 
-更多用法请参考 [移植指南](https://pikadoc.readthedocs.io/zh/latest/index_porting.html)
+更多用法请参考 [移植指南](index_porting.html)

@@ -12,7 +12,7 @@ PikaPython 标准库是跨平台的，所以不能够使用平台（比如 stm32
 
 ### 构建 Docker 容器
 
-[ 快速开始 -> 从 Docker 开发环境开始 ](https://pikadoc.readthedocs.io/zh/latest/get-start_linux.html)
+[ 快速开始 -> 从 Docker 开发环境开始 ](get-start_linux.html)
 
 ## 使用 VSCODE 连接到容器进行开发
 

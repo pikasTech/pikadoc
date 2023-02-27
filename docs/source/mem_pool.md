@@ -14,7 +14,7 @@ PikaPython 内置了供小资源芯片使用的紧凑型内存池，默认不开
 
 ### 开启用户配置
 
-参考 [配置文档](https://pikadoc.readthedocs.io/zh/latest/%E4%BC%98%E5%8C%96%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E3%80%81%E9%85%8D%E7%BD%AE%20libc.html)
+参考 [配置文档](%E4%BC%98%E5%8C%96%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E3%80%81%E9%85%8D%E7%BD%AE%20libc.html)
 
 ### 加入配置项
 

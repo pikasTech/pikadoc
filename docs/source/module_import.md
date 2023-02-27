@@ -22,7 +22,7 @@ PikaPython 的预编译器可以将 Python 文件在 PC 开发机就转换成字
 
 我们仍然以 keil 的仿真工程作为实验平台，这样不需要硬件即可快速实验。
 
-首先参考 keil 的[仿真工程文档](https://pikadoc.readthedocs.io/zh/latest/Keil%20%E4%BB%BF%E7%9C%9F%E5%B7%A5%E7%A8%8B.html)，获得工程。
+首先参考 keil 的[仿真工程文档](Keil%20%E4%BB%BF%E7%9C%9F%E5%B7%A5%E7%A8%8B.html)，获得工程。
 
 然后在 pikascript_simulation-keil/pikascript/ 目录下新建一个 test.py 的 Python 文件 （所有的 Python 模块都要放在这个目录）。
 
@@ -141,4 +141,4 @@ print('test end...')
 
 用户也可以自己制作 C 模块，需要做的就是编写 \<module\>.pyi Python 接口文件和 pikascript-lib/\<module\> 里面的 .c 实现文件。
 
-具体请参考[C 模块的制作文档](https://pikadoc.readthedocs.io/zh/latest/index_cmodule.html)。
+具体请参考[C 模块的制作文档](index_cmodule.html)。
