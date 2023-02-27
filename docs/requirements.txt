@@ -1,3 +1,6 @@
 recommonmark
 sphinx_markdown_tables
 markdown
+sphinx
+sphinx-autobuild
+sphinx_rtd_theme
