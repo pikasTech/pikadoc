@@ -121,3 +121,27 @@ class LED(GPIO):
 ## 示例代码
 
 [PikaPython - Example](https://gitee.com/Lyon1998/pikapython/tree/master/examples)
+
+
+
+## （进阶） 自己编译固件
+
+克隆固件仓库（需要安装 git）
+
+```bat
+git clone https://gitee.com/lyon1998/bl_mcu_sdk
+```
+
+进入 pikapython 目录
+
+```
+cd bl_mcu_sdk/example/pikapython
+```
+
+编译固件
+
+```
+make_bl618.bat
+```
+
+编译后的固件在`bl_mcu_sdk/example/pikapython/build/buildout/pikapython_bl616_m0.bin`
