@@ -32,6 +32,7 @@
 | from [module] import * | - | PikaObj Module Only |
 
 #### List/Dict
+
 | Syntax | State |
 | --- | --- |
 | l = list() | √  |
