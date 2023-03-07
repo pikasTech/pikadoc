@@ -4,6 +4,10 @@
 
 Sipeed M0P DOCK 是基于[博流智能科技](http://www.bouffalolab.com/)的 BL618 芯片所设计的一款适用于超低功耗应用 IOT 开发板，支持 Wifi6、蓝牙 5.2 和 zigbee 等无线协议，默认最高主频 320MHz，芯片多种低功耗模式和多种唤醒源满足不同的低功耗场景。
 
+![](assets/image-20230307162755026.png)
+
+[购买店铺](https://shop362018057.taobao.com/) (暂未上架，敬请期待)
+
 ## 固件烧录
 
 - 下载烧录工具: [Bouffalo Lab Dev Cube](https://gitee.com/Lyon1998/pikapython/attach_files/1322074/download)
