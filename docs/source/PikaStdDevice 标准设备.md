@@ -354,6 +354,77 @@ PIKA_WEAK int pika_hal_platform_XXXX_ioctl_config(pika_dev* dev, pika_hal_XXXX_c
 
 [https://gitee.com/Lyon1998/pikapython/tree/master/package/ESP32](https://gitee.com/Lyon1998/pikapython/tree/master/package/ESP32)
 
+### 案例教程1 - ESP32 上对 WIFI 设备的适配
+
+[源码链接](https://gitee.com/Lyon1998/pikapython/blob/master/package/ESP32/pika_hal_ESP32_WIFI.c)
+
+首先，我们需要包含一些必要的头文件，如 pika_hal.h、esp_wifi.h、esp_event.h 等。这些头文件提供了 pika_hal 和 esp32 的相关定义和函数。
+
+```c
+#include "../pikascript-lib/pikastddevice/pika_hal.h"
+#include "esp_event.h"
+#include "esp_mac.h"
+#include "esp_netif.h"
+#include "esp_wifi.h"
+#include "freertos/freertos.h"
+#include "freertos/event_groups.h"
+#include "freertos/task.h"
+#include "nvs_flash.h"
+```
+
+然后，我们定义了一些全局变量和常量，用于记录 WIFI 的状态和配置信息。例如，wifi_started 表示 WIFI 是否已经启动，wifi_sta_connect_requested 表示是否请求连接到某个 WIFI 热点，wifi_sta_disconn_reason 表示连接失败的原因等。
+
+```c
+static volatile pika_bool wifi_started = pika_false;
+static volatile pika_bool wifi_sta_connect_requested = pika_false;
+static volatile pika_bool wifi_sta_connected = pika_false;
+static volatile pika_hal_wifi_status wifi_sta_disconn_reason =
+    pika_hal_wifi_status_idle;
+static eventgrouphandle_t wifi_event_group;
+static esp_netif_t* sta_netif = null;
+static esp_netif_t* ap_netif = null;
+```
+
+接下来，我们定义了一个辅助函数 _ip_str2u32 ，用于将字符串形式的 IP 地址转换为 uint32_t 类型的数值。这个函数会遍历字符串中的每个数字，并将其存储到一个 uint8_t 类型的数组中，然后返回这个数组所代表的 uint32_t 值。
+
+```c
+uint32_t _ip_str2u32(char* ip_str) {
+    uint32_t ip = 0;
+    uint8_t* ip_u8 = (uint8_t*)&ip;
+    char* p = ip_str;
+    for (int i = 0; i < 4; i++) {
+        ip_u8[i] = atoi(p);
+        p = strchr(p, '.');
+        if (p == null) {
+            break;
+        }
+        p++;
+    }
+    return ip;
+}
+```
+
+紧接着，我们定义了一个事件处理函数 event_handler ，用于响应不同类型和 ID 的事件，并根据事件数据进行相应的操作。例如，在 WIFI_EVENT_STA_START 事件中，如果请求连接到某个热点，则调用 esp_wifi_connect 函数；在 IP_EVENT_STA_GOT_IP 事件中，则设置 wifi_sta_connected 为 PIKA_TRUE 并设置 wifi_sta_disconn_reason 为 PIKA_HAL_WIFI_STATUS_GOT_IP 等。
+
+```c
+static void event_handler(void* event_handler_arg,
+                          esp_event_base_t event_base,
+                          int32_t event_id,
+                          void* event_data) {
+    // ...
+}
+```
+
+然后，我们实现了几个主要的设备操作函数，分别对应于打开、关闭、配置和控制 WIFI 设备。这些函数都需要传入一个指向设备对象（pika_dev）的指针，并根据不同情况返回相应的结果或错误码。
+
+- `pika_hal_platform_WIFI_open` 函数用于初始化 NVS（非易失性存储）、网络接口和事件循环，并创建一个事件组（event group）。
+
+- `pika_hal_platform_WIFI_close` 函数用于反初始化 NVS、网络接口和事件循环，并删除事件组。
+- `pika_hal_platform_WIFI_ioctl_config` 函数用于根据设备对象中的 ioctl_config 字段（pika_hal_WIFI_config 类型）来配置 WIFI 的模式、热点信息等。如果是 STA 模式，则不支持配置；如果是 AP 模式，则调用 esp_wifi_set_config 函数来设置热点的 SSID、密码、信道、认证模式和最大连接数等。
+- `pika_hal_platform_WIFI_ioctl_enable` 函数用于启动或停止 WIFI。首先，根据 ioctl_config 字段中的 mode 字段来确定 WIFI 的模式，然后调用 esp_wifi_set_mode 函数来设置模式。如果 WIFI 还没有启动，则还需要注册事件处理函数，创建默认的网络接口，以及调用 esp_wifi_start 函数来启动 WIFI，并设置 wifi_started 为 PIKA_TRUE；否则，只需要设置模式即可。
+- `pika_hal_platform_WIFI_ioctl_disable` 函数用于停止或反初始化 WIFI。如果 WIFI 已经启动，则调用 esp_wifi_stop 和 esp_wifi_deinit 函数来停止和反初始化 WIFI，并设置 wifi_started 为 PIKA_FALSE；否则，返回 -1 表示错误。
+- `pika_hal_platform_WIFI_ioctl_others` 函数用于处理其他类型的控制命令，如获取 WIFI 的状态、是否激活、扫描附近的热点等。这些命令都通过 cmd 参数来指定，并通过 arg 参数来传递或返回数据。例如，在 PIKA_HAL_IOCTL_WIFI_GET_STATUS 命令中，根据 wifi_sta_connect_requested 和 wifi_sta_connected 等变量来判断当前的连接状态，并将其赋值给 arg 指向的 pika_hal_wifi_status 类型变量。
+
 ## 参与贡献
 
 请参考 [参与社区贡献->贡献模块](%E5%A6%82%E4%BD%95%E8%B4%A1%E7%8C%AE%20PikaScript%20%E6%A8%A1%E5%9D%97.html) 部分的文档发布你编写的模块。
