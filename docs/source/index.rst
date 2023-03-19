@@ -15,6 +15,7 @@ PikaPython (也称 PikaScript、PikaPy) 是一个完全重写的超轻量级 pyt
    index_porting
    index_module
    index_stdlib
+   index_api
    index_cmodule
    index_coreapi
    index_config
