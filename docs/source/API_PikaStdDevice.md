@@ -1,5 +1,6 @@
 # PikaStdDevice 模块 API 文档
 
+   ## PikaStdDevice
    PikaStdDevice is a standard and abstract device module for PikaScript.
    PikaStdDevice supplies the standard device API for users.
    Document: https://pikadoc.readthedocs.io/en/latest/PikaStdDevice%20%E6%A0%87%E5%87%86%E8%AE%BE%E5%A4%87.html
@@ -137,7 +138,7 @@ def platformRead(self):...
 def Time()->time:...
 ```
 
-   # use time module instead 
+   use time module instead 
 
 ### class ADC(BaseDev):
 ``` python
