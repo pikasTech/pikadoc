@@ -2,7 +2,7 @@
 
 ## 概述
 
-PikaPython 内核中提供了事件回调机制，可以支持在 C 的事件/中断中触发 Python 定义的回调函数。
+PikaPython 内核中提供了事件回调机制，使得您可以在 C 的事件/中断中触发 Python 定义的回调函数。
 
 > 注意
 > 
@@ -20,7 +20,7 @@ PikaPython 内核中提供了事件回调机制，可以支持在 C 的事件/�
 typedef PikaObj PikaEventListener;
 ```
 
-事件回调机制主要依靠 `PikaEventListener` 事件监听器，事件监听器中记录了每个被注册的事件 ID，当有信号发送至事件监听器时，事件监听器将根据 事件 ID 将调用相应的 Python 回调函数，并传递信号量。
+事件回调机制主要依赖于 `PikaEventListener` 事件监听器。事件监听器会记录每个已注册的事件 ID。当信号发送至事件监听器时，事件监听器会根据事件 ID 调用相应的 Python 回调函数，并传递信号量。
 
 ## 事件模型
 
@@ -28,15 +28,42 @@ typedef PikaObj PikaEventListener;
 
 ![](assets/image-20220619102931608.png)
 
-`PikaEventListener` 的模型如上图所示，向事件监听器中注册事件后，将会在 `PikaEventListener` 内部记录下一个事件项 `Event Item`，包括：
+`PikaEventListener` 的模型如上图所示，在此文档中，我将提供改进后的文档，并为每个修改提供理由。
 
-- `Event ID` 事件的唯一 ID
-- `Event Handler Object ` 事件对象，记录了事件项的全部信息
+事件回调机制
+概述
+PikaPython 内核中提供了事件回调机制，使得您可以在 C 的事件/中断中触发 Python 定义的回调函数。
 
-  - `Event CallBack` 事件回调函数 ( Python 函数 )
+注意
+
+请确保内核版本不低于: v1.8.7
+
+改进：简化了句子结构，使之更易理解。
+
+头文件
+C
+Copy code
+#include "PikaObj.h"
+数据类型
+c
+Copy code
+typedef PikaObj PikaEventListener;
+事件回调机制主要依赖于 PikaEventListener 事件监听器。事件监听器会记录每个已注册的事件 ID。当信号发送至事件监听器时，事件监听器会根据事件 ID 调用相应的 Python 回调函数，并传递信号量。
+
+改进：简化句子，以便于阅读。
+
+事件模型
+事件模型的核心是 PikaEventListener 事件监听器。
 
 
-当 `Event Signal` 事件信号到来时，事件监听器将会匹配 `Event ID` 找到相应的事件项，然后再将信号代码`Event Code`传递给 `Event CallBak` 然后触发回调函数。
+
+当您向事件监听器中注册事件后，它将在 PikaEventListener 内部记录一个事件项 Event Item，包括：
+
+- Event ID 事件的唯一 ID
+- Event Handler Object 事件对象，记录了事件项的全部信息
+- Event CallBack 事件回调函数 ( Python 函数 )
+
+当 `Event Signal` 事件信号到来时，事件监听器会匹配 `Event ID`，找到相应的事件项，然后将信号代码 Event Code 传递给 Event CallBack，并触发回调函数
 
 ![](assets/image-20220619104053576.png)
 
@@ -49,7 +76,7 @@ typedef PikaObj PikaEventListener;
 
 ## 通过 PikaStdDevice 支持事件回调
 
-继承 PikaStdDevice 是支持事件回调的最简单方式，`PikaStdDevice.BaseDev` 设备基本类已经支持了事件注册方法 `addEventCallBack`。
+继承 `PikaStdDevice` 是支持事件回调的最简单方式。`PikaStdDevice.BaseDev` 设备基本类已经支持了事件注册方法 `addEventCallBack`。
 
 ```python
 class BaseDev:
@@ -59,7 +86,7 @@ class BaseDev:
     def platformGetEventId(self):...
 ```
 
-- `PikaStdDevice` 中的设备类（如 GPIO）都继承了 `BaseDev`，因此都获得了 `addEventCallBack` 的方法，能够注册回调。
+`PikaStdDevice` 中的设备类（如 GPIO）都继承了 `BaseDev`，因此都获得了 `addEventCallBack` 的方法，能够注册回调。
 
 [/package/PikaStdDevice/PikaStdDevice.pyi](https://gitee.com/Lyon1998/pikapython/blob/master/package/PikaStdDevice/PikaStdDevice.pyi)
 
