@@ -28,36 +28,9 @@ typedef PikaObj PikaEventListener;
 
 ![](assets/image-20220619102931608.png)
 
-`PikaEventListener` 的模型如上图所示，在此文档中，我将提供改进后的文档，并为每个修改提供理由。
+`PikaEventListener` 的模型如上图所示
 
-事件回调机制
-概述
-PikaPython 内核中提供了事件回调机制，使得您可以在 C 的事件/中断中触发 Python 定义的回调函数。
-
-注意
-
-请确保内核版本不低于: v1.8.7
-
-改进：简化了句子结构，使之更易理解。
-
-头文件
-C
-Copy code
-#include "PikaObj.h"
-数据类型
-c
-Copy code
-typedef PikaObj PikaEventListener;
-事件回调机制主要依赖于 PikaEventListener 事件监听器。事件监听器会记录每个已注册的事件 ID。当信号发送至事件监听器时，事件监听器会根据事件 ID 调用相应的 Python 回调函数，并传递信号量。
-
-改进：简化句子，以便于阅读。
-
-事件模型
-事件模型的核心是 PikaEventListener 事件监听器。
-
-
-
-当您向事件监听器中注册事件后，它将在 PikaEventListener 内部记录一个事件项 Event Item，包括：
+当您向事件监听器中注册事件后，它将在 `PikaEventListener` 内部记录一个事件项 `Event Item`，包括：
 
 - Event ID 事件的唯一 ID
 - Event Handler Object 事件对象，记录了事件项的全部信息
