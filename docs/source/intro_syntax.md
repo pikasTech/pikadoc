@@ -58,6 +58,45 @@
 | d = dict() | √ |
 | d = {'a':x, 'b':y, 'c':z} | √ |
 
+#### Slice
+
+| Syntax | str | bytes | list |
+| --- | --- | --- | --- |
+| test[i] | √ | √ | √ |
+| test[a : b] | √ | √ | √ | 
+| test[a :] | √ | √ | √ |
+
+#### Function Arguments
+
+| Syntax                                | State |
+| ------------------------------------- | ----- |
+| Default Arguments                     | √     |
+| Keyword Arguments                     | √     |
+| Variable Positional Arguments (\*args) | √     |
+| Variable Keyword Arguments (\*\*kwargs) | √     |
+
+#### String Formatting
+
+| Syntax                                | State |
+| ------------------------------------- | ----- |
+| %-formatting                          | √     |
+| str.format()                          | -     |
+| f-strings (formatted string literals) | -     |
+
+#### Comparison Operations
+
+| Syntax                        | Number | List | Dictionary |
+| ----------------------------- | ------ | ---- | ---------- |
+| Equal (==)                    | √      | -    | -          |
+| Greater Than (>)              | √      | -    | -          |
+| Less Than (<)                 | √      | -    | -          |
+| Greater Than or Equal To (>=) | √      | -    | -          |
+| Less Than or Equal To (<=)    | √      | -    | -          |
+| Membership (in)               | -      | √    | √ (keys)   |
+| Non-membership (not in)       | -      | √    | √ (keys)   |
+| Identity (is)                 | √      | √    | √          |
+| Non-identity (is not)         | √      | √    | √          |
+
 #### Exception
 
 | Syntax | State |
@@ -71,16 +110,16 @@
 |raise [Exception]:| - |
 |finally:| - |
 
-#### Slice
+#### Context Managers
 
-| Syntax | str | bytes | list |
-| --- | --- | --- | --- |
-| test[i] | √ | √ | √ |
-| test[a : b] | √ | √ | √ | 
-| test[a :] | √ | √ | √ |
+| Syntax                                                       | State |
+| ------------------------------------------------------------ | ----- |
+| with statement                                               | -     |
+| custom context managers (using __enter__ and __exit__ methods) | -     |
 
-#### Other keywords/Syntax
+#### Generators
 
-| yield | is | comprehensions |
-| --- | --- | --- |
-| - | √ | - |
+| Syntax                              | State |
+| ----------------------------------- | ----- |
+| generator functions (using 'yield') | -     |
+| generator expressions               | -     |
