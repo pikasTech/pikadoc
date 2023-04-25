@@ -1,4 +1,4 @@
-# LPC55S59 PikaPython 移植记录
+# LPC55S59 PikaPython 移植记录 - 作者：流水源
 
 作者：流水源
 

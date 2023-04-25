@@ -1,4 +1,4 @@
-# MM32 PikaPython 开发实战
+# MM32 PikaPython 开发实战 - 作者：xld0932
 
 作者：[xld0932](https://bbs.21ic.com/icview-3236202-1-1.html)
 
