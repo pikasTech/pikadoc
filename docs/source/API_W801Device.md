@@ -1,5 +1,7 @@
 # W801Device 模块 API 文档
 
+## API
+
 ### class GPIO(PikaStdDevice.GPIO):
 ``` python
 def platformHigh():...
@@ -101,4 +103,8 @@ def platformEnable():...
 ``` python
 def platformRead():...
 ```
+
+
+
+## Examples
 

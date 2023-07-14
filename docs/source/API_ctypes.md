@@ -1,5 +1,7 @@
 # ctypes 模块 API 文档
 
+## API
+
 ### class c_uint(TinyObj):
 ``` python
 def __init__(self,value:int):...
@@ -62,4 +64,8 @@ def __init__(self,value:any,size:int):...
 ``` python
 def __getitem__(self,__key:int)->int:...
 ```
+
+
+
+## Examples
 

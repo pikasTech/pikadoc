@@ -1,5 +1,7 @@
 # PikaMath 模块 API 文档
 
+## API
+
 ### class Operator(TinyObj):
 ``` python
 def plusInt(self,num1:int,num2:int)->int:...
@@ -227,3 +229,65 @@ def fromEuler(self,yaw:float,pitch:float,roll:float,mode:int):...
 def toEuler(self)->list:...
 ```
 
+
+
+## Examples
+
+### Quaternion_test.py
+
+```python
+from PikaMath import Quaternion
+
+a=Quaternion()
+a.set(0.592,0.158,0.592,0.525)
+
+b=Quaternion()
+
+a.add(b)
+a.mul(b)
+
+
+
+```
+### modbus_convert.py
+
+```python
+def convert_to_modbus(num):
+    # 判断输入数值的符号
+    if num >= 0:
+        sign = 0
+    else:
+        sign = 1
+
+    # 如果是负数，将其转换为补码形式
+    if sign:
+        num = (~(-num) + 1) & 0xFFFF
+
+    return num
+
+
+def convert_from_modbus(num):
+    # 判断输入数值的符号
+    if (num & 0x8000):
+        sign = 1
+    else:
+        sign = 0
+
+    # 如果是负数，将其转换回原始的负数形式
+    if sign:
+        num = -((~num + 1) & 0xFFFF)
+
+    return num
+
+
+# 测试示例
+num = -10
+modbus_value = convert_to_modbus(num)
+
+original_value = convert_from_modbus(modbus_value)
+
+assert modbus_value == 65526
+assert original_value == -10
+print("PASS")
+
+```

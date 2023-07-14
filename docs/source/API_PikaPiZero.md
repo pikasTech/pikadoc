@@ -1,5 +1,7 @@
 # PikaPiZero 模块 API 文档
 
+## API
+
 ### class RGB:
 ``` python
 def init(self):...
@@ -52,3 +54,7 @@ def fill(self,x0:int,y0:int,hight:int,wight:int,color:str):...
 ```
 
 ### class Point:
+
+
+## Examples
+
