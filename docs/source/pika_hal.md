@@ -1,8 +1,18 @@
 # `pika_hal` 设备抽象层
 
-## 概述
-
 `pika_hal` 是一个设备抽象层，其设计初衷是简化设备控制和提高跨平台开发的效率。它将硬件设备（例如 GPIO、IIC、PWM 等）的操作抽象成统一的 API 接口，使得在不同的硬件平台（如 STM32、ESP32、BL602 等）上可以使用相同的代码来进行设备控制。
+
+## 安装
+
+`pika_hal` 内置在 `PikaStdDevice` 模块内，安装步骤：
+
+- 在 requestment.txt 中加入 PikaStdDevice 的依赖。
+```
+PikaStdDevice
+```
+- 运行 pikaPackage.exe
+
+## 概述
 
 适配 `pika_hal` 的硬件平台可以直接使用 PikaPython 提供的 Python 模块，例如 `PikaStdDevice` 模块和一些传感器、电机等其他模块。这些模块使用的是 `pika_hal` 的统一 API，因此，一旦硬件平台适配了 `pika_hal`，就可以直接使用这些 Python 模块，无需再为每个模块进行平台适配。
 
