@@ -75,29 +75,25 @@ keys['c']: 3
 >>>
 ```
 
-# C 模块返回 List/Dict
+# C 模块返回 List/Dict/Tuple
+
+注意：需要内核版本 `>= v1.12.5`
 
 ## List
 
 ``` python
 # test.pyi
-def test_list()->list:...
+def test_list() -> list: ...
 ```
 
 ``` C
 // test.c
-#include "PikaStdData_List.h"
+#include "PikaObj.h"
 PikaObj* test_test_list(PikaObj* self){
     /* 创建 list 对象 */
-    PikaObj* list = newNormalObj(New_PikaStdData_List);
-    /* 初始化 list */
-    PikaStdData_List___init__(list);
-    /* 用 arg_new<type> 的 api 创建 arg */
-    Arg* str_arg1 = arg_newStr("aaa");
-    /* 添加到 list 对象 */
-    PikaStdData_List_append(list, str_arg1);
-    /* 销毁 arg */
-    arg_deinit(str_arg1);
+    PikaList* list = New_PikaList();
+    /* 用 arg_new<type> 的 api 创建 arg, 添加到 list 对象 */
+    pikaList_append(list, arg_newStr("aaa"));
     /* 返回列表 */
     return list;
 }
@@ -105,26 +101,34 @@ PikaObj* test_test_list(PikaObj* self){
 
 ## Dict
 
-注意：需要内核版本 `>= v1.10.8`
-
 ``` python
 # test.pyi
-def test_dict()->dict:...
+def test_dict() -> dict: ...
 ```
 
 ``` C
 // test.c
-#include "PikaStdData_Dict.h"
+#include "PikaObj.h"
 PikaObj* test_test_dict(PikaObj* self){
-    PikaObj* dict = newNormalObj(New_PikaStdData_Dict);
-    PikaStdData_Dict___init__(dict);
-    Arg* para1 = arg_newInt(1);
-    Arg* para2 = arg_newInt(2);
-    PikaStdData_Dict_set(dict, "para1", para1);
-    PikaStdData_Dict_set(dict, "para2", para2);
-    arg_deinit(para1);
-    arg_deinit(para2);
+    PikaObj* dict = New_PikaDict();
+    pikaDict_set(dict, "para1", arg_newInt(1));
+    pikaDict_set(dict, "para1", arg_newStr("2"));
     return dict;
+}
+```
+
+## Tuple
+
+```C
+# test.pyi
+def test_tuple() -> tuple: ...
+```
+
+```C
+// test.c
+#include "PikaObj.h"
+PikaObj* test_test_tuple(PikaObj* self){
+    return New_PikaTupleFrom(arg_newInt(1), arg_newStr("2"));
 }
 ```
 
